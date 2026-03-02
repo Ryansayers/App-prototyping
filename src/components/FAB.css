@@ -6,7 +6,9 @@
   height: 56px;
   border-radius: 28px;
   border: none;
-  background: #F72717;
+  background: linear-gradient(135deg, #ff2040 0%, #cc30cc 25%, #7030e0 50%, #2070f0 75%, #00d4c8 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -14,11 +16,11 @@
   justify-content: center;
   gap: 0;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(247, 39, 23, 0.35);
+  box-shadow: 0 4px 16px rgba(112, 48, 224, 0.4);
   transition:
     width 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
     border-radius 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
-    background 0.3s ease,
+    background-position 0.6s ease,
     box-shadow 0.3s ease;
   z-index: 10;
 }
@@ -27,12 +29,24 @@
   width: 140px;
   border-radius: 28px;
   gap: 8px;
-  background: #1a1a1a;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #00a854 0%, #0099a8 30%, #1450c0 65%, #4a0eaa 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  box-shadow: 0 4px 20px rgba(0, 212, 160, 0.4);
+  transition:
+    width 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
+    border-radius 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
+    background-position 0.6s ease,
+    box-shadow 0.3s ease;
 }
 
 .fab:hover {
   transform: scale(1.05);
+  background-position: 100% 50%;
+}
+
+.fab-ai:hover {
+  background-position: 100% 50%;
 }
 
 .fab:active {

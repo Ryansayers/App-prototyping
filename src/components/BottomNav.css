@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-around;
   height: 72px;
-  background: #fff;
+  background: transparent;
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
 

@@ -2,6 +2,14 @@ import { useState } from 'react'
 import './Page.css'
 import './Feed.css'
 
+const TAG_GRADIENTS = {
+  'Your Team':       'linear-gradient(135deg, #6366f1, #8b5cf6)',
+  'Company':         'linear-gradient(135deg, #0ea5e9, #6366f1)',
+  'Engineering':     'linear-gradient(135deg, #10b981, #0ea5e9)',
+  'People & Culture':'linear-gradient(135deg, #f59e0b, #ec4899)',
+}
+
+
 const NEWS = [
   {
     id: 'n1',
@@ -11,7 +19,6 @@ const NEWS = [
     body: 'The new component library is live. All product teams are encouraged to migrate by end of Q2.',
     time: '2m ago',
     relevant: true,
-    img: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&q=80',
   },
   {
     id: 'n2',
@@ -21,7 +28,6 @@ const NEWS = [
     body: 'CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.',
     time: '1h ago',
     relevant: true,
-    img: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80',
   },
   {
     id: 'n3',
@@ -31,7 +37,6 @@ const NEWS = [
     body: 'Build times are down 40% following last week\'s infrastructure upgrade across all repos.',
     time: '3h ago',
     relevant: true,
-    img: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80',
   },
   {
     id: 'n4',
@@ -41,7 +46,6 @@ const NEWS = [
     body: 'We\'re opening a new office in Austin this summer. Applications for relocation packages are now open.',
     time: '1d ago',
     relevant: false,
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
   },
   {
     id: 'n5',
@@ -51,7 +55,6 @@ const NEWS = [
     body: 'Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.',
     time: '2d ago',
     relevant: false,
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
   },
 ]
 
@@ -150,8 +153,7 @@ const BookmarkIcon = ({ filled }) => (
 function NewsCard({ item, saved, onSave }) {
   return (
     <div className="nc">
-      <div className="nc-img-wrap">
-        <img className="nc-img" src={item.img} alt={item.title} />
+      <div className="nc-img-wrap" style={{ background: TAG_GRADIENTS[item.tag] || 'linear-gradient(135deg, #cbd5e1, #94a3b8)' }}>
         <span className="nc-tag">{item.tag}</span>
         {item.relevant && <span className="nc-badge">For you</span>}
       </div>
