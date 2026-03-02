@@ -4,19 +4,19 @@
   right: 20px;
   width: 56px;
   height: 56px;
-  border-radius: 28px;
+  border-radius: var(--fab-radius, 28px);
   border: none;
-  background: linear-gradient(135deg, #ff2040 0%, #cc30cc 25%, #7030e0 50%, #2070f0 75%, #00d4c8 100%);
+  background: var(--fab-bg);
   background-size: 200% 200%;
   background-position: 0% 50%;
-  color: #fff;
+  color: var(--fab-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(112, 48, 224, 0.4);
+  box-shadow: var(--fab-shadow);
   transition:
     width 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
     border-radius 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
@@ -27,12 +27,12 @@
 
 .fab-ai {
   width: 140px;
-  border-radius: 28px;
+  border-radius: var(--fab-radius, 28px);
   gap: 8px;
-  background: linear-gradient(135deg, #00a854 0%, #0099a8 30%, #1450c0 65%, #4a0eaa 100%);
+  background: var(--fab-ai-bg);
   background-size: 200% 200%;
   background-position: 0% 50%;
-  box-shadow: 0 4px 20px rgba(0, 212, 160, 0.4);
+  box-shadow: var(--fab-ai-shadow);
   transition:
     width 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),
     border-radius 0.4s cubic-bezier(0.34, 1.2, 0.64, 1),

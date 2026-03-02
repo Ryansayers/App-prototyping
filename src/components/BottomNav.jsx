@@ -67,18 +67,8 @@ const NAV_ITEMS = [
   {
     id: 'profile',
     label: 'You',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-      </svg>
-    ),
-    iconFilled: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-        <circle cx="12" cy="7" r="4" />
-        <path d="M4 21v-2a4 4 0 014-4h8a4 4 0 014 4v2H4z" />
-      </svg>
-    ),
+    icon: <span className="nav-avatar">RS</span>,
+    iconFilled: <span className="nav-avatar nav-avatar--active">RS</span>,
   },
 ]
 
@@ -87,11 +77,7 @@ export default function BottomNav({ active, onChange }) {
 
   return (
     <nav className="bottom-nav">
-      <span
-        className="nav-slider"
-        style={{ transform: `translateX(${activeIndex * 100}%)` }}
-      />
-      {NAV_ITEMS.map((item) => {
+{NAV_ITEMS.map((item) => {
         const isActive = active === item.id
         return (
           <button

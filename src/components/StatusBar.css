@@ -10,7 +10,7 @@
 .status-time {
   font-size: 13px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--statusbar-text);
   letter-spacing: 0.2px;
 }
 
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #1a1a1a;
+  color: var(--statusbar-icon);
 }
 
 .status-icons svg {

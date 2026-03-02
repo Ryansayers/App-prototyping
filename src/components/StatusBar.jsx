@@ -17,7 +17,7 @@ const SignalIcon = () => (
 )
 
 const BatteryIcon = ({ level }) => {
-  const color = level <= 20 ? '#f44' : 'currentColor'
+  const color = level <= 20 ? 'var(--statusbar-danger-icon)' : 'currentColor'
   return (
     <svg viewBox="0 0 24 10" fill="none">
       <rect x="0.5" y="0.5" width="20" height="9" rx="2" stroke="currentColor" strokeWidth="1.2" />

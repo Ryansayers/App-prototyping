@@ -14,20 +14,21 @@
   flex: 1;
   height: 44px;
   border: none;
-  border-radius: 22px;
-  background: #fff;
+  border-radius: var(--feed-tab-radius, 22px);
+  background: var(--feed-tab-bg);
+  color: var(--feed-tab-color);
   font-family: inherit;
   font-size: 13px;
   font-weight: 500;
-  color: #888;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 
 .feed-tab--active {
-  background: #333;
-  color: #fff;
+  background: var(--feed-tab-active-bg);
+  color: var(--feed-tab-active-color);
   font-weight: 600;
+  border: var(--feed-tab-active-stroke-width) solid var(--feed-tab-active-stroke-color);
 }
 
 /* Feed list */
@@ -35,22 +36,22 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px 6px 24px;
+  padding: 16px 0 24px;
   overflow-y: auto;
 }
 
 /* ── News Card ── */
 .nc {
-  background: #fff;
-  border-radius: 16px;
+  background: var(--nc-bg);
+  border-radius: var(--nc-radius, 16px);
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  box-shadow: var(--nc-shadow);
 }
 
 .nc-img-wrap {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 150px;
 }
 
 .nc-img {
@@ -64,13 +65,13 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: rgba(0,0,0,0.55);
+  background: var(--nc-tag-bg);
   backdrop-filter: blur(4px);
-  color: #fff;
+  color: var(--nc-tag-color);
   font-size: 10px;
   font-weight: 600;
   padding: 3px 9px;
-  border-radius: 20px;
+  border-radius: var(--nc-tag-radius, 20px);
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
@@ -79,12 +80,12 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #333;
-  color: #fff;
+  background: var(--nc-badge-bg);
+  color: var(--nc-badge-color);
   font-size: 10px;
   font-weight: 700;
   padding: 3px 9px;
-  border-radius: 20px;
+  border-radius: var(--nc-badge-radius, 20px);
 }
 
 .nc-body {
@@ -104,36 +105,36 @@
 .nc-title {
   font-size: 14px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--nc-title-color);
   margin: 0;
   line-height: 1.4;
 }
 
 .nc-desc {
   font-size: 12px;
-  color: #777;
+  color: var(--nc-desc-color);
   margin: 0;
   line-height: 1.5;
 }
 
 .nc-time {
   font-size: 11px;
-  color: #bbb;
+  color: var(--nc-time-color);
 }
 
 /* ── Recognition Card ── */
 .rc {
-  background: #fff;
-  border-radius: 16px;
+  background: var(--rc-bg);
+  border-radius: var(--rc-radius, 16px);
   padding: 16px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  box-shadow: var(--rc-shadow);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .rc--you {
-  border: 1.5px solid #ffe8e7;
+  border: var(--rc-you-stroke-width) solid var(--rc-you-stroke-color);
 }
 
 .rc-header {
@@ -152,7 +153,7 @@
 .rc-avatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: var(--rc-avatar-radius, 50%);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -160,17 +161,19 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  border: 2px solid #fff;
+  border: var(--rc-avatar-stroke-width) solid var(--rc-avatar-stroke-color);
 }
 
 .rc-avatar--from {
   left: 0;
   z-index: 2;
+  border: none;
 }
 
 .rc-avatar--to {
   left: 18px;
   z-index: 1;
+  border: none;
 }
 
 .rc-meta {
@@ -182,25 +185,25 @@
 
 .rc-from {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--rc-from-color);
   margin: 0;
 }
 
 .rc-role {
   font-weight: 400;
-  color: #999;
+  color: var(--rc-role-color);
   font-size: 12px;
 }
 
 .rc-to {
   font-size: 12px;
-  color: #777;
+  color: var(--rc-to-color);
   margin: 0;
 }
 
 .rc-time {
   font-size: 11px;
-  color: #bbb;
+  color: var(--rc-time-color);
   flex-shrink: 0;
   align-self: flex-start;
 }
@@ -210,14 +213,14 @@
   font-size: 11px;
   font-weight: 700;
   padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: var(--rc-value-radius, 20px);
   width: fit-content;
   letter-spacing: 0.3px;
 }
 
 .rc-message {
   font-size: 13px;
-  color: #444;
+  color: var(--rc-message-color);
   line-height: 1.6;
   margin: 0;
   font-style: italic;
@@ -228,7 +231,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #ccc;
+  color: var(--save-btn-color);
   padding: 0;
   flex-shrink: 0;
   display: flex;
@@ -243,11 +246,11 @@
 }
 
 .save-btn--saved {
-  color: #333;
+  color: var(--save-btn-saved-color);
 }
 
 .save-btn:hover {
-  color: #555;
+  color: var(--save-btn-hover-color);
 }
 
 /* Tab count badge */
@@ -255,8 +258,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: #333;
+  background: var(--feed-tab-count-bg);
+  color: var(--feed-tab-count-color);
   font-size: 10px;
   font-weight: 700;
   width: 16px;
@@ -266,8 +269,8 @@
 }
 
 .feed-tab--active .feed-tab-count {
-  background: rgba(255,255,255,0.3);
-  color: #fff;
+  background: var(--feed-tab-count-active-bg);
+  color: var(--feed-tab-count-active-color);
 }
 
 /* Saved empty state */
@@ -284,19 +287,19 @@
 .saved-empty p:first-child {
   font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: var(--result-color);
 }
 
 .saved-empty p:last-child {
   font-size: 13px;
-  color: #aaa;
+  color: var(--result-empty-color);
 }
 
 .rc-you-banner {
-  background: #f5f3ff;
-  border-radius: 10px;
+  background: var(--rc-you-banner-bg);
+  border-radius: var(--rc-you-banner-radius, 12px);
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #F72717;
+  color: var(--rc-you-banner-color);
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -20,12 +20,19 @@ const PAGES = {
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
+  const [theme, setTheme] = useState(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  )
   const { title, component } = PAGES[activePage]
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
 
   return (
     <div className="app">
       <StatusBar />
-      <Header title={title} />
+      <Header title={title} darkMode={theme === 'dark'} onToggleDark={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
       <main className="content">{component}</main>
       <FAB activePage={activePage} />
       <BottomNav active={activePage} onChange={setActivePage} />

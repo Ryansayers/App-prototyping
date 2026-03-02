@@ -37,7 +37,7 @@ function ProgressBar({ current, target, color }) {
   const pct = Math.min(Math.round((current / target) * 100), 100)
   return (
     <div className="goal-bar-track">
-      <div className="goal-bar-fill" style={{ width: `${pct}%`, background: color }} />
+      <div className="goal-bar-fill" style={{ width: `${pct}%` }} />
     </div>
   )
 }
@@ -56,12 +56,11 @@ export default function Profile() {
           return (
             <div key={goal.id} className="goal-card">
               <div className="goal-header">
-                <span className="goal-icon">{goal.icon}</span>
-                <div className="goal-meta">
+<div className="goal-meta">
                   <span className="goal-label">{goal.label}</span>
                   <span className="goal-challenge">{goal.challenge}</span>
                 </div>
-                <span className="goal-pct" style={{ color: goal.color }}>{pct}%</span>
+                <span className="goal-pct">{pct}%</span>
               </div>
               <ProgressBar current={goal.current} target={goal.target} color={goal.color} />
               <div className="goal-footer">

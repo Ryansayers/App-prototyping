@@ -6,13 +6,13 @@
 .page-title {
   font-size: 26px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--page-title-color);
   margin-bottom: 4px;
 }
 
 .page-subtitle {
   font-size: 14px;
-  color: #888;
+  color: var(--page-subtitle-color);
   margin-bottom: 20px;
 }
 
@@ -24,35 +24,35 @@
 }
 
 .card {
-  background: #f9f9f9;
-  border-radius: 14px;
+  background: var(--card-bg);
+  border-radius: var(--card-radius, 14px);
   padding: 16px;
   cursor: pointer;
   transition: background 0.15s;
 }
 
 .card:hover {
-  background: #fff0ef;
+  background: var(--card-hover-bg);
 }
 
 .card h3 {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--card-title-color);
   margin-bottom: 4px;
 }
 
 .card p {
   font-size: 13px;
-  color: #888;
+  color: var(--card-body-color);
 }
 
 /* Search */
 .search-input {
   width: 100%;
   padding: 12px 16px;
-  border: 1.5px solid #eee;
-  border-radius: 12px;
+  border: var(--search-stroke-width) solid var(--search-stroke-color);
+  border-radius: var(--search-radius, 12px);
   font-size: 15px;
   outline: none;
   margin-bottom: 16px;
@@ -60,7 +60,7 @@
 }
 
 .search-input:focus {
-  border-color: #F72717;
+  border-color: var(--search-stroke-color-focus);
 }
 
 .result-list {
@@ -72,14 +72,14 @@
 
 .result-item {
   padding: 14px 16px;
-  background: #f9f9f9;
-  border-radius: 12px;
+  background: var(--result-bg);
+  border-radius: var(--result-radius, 12px);
   font-size: 14px;
-  color: #333;
+  color: var(--result-color);
 }
 
 .result-item.empty {
-  color: #aaa;
+  color: var(--result-empty-color);
   font-style: italic;
 }
 
@@ -87,9 +87,9 @@
 .avatar {
   width: 72px;
   height: 72px;
-  border-radius: 50%;
-  background: #F72717;
-  color: #fff;
+  border-radius: var(--avatar-radius, 50%);
+  background: var(--avatar-bg);
+  color: var(--avatar-color);
   font-size: 22px;
   font-weight: 700;
   display: flex;
@@ -101,21 +101,21 @@
 .avatar-name {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--page-title-color);
   margin-bottom: 4px;
 }
 
 .menu-item {
   font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color: var(--menu-item-color);
 }
 
 /* Goals & Challenges */
 .section-heading {
   font-size: 17px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--section-heading-color);
   margin: 24px 0 12px;
 }
 
@@ -126,8 +126,8 @@
 }
 
 .goal-card {
-  background: #f9f9f9;
-  border-radius: 14px;
+  background: var(--card-bg);
+  border-radius: var(--card-radius, 14px);
   padding: 16px;
 }
 
@@ -154,12 +154,12 @@
 .goal-label {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--goal-label-color);
 }
 
 .goal-challenge {
   font-size: 12px;
-  color: #888;
+  color: var(--goal-challenge-color);
   margin-top: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -170,12 +170,13 @@
   font-size: 15px;
   font-weight: 700;
   flex-shrink: 0;
+  color: var(--color-text-primary);
 }
 
 .goal-bar-track {
   width: 100%;
   height: 8px;
-  background: #e5e7eb;
+  background: var(--goal-track-bg);
   border-radius: 99px;
   overflow: hidden;
 }
@@ -183,6 +184,7 @@
 .goal-bar-fill {
   height: 100%;
   border-radius: 99px;
+  background: var(--goal-bar-fill);
   transition: width 0.4s ease;
 }
 
@@ -195,12 +197,12 @@
 .goal-current {
   font-size: 12px;
   font-weight: 600;
-  color: #444;
+  color: var(--goal-current-color);
 }
 
 .goal-target {
   font-size: 12px;
-  color: #aaa;
+  color: var(--goal-target-color);
 }
 
 /* CTA Carousel */
@@ -219,23 +221,22 @@
 }
 
 .cta-card {
-  flex: 0 0 80%;
+  flex: 0 0 89%;
   scroll-snap-align: start;
-  border-radius: 16px;
+  border-radius: var(--cta-card-radius, 16px);
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  color: var(--cta-color);
 }
 
 .cta-discounts {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #fff;
+  background: var(--cta-discounts-bg);
 }
 
 .cta-rewards {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #fff;
+  background: var(--cta-rewards-bg);
 }
 
 .cta-badge {
@@ -264,10 +265,10 @@
 .cta-btn {
   align-self: flex-start;
   margin-top: auto;
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
+  background: var(--cta-btn-bg);
+  color: inherit;
   border: none;
-  border-radius: 20px;
+  border-radius: var(--cta-btn-radius, 20px);
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
@@ -276,13 +277,14 @@
 }
 
 .cta-btn:hover {
-  background: rgba(255, 255, 255, 0.38);
+  background: var(--cta-btn-bg);
+  opacity: 0.8;
 }
 
 .cta-bar-track {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--cta-bar-track-bg);
   border-radius: 99px;
   overflow: hidden;
   margin: 8px 0 4px;
@@ -290,7 +292,7 @@
 
 .cta-bar-fill {
   height: 100%;
-  background: #fff;
+  background: var(--cta-bar-fill-bg);
   border-radius: 99px;
 }
 
@@ -310,8 +312,8 @@
 }
 
 .shop-card {
-  background: #f9f9f9;
-  border-radius: 14px;
+  background: var(--shop-card-bg);
+  border-radius: var(--shop-card-radius, 14px);
   padding: 12px;
   position: relative;
   cursor: pointer;
@@ -319,14 +321,14 @@
 }
 
 .shop-card:hover {
-  background: #fff0ef;
+  background: var(--shop-card-hover-bg);
 }
 
 .shop-thumb {
   width: 100%;
   aspect-ratio: 1;
-  background: #ffe8e7;
-  border-radius: 10px;
+  background: var(--shop-thumb-bg);
+  border-radius: var(--shop-thumb-radius, 10px);
   margin-bottom: 10px;
 }
 
@@ -334,23 +336,23 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  background: #F72717;
-  color: #fff;
+  background: var(--shop-tag-bg);
+  color: var(--shop-tag-color);
   font-size: 10px;
   font-weight: 600;
   padding: 2px 7px;
-  border-radius: 20px;
+  border-radius: var(--shop-tag-radius, 20px);
 }
 
 .shop-name {
   font-size: 13px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--shop-name-color);
   margin-bottom: 4px;
 }
 
 .shop-price {
   font-size: 13px;
-  color: #F72717;
+  color: var(--shop-price-color);
   font-weight: 500;
 }

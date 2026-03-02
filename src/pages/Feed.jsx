@@ -192,7 +192,7 @@ function RecognitionCard({ item, saved, onSave }) {
       </div>
       <span className="rc-value" style={{ background: colours.bg, color: colours.text }}>{item.value}</span>
       <p className="rc-message">"{item.message}"</p>
-      {item.isYou && <div className="rc-you-banner"><span>⭐ You were recognised</span></div>}
+      {item.isYou && <div className="rc-you-banner"><span>You were recognised</span></div>}
       <span className="rc-time">{item.time}</span>
     </div>
   )

@@ -1,0 +1,205 @@
+/* =============================================================
+   TIER 3 — COMPONENT TOKENS
+   Per-component aliases referencing semantic tokens only.
+   Override here (or in a brand-override.css) to customise
+   individual components without touching semantic intent.
+   ============================================================= */
+
+:root {
+  /* ── App Shell ── */
+  --app-bg:                        var(--color-bg-app);
+  --app-shadow:                    var(--shadow-app-shell);
+  --app-radius:                    var(--radius-app-shell);
+
+  /* ── StatusBar ── */
+  --statusbar-text:                var(--color-text-primary);
+  --statusbar-icon:                var(--color-text-primary);
+  --statusbar-danger-icon:         var(--color-state-danger);
+
+  /* ── Header ── */
+  --header-title-color:            var(--color-text-primary);
+  --header-icon-btn-bg:            var(--color-surface-default);
+  --header-icon-btn-color:         var(--color-text-tertiary);
+  --header-icon-btn-hover-bg:      var(--color-surface-brand-tint);
+  --header-icon-btn-hover-color:   var(--color-brand);
+  --header-icon-btn-radius:        var(--radius-circle);
+  --header-notif-dot-bg:           var(--color-state-danger);
+  --header-notif-dot-stroke-width: var(--stroke-strong);
+  --header-notif-dot-stroke-color: var(--color-border-on-surface);
+  --header-notif-dot-border:       var(--color-border-on-surface);
+
+  /* ── BottomNav ── */
+  --nav-item-color:                var(--color-text-secondary);
+  --nav-item-active-color:         #000000;
+  --nav-avatar-bg:                 var(--color-neutral-900);
+  --nav-avatar-color:              #ffffff;
+
+  /* ── Button ── */
+  --btn-primary-bg:                var(--color-secondary-900);
+  --btn-primary-bg-hover:          var(--color-accent-hover);
+  --btn-primary-color:             var(--color-text-on-brand);
+  --btn-primary-radius:            var(--radius-control);
+
+  /* ── FAB ── */
+  --fab-bg:                        linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
+  --fab-ai-bg:                     linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 50%, var(--color-primary-700) 100%);
+  --fab-color:                     #000000;
+  --fab-radius:                    var(--radius-fab);
+  --fab-shadow:                    0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
+  --fab-ai-shadow:                 0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.35);
+
+  /* ── Feed Tabs ── */
+  --feed-tab-bg:                   var(--color-surface-default);
+  --feed-tab-color:                var(--color-text-secondary);
+  --feed-tab-active-bg:            var(--color-surface-brand-tint);
+  --feed-tab-active-color:         #000000;
+  --feed-tab-active-stroke-width:  var(--stroke-subtle);
+  --feed-tab-active-stroke-color:  var(--color-primary-300);
+  --feed-tab-radius:               var(--radius-tab);
+  --feed-tab-count-bg:             var(--color-surface-default);
+  --feed-tab-count-color:          var(--color-text-secondary);
+  --feed-tab-count-active-bg:      rgba(0, 0, 0, 0.12);
+  --feed-tab-count-active-color:   #000000;
+
+  /* ── NewsCard ── */
+  --nc-bg:                         var(--color-surface-default);
+  --nc-shadow:                     var(--shadow-card);
+  --nc-radius:                     var(--radius-card-lg);
+  --nc-tag-bg:                     var(--color-surface-overlay);
+  --nc-tag-color:                  var(--color-text-on-dark);
+  --nc-tag-radius:                 var(--radius-control);
+  --nc-badge-bg:                   var(--color-text-secondary);
+  --nc-badge-color:                var(--color-text-on-dark);
+  --nc-badge-radius:               var(--radius-control);
+  --nc-title-color:                var(--color-text-primary);
+  --nc-desc-color:                 var(--color-text-primary);
+  --nc-time-color:                 var(--color-text-primary);
+
+  /* ── RecognitionCard ── */
+  --rc-bg:                         var(--color-surface-default);
+  --rc-shadow:                     var(--shadow-card);
+  --rc-radius:                     var(--radius-card-lg);
+  --rc-you-stroke-width:           var(--stroke-default);
+  --rc-you-stroke-color:           var(--color-border-brand-tint);
+  --rc-you-border:                 var(--color-border-brand-tint);
+  --rc-avatar-radius:              var(--radius-circle);
+  --rc-avatar-stroke-width:        var(--stroke-strong);
+  --rc-avatar-stroke-color:        var(--color-border-on-surface);
+  --rc-avatar-border:              var(--color-border-on-surface);
+  --rc-value-radius:               var(--radius-control);
+  --rc-you-banner-radius:          var(--radius-control-sm);
+  --rc-from-color:                 var(--color-text-primary);
+  --rc-role-color:                 var(--color-text-disabled);
+  --rc-to-color:                   var(--color-text-subtle);
+  --rc-time-color:                 var(--color-text-disabled);
+  --rc-message-color:              var(--color-text-tertiary);
+  --rc-you-banner-bg:              var(--color-surface-accent-tint);
+  --rc-you-banner-color:           #000000;
+
+  /* ── SaveButton ── */
+  --save-btn-color:                var(--color-text-disabled);
+  --save-btn-saved-color:          var(--color-text-secondary);
+  --save-btn-hover-color:          var(--color-text-tertiary);
+
+  /* ── Cards (general) ── */
+  --card-bg:                       var(--color-surface-subtle);
+  --card-hover-bg:                 var(--color-surface-brand-tint);
+  --card-radius:                   var(--radius-card);
+  --card-title-color:              var(--color-text-primary);
+  --card-body-color:               var(--color-text-muted);
+
+  /* ── Search Input ── */
+  --search-stroke-width:           var(--stroke-default);
+  --search-stroke-color:           var(--color-border-default);
+  --search-stroke-color-focus:     var(--color-border-brand);
+  --search-radius:                 var(--radius-control-sm);
+  --search-border:                 var(--color-border-default);
+  --search-focus-border:           var(--color-border-brand);
+
+  /* ── Result Items ── */
+  --result-bg:                     var(--color-surface-subtle);
+  --result-radius:                 var(--radius-control-sm);
+  --result-color:                  var(--color-text-secondary);
+  --result-empty-color:            var(--color-text-secondary);
+
+  /* ── Avatar ── */
+  --avatar-bg:                     var(--color-surface-brand);
+  --avatar-color:                  var(--color-text-on-brand);
+  --avatar-radius:                 var(--radius-circle);
+
+  /* ── Goal Progress ── */
+  --goal-track-bg:                 var(--shadow-progress-track);
+  --goal-bar-fill:                 var(--color-state-success);
+  --goal-label-color:              var(--color-text-primary);
+  --goal-challenge-color:          var(--color-text-muted);
+  --goal-current-color:            var(--color-text-tertiary);
+  --goal-target-color:             var(--color-text-disabled);
+
+  /* ── CTA Carousel ── */
+  --cta-carousel-bg:               linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+  --cta-carousel-radius:           var(--radius-card-lg);
+  --cta-card-radius:               var(--radius-card-lg);
+  --cta-color:                     #000000;
+  --cta-bar-track-bg:              rgba(0, 0, 0, 0.12);
+  --cta-bar-fill-bg:               rgba(0, 0, 0, 0.35);
+  --cta-btn-bg:                    rgba(0, 0, 0, 0.12);
+  --cta-btn-radius:                var(--radius-control);
+  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
+
+  /* ── Shop ── */
+  --shop-card-bg:                  var(--color-surface-subtle);
+  --shop-card-hover-bg:            var(--color-surface-brand-tint);
+  --shop-card-radius:              var(--radius-card);
+  --shop-thumb-bg:                 var(--color-primary-100);
+  --shop-thumb-radius:             var(--radius-thumb);
+  --shop-tag-bg:                   var(--color-surface-brand);
+  --shop-tag-color:                var(--color-text-on-brand);
+  --shop-tag-radius:               var(--radius-control);
+  --shop-name-color:               var(--color-text-primary);
+  --shop-price-color:              var(--color-brand);
+
+  /* ── Section / Page ── */
+  --section-heading-color:         var(--color-text-primary);
+  --page-title-color:              var(--color-text-primary);
+  --page-subtitle-color:           var(--color-text-muted);
+  --menu-item-color:               var(--color-text-secondary);
+}
+
+/* =============================================================
+   DARK MODE — component overrides
+   Only tokens with hardcoded light-mode values need overriding.
+   Tokens that reference semantic tokens cascade automatically.
+   ============================================================= */
+
+
+:root[data-theme="light"] {
+  --feed-tab-active-stroke-color: var(--color-primary-500);
+  --nav-item-active-color:  #000000;
+  --feed-tab-bg:            var(--color-surface-default);
+  --feed-tab-active-color:  #000000;
+  --feed-tab-count-active-color: #000000;
+  --nc-badge-bg:            var(--color-text-secondary);
+  --rc-time-color:          #000000;
+  --rc-you-banner-color:    #000000;
+  --save-btn-color:         #000000;
+  --cta-color:              #000000;
+}
+
+:root[data-theme="dark"] {
+  --feed-tab-active-stroke-color: var(--color-primary-700);
+  --cta-color:              #ffffff;
+  --cta-bar-track-bg:       rgba(255, 255, 255, 0.3);
+  --cta-bar-fill-bg:        #ffffff;
+  --cta-btn-bg:             rgba(255, 255, 255, 0.25);
+  --nav-item-active-color:  #ffffff;
+  --feed-tab-active-color:  #ffffff;
+  --feed-tab-count-active-color: #ffffff;
+  --feed-tab-bg:            var(--color-surface-subtle);
+  --nc-badge-bg:            var(--color-neutral-700);
+  --rc-you-banner-color:    #ffffff;
+  --rc-time-color:          #ffffff;
+  --save-btn-color:         #ffffff;
+  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-800) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-800) 100%);
+}

@@ -1,0 +1,152 @@
+/* =============================================================
+   TIER 2 — SEMANTIC TOKENS
+   Intent-based aliases. Always reference primitive tokens.
+   ============================================================= */
+
+:root {
+  /* ── Brand ── */
+  --color-brand:               var(--color-primary-500);
+  --color-brand-hover:         var(--color-primary-600);
+  --color-brand-active:        var(--color-primary-700);
+  --color-brand-subtle:        var(--color-primary-50);
+  --color-brand-tint:          var(--color-primary-100);
+
+  --color-accent:              var(--color-secondary-500);
+  --color-accent-hover:        var(--color-secondary-600);
+  --color-accent-subtle:       var(--color-secondary-50);
+  --color-accent-tint:         var(--color-secondary-100);
+
+  /* ── Text ── */
+  --color-text-primary:        rgba(0, 0, 0, 0.90);
+  --color-text-secondary:      rgba(0, 0, 0, 0.72);
+  --color-text-tertiary:       rgba(0, 0, 0, 0.56);
+  --color-text-muted:          rgba(0, 0, 0, 0.44);
+  --color-text-subtle:         rgba(0, 0, 0, 0.32);
+  --color-text-disabled:       rgba(0, 0, 0, 0.24);
+  --color-text-on-brand:       #ffffff;
+  --color-text-on-dark:        #ffffff;
+  --color-text-brand:          var(--color-brand);
+  --color-text-accent:         var(--color-accent);
+
+  /* ── Surface ── */
+  --color-surface-default:     var(--color-neutral-0);
+  --color-surface-subtle:      var(--color-neutral-50);
+  --color-surface-raised:      var(--color-neutral-100);
+  --color-surface-overlay:     rgba(0, 0, 0, 0.55);
+  --color-surface-brand:       var(--color-brand);
+  --color-surface-brand-tint:  var(--color-brand-subtle);
+  --color-surface-accent-tint: var(--color-accent-subtle);
+
+  /* ── Background ── */
+  --color-bg-page:             var(--color-neutral-100);
+  --color-bg-app:              linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-100) 100%);
+
+  /* ── Border / Stroke colors ── */
+  --color-border-default:      var(--color-neutral-200);
+  --color-border-strong:       var(--color-neutral-300);
+  --color-border-brand:        var(--color-brand);
+  --color-border-brand-tint:   var(--color-primary-100);
+  --color-border-on-surface:   var(--color-neutral-0);
+
+  /* ── Stroke widths (semantic) ── */
+  --stroke-subtle:             var(--stroke-width-1);
+  --stroke-default:            var(--stroke-width-2);
+  --stroke-strong:             var(--stroke-width-3);
+  --stroke-emphasis:           var(--stroke-width-4);
+
+  /* ── Radius (semantic) ── */
+  --radius-control-sm:         var(--radius-md);      /* 12px — inputs, banners */
+  --radius-control:            var(--radius-2xl);     /* 20px — tags, badges, pills */
+  --radius-control-pill:       var(--radius-pill);    /* 99px — progress bars */
+  --radius-tab:                var(--radius-3xl);     /* 22px — tabs */
+  --radius-card:               var(--radius-lg);      /* 14px — cards, goal cards */
+  --radius-card-lg:            var(--radius-xl);      /* 16px — news/recognition cards */
+  --radius-thumb:              var(--radius-sm);      /* 10px — image thumbnails */
+  --radius-fab:                var(--radius-4xl);     /* 28px — FAB */
+  --radius-app-shell:          var(--radius-app);     /* 40px — outer app frame */
+  --radius-circle:             var(--radius-circle);  /* 50%  — avatars, icon buttons */
+
+  /* ── State ── */
+  --color-state-danger:        var(--color-danger-500);
+  --color-state-success:       var(--color-success-500);
+  --color-state-warning:       var(--color-warning-500);
+  --color-state-info:          var(--color-info-500);
+
+  /* ── Shadow ── */
+  --shadow-card:               none;
+  --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.2);
+  --shadow-progress-track:     var(--color-neutral-200);
+}
+
+/* =============================================================
+   DARK MODE
+   Triggered by system preference OR [data-theme="dark"] on .app.
+   Overrides semantic tokens only — component tokens cascade.
+   ============================================================= */
+@media (prefers-color-scheme: light) { :root {
+    --color-text-primary:        rgba(255, 255, 255, 0.95);
+    --color-text-secondary:      rgba(255, 255, 255, 0.80);
+    --color-text-tertiary:       rgba(255, 255, 255, 0.65);
+    --color-text-muted:          rgba(255, 255, 255, 0.50);
+    --color-text-subtle:         rgba(255, 255, 255, 0.35);
+    --color-text-disabled:       rgba(255, 255, 255, 0.24);
+    --color-surface-default:     var(--color-neutral-800);
+    --color-surface-subtle:      var(--color-neutral-700);
+    --color-surface-raised:      var(--color-neutral-600);
+    --color-surface-overlay:     rgba(0, 0, 0, 0.75);
+    --color-surface-brand-tint:  var(--color-primary-900);
+    --color-surface-accent-tint: var(--color-secondary-900);
+    --color-bg-page:             var(--color-neutral-900);
+    --color-bg-app:              linear-gradient(180deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
+    --color-border-default:      rgba(255, 255, 255, 0.1);
+    --color-border-strong:       rgba(255, 255, 255, 0.18);
+    --color-border-brand-tint:   var(--color-primary-800);
+    --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
+    --shadow-progress-track:     var(--color-neutral-700);
+  }
+}
+
+/* Manual dev toggle — data-theme on <html> overrides system preference */
+:root[data-theme="light"] {
+    --color-text-primary:        rgba(0, 0, 0, 0.90);
+    --color-text-secondary:      rgba(0, 0, 0, 0.72);
+    --color-text-tertiary:       rgba(0, 0, 0, 0.56);
+    --color-text-muted:          rgba(0, 0, 0, 0.44);
+    --color-text-subtle:         rgba(0, 0, 0, 0.32);
+    --color-text-disabled:       rgba(0, 0, 0, 0.24);
+    --color-surface-default:     var(--color-neutral-0);
+    --color-surface-subtle:      var(--color-neutral-50);
+    --color-surface-raised:      var(--color-neutral-100);
+    --color-surface-overlay:     rgba(0, 0, 0, 0.55);
+    --color-surface-brand-tint:  var(--color-brand-subtle);
+    --color-surface-accent-tint: var(--color-accent-subtle);
+    --color-bg-page:             var(--color-neutral-100);
+    --color-bg-app:              linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-neutral-100) 100%);
+    --color-border-default:      var(--color-neutral-200);
+    --color-border-strong:       var(--color-neutral-300);
+    --color-border-brand-tint:   var(--color-primary-100);
+    --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.2);
+    --shadow-progress-track:     var(--color-neutral-200);
+}
+
+:root[data-theme="dark"] {
+    --color-text-primary:        rgba(255, 255, 255, 0.95);
+    --color-text-secondary:      rgba(255, 255, 255, 0.80);
+    --color-text-tertiary:       rgba(255, 255, 255, 0.65);
+    --color-text-muted:          rgba(255, 255, 255, 0.50);
+    --color-text-subtle:         rgba(255, 255, 255, 0.35);
+    --color-text-disabled:       rgba(255, 255, 255, 0.24);
+    --color-surface-default:     var(--color-neutral-800);
+    --color-surface-subtle:      var(--color-neutral-700);
+    --color-surface-raised:      var(--color-neutral-600);
+    --color-surface-overlay:     rgba(0, 0, 0, 0.75);
+    --color-surface-brand-tint:  var(--color-primary-900);
+    --color-surface-accent-tint: var(--color-secondary-900);
+    --color-bg-page:             var(--color-neutral-900);
+    --color-bg-app:              linear-gradient(180deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
+    --color-border-default:      rgba(255, 255, 255, 0.1);
+    --color-border-strong:       rgba(255, 255, 255, 0.18);
+    --color-border-brand-tint:   var(--color-primary-800);
+    --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
+    --shadow-progress-track:     var(--color-neutral-700);
+}
