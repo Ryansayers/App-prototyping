@@ -1,0 +1,33 @@
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 6px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.status-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.2px;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a1a1a;
+}
+
+.status-icons svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* battery is wider */
+.status-icons svg:last-child {
+  width: 24px;
+  height: 12px;
+}
