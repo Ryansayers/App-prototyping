@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -15,29 +15,28 @@ const PAGES = {
   search:    { title: 'Search',    component: <Search /> },
   feed:      { title: 'Feed',      component: <Feed /> },
   shop:      { title: 'Shop',      component: <Shop /> },
-  profile:   { title: 'You',      component: <Profile /> },
+  profile:   { title: 'You',       component: <Profile /> },
 }
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
-  const [theme, setTheme] = useState(
-    () => window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  )
   const { title, component } = PAGES[activePage]
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+  function handlePageChange(page) {
+    setActivePage(page)
+  }
 
   return (
     <div className="app">
-      <div className="app-top">
-        <StatusBar />
-        <Header title={title} isHome={activePage === 'home'} darkMode={theme === 'dark'} onToggleDark={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
-      </div>
-      <main className="content">{component}</main>
+      <main className="content">
+        <div className={`app-top ${activePage === 'home' ? 'app-top--home' : 'app-top--page'}`}>
+          <StatusBar />
+          <Header title={title} isHome={activePage === 'home'} />
+        </div>
+        {component}
+      </main>
       <FAB activePage={activePage} />
-      <BottomNav active={activePage} onChange={setActivePage} />
+      <BottomNav active={activePage} onChange={handlePageChange} />
     </div>
   )
 }

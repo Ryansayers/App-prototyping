@@ -31,6 +31,15 @@ body {
 .app-top {
   background: transparent;
   flex-shrink: 0;
+  margin: -16px -16px 0;
+}
+
+.app-top--home {
+  background: var(--header-home-bg);
+}
+
+.app-top--page {
+  background: var(--app-top-bg);
 }
 
 .content {

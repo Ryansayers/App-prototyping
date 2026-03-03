@@ -19,6 +19,8 @@ const NEWS = [
     body: 'The new component library is live. All product teams are encouraged to migrate by end of Q2.',
     time: '2m ago',
     relevant: true,
+    likes: 7,
+    comments: 3,
   },
   {
     id: 'n2',
@@ -28,6 +30,8 @@ const NEWS = [
     body: 'CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.',
     time: '1h ago',
     relevant: true,
+    likes: 16,
+    comments: 7,
   },
   {
     id: 'n3',
@@ -37,6 +41,8 @@ const NEWS = [
     body: 'Build times are down 40% following last week\'s infrastructure upgrade across all repos.',
     time: '3h ago',
     relevant: true,
+    likes: 8,
+    comments: 2,
   },
   {
     id: 'n4',
@@ -46,6 +52,8 @@ const NEWS = [
     body: 'We\'re opening a new office in Austin this summer. Applications for relocation packages are now open.',
     time: '1d ago',
     relevant: false,
+    likes: 6,
+    comments: 5,
   },
   {
     id: 'n5',
@@ -55,6 +63,8 @@ const NEWS = [
     body: 'Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.',
     time: '2d ago',
     relevant: false,
+    likes: 9,
+    comments: 4,
   },
 ]
 
@@ -62,6 +72,7 @@ const RECOGNITION = [
   {
     id: 'r1',
     type: 'recognition',
+    image: '/rc-header-1.jpg',
     from: 'Sarah Chen',
     fromRole: 'CEO',
     fromInitials: 'SC',
@@ -73,10 +84,13 @@ const RECOGNITION = [
     message: 'Ryan shipped the new mobile design system ahead of schedule — the whole company benefits from this work. Incredible effort!',
     time: '5m ago',
     isYou: true,
+    likes: 23,
+    comments: 6,
   },
   {
     id: 'r2',
     type: 'recognition',
+    image: '/rc-header-2.jpg',
     from: 'Marcus Lee',
     fromRole: 'Engineering Lead',
     fromInitials: 'ML',
@@ -88,10 +102,13 @@ const RECOGNITION = [
     message: 'Priya jumped in to unblock three different teams this sprint without being asked. True team player.',
     time: '45m ago',
     isYou: false,
+    likes: 12,
+    comments: 3,
   },
   {
     id: 'r3',
     type: 'recognition',
+    image: '/rc-header-3.png',
     from: 'Jess Wu',
     fromRole: 'Product Manager',
     fromInitials: 'JW',
@@ -103,10 +120,13 @@ const RECOGNITION = [
     message: 'The UX improvements Ryan made based on user feedback reduced drop-off by 22%. Outstanding work.',
     time: '2h ago',
     isYou: true,
+    likes: 19,
+    comments: 4,
   },
   {
     id: 'r4',
     type: 'recognition',
+    image: '/rc-header-4.jpg',
     from: 'Tom Briggs',
     fromRole: 'Head of Sales',
     fromInitials: 'TB',
@@ -118,10 +138,13 @@ const RECOGNITION = [
     message: 'Anika closed our biggest enterprise deal of the year. Flawless execution from first call to contract.',
     time: '5h ago',
     isYou: false,
+    likes: 25,
+    comments: 9,
   },
   {
     id: 'r5',
     type: 'recognition',
+    image: '/rc-header-1.jpg',
     from: 'Priya Patel',
     fromRole: 'Senior Engineer',
     fromInitials: 'PP',
@@ -133,13 +156,15 @@ const RECOGNITION = [
     message: 'Ryan\'s thorough code reviews have made our whole codebase healthier. Always constructive and helpful.',
     time: '1d ago',
     isYou: true,
+    likes: 19,
+    comments: 5,
   },
 ]
 
 const VALUE_COLOURS = {
   Innovation:       { bg: '#ede9fe', text: '#7c3aed' },
   Collaboration:    { bg: '#dbeafe', text: '#1d4ed8' },
-  'Customer Focus': { bg: '#dcfce7', text: '#16a34a' },
+  'Customer Focus': { bg: '#dcfce7', text: '#15803d' },
   Excellence:       { bg: '#fef9c3', text: '#a16207' },
   Teamwork:         { bg: '#fee2e2', text: '#b91c1c' },
 }
@@ -149,6 +174,52 @@ const BookmarkIcon = ({ filled }) => (
     <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
   </svg>
 )
+
+const ThumbUpIcon = ({ filled }) => (
+  <svg viewBox="0 0 24 24" fill={filled ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z" />
+    <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" />
+  </svg>
+)
+
+const CommentIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+  </svg>
+)
+
+function CardActions({ initialLikes = 0, commentCount = 0, saved, onSave }) {
+  const [liked, setLiked] = useState(false)
+  const [likes, setLikes] = useState(initialLikes)
+
+  function toggleLike() {
+    setLiked(prev => {
+      setLikes(c => prev ? c - 1 : c + 1)
+      return !prev
+    })
+  }
+
+  return (
+    <div className="card-actions">
+      <div className="card-actions-left">
+        <button
+          className={`action-btn ${liked ? 'action-btn--active' : ''}`}
+          onClick={toggleLike}
+        >
+          <ThumbUpIcon filled={liked} />
+          {likes > 0 && <span className="action-count">{likes}</span>}
+        </button>
+        <button className="action-btn">
+          <CommentIcon />
+          {commentCount > 0 && <span className="action-count">{commentCount}</span>}
+        </button>
+      </div>
+      <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={onSave}>
+        <BookmarkIcon filled={saved} />
+      </button>
+    </div>
+  )
+}
 
 function NewsCard({ item, saved, onSave }) {
   return (
@@ -162,11 +233,9 @@ function NewsCard({ item, saved, onSave }) {
         <p className="nc-desc">{item.body}</p>
         <div className="card-footer">
           <span className="nc-time">{item.time}</span>
-          <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={() => onSave(item.id)}>
-            <BookmarkIcon filled={saved} />
-          </button>
         </div>
       </div>
+      <CardActions initialLikes={item.likes} commentCount={item.comments} saved={saved} onSave={() => onSave(item.id)} />
     </div>
   )
 }
@@ -175,25 +244,30 @@ function RecognitionCard({ item, saved, onSave }) {
   const colours = VALUE_COLOURS[item.value] || { bg: '#f3f4f6', text: '#374151' }
   return (
     <div className={`rc ${item.isYou ? 'rc--you' : ''}`}>
-      <div className="rc-header">
-        <div className="rc-avatars">
-          <div className="rc-avatar rc-avatar--from" style={{ background: item.fromColour }}>{item.fromInitials}</div>
-          <div className="rc-avatar rc-avatar--to" style={{ background: item.toColour }}>{item.toInitials}</div>
+      {item.image && (
+        <div className="rc-img-wrap">
+          <img className="rc-img" src={item.image} alt="" />
         </div>
-        <div className="rc-meta">
-          <p className="rc-from"><strong>{item.from}</strong> <span className="rc-role">· {item.fromRole}</span></p>
-          <p className="rc-to">recognised <strong>{item.isYou ? 'you' : item.to}</strong></p>
+      )}
+      <div className="rc-content">
+        <div className="rc-header">
+          <div className="rc-avatars">
+            <div className="rc-avatar rc-avatar--from" style={{ background: item.fromColour }}>{item.fromInitials}</div>
+            <div className="rc-avatar rc-avatar--to" style={{ background: item.toColour }}>{item.toInitials}</div>
+          </div>
+          <div className="rc-meta">
+            <p className="rc-from"><strong>{item.from}</strong> <span className="rc-role">· {item.fromRole}</span></p>
+            <p className="rc-to">recognised <strong>{item.isYou ? 'you' : item.to}</strong></p>
+          </div>
+        </div>
+        <span className="rc-value" style={{ background: colours.bg, color: colours.text }}>{item.value}</span>
+        <p className="rc-message">"{item.message}"</p>
+        {item.isYou && <div className="rc-you-banner"><span>You were recognised</span></div>}
+        <div className="card-footer">
+          <span className="rc-time">{item.time}</span>
         </div>
       </div>
-      <span className="rc-value" style={{ background: colours.bg, color: colours.text }}>{item.value}</span>
-      <p className="rc-message">"{item.message}"</p>
-      {item.isYou && <div className="rc-you-banner"><span>You were recognised</span></div>}
-      <div className="card-footer">
-        <span className="rc-time">{item.time}</span>
-        <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={() => onSave(item.id)}>
-          <BookmarkIcon filled={saved} />
-        </button>
-      </div>
+      <CardActions initialLikes={item.likes} commentCount={item.comments} saved={saved} onSave={() => onSave(item.id)} />
     </div>
   )
 }

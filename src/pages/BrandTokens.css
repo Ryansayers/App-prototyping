@@ -61,6 +61,95 @@
   border-radius: 50%;
 }
 
+.bt-seed-dot--bg {
+  background: linear-gradient(135deg, #a5f3fc 0%, #c4b5fd 50%, #fde68a 100%);
+  border: 1px solid var(--color-border-default);
+}
+
+.bt-url-input {
+  height: 32px;
+  padding: 0 10px;
+  border: var(--stroke-subtle) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-default);
+  color: var(--color-text-primary);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  min-width: 200px;
+}
+
+.bt-url-input:focus {
+  border-color: var(--color-border-brand);
+}
+
+.bt-page-heading {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 24px;
+}
+
+.bt-mode-group {
+  display: flex;
+  gap: 12px;
+}
+
+.bt-mode-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 96px;
+  padding: 16px 12px;
+  border: var(--stroke-subtle) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-default);
+  color: var(--color-text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.bt-mode-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.bt-mode-btn--active {
+  border-color: var(--color-border-brand);
+  background: var(--color-surface-brand-tint);
+  color: var(--color-text-link);
+  font-weight: 600;
+}
+
+.bt-surfaces-list {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.bt-surface-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bt-surface-label {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.bt-bg-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 /* Section */
 .bt-section {
   margin-bottom: 48px;
@@ -222,10 +311,10 @@
 .bt-btn-ghost {
   height: 44px;
   padding: 0 20px;
-  border: var(--stroke-default) solid var(--color-border-brand);
-  border-radius: var(--radius-control);
+  border: var(--stroke-default) solid var(--btn-ghost-color);
+  border-radius: var(--btn-ghost-radius);
   background: transparent;
-  color: var(--color-brand);
+  color: var(--btn-ghost-color);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;

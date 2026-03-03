@@ -8,7 +8,7 @@
 }
 
 .app-header--home {
-  background: var(--header-home-bg);
+  background: transparent;
   padding: 20px 20px;
 }
 

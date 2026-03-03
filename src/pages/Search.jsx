@@ -22,6 +22,24 @@ const FILTERS = [
     ),
   },
   {
+    key: 'deals',
+    label: 'Deals',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+      </svg>
+    ),
+  },
+  {
+    key: 'recognitions',
+    label: 'Recognitions',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="6" /><path d="M8.56 2.75c.56 1.31 1 2.93.73 4.38a4.73 4.73 0 01-2.37 3.17" /><path d="M12 22v-6M9 22h6" />
+      </svg>
+    ),
+  },
+  {
     key: 'help',
     label: 'Help & Resources',
     icon: (
@@ -33,9 +51,11 @@ const FILTERS = [
 ]
 
 const ITEMS = {
-  news:      ['Design System v2.0 launched', 'Q1 All-Hands recap', 'New CI/CD pipeline rollout', 'Office expansion — Austin TX', 'Updated hybrid work policy'],
-  retailers: ['Nike', 'Apple', 'Amazon', 'Marks & Spencer', 'Boots', 'Tesco', 'ASOS', 'Currys'],
-  help:      ['How to redeem points', 'Setting up your profile', 'Wellbeing programme guide', 'Contact HR', 'IT support', 'FAQs'],
+  news:         ['Design System v2.0 launched', 'Q1 All-Hands recap', 'New CI/CD pipeline rollout', 'Office expansion — Austin TX', 'Updated hybrid work policy'],
+  retailers:    ['Nike', 'Apple', 'Amazon', 'Marks & Spencer', 'Boots', 'Tesco', 'ASOS', 'Currys'],
+  deals:        ['Tesco — Save 5% in-store', 'ASOS — 20% off online', 'Boots — 3 for 2 on health', 'Samsung — 10% off tech', 'TUI — £50 off holidays'],
+  recognitions: ['Sarah recognised for Innovation', 'Tom recognised for Teamwork', 'Priya recognised for Customer Focus', 'James recognised for Excellence', 'Mia recognised for Collaboration'],
+  help:         ['How to redeem points', 'Setting up your profile', 'Wellbeing programme guide', 'Contact HR', 'IT support', 'FAQs'],
 }
 
 const RECENT_SEARCHES = ['Nike trainers', 'Q1 All-Hands', 'Redeem points', 'Hybrid work policy']

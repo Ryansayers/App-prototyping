@@ -38,10 +38,12 @@
   --nav-avatar-color:              #ffffff;
 
   /* ── Button ── */
-  --btn-primary-bg:                var(--color-secondary-900);
+  --btn-primary-bg:                var(--color-secondary-800);
   --btn-primary-bg-hover:          var(--color-accent-hover);
   --btn-primary-color:             var(--color-text-on-brand);
   --btn-primary-radius:            var(--radius-control);
+  --btn-ghost-color:               var(--color-secondary-800);
+  --btn-ghost-radius:              var(--radius-control);
 
   /* ── FAB ── */
   --fab-bg:                        linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
@@ -160,7 +162,7 @@
   --shop-tag-color:                var(--color-text-on-brand);
   --shop-tag-radius:               var(--radius-control);
   --shop-name-color:               var(--color-text-primary);
-  --shop-price-color:              var(--color-brand);
+  --shop-price-color:              var(--color-text-link);
 
   /* ── Section / Page ── */
   --section-heading-color:         var(--color-text-primary);
@@ -174,7 +176,6 @@
    Only tokens with hardcoded light-mode values need overriding.
    Tokens that reference semantic tokens cascade automatically.
    ============================================================= */
-
 
 :root[data-theme="light"] {
   --feed-tab-active-stroke-color: var(--color-primary-500);
@@ -190,6 +191,7 @@
 }
 
 :root[data-theme="dark"] {
+  --btn-ghost-color:               var(--color-secondary-200);
   --app-top-bg:                    var(--color-neutral-800);
   --header-home-bg:                linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%);
   --header-logo-word-color:        #ffffff;

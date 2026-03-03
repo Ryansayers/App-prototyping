@@ -27,6 +27,7 @@
   --color-text-on-dark:        #ffffff;
   --color-text-brand:          var(--color-brand);
   --color-text-accent:         var(--color-accent);
+  --color-text-link:           var(--color-primary-700);
 
   /* ── Surface ── */
   --color-surface-default:     var(--color-neutral-0);
@@ -149,4 +150,5 @@
     --color-border-brand-tint:   var(--color-primary-800);
     --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
     --shadow-progress-track:     var(--color-neutral-700);
+    --color-text-link:           var(--color-primary-300);
 }

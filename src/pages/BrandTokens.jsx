@@ -3,6 +3,9 @@ import './BrandTokens.css'
 import {
   PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS,
   applySeeds, saveSeeds, loadSeeds,
+  BG_PRESETS, applyBg, loadBg, saveBg,
+  applyTheme, loadTheme, saveTheme,
+  CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -107,6 +110,66 @@ export default function BrandTokens() {
   const [primaryIdx,   setPrimaryIdx]   = useSeed('primary',   PRIMARY_PRESETS)
   const [secondaryIdx, setSecondaryIdx] = useSeed('secondary', SECONDARY_PRESETS)
   const [neutralIdx,   setNeutralIdx]   = useSeed('neutral',   NEUTRAL_PRESETS)
+
+  const [bgIdx,     setBgIdx]     = useState(() => loadBg().idx)
+  const [customUrl, setCustomUrl] = useState(() => loadBg().url)
+  const [themeMode, setThemeMode] = useState(() => loadTheme())
+
+  const [discountIdx, setDiscountIdx] = useState(() => loadCardBg('discounts').idx)
+  const [discountUrl, setDiscountUrl] = useState(() => loadCardBg('discounts').url)
+  const [rewardsIdx,  setRewardsIdx]  = useState(() => loadCardBg('rewards').idx)
+  const [rewardsUrl,  setRewardsUrl]  = useState(() => loadCardBg('rewards').url)
+
+  useEffect(() => {
+    const { idx, url } = loadBg()
+    applyBg(idx, url)
+    const d = loadCardBg('discounts')
+    applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS)
+    const r = loadCardBg('rewards')
+    applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
+  }, [])
+
+  function handleThemeChange(mode) {
+    setThemeMode(mode)
+    saveTheme(mode)
+    applyTheme(mode)
+  }
+
+  function handleDiscountChange(i) {
+    setDiscountIdx(i)
+    saveCardBg('discounts', i, discountUrl)
+    applyCardBg('--cta-discounts-bg', i, discountUrl, CTA_DISCOUNTS_PRESETS)
+  }
+
+  function handleDiscountUrl(url) {
+    setDiscountUrl(url)
+    saveCardBg('discounts', discountIdx, url)
+    applyCardBg('--cta-discounts-bg', discountIdx, url, CTA_DISCOUNTS_PRESETS)
+  }
+
+  function handleRewardsChange(i) {
+    setRewardsIdx(i)
+    saveCardBg('rewards', i, rewardsUrl)
+    applyCardBg('--cta-rewards-bg', i, rewardsUrl, CTA_REWARDS_PRESETS)
+  }
+
+  function handleRewardsUrl(url) {
+    setRewardsUrl(url)
+    saveCardBg('rewards', rewardsIdx, url)
+    applyCardBg('--cta-rewards-bg', rewardsIdx, url, CTA_REWARDS_PRESETS)
+  }
+
+  function handleBgChange(i) {
+    setBgIdx(i)
+    saveBg(i, customUrl)
+    applyBg(i, customUrl)
+  }
+
+  function handleCustomUrl(url) {
+    setCustomUrl(url)
+    saveBg(bgIdx, url)
+    applyBg(bgIdx, url)
+  }
 
   return (
     <div className="bt-page">
@@ -285,6 +348,78 @@ export default function BrandTokens() {
             </div>
           </div>
 
+        </div>
+      </Section>
+
+      <Section title="System Modes">
+        <div className="bt-mode-group">
+          {[
+            { id: 'light',  label: 'Light', icon: '☀️' },
+            { id: 'dark',   label: 'Dark',  icon: '🌙' },
+          ].map(({ id, label, icon }) => (
+            <button
+              key={id}
+              className={`bt-mode-btn ${themeMode === id ? 'bt-mode-btn--active' : ''}`}
+              onClick={() => handleThemeChange(id)}
+            >
+              <span className="bt-mode-icon">{icon}</span>
+              <span>{label}</span>
+            </button>
+          ))}
+        </div>
+      </Section>
+
+      <h2 className="bt-page-heading">Internal Configuration</h2>
+
+      <Section title="Surfaces">
+        <div className="bt-surfaces-list">
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">App Background</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot bt-seed-dot--bg" />
+                <select className="bt-select" value={bgIdx} onChange={e => handleBgChange(Number(e.target.value))}>
+                  {BG_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+              {BG_PRESETS[bgIdx]?.value === 'custom' && (
+                <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
+                  value={customUrl} onChange={e => handleCustomUrl(e.target.value)} />
+              )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Discounts Card</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'linear-gradient(135deg, #f97060, #fb9a8a)' }} />
+                <select className="bt-select" value={discountIdx} onChange={e => handleDiscountChange(Number(e.target.value))}>
+                  {CTA_DISCOUNTS_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+              {CTA_DISCOUNTS_PRESETS[discountIdx]?.value === 'custom' && (
+                <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
+                  value={discountUrl} onChange={e => handleDiscountUrl(e.target.value)} />
+              )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Rewards Card</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'linear-gradient(135deg, #7c3aed, #a78bfa)' }} />
+                <select className="bt-select" value={rewardsIdx} onChange={e => handleRewardsChange(Number(e.target.value))}>
+                  {CTA_REWARDS_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+              {CTA_REWARDS_PRESETS[rewardsIdx]?.value === 'custom' && (
+                <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
+                  value={rewardsUrl} onChange={e => handleRewardsUrl(e.target.value)} />
+              )}
+            </div>
+          </div>
         </div>
       </Section>
     </div>

@@ -1,6 +1,50 @@
 .page {
   display: flex;
   flex-direction: column;
+  padding-top: 16px;
+}
+
+/* Recognition Nudge */
+.rec-nudge {
+  background: var(--color-surface-brand-tint);
+  border: var(--stroke-subtle) solid var(--feed-tab-active-stroke-color);
+  border-radius: var(--cta-card-radius, 16px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--cta-color);
+  margin-bottom: 16px;
+}
+
+.rec-nudge-award {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.rec-nudge-pts {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.rec-nudge-pts-value {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.rec-nudge-pts-unit {
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+.rec-nudge-desc {
+  font-size: 11px;
+  opacity: 0.75;
+  margin: 0 0 12px;
 }
 
 .page-title {
@@ -16,6 +60,148 @@
   margin-bottom: 20px;
 }
 
+/* Work Anniversaries */
+.anniv-card {
+  background: var(--color-surface-accent-tint);
+  border: var(--stroke-subtle) solid var(--color-secondary-300);
+  border-radius: var(--radius-card-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.anniv-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--card-title-color);
+  margin: 0 0 14px;
+}
+
+.anniv-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.anniv-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: var(--stroke-subtle) solid var(--color-border-default);
+}
+
+.anniv-item:last-child {
+  border-bottom: none;
+}
+
+.anniv-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.anniv-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.anniv-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-link);
+}
+
+.anniv-date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.anniv-years {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.anniv-btn {
+  align-self: flex-end;
+  margin-top: 14px;
+  height: 44px;
+  padding: 0 18px;
+  background: transparent;
+  color: var(--btn-ghost-color);
+  border: var(--stroke-default) solid var(--btn-ghost-color);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Benefits CTA */
+.benefits-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.benefits-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.benefits-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefits-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--card-title-color);
+  margin: 0;
+}
+
+.benefits-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.benefits-btn {
+  align-self: flex-end;
+  margin-top: 4px;
+  height: 44px;
+  padding: 0 20px;
+  background: transparent;
+  color: var(--btn-ghost-color);
+  border: var(--stroke-default) solid var(--btn-ghost-color);
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 /* Cards */
 .card-list {
   display: flex;
@@ -24,7 +210,7 @@
 }
 
 .card {
-  background: var(--card-bg);
+  background: var(--color-surface-brand-tint);
   border-radius: var(--card-radius, 14px);
   padding: 16px;
   cursor: pointer;
@@ -67,7 +253,8 @@
 .search-filters {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+  padding: 0 16px;
+  margin: 0 -16px 16px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -82,7 +269,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  height: 48px;
+  height: 44px;
   padding: 0 18px;
   border: var(--stroke-default) solid var(--color-border-default);
   border-radius: var(--radius-pill);
@@ -229,6 +416,26 @@
   color: var(--menu-item-color);
 }
 
+/* Wellbeing Carousel */
+.wb-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.wb-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.wb-carousel .wb-continue-card {
+  flex: 0 0 88%;
+  scroll-snap-align: start;
+}
+
 /* Wellbeing Continue Card */
 .wb-continue-card {
   display: flex;
@@ -243,6 +450,50 @@
   width: 100%;
   height: 150px;
   flex-shrink: 0;
+  position: relative;
+}
+
+.wb-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wb-completed-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 99px;
+  padding: 4px 10px 4px 4px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.wb-avatar-group {
+  display: flex;
+}
+
+.wb-avatar-chip {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  margin-right: -6px;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.wb-avatar-chip:last-child {
+  margin-right: 0;
 }
 
 .wb-content {
@@ -269,7 +520,7 @@
 }
 
 .wb-type-badge {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   background: var(--color-surface-raised);
   color: var(--color-text-secondary);
@@ -303,6 +554,34 @@
   width: 13px;
   height: 13px;
   flex-shrink: 0;
+}
+
+.section-subheading {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+  margin: 32px 0 0;
+}
+
+/* Section header row */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0 12px;
+}
+
+.section-view-all {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--btn-ghost-color);
 }
 
 /* Goals & Challenges */
@@ -399,12 +678,6 @@
   color: var(--goal-target-color);
 }
 
-/* Shop top hero */
-.shop-top {
-  background: var(--app-top-bg);
-  margin: -16px -16px 16px;
-  padding: 16px 16px 20px;
-}
 
 /* CTA Carousel */
 .cta-carousel {
@@ -515,6 +788,246 @@
   margin-bottom: 10px;
 }
 
+/* Saved Retailers */
+.saved-retailers {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+  scrollbar-width: none;
+}
+
+.saved-retailers::-webkit-scrollbar {
+  display: none;
+}
+
+.saved-retailer-item {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+  border: var(--stroke-subtle) solid var(--color-border-default);
+}
+
+.saved-retailer-logo {
+  width: 56px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Deal / Savings cards */
+.deal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.deal-card {
+  background: var(--nc-bg);
+  border-radius: var(--nc-radius, 16px);
+  overflow: hidden;
+  box-shadow: var(--nc-shadow);
+}
+
+.deal-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.deal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.deal-merchant {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-card-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deal-merchant-logo {
+  width: 56px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.deal-normal-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: var(--nc-tag-bg);
+  backdrop-filter: blur(4px);
+  color: var(--nc-tag-color);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--nc-tag-radius, 20px);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+.deal-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.deal-save {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.deal-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Spotlight Carousel */
+.spotlight-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+}
+
+.spotlight-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.spotlight-card {
+  flex: 0 0 56%;
+  scroll-snap-align: start;
+  background: var(--nc-bg);
+  border-radius: var(--nc-radius, 16px);
+  overflow: hidden;
+  box-shadow: var(--nc-shadow);
+}
+
+.spotlight-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.spotlight-logo-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.spotlight-logo {
+  width: 36px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.spotlight-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spotlight-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--nc-title-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.spotlight-desc {
+  font-size: 12px;
+  color: var(--nc-desc-color);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Summer Deals Carousel */
+.summer-deals-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+}
+
+.summer-deals-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.summer-deal-card {
+  flex: 0 0 88%;
+  scroll-snap-align: start;
+  background: var(--nc-bg);
+  border-radius: var(--nc-radius, 16px);
+  overflow: hidden;
+  box-shadow: var(--nc-shadow);
+}
+
+.summer-deal-img-wrap {
+  height: 200px;
+}
+
+.deal-top-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--nc-tag-radius, 20px);
+  letter-spacing: 0.3px;
+}
+
 /* Shop */
 .shop-grid {
   display: grid;
@@ -549,7 +1062,7 @@
   left: 10px;
   background: var(--shop-tag-bg);
   color: var(--shop-tag-color);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   padding: 2px 7px;
   border-radius: var(--shop-tag-radius, 20px);
