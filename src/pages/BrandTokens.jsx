@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './BrandTokens.css'
+import './Page.css'
+import './Feed.css'
 import {
   PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS,
   applySeeds, saveSeeds, loadSeeds,
@@ -290,15 +292,48 @@ export default function BrandTokens() {
         </div>
       </Section>
 
-      <Section title="Component Tokens in Use">
+      <Section title="Components">
         <div className="bt-components">
 
           <div className="bt-component-group">
-            <h3>Buttons / FAB</h3>
+            <h3>Buttons &amp; FAB</h3>
             <div className="bt-row">
               <button className="bt-fab">+</button>
-              <button className="bt-btn-primary">Primary Button</button>
-              <button className="bt-btn-ghost">Ghost Button</button>
+              <button className="bt-btn-primary">Primary</button>
+              <button className="bt-btn-ghost">Ghost</button>
+            </div>
+            <div className="bt-token-list">
+              <code>--btn-primary-bg</code>
+              <code>--btn-primary-color</code>
+              <code>--btn-primary-radius</code>
+              <code>--btn-ghost-color</code>
+              <code>--btn-ghost-radius</code>
+              <code>--fab-bg</code>
+              <code>--fab-radius</code>
+              <code>--fab-shadow</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>Navigation</h3>
+            <div className="bt-nav-strip">
+              {[
+                { label: 'Home', active: true, path: 'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z' },
+                { label: 'Feed', active: false, path: 'M4 6h16M4 12h16M4 18h16' },
+                { label: 'Search', active: false, path: 'M21 21l-4.35-4.35M17 11A6 6 0 111 11a6 6 0 0116 0z' },
+              ].map(({ label, active, path }) => (
+                <div key={label} className={`bt-nav-item ${active ? 'bt-nav-item--active' : ''}`}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                    <path d={path} />
+                  </svg>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="bt-token-list">
+              <code>--nav-item-color</code>
+              <code>--nav-item-active-color</code>
+              <code>--nav-avatar-bg</code>
             </div>
           </div>
 
@@ -306,7 +341,136 @@ export default function BrandTokens() {
             <h3>Feed Tabs</h3>
             <div className="bt-row">
               <button className="bt-tab bt-tab--active">All <span className="bt-tab-count">4</span></button>
+              <button className="bt-tab">Recognition</button>
               <button className="bt-tab">Saved <span className="bt-tab-count">2</span></button>
+            </div>
+            <div className="bt-token-list">
+              <code>--feed-tab-bg</code>
+              <code>--feed-tab-color</code>
+              <code>--feed-tab-active-bg</code>
+              <code>--feed-tab-active-color</code>
+              <code>--feed-tab-active-stroke-color</code>
+              <code>--feed-tab-count-bg</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>Search Input</h3>
+            <input className="search-input" type="text" placeholder="Search content and retailers…" readOnly style={{ marginBottom: 0 }} />
+            <div className="bt-token-list">
+              <code>--search-stroke-color</code>
+              <code>--search-stroke-color-focus</code>
+              <code>--search-radius</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>News Card</h3>
+            <div className="nc" style={{ maxWidth: 320 }}>
+              <div className="nc-img-wrap" style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}>
+                <span className="nc-tag">Your Team</span>
+                <span className="nc-badge">For you</span>
+              </div>
+              <div className="nc-body">
+                <p className="nc-title">Design System v2.0 launched</p>
+                <p className="nc-desc">The new component library is live. All teams encouraged to migrate by end of Q2.</p>
+                <div className="card-footer">
+                  <span className="nc-time">2m ago</span>
+                </div>
+              </div>
+            </div>
+            <div className="bt-token-list">
+              <code>--nc-bg</code>
+              <code>--nc-radius</code>
+              <code>--nc-tag-bg</code>
+              <code>--nc-tag-color</code>
+              <code>--nc-badge-bg</code>
+              <code>--nc-title-color</code>
+              <code>--nc-desc-color</code>
+              <code>--nc-time-color</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>Card Actions</h3>
+            <div className="nc" style={{ maxWidth: 320 }}>
+              <div className="card-actions">
+                <div className="card-actions-left">
+                  <button className="action-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z" />
+                      <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" />
+                    </svg>
+                    <span className="action-count">12</span>
+                  </button>
+                  <button className="action-btn action-btn--active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z" />
+                      <path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" />
+                    </svg>
+                    <span className="action-count">13</span>
+                  </button>
+                  <button className="action-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                    <span className="action-count">4</span>
+                  </button>
+                </div>
+                <button className="save-btn save-btn--saved">
+                  <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="bt-token-list">
+              <code>--save-btn-color</code>
+              <code>--save-btn-saved-color</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>Recognition Value Badges</h3>
+            <div className="bt-row">
+              {[
+                { label: 'Innovation',    bg: '#ede9fe', text: '#7c3aed' },
+                { label: 'Collaboration', bg: '#dbeafe', text: '#1d4ed8' },
+                { label: 'Customer Focus',bg: '#dcfce7', text: '#15803d' },
+                { label: 'Excellence',    bg: '#fef9c3', text: '#a16207' },
+                { label: 'Teamwork',      bg: '#fee2e2', text: '#b91c1c' },
+              ].map(v => (
+                <span key={v.label} className="rc-value" style={{ background: v.bg, color: v.text }}>{v.label}</span>
+              ))}
+            </div>
+            <div className="bt-token-list">
+              <code>--rc-value-radius</code>
+            </div>
+          </div>
+
+          <div className="bt-component-group">
+            <h3>CTA Cards</h3>
+            <div className="bt-row" style={{ alignItems: 'stretch' }}>
+              <div className="cta-card cta-discounts" style={{ flex: '0 0 auto', width: 200, minHeight: 0 }}>
+                <p className="cta-title">Discounts</p>
+                <p className="cta-label">Total Savings</p>
+                <p className="cta-value">£300.00</p>
+                <button className="cta-btn" style={{ marginTop: 12 }}>View Discounts</button>
+              </div>
+              <div className="cta-card cta-rewards" style={{ flex: '0 0 auto', width: 200, minHeight: 0 }}>
+                <p className="cta-title">Rewards</p>
+                <p className="cta-label">Reward Points</p>
+                <p className="cta-value">4,750 pts</p>
+                <button className="cta-btn" style={{ marginTop: 12 }}>Redeem</button>
+              </div>
+            </div>
+            <div className="bt-token-list">
+              <code>--cta-discounts-bg</code>
+              <code>--cta-rewards-bg</code>
+              <code>--cta-color</code>
+              <code>--cta-btn-bg</code>
+              <code>--cta-card-radius</code>
+              <code>--cta-bar-fill-bg</code>
             </div>
           </div>
 
@@ -322,14 +486,26 @@ export default function BrandTokens() {
                 <div className="bt-card-body">Using --color-surface-brand-tint background.</div>
               </div>
             </div>
+            <div className="bt-token-list">
+              <code>--card-bg</code>
+              <code>--card-radius</code>
+              <code>--card-title-color</code>
+              <code>--card-body-color</code>
+            </div>
           </div>
 
           <div className="bt-component-group">
-            <h3>Badges & Tags</h3>
+            <h3>Badges &amp; Tags</h3>
             <div className="bt-row">
               <span className="bt-badge">Badge</span>
               <span className="bt-tag">Tag</span>
               <span className="bt-pill">Pill</span>
+            </div>
+            <div className="bt-token-list">
+              <code>--color-surface-brand-tint</code>
+              <code>--color-brand</code>
+              <code>--radius-control</code>
+              <code>--radius-pill</code>
             </div>
           </div>
 
@@ -339,12 +515,22 @@ export default function BrandTokens() {
               <div className="bt-avatar">RS</div>
               <div className="bt-avatar bt-avatar--brand">AB</div>
             </div>
+            <div className="bt-token-list">
+              <code>--nav-avatar-bg</code>
+              <code>--nav-avatar-color</code>
+              <code>--radius-circle</code>
+            </div>
           </div>
 
           <div className="bt-component-group">
             <h3>Progress Bar</h3>
             <div className="bt-progress-track">
               <div className="bt-progress-fill" style={{ width: '65%' }} />
+            </div>
+            <div className="bt-token-list">
+              <code>--goal-track-bg</code>
+              <code>--goal-bar-fill</code>
+              <code>--shadow-progress-track</code>
             </div>
           </div>
 

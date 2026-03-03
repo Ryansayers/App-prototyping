@@ -15,6 +15,7 @@ const NEWS = [
     id: 'n1',
     type: 'news',
     tag: 'Your Team',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop',
     title: 'Design System v2.0 launched',
     body: 'The new component library is live. All product teams are encouraged to migrate by end of Q2.',
     time: '2m ago',
@@ -26,6 +27,7 @@ const NEWS = [
     id: 'n2',
     type: 'news',
     tag: 'Company',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop',
     title: 'Q1 All-Hands recap',
     body: 'CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.',
     time: '1h ago',
@@ -37,6 +39,7 @@ const NEWS = [
     id: 'n3',
     type: 'news',
     tag: 'Engineering',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop',
     title: 'New CI/CD pipeline rollout',
     body: 'Build times are down 40% following last week\'s infrastructure upgrade across all repos.',
     time: '3h ago',
@@ -48,6 +51,7 @@ const NEWS = [
     id: 'n4',
     type: 'news',
     tag: 'Company',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop',
     title: 'Office expansion — Austin TX',
     body: 'We\'re opening a new office in Austin this summer. Applications for relocation packages are now open.',
     time: '1d ago',
@@ -59,6 +63,7 @@ const NEWS = [
     id: 'n5',
     type: 'news',
     tag: 'People & Culture',
+    image: 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop',
     title: 'Updated hybrid work policy',
     body: 'Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.',
     time: '2d ago',
@@ -222,9 +227,12 @@ function CardActions({ initialLikes = 0, commentCount = 0, saved, onSave }) {
 }
 
 function NewsCard({ item, saved, onSave }) {
+  const gradient = TAG_GRADIENTS[item.tag] || 'linear-gradient(135deg, #cbd5e1, #94a3b8)'
   return (
     <div className="nc">
-      <div className="nc-img-wrap" style={{ background: TAG_GRADIENTS[item.tag] || 'linear-gradient(135deg, #cbd5e1, #94a3b8)' }}>
+      <div className="nc-img-wrap" style={{ background: gradient }}>
+        {item.image && <img className="nc-bg-img" src={item.image} alt="" />}
+        <div className="nc-img-overlay" style={{ background: gradient }} />
         <span className="nc-tag">{item.tag}</span>
         {item.relevant && <span className="nc-badge">For you</span>}
       </div>

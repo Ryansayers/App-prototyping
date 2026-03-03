@@ -1,8 +1,8 @@
 export const PRIMARY_PRESETS = [
-  { label: 'Cyan (default)',  h: 192, s: 100 },
-  { label: 'Smarter',         h: 214, s: 85  },
+  { label: 'Light Cobalt (default)',  h: 192, s: 100 },
+  { label: 'Smarter Legacy',         h: 214, s: 85  },
   { label: 'Edenred+',        h: 256, s: 86  },
-  { label: 'Eden Red',        h: 4,   s: 93  },
+  { label: 'ER depreciate',        h: 4,   s: 93  },
   { label: 'Eden Cobalt',     h: 209, s: 100 },
   { label: 'Boom Blue',       h: 196, s: 100 },
   { label: 'Boom Orange',     h: 21,  s: 88  },
@@ -15,12 +15,12 @@ export const PRIMARY_PRESETS = [
 
 export const SECONDARY_PRESETS = [
   { label: 'Blue-Purple (default)', h: 239, s: 65  },
-  { label: 'Smarter',               h: 244, s: 72  },
+  { label: 'Smarter Legacy',               h: 244, s: 72  },
   { label: 'Edenred+',              h: 222, s: 56  },
   { label: 'Eden Violet',           h: 263, s: 100 },
   { label: 'Eden Mint',             h: 169, s: 100 },
   { label: 'Eden Olive',            h: 80,  s: 95  },
-  { label: 'Eden Pink',             h: 349, s: 100 },
+  { label: 'ER - depreciate',             h: 349, s: 100 },
   { label: 'Boom Amber',            h: 42,  s: 100 },
   { label: 'Boom Green',            h: 109, s: 61  },
   { label: 'Pink',                  h: 330, s: 80  },
@@ -31,7 +31,7 @@ export const SECONDARY_PRESETS = [
 
 export const NEUTRAL_PRESETS = [
   { label: 'Cyan tint (default)', h: 192, s: 20 },
-  { label: 'Smarter',             h: 220, s: 8  },
+  { label: 'Smarter Legacy',             h: 220, s: 8  },
   { label: 'Warm',                h: 30,  s: 15 },
   { label: 'Cool Slate',          h: 220, s: 12 },
   { label: 'Pure Grey',           h: 0,   s: 0  },
@@ -51,12 +51,12 @@ export function applySeeds({ primary, secondary, neutral }) {
 
 export const BG_PRESETS = [
   { label: 'None',          value: null },
-  { label: 'Aurora Mesh',   value: 'radial-gradient(ellipse at 15% 40%, hsl(var(--color-primary-h), 60%, 75%) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, hsl(var(--color-secondary-h), 60%, 78%) 0%, transparent 55%), var(--color-surface-subtle)' },
-  { label: 'Diagonal',      value: 'linear-gradient(135deg, hsl(30, 80%, 92%) 0%, hsl(20, 70%, 88%) 50%, hsl(340, 60%, 90%) 100%)' },
-  { label: 'Soft Glow',     value: 'radial-gradient(circle at 50% 0%, hsl(var(--color-primary-h), 70%, 82%) 0%, var(--color-surface-default) 65%)' },
-  { label: 'Violet Mist',   value: 'linear-gradient(175deg, hsl(258, 26%, 95%) 0%, hsl(248, 36%, 91%) 18%, hsl(262, 20%, 95%) 34%, hsl(248, 34%, 90%) 50%, hsl(260, 24%, 94%) 66%, hsl(250, 32%, 91%) 82%, hsl(258, 18%, 96%) 100%)' },
+  { label: 'Boom Aura',   value: 'radial-gradient(ellipse at 15% 40%, hsl(var(--color-primary-h), 60%, 75%) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, hsl(var(--color-secondary-h), 60%, 78%) 0%, transparent 55%), var(--color-surface-subtle)' },
+  { label: 'Boom Orange',      value: 'linear-gradient(135deg, hsl(30, 80%, 92%) 0%, hsl(20, 70%, 88%) 50%, hsl(340, 60%, 90%) 100%)' },
+  { label: 'Boom Blue Glow',     value: 'radial-gradient(circle at 50% 0%, hsl(var(--color-primary-h), 70%, 82%) 0%, var(--color-surface-default) 65%)' },
+  { label: 'Smarter Mist',   value: 'linear-gradient(175deg, hsl(258, 26%, 95%) 0%, hsl(248, 36%, 91%) 18%, hsl(262, 20%, 95%) 34%, hsl(248, 34%, 90%) 50%, hsl(260, 24%, 94%) 66%, hsl(250, 32%, 91%) 82%, hsl(258, 18%, 96%) 100%)' },
   { label: 'Indigo Haze',   value: 'radial-gradient(ellipse at 25% 25%, hsl(258, 38%, 86%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 44%, 88%) 0%, transparent 50%), var(--color-surface-subtle)' },
-  { label: 'Smarter',       value: "url('/app-bg-smarter.png') center / cover no-repeat" },
+  { label: 'Smarter Legacy',       value: "url('/app-bg-smarter.png') center / cover no-repeat" },
   { label: 'Custom Image…', value: 'custom' },
 ]
 
@@ -115,13 +115,13 @@ const CTA_SHARED_PRESETS = [
 
 export const CTA_DISCOUNTS_PRESETS = [
   ...CTA_SHARED_PRESETS.slice(0, 1),
-  { label: 'Smarter',      value: "url('/card-bg-smarter.png') center / cover no-repeat" },
+  { label: 'Smarter Legacy',      value: "url('/card-bg-smarter.png') center / cover no-repeat" },
   ...CTA_SHARED_PRESETS.slice(1),
 ]
 
 export const CTA_REWARDS_PRESETS = [
   ...CTA_SHARED_PRESETS.slice(0, 1),
-  { label: 'Smarter',      value: "url('/card-bg-rewards.png') center / cover no-repeat" },
+  { label: 'Smarter Legacy',      value: "url('/card-bg-rewards.png') center / cover no-repeat" },
   ...CTA_SHARED_PRESETS.slice(1),
 ]
 

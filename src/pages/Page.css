@@ -905,6 +905,57 @@
   margin: 0;
 }
 
+/* Discover More Carousel */
+.discover-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+}
+
+.discover-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.discover-card {
+  flex: 0 0 68%;
+  scroll-snap-align: start;
+  background: var(--nc-bg);
+  border-radius: var(--nc-radius, 16px);
+  overflow: hidden;
+  box-shadow: var(--nc-shadow);
+}
+
+.discover-img-wrap {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.discover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+.discover-body {
+  padding: 12px 14px 14px;
+}
+
+.discover-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--nc-title-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
 /* Spotlight Carousel */
 .spotlight-carousel {
   display: flex;

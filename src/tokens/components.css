@@ -191,7 +191,7 @@
 }
 
 :root[data-theme="dark"] {
-  --btn-ghost-color:               var(--color-secondary-200);
+  --btn-ghost-color:               var(--color-secondary-100);
   --app-top-bg:                    var(--color-neutral-800);
   --header-home-bg:                linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%);
   --header-logo-word-color:        #ffffff;

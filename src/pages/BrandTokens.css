@@ -457,6 +457,58 @@
   border-radius: 99px;
 }
 
+/* Navigation strip preview */
+.bt-nav-strip {
+  display: flex;
+  gap: 4px;
+  background: var(--color-surface-default);
+  border: var(--stroke-subtle) solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: 8px 12px;
+  width: fit-content;
+}
+
+.bt-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border-radius: var(--radius-md);
+  color: var(--nav-item-color);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: default;
+  min-width: 56px;
+}
+
+.bt-nav-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+.bt-nav-item--active {
+  color: var(--nav-item-active-color);
+  font-weight: 700;
+}
+
+/* Token reference list */
+.bt-token-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.bt-token-list code {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  background: var(--color-surface-subtle);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  border: var(--stroke-subtle) solid var(--color-border-default);
+}
+
 code {
   font-family: 'SF Mono', 'Fira Code', monospace;
 }

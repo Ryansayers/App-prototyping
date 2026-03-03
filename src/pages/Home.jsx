@@ -11,7 +11,14 @@ const ANNIVERSARIES = [
 const CARDS = [
   { id: 1, title: 'Essentials', desc: 'Pay, Leave & Expenses' },
   { id: 2, title: 'People & Locations', desc: 'Discover our team hubs' },
-  { id: 3, title: 'Featured Content', desc: 'Hand-picked articles just for you.' },
+  { id: 3, title: 'Learning Pathways at RG', desc: 'Hand-picked articles just for you.' },
+]
+
+const DISCOVER = [
+  { id: 1, title: 'Speak Up',            image: '/discover-speak-up.png'   },
+  { id: 2, title: 'Our Brand',           image: '/discover-our-brand.png'  },
+  { id: 3, title: 'Internal Vacancies',  image: '/discover-vacancies.png'  },
+  { id: 4, title: 'Our Strategy',        image: '/discover-strategy.png'   },
 ]
 
 function RecognitionNudge() {
@@ -62,13 +69,39 @@ function BenefitsCTA() {
   )
 }
 
+function HeartCard() {
+  return (
+    <div className="benefits-card">
+      <img className="benefits-img" src="/heart-hero.png" alt="H.E.A.R.T." />
+      <div className="benefits-body">
+        <h3 className="benefits-title">H.E.A.R.T.</h3>
+        <p className="benefits-text">Our values — Honesty, Excellence, Accountability, Respect, and Teamwork — are at the heart of everything we do.</p>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <div className="page">
       <p className="page-subtitle" style={{ color: 'var(--color-text-secondary)' }}>Welcome back!</p>
       <RecognitionNudge />
       <BenefitsCTA />
+      <HeartCard />
       <WorkAnniversaries />
+      <h2 className="section-heading">Discover More</h2>
+      <div className="discover-carousel">
+        {DISCOVER.map((item) => (
+          <div key={item.id} className="discover-card">
+            <div className="discover-img-wrap">
+              <img className="discover-img" src={item.image} alt={item.title} />
+            </div>
+            <div className="discover-body">
+              <p className="discover-title">{item.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="card-list">
         {CARDS.map((card) => (
           <div key={card.id} className="card">
