@@ -1,6 +1,10 @@
 export const PRIMARY_PRESETS = [
   { label: 'Cyan (default)',  h: 192, s: 100 },
-  { label: 'Coral Red',       h: 4,   s: 93  },
+  { label: 'Eden Red',        h: 4,   s: 93  },
+  { label: 'Eden Cobalt',     h: 209, s: 100 },
+  { label: 'Boom Blue',       h: 196, s: 100 },
+  { label: 'Boom Orange',     h: 21,  s: 88  },
+  { label: 'Orange',          h: 28,  s: 95  },
   { label: 'Indigo',          h: 245, s: 80  },
   { label: 'Emerald',         h: 152, s: 76  },
   { label: 'Amber',           h: 38,  s: 95  },
@@ -8,12 +12,17 @@ export const PRIMARY_PRESETS = [
 ]
 
 export const SECONDARY_PRESETS = [
-  { label: 'Blue-Purple (default)', h: 239, s: 84 },
-  { label: 'Pink',                  h: 330, s: 80 },
-  { label: 'Teal',                  h: 174, s: 72 },
-  { label: 'Lime',                  h: 84,  s: 80 },
-  { label: 'Sky',                   h: 204, s: 90 },
-  { label: 'Violet',                h: 270, s: 76 },
+  { label: 'Blue-Purple (default)', h: 239, s: 65  },
+  { label: 'Eden Violet',           h: 263, s: 100 },
+  { label: 'Eden Mint',             h: 169, s: 100 },
+  { label: 'Eden Olive',            h: 80,  s: 95  },
+  { label: 'Eden Pink',             h: 349, s: 100 },
+  { label: 'Boom Amber',            h: 42,  s: 100 },
+  { label: 'Boom Green',            h: 109, s: 61  },
+  { label: 'Pink',                  h: 330, s: 80  },
+  { label: 'Teal',                  h: 174, s: 72  },
+  { label: 'Sky',                   h: 204, s: 90  },
+  { label: 'Violet',                h: 270, s: 76  },
 ]
 
 export const NEUTRAL_PRESETS = [

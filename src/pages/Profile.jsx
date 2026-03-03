@@ -1,8 +1,26 @@
 import './Page.css'
 
+const WELLBEING_ACTIVITY = {
+  category: 'Workouts',
+  type: 'Video',
+  title: 'Shoulder release',
+  duration: '20 min',
+  gradient: 'linear-gradient(135deg, #7c9eb5 0%, #b0c9d8 50%, #d4a57a 100%)',
+}
+
 const GOALS = [
   {
     id: 1,
+    icon: '👟',
+    label: 'Monthly Step Goal',
+    challenge: '250,000 steps this month',
+    current: 168400,
+    target: 250000,
+    unit: 'steps',
+    color: '#0ea5e9',
+  },
+  {
+    id: 2,
     icon: '💰',
     label: 'Savings Goal',
     challenge: 'Save $2,000 by June',
@@ -12,7 +30,7 @@ const GOALS = [
     color: '#22c55e',
   },
   {
-    id: 2,
+    id: 3,
     icon: '🏃',
     label: 'Physical Activity',
     challenge: '10,000 steps per day',
@@ -20,16 +38,6 @@ const GOALS = [
     target: 10000,
     unit: 'steps',
     color: '#F72717',
-  },
-  {
-    id: 3,
-    icon: '📈',
-    label: 'Monthly Progress',
-    challenge: 'Complete 20 tasks this month',
-    current: 13,
-    target: 20,
-    unit: 'tasks',
-    color: '#8b5cf6',
   },
 ]
 
@@ -48,6 +56,24 @@ export default function Profile() {
       <div className="avatar">RS</div>
       <p className="avatar-name">Ryan Sayers</p>
       <p className="page-subtitle">ryan@example.com</p>
+
+      <h2 className="section-heading">Continue Wellbeing</h2>
+      <div className="wb-continue-card">
+        <div className="wb-thumb" style={{ background: WELLBEING_ACTIVITY.gradient }} />
+        <div className="wb-content">
+          <div className="wb-content-top">
+            <span className="wb-category">{WELLBEING_ACTIVITY.category}</span>
+            <span className="wb-type-badge">{WELLBEING_ACTIVITY.type}</span>
+          </div>
+          <p className="wb-title">{WELLBEING_ACTIVITY.title}</p>
+          <span className="wb-duration">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
+            </svg>
+            {WELLBEING_ACTIVITY.duration}
+          </span>
+        </div>
+      </div>
 
       <h2 className="section-heading">Goals &amp; Challenges</h2>
       <div className="goal-list">

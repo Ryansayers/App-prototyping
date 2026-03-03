@@ -111,7 +111,7 @@ export default function BrandTokens() {
   return (
     <div className="bt-page">
       <header className="bt-header">
-        <h1>Brand Tokens</h1>
+        <h1>Brand token page</h1>
         <p>Live token reference — all values respond to seed changes below</p>
         <div className="bt-seeds">
           <label className="bt-seed">

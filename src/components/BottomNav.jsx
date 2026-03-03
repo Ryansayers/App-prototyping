@@ -67,8 +67,17 @@ const NAV_ITEMS = [
   {
     id: 'profile',
     label: 'You',
-    icon: <span className="nav-avatar">RS</span>,
-    iconFilled: <span className="nav-avatar nav-avatar--active">RS</span>,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      </svg>
+    ),
+    iconFilled: (
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 2a6 6 0 110 12A6 6 0 0112 2zm0 14c-5 0-9 2.69-9 6h18c0-3.31-4-6-9-6z" />
+      </svg>
+    ),
   },
 ]
 

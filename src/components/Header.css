@@ -7,6 +7,39 @@
   flex-shrink: 0;
 }
 
+.app-header--home {
+  background: var(--header-home-bg);
+  padding: 20px 20px;
+}
+
+.header-logo {
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-logo-img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+:root[data-theme="dark"] .header-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+:root[data-theme="light"] .header-logo-img {
+  filter: none;
+}
+
 .header-title {
   font-size: 20px;
   font-weight: 700;

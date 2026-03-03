@@ -10,6 +10,7 @@
   --app-bg:                        var(--color-bg-app);
   --app-shadow:                    var(--shadow-app-shell);
   --app-radius:                    var(--radius-app-shell);
+  --app-top-bg:                    var(--color-neutral-100);
 
   /* ── StatusBar ── */
   --statusbar-text:                var(--color-text-primary);
@@ -18,6 +19,8 @@
 
   /* ── Header ── */
   --header-title-color:            var(--color-text-primary);
+  --header-home-bg:                linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
+  --header-logo-word-color:        var(--color-text-primary);
   --header-icon-btn-bg:            var(--color-surface-default);
   --header-icon-btn-color:         var(--color-text-tertiary);
   --header-icon-btn-hover-bg:      var(--color-surface-brand-tint);
@@ -41,12 +44,12 @@
   --btn-primary-radius:            var(--radius-control);
 
   /* ── FAB ── */
-  --fab-bg:                        linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
-  --fab-ai-bg:                     linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 50%, var(--color-primary-700) 100%);
+  --fab-bg:                        linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-300) 0%, var(--color-secondary-400) 100%);
   --fab-color:                     #000000;
   --fab-radius:                    var(--radius-fab);
   --fab-shadow:                    0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
-  --fab-ai-shadow:                 0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.35);
+  --fab-ai-shadow:                 0 4px 16px hsla(var(--color-secondary-h), var(--color-secondary-s), 45%, 0.35);
 
   /* ── Feed Tabs ── */
   --feed-tab-bg:                   var(--color-surface-default);
@@ -89,9 +92,9 @@
   --rc-value-radius:               var(--radius-control);
   --rc-you-banner-radius:          var(--radius-control-sm);
   --rc-from-color:                 var(--color-text-primary);
-  --rc-role-color:                 var(--color-text-disabled);
-  --rc-to-color:                   var(--color-text-subtle);
-  --rc-time-color:                 var(--color-text-disabled);
+  --rc-role-color:                 var(--color-text-tertiary);
+  --rc-to-color:                   var(--color-text-muted);
+  --rc-time-color:                 var(--color-text-tertiary);
   --rc-message-color:              var(--color-text-tertiary);
   --rc-you-banner-bg:              var(--color-surface-accent-tint);
   --rc-you-banner-color:           #000000;
@@ -112,7 +115,7 @@
   --search-stroke-width:           var(--stroke-default);
   --search-stroke-color:           var(--color-border-default);
   --search-stroke-color-focus:     var(--color-border-brand);
-  --search-radius:                 var(--radius-control-sm);
+  --search-radius:                 var(--radius-pill);
   --search-border:                 var(--color-border-default);
   --search-focus-border:           var(--color-border-brand);
 
@@ -133,7 +136,7 @@
   --goal-label-color:              var(--color-text-primary);
   --goal-challenge-color:          var(--color-text-muted);
   --goal-current-color:            var(--color-text-tertiary);
-  --goal-target-color:             var(--color-text-disabled);
+  --goal-target-color:             var(--color-text-tertiary);
 
   /* ── CTA Carousel ── */
   --cta-carousel-bg:               linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%);
@@ -145,7 +148,7 @@
   --cta-btn-bg:                    rgba(0, 0, 0, 0.12);
   --cta-btn-radius:                var(--radius-control);
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
-  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-100) 0%, var(--color-secondary-300) 100%);
 
   /* ── Shop ── */
   --shop-card-bg:                  var(--color-surface-subtle);
@@ -187,6 +190,9 @@
 }
 
 :root[data-theme="dark"] {
+  --app-top-bg:                    var(--color-neutral-800);
+  --header-home-bg:                linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%);
+  --header-logo-word-color:        #ffffff;
   --feed-tab-active-stroke-color: var(--color-primary-700);
   --cta-color:              #ffffff;
   --cta-bar-track-bg:       rgba(255, 255, 255, 0.3);
@@ -200,6 +206,6 @@
   --rc-you-banner-color:    #ffffff;
   --rc-time-color:          #ffffff;
   --save-btn-color:         #ffffff;
-  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-800) 100%);
-  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-800) 100%);
+  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-900) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-700) 0%, var(--color-secondary-900) 100%);
 }

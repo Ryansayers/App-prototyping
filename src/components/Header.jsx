@@ -36,12 +36,18 @@ const MoonIcon = () => (
   </svg>
 )
 
-export default function Header({ title, darkMode, onToggleDark }) {
+export default function Header({ title, isHome, darkMode, onToggleDark }) {
   const [hasNotif, setHasNotif] = useState(true)
 
   return (
-    <header className="app-header">
-      <h2 className="header-title">{title}</h2>
+    <header className={`app-header ${isHome ? 'app-header--home' : ''}`}>
+      {isHome ? (
+        <div className="header-logo">
+          <img src="/boom.svg" alt="Boom" className="header-logo-img" />
+        </div>
+      ) : (
+        <h2 className="header-title">{title}</h2>
+      )}
       <div className="header-actions">
         <button className="icon-btn" onClick={onToggleDark} aria-label="Toggle dark mode">
           {darkMode ? <SunIcon /> : <MoonIcon />}

@@ -40,13 +40,34 @@
     box-shadow 0.3s ease;
 }
 
+.fab::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.45s ease;
+  pointer-events: none;
+}
+
 .fab:hover {
   transform: scale(1.05);
-  background-position: 100% 50%;
+}
+
+.fab:hover::after {
+  left: 140%;
 }
 
 .fab-ai:hover {
-  background-position: 100% 50%;
+  transform: none;
 }
 
 .fab:active {

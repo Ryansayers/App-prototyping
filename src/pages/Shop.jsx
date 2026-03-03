@@ -6,8 +6,10 @@ export default function Shop() {
   const pct = Math.min(Math.round((SAVING.current / SAVING.target) * 100), 100)
   return (
     <div className="page">
+      <div className="shop-top">
       <div className="cta-carousel">
         <div className="cta-card cta-discounts">
+          <p className="cta-title">Discounts</p>
           <p className="cta-label">Total Savings</p>
           <p className="cta-value">£300.00</p>
           <p className="cta-sub">Save £2,000 by June</p>
@@ -21,11 +23,13 @@ export default function Shop() {
           <button className="cta-btn">View Discounts</button>
         </div>
         <div className="cta-card cta-rewards">
+          <p className="cta-title">Rewards</p>
           <p className="cta-label">Reward Points</p>
           <p className="cta-value">4,750 pts</p>
           <p className="cta-sub">worth approx. £47.50</p>
           <button className="cta-btn">Redeem Rewards</button>
         </div>
+      </div>
       </div>
 
       <div className="shop-grid" />

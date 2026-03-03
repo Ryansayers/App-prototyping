@@ -158,16 +158,14 @@ function NewsCard({ item, saved, onSave }) {
         {item.relevant && <span className="nc-badge">For you</span>}
       </div>
       <div className="nc-body">
-        <div className="nc-body-top">
-          <div>
-            <p className="nc-title">{item.title}</p>
-            <p className="nc-desc">{item.body}</p>
-          </div>
+        <p className="nc-title">{item.title}</p>
+        <p className="nc-desc">{item.body}</p>
+        <div className="card-footer">
+          <span className="nc-time">{item.time}</span>
           <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={() => onSave(item.id)}>
             <BookmarkIcon filled={saved} />
           </button>
         </div>
-        <span className="nc-time">{item.time}</span>
       </div>
     </div>
   )
@@ -186,22 +184,41 @@ function RecognitionCard({ item, saved, onSave }) {
           <p className="rc-from"><strong>{item.from}</strong> <span className="rc-role">· {item.fromRole}</span></p>
           <p className="rc-to">recognised <strong>{item.isYou ? 'you' : item.to}</strong></p>
         </div>
-        <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={() => onSave(item.id)}>
-          <BookmarkIcon filled={saved} />
-        </button>
       </div>
       <span className="rc-value" style={{ background: colours.bg, color: colours.text }}>{item.value}</span>
       <p className="rc-message">"{item.message}"</p>
       {item.isYou && <div className="rc-you-banner"><span>You were recognised</span></div>}
-      <span className="rc-time">{item.time}</span>
+      <div className="card-footer">
+        <span className="rc-time">{item.time}</span>
+        <button className={`save-btn ${saved ? 'save-btn--saved' : ''}`} onClick={() => onSave(item.id)}>
+          <BookmarkIcon filled={saved} />
+        </button>
+      </div>
     </div>
   )
 }
 
-const ALL_ITEMS = [...NEWS, ...RECOGNITION]
+function parseMinutes(t) {
+  const m = t.match(/(\d+)(m|h|d)/)
+  if (!m) return 0
+  const n = Number(m[1])
+  if (m[2] === 'm') return n
+  if (m[2] === 'h') return n * 60
+  return n * 1440
+}
+
+const ALL_ITEMS = [...NEWS, ...RECOGNITION].sort(
+  (a, b) => parseMinutes(a.time) - parseMinutes(b.time)
+)
+
+function FeedItem({ item, saved, onSave }) {
+  return item.type === 'news'
+    ? <NewsCard item={item} saved={saved} onSave={onSave} />
+    : <RecognitionCard item={item} saved={saved} onSave={onSave} />
+}
 
 export default function Feed() {
-  const [tab, setTab] = useState('news')
+  const [tab, setTab] = useState('all')
   const [savedIds, setSavedIds] = useState(new Set())
 
   const toggleSave = (id) => {
@@ -214,16 +231,53 @@ export default function Feed() {
 
   const savedItems = ALL_ITEMS.filter((item) => savedIds.has(item.id))
 
+  const YOUR_TEAM_ITEMS = ALL_ITEMS.filter(
+    item => (item.type === 'news' && item.tag === 'Your Team') || (item.type === 'recognition' && item.isYou)
+  )
+
+  const TAB_LABELS = { all: 'All', team: 'Your Team', news: 'News', recognition: 'Recognition', saved: 'Saved' }
+
+  const TAB_ICONS = {
+    all: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+      </svg>
+    ),
+    team: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+      </svg>
+    ),
+    news: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16v14a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" /><path d="M8 9h8M8 13h5" />
+      </svg>
+    ),
+    recognition: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      </svg>
+    ),
+    saved: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+      </svg>
+    ),
+  }
+
   return (
     <div className="page feed-page">
       <div className="feed-tabs">
-        {['news', 'recognition', 'saved'].map((t) => (
+        {['all', 'team', 'news', 'recognition', 'saved'].map((t) => (
           <button
             key={t}
             className={`feed-tab ${tab === t ? 'feed-tab--active' : ''}`}
             onClick={() => setTab(t)}
           >
-            {t.charAt(0).toUpperCase() + t.slice(1)}
+            <span className="feed-tab-icon">{TAB_ICONS[t]}</span>
+            {TAB_LABELS[t]}
             {t === 'saved' && savedIds.size > 0 && (
               <span className="feed-tab-count">{savedIds.size}</span>
             )}
@@ -232,6 +286,12 @@ export default function Feed() {
       </div>
 
       <div className="feed-list">
+        {tab === 'all' && ALL_ITEMS.map((item) => (
+          <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
+        ))}
+        {tab === 'team' && YOUR_TEAM_ITEMS.map((item) => (
+          <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
+        ))}
         {tab === 'news' && NEWS.map((item) => (
           <NewsCard key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
         ))}
@@ -241,11 +301,9 @@ export default function Feed() {
         {tab === 'saved' && (
           savedItems.length === 0
             ? <div className="saved-empty"><p>No saved items yet.</p><p>Tap the bookmark on any post to save it.</p></div>
-            : savedItems.map((item) =>
-                item.type === 'news'
-                  ? <NewsCard key={item.id} item={item} saved onSave={toggleSave} />
-                  : <RecognitionCard key={item.id} item={item} saved onSave={toggleSave} />
-              )
+            : savedItems.map((item) => (
+                <FeedItem key={item.id} item={item} saved onSave={toggleSave} />
+              ))
         )}
       </div>
     </div>

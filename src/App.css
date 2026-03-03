@@ -28,6 +28,11 @@ body {
   flex-direction: column;
 }
 
+.app-top {
+  background: transparent;
+  flex-shrink: 0;
+}
+
 .content {
   flex: 1;
   overflow-y: auto;

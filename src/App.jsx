@@ -31,8 +31,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <StatusBar />
-      <Header title={title} darkMode={theme === 'dark'} onToggleDark={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
+      <div className="app-top">
+        <StatusBar />
+        <Header title={title} isHome={activePage === 'home'} darkMode={theme === 'dark'} onToggleDark={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} />
+      </div>
       <main className="content">{component}</main>
       <FAB activePage={activePage} />
       <BottomNav active={activePage} onChange={setActivePage} />
