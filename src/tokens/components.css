@@ -42,6 +42,7 @@
   --btn-primary-bg-hover:          var(--color-accent-hover);
   --btn-primary-color:             var(--color-text-on-brand);
   --btn-primary-radius:            var(--radius-control);
+  --btn-primary-ring:              none;
   --btn-ghost-color:               var(--color-secondary-800);
   --btn-ghost-radius:              var(--radius-control);
 
@@ -192,6 +193,7 @@
 
 :root[data-theme="dark"] {
   --btn-ghost-color:               var(--color-secondary-100);
+  --btn-primary-ring:              0 0 0 1.5px rgba(255, 255, 255, 0.22);
   --app-top-bg:                    var(--color-neutral-800);
   --header-home-bg:                linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%);
   --header-logo-word-color:        #ffffff;

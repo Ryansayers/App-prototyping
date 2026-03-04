@@ -20,8 +20,8 @@
   --color-text-primary:        rgba(0, 0, 0, 0.90);
   --color-text-secondary:      rgba(0, 0, 0, 0.72);
   --color-text-tertiary:       rgba(0, 0, 0, 0.56);
-  --color-text-muted:          rgba(0, 0, 0, 0.44);
-  --color-text-subtle:         rgba(0, 0, 0, 0.32);
+  --color-text-muted:          rgba(0, 0, 0, 0.55);
+  --color-text-subtle:         rgba(0, 0, 0, 0.44);
   --color-text-disabled:       rgba(0, 0, 0, 0.24);
   --color-text-on-brand:       #ffffff;
   --color-text-on-dark:        #ffffff;
@@ -84,7 +84,7 @@
    Triggered by system preference OR [data-theme="dark"] on .app.
    Overrides semantic tokens only — component tokens cascade.
    ============================================================= */
-@media (prefers-color-scheme: light) { :root {
+@media (prefers-color-scheme: dark) { :root {
     --color-text-primary:        rgba(255, 255, 255, 0.95);
     --color-text-secondary:      rgba(255, 255, 255, 0.80);
     --color-text-tertiary:       rgba(255, 255, 255, 0.65);
@@ -104,6 +104,7 @@
     --color-border-brand-tint:   var(--color-primary-800);
     --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
     --shadow-progress-track:     var(--color-neutral-700);
+    --color-text-link:           var(--color-primary-300);
   }
 }
 
@@ -112,8 +113,8 @@
     --color-text-primary:        rgba(0, 0, 0, 0.90);
     --color-text-secondary:      rgba(0, 0, 0, 0.72);
     --color-text-tertiary:       rgba(0, 0, 0, 0.56);
-    --color-text-muted:          rgba(0, 0, 0, 0.44);
-    --color-text-subtle:         rgba(0, 0, 0, 0.32);
+    --color-text-muted:          rgba(0, 0, 0, 0.55);
+    --color-text-subtle:         rgba(0, 0, 0, 0.44);
     --color-text-disabled:       rgba(0, 0, 0, 0.24);
     --color-surface-default:     var(--color-neutral-0);
     --color-surface-subtle:      var(--color-neutral-50);

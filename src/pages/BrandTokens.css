@@ -303,6 +303,7 @@
   border-radius: var(--btn-primary-radius);
   background: var(--btn-primary-bg);
   color: var(--btn-primary-color);
+  box-shadow: var(--btn-primary-ring);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
