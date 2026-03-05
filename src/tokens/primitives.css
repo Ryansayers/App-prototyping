@@ -7,6 +7,9 @@
    ============================================================= */
 
 :root {
+  /* ── Typography ── */
+  --font-body: 'Ubuntu', sans-serif;
+
   /* ── Brand seed values (the three knobs a customer turns) ── */
   --color-primary-h: 192;
   --color-primary-s: 100%;

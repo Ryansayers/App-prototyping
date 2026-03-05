@@ -8,6 +8,7 @@ import {
   BG_PRESETS, applyBg, loadBg, saveBg,
   applyTheme, loadTheme, saveTheme,
   CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
+  FONT_PRESETS, applyFont, loadFont, saveFont,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -117,10 +118,16 @@ export default function BrandTokens() {
   const [customUrl, setCustomUrl] = useState(() => loadBg().url)
   const [themeMode, setThemeMode] = useState(() => loadTheme())
 
+  const [fontIdx, setFontIdx] = useState(() => loadFont())
+
   const [discountIdx, setDiscountIdx] = useState(() => loadCardBg('discounts').idx)
   const [discountUrl, setDiscountUrl] = useState(() => loadCardBg('discounts').url)
   const [rewardsIdx,  setRewardsIdx]  = useState(() => loadCardBg('rewards').idx)
   const [rewardsUrl,  setRewardsUrl]  = useState(() => loadCardBg('rewards').url)
+
+  useEffect(() => {
+    applyFont(loadFont())
+  }, [])
 
   useEffect(() => {
     const { idx, url } = loadBg()
@@ -130,6 +137,12 @@ export default function BrandTokens() {
     const r = loadCardBg('rewards')
     applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
   }, [])
+
+  function handleFontChange(i) {
+    setFontIdx(i)
+    saveFont(i)
+    applyFont(i)
+  }
 
   function handleThemeChange(mode) {
     setThemeMode(mode)
@@ -198,6 +211,13 @@ export default function BrandTokens() {
             <span>Neutral</span>
             <select className="bt-select" value={neutralIdx} onChange={e => setNeutralIdx(Number(e.target.value))}>
               {NEUTRAL_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+            </select>
+          </label>
+          <label className="bt-seed">
+            <span>🔤</span>
+            <span>Font</span>
+            <select className="bt-select" value={fontIdx} onChange={e => handleFontChange(Number(e.target.value))}>
+              {FONT_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
             </select>
           </label>
         </div>

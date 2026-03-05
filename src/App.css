@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--font-body, 'Ubuntu', sans-serif);
   background: var(--color-bg-page);
 }
 

@@ -178,6 +178,26 @@ export function saveTheme(theme) {
   localStorage.setItem('brand-theme', theme)
 }
 
+export const FONT_PRESETS = [
+  { label: 'Ubuntu (Brand)', value: "'Ubuntu', sans-serif" },
+  { label: 'SF Pro',         value: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif" },
+  { label: 'Roboto',         value: "'Roboto', sans-serif" },
+]
+
+export function applyFont(idx) {
+  const preset = FONT_PRESETS[idx] || FONT_PRESETS[0]
+  document.documentElement.style.setProperty('--font-body', preset.value)
+}
+
+export function loadFont() {
+  try { return Number(localStorage.getItem('brand-font') || 0) }
+  catch { return 0 }
+}
+
+export function saveFont(idx) {
+  localStorage.setItem('brand-font', idx)
+}
+
 export function saveSeeds(indices) {
   localStorage.setItem('brand-seeds', JSON.stringify(indices))
 }
