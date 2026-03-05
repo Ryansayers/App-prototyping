@@ -212,10 +212,6 @@ export const LOGO_PRESETS = [
   { label: 'None',    src: null },
   { label: 'Boom',    src: '/boom.svg' },
   { label: 'Next',    src: '/logo-next.svg' },
-  { label: 'ASDA',    src: '/logo-asda.svg' },
-  { label: 'TUI',     src: '/logo-tui.svg' },
-  { label: 'Samsung', src: '/logo-samsung.svg' },
-  { label: 'ASOS',    src: '/logo-asos.svg' },
 ]
 
 export function loadLogo() {
