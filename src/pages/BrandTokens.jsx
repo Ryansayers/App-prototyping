@@ -9,6 +9,7 @@ import {
   applyTheme, loadTheme, saveTheme,
   CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
   FONT_PRESETS, applyFont, loadFont, saveFont,
+  LOGO_PRESETS, loadLogo, saveLogo,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -119,6 +120,7 @@ export default function BrandTokens() {
   const [themeMode, setThemeMode] = useState(() => loadTheme())
 
   const [fontIdx, setFontIdx] = useState(() => loadFont())
+  const [logoIdx, setLogoIdx] = useState(() => loadLogo() || 1)
 
   const [discountIdx, setDiscountIdx] = useState(() => loadCardBg('discounts').idx)
   const [discountUrl, setDiscountUrl] = useState(() => loadCardBg('discounts').url)
@@ -137,6 +139,11 @@ export default function BrandTokens() {
     const r = loadCardBg('rewards')
     applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
   }, [])
+
+  function handleLogoChange(i) {
+    setLogoIdx(i)
+    saveLogo(i)
+  }
 
   function handleFontChange(i) {
     setFontIdx(i)
@@ -191,6 +198,20 @@ export default function BrandTokens() {
       <header className="bt-header">
         <h1>Brand token page</h1>
         <p>Live token reference — all values respond to seed changes below</p>
+        <div className="bt-logo-bar">
+          <div className="bt-logo-preview">
+            {LOGO_PRESETS[logoIdx]?.src
+              ? <img src={LOGO_PRESETS[logoIdx].src} alt={LOGO_PRESETS[logoIdx].label} className="bt-logo-img" />
+              : <span className="bt-logo-none">No logo</span>
+            }
+          </div>
+          <label className="bt-seed">
+            <span>Brand Logo</span>
+            <select className="bt-select" value={logoIdx} onChange={e => handleLogoChange(Number(e.target.value))}>
+              {LOGO_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+            </select>
+          </label>
+        </div>
         <div className="bt-seeds">
           <label className="bt-seed">
             <div className="bt-seed-dot" style={{ background: 'var(--color-primary-500)' }} />
@@ -211,13 +232,6 @@ export default function BrandTokens() {
             <span>Neutral</span>
             <select className="bt-select" value={neutralIdx} onChange={e => setNeutralIdx(Number(e.target.value))}>
               {NEUTRAL_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
-            </select>
-          </label>
-          <label className="bt-seed">
-            <span>🔤</span>
-            <span>Font</span>
-            <select className="bt-select" value={fontIdx} onChange={e => handleFontChange(Number(e.target.value))}>
-              {FONT_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
             </select>
           </label>
         </div>
@@ -575,10 +589,21 @@ export default function BrandTokens() {
         </div>
       </Section>
 
-      <h2 className="bt-page-heading">Internal Configuration</h2>
+      <h2 className="bt-page-heading">Internal Brand Configuration</h2>
 
       <Section title="Surfaces">
         <div className="bt-surfaces-list">
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Font</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <select className="bt-select" value={fontIdx} onChange={e => handleFontChange(Number(e.target.value))}>
+                  {FONT_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+            </div>
+          </div>
+
           <div className="bt-surface-row">
             <span className="bt-surface-label">App Background</span>
             <div className="bt-bg-row">

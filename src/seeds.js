@@ -2,15 +2,14 @@ export const PRIMARY_PRESETS = [
   { label: 'Light Cobalt (default)',  h: 192, s: 100 },
   { label: 'Smarter Legacy',         h: 214, s: 85  },
   { label: 'Edenred+',        h: 256, s: 86  },
-  { label: 'ER depreciate',        h: 4,   s: 93  },
   { label: 'Eden Cobalt',     h: 209, s: 100 },
   { label: 'Boom Blue',       h: 196, s: 100 },
   { label: 'Boom Orange',     h: 21,  s: 88  },
-  { label: 'Orange',          h: 28,  s: 95  },
   { label: 'Indigo',          h: 245, s: 80  },
   { label: 'Emerald',         h: 152, s: 76  },
   { label: 'Amber',           h: 38,  s: 95  },
   { label: 'Rose',            h: 346, s: 84  },
+  { label: 'Next Big Stone',  h: 45,  s: 12  },
 ]
 
 export const SECONDARY_PRESETS = [
@@ -27,6 +26,7 @@ export const SECONDARY_PRESETS = [
   { label: 'Teal',                  h: 174, s: 72  },
   { label: 'Sky',                   h: 204, s: 90  },
   { label: 'Violet',                h: 270, s: 76  },
+  { label: 'Next Pacific Blue',     h: 192, s: 100 },
 ]
 
 export const NEUTRAL_PRESETS = [
@@ -37,6 +37,7 @@ export const NEUTRAL_PRESETS = [
   { label: 'Pure Grey',           h: 0,   s: 0  },
   { label: 'Rose tint',           h: 346, s: 10 },
   { label: 'Green tint',          h: 152, s: 12 },
+  { label: 'Next Cool Navy-Tinted Grey', h: 205, s: 10 },
 ]
 
 export function applySeeds({ primary, secondary, neutral }) {
@@ -50,14 +51,20 @@ export function applySeeds({ primary, secondary, neutral }) {
 }
 
 export const BG_PRESETS = [
-  { label: 'None',          value: null },
-  { label: 'Boom Aura',   value: 'radial-gradient(ellipse at 15% 40%, hsl(var(--color-primary-h), 60%, 75%) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, hsl(var(--color-secondary-h), 60%, 78%) 0%, transparent 55%), var(--color-surface-subtle)' },
-  { label: 'Boom Orange',      value: 'linear-gradient(135deg, hsl(30, 80%, 92%) 0%, hsl(20, 70%, 88%) 50%, hsl(340, 60%, 90%) 100%)' },
-  { label: 'Boom Blue Glow',     value: 'radial-gradient(circle at 50% 0%, hsl(var(--color-primary-h), 70%, 82%) 0%, var(--color-surface-default) 65%)' },
-  { label: 'Smarter Mist',   value: 'linear-gradient(175deg, hsl(258, 26%, 95%) 0%, hsl(248, 36%, 91%) 18%, hsl(262, 20%, 95%) 34%, hsl(248, 34%, 90%) 50%, hsl(260, 24%, 94%) 66%, hsl(250, 32%, 91%) 82%, hsl(258, 18%, 96%) 100%)' },
-  { label: 'Indigo Haze',   value: 'radial-gradient(ellipse at 25% 25%, hsl(258, 38%, 86%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 44%, 88%) 0%, transparent 50%), var(--color-surface-subtle)' },
-  { label: 'Smarter Legacy',       value: "url('/app-bg-smarter.png') center / cover no-repeat" },
-  { label: 'Custom Image…', value: 'custom' },
+  { label: 'None',         value: null,      darkValue: null },
+  { label: 'Aura',         value: 'radial-gradient(ellipse at 15% 40%, hsl(var(--color-primary-h), 60%, 75%) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, hsl(var(--color-secondary-h), 60%, 78%) 0%, transparent 55%), var(--color-surface-subtle)',
+                            darkValue: 'radial-gradient(ellipse at 15% 40%, hsl(var(--color-primary-h), 40%, 20%) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, hsl(var(--color-secondary-h), 40%, 22%) 0%, transparent 55%), var(--color-surface-subtle)' },
+  { label: 'Boom Orange',  value: 'linear-gradient(135deg, hsl(30, 80%, 92%) 0%, hsl(20, 70%, 88%) 50%, hsl(340, 60%, 90%) 100%)',
+                            darkValue: 'linear-gradient(135deg, hsl(30, 50%, 14%) 0%, hsl(20, 40%, 11%) 50%, hsl(340, 35%, 13%) 100%)' },
+  { label: 'Boom Blue Glow', value: 'radial-gradient(circle at 50% 0%, hsl(var(--color-primary-h), 70%, 82%) 0%, var(--color-surface-default) 65%)',
+                              darkValue: 'radial-gradient(circle at 50% 0%, hsl(var(--color-primary-h), 50%, 22%) 0%, var(--color-surface-default) 65%)' },
+  { label: 'Smarter Mist', value: 'linear-gradient(175deg, hsl(258, 26%, 95%) 0%, hsl(248, 36%, 91%) 18%, hsl(262, 20%, 95%) 34%, hsl(248, 34%, 90%) 50%, hsl(260, 24%, 94%) 66%, hsl(250, 32%, 91%) 82%, hsl(258, 18%, 96%) 100%)',
+                            darkValue: 'linear-gradient(175deg, hsl(258, 18%, 12%) 0%, hsl(248, 25%, 16%) 18%, hsl(262, 14%, 12%) 34%, hsl(248, 22%, 15%) 50%, hsl(260, 16%, 12%) 66%, hsl(250, 20%, 15%) 82%, hsl(258, 12%, 12%) 100%)' },
+  { label: 'Indigo Haze',  value: 'radial-gradient(ellipse at 25% 25%, hsl(258, 38%, 86%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 44%, 88%) 0%, transparent 50%), var(--color-surface-subtle)',
+                            darkValue: 'radial-gradient(ellipse at 25% 25%, hsl(258, 28%, 20%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 34%, 22%) 0%, transparent 50%), var(--color-surface-subtle)' },
+  { label: 'Blue Purple',   value: 'linear-gradient(to right, #F1F7FF, #F1E8FF)',
+                            darkValue: 'linear-gradient(to right, hsl(214, 35%, 13%), hsl(280, 35%, 13%))' },
+  { label: 'Custom Image…', value: 'custom', darkValue: 'custom' },
 ]
 
 function isDarkMode() {
@@ -70,18 +77,21 @@ function isDarkMode() {
 export function applyBg(idx, url = '') {
   const el = document.documentElement
   const preset = BG_PRESETS[idx]
-  if (!preset || preset.value === null || isDarkMode()) {
+  const dark = isDarkMode()
+  const activeValue = dark ? preset?.darkValue : preset?.value
+
+  if (!activeValue) {
     el.style.removeProperty('--app-bg')
     el.style.removeProperty('--app-top-bg')
     el.style.removeProperty('--header-home-bg')
-  } else if (preset.value === 'custom') {
+  } else if (activeValue === 'custom') {
     if (url) {
       el.style.setProperty('--app-bg', `url('${url}') center / cover no-repeat`)
       el.style.setProperty('--app-top-bg', 'transparent')
       el.style.setProperty('--header-home-bg', 'transparent')
     }
   } else {
-    el.style.setProperty('--app-bg', preset.value)
+    el.style.setProperty('--app-bg', activeValue)
     el.style.setProperty('--app-top-bg', 'transparent')
     el.style.setProperty('--header-home-bg', 'transparent')
   }
@@ -196,6 +206,25 @@ export function loadFont() {
 
 export function saveFont(idx) {
   localStorage.setItem('brand-font', idx)
+}
+
+export const LOGO_PRESETS = [
+  { label: 'None',    src: null },
+  { label: 'Boom',    src: '/boom.svg' },
+  { label: 'Next',    src: '/logo-next.svg' },
+  { label: 'ASDA',    src: '/logo-asda.svg' },
+  { label: 'TUI',     src: '/logo-tui.svg' },
+  { label: 'Samsung', src: '/logo-samsung.svg' },
+  { label: 'ASOS',    src: '/logo-asos.svg' },
+]
+
+export function loadLogo() {
+  try { return Number(localStorage.getItem('brand-logo') || 1) }
+  catch { return 1 }
+}
+
+export function saveLogo(idx) {
+  localStorage.setItem('brand-logo', idx)
 }
 
 export function saveSeeds(indices) {

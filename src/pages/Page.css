@@ -120,7 +120,7 @@
 .anniv-name {
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-text-link);
+  color: var(--color-text-primary);
 }
 
 .anniv-date {

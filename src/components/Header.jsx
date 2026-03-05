@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Header.css'
+import { LOGO_PRESETS, loadLogo } from '../seeds.js'
 
 const BellIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -18,12 +19,13 @@ const CartIcon = () => (
 
 export default function Header({ title, isHome }) {
   const [hasNotif, setHasNotif] = useState(true)
+  const logoSrc = LOGO_PRESETS[loadLogo()]?.src
 
   return (
     <header className={`app-header ${isHome ? 'app-header--home' : ''}`}>
       {isHome ? (
         <div className="header-logo">
-          <img src="/boom.svg" alt="Boom" className="header-logo-img" />
+          {logoSrc && <img src={logoSrc} alt="Brand logo" className="header-logo-img" />}
         </div>
       ) : (
         <h2 className="header-title">{title}</h2>
