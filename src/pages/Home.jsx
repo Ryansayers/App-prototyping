@@ -51,7 +51,7 @@ function WorkAnniversaries() {
           </div>
         ))}
       </div>
-      <button className="anniv-btn">See more</button>
+      <button className="anniv-link">See more</button>
     </div>
   )
 }

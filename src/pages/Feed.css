@@ -135,7 +135,7 @@
 }
 
 .nc-body {
-  padding: 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -365,7 +365,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 14px 14px;
+  padding: 8px 16px 16px;
   border-top: var(--stroke-subtle) solid var(--color-border-default);
 }
 

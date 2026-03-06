@@ -89,6 +89,16 @@ const SAVINGS_FOR_YOU = [
     saveRate: '5%',
     desc: 'on all purchases in-store and online',
   },
+  {
+    id: 2,
+    image: '/deal-asda.jpg',
+    merchant: 'ASDA',
+    merchantBg: '#ffffff',
+    logo: '/logo-asda.svg',
+    normalRate: '3%',
+    saveRate: '7%',
+    desc: 'on groceries and George clothing in-store and online',
+  },
 ]
 
 export default function Shop() {
