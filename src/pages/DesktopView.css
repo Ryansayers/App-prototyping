@@ -167,6 +167,14 @@
 
 /* ── Component overrides inside desktop view ───────────────── */
 
+/* Side-by-side cards row in the main column */
+.dv-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
 /* Remove bottom margins that were designed for stacked mobile flow */
 .dv-col .benefits-card,
 .dv-col .anniv-card,

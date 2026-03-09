@@ -244,8 +244,10 @@ export default function DesktopView() {
           <WelcomeBannerSection />
           <div className="dv-grid">
             <div className="dv-col dv-col--main">
-              <MainCardSection />
-              <HeartCardSection />
+              <div className="dv-cards-row">
+                <MainCardSection />
+                <HeartCardSection />
+              </div>
               <VoiceCardSection />
             </div>
             <div className="dv-col dv-col--sidebar">
