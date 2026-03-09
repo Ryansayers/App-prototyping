@@ -177,6 +177,7 @@
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .rc-content {
@@ -196,10 +197,23 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--img-filter);
 }
 
-.rc--you {
+.rc--you::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
   border: var(--rc-you-stroke-width) solid var(--rc-you-stroke-color);
+  animation: rcYouPulse 2.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rcYouPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
 }
 
 .rc-header {
@@ -229,16 +243,28 @@
   border: var(--rc-avatar-stroke-width) solid var(--rc-avatar-stroke-color);
 }
 
+@keyframes avatarSlideFrom {
+  from { transform: translateX(9px); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes avatarSlideTo {
+  from { transform: translateX(-9px); }
+  to   { transform: translateX(0); }
+}
+
 .rc-avatar--from {
   left: 0;
   z-index: 2;
   border: none;
+  animation: avatarSlideFrom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .rc-avatar--to {
   left: 18px;
   z-index: 1;
   border: none;
+  animation: avatarSlideTo 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 .rc-meta {

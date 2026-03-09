@@ -7,7 +7,7 @@ import {
   applySeeds, saveSeeds, loadSeeds,
   BG_PRESETS, applyBg, loadBg, saveBg,
   applyTheme, loadTheme, saveTheme,
-  CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
+  CTA_ACTIVITY_PRESETS, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
   FONT_PRESETS, applyFont, loadFont, saveFont,
   LOGO_PRESETS, loadLogo, saveLogo,
 } from '../seeds.js'
@@ -122,10 +122,12 @@ export default function BrandTokens() {
   const [fontIdx, setFontIdx] = useState(() => loadFont())
   const [logoIdx, setLogoIdx] = useState(() => loadLogo() || 1)
 
-  const [discountIdx, setDiscountIdx] = useState(() => loadCardBg('discounts').idx)
-  const [discountUrl, setDiscountUrl] = useState(() => loadCardBg('discounts').url)
-  const [rewardsIdx,  setRewardsIdx]  = useState(() => loadCardBg('rewards').idx)
-  const [rewardsUrl,  setRewardsUrl]  = useState(() => loadCardBg('rewards').url)
+  const [discountIdx,  setDiscountIdx]  = useState(() => loadCardBg('discounts').idx)
+  const [discountUrl,  setDiscountUrl]  = useState(() => loadCardBg('discounts').url)
+  const [rewardsIdx,   setRewardsIdx]   = useState(() => loadCardBg('rewards').idx)
+  const [rewardsUrl,   setRewardsUrl]   = useState(() => loadCardBg('rewards').url)
+  const [activityIdx,  setActivityIdx]  = useState(() => loadCardBg('activity').idx)
+  const [activityUrl,  setActivityUrl]  = useState(() => loadCardBg('activity').url)
 
   useEffect(() => {
     applyFont(loadFont())
@@ -138,6 +140,8 @@ export default function BrandTokens() {
     applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS)
     const r = loadCardBg('rewards')
     applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
+    const a = loadCardBg('activity')
+    applyCardBg('--activity-bg', a.idx, a.url, CTA_ACTIVITY_PRESETS)
   }, [])
 
   function handleLogoChange(i) {
@@ -179,6 +183,18 @@ export default function BrandTokens() {
     setRewardsUrl(url)
     saveCardBg('rewards', rewardsIdx, url)
     applyCardBg('--cta-rewards-bg', rewardsIdx, url, CTA_REWARDS_PRESETS)
+  }
+
+  function handleActivityChange(i) {
+    setActivityIdx(i)
+    saveCardBg('activity', i, activityUrl)
+    applyCardBg('--activity-bg', i, activityUrl, CTA_ACTIVITY_PRESETS)
+  }
+
+  function handleActivityUrl(url) {
+    setActivityUrl(url)
+    saveCardBg('activity', activityIdx, url)
+    applyCardBg('--activity-bg', activityIdx, url, CTA_ACTIVITY_PRESETS)
   }
 
   function handleBgChange(i) {
@@ -648,6 +664,22 @@ export default function BrandTokens() {
               {CTA_REWARDS_PRESETS[rewardsIdx]?.value === 'custom' && (
                 <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
                   value={rewardsUrl} onChange={e => handleRewardsUrl(e.target.value)} />
+              )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Wellbeing activity card</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'var(--activity-bg)' }} />
+                <select className="bt-select" value={activityIdx} onChange={e => handleActivityChange(Number(e.target.value))}>
+                  {CTA_ACTIVITY_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+              {CTA_ACTIVITY_PRESETS[activityIdx]?.value === 'custom' && (
+                <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
+                  value={activityUrl} onChange={e => handleActivityUrl(e.target.value)} />
               )}
             </div>
           </div>

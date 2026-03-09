@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './Page.css'
 
 const WELLBEING_ACTIVITIES = [
@@ -86,11 +87,36 @@ const GOALS = [
   },
 ]
 
-function ProgressBar({ current, target, color }) {
+function ProgressBar({ current, target, delay = 50 }) {
   const pct = Math.min(Math.round((current / target) * 100), 100)
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    const id = setTimeout(() => setWidth(pct), delay)
+    return () => clearTimeout(id)
+  }, [])
+
   return (
     <div className="goal-bar-track">
-      <div className="goal-bar-fill" style={{ width: `${pct}%` }} />
+      <div className="goal-bar-fill" style={{ width: `${width}%` }} />
+    </div>
+  )
+}
+
+function ActivityTracker() {
+  return (
+    <div className="activity-card">
+      <p className="activity-title">Steps</p>
+      <p className="activity-date">Wed, Oct 17</p>
+      <p className="activity-count">10,023</p>
+      <p className="activity-sync">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M23 4v6h-6M1 20v-6h6" />
+          <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+        </svg>
+        Last synced about 20 min ago
+      </p>
+      <button className="activity-add">Add activity</button>
     </div>
   )
 }
@@ -101,6 +127,8 @@ export default function Profile() {
       <div className="avatar">RS</div>
       <p className="avatar-name">Ryan Sayers</p>
       <p className="page-subtitle">ryan@example.com</p>
+
+      <ActivityTracker />
 
       <div className="section-header">
         <h2 className="section-heading" style={{ margin: 0 }}>Continue Wellbeing</h2>
@@ -141,7 +169,7 @@ export default function Profile() {
 
       <h2 className="section-heading">Goals &amp; Challenges</h2>
       <div className="goal-list">
-        {GOALS.map((goal) => {
+        {GOALS.map((goal, i) => {
           const pct = Math.min(Math.round((goal.current / goal.target) * 100), 100)
           return (
             <div key={goal.id} className="goal-card">
@@ -152,7 +180,7 @@ export default function Profile() {
                 </div>
                 <span className="goal-pct">{pct}%</span>
               </div>
-              <ProgressBar current={goal.current} target={goal.target} color={goal.color} />
+              <ProgressBar current={goal.current} target={goal.target} delay={50 + i * 150} />
               <div className="goal-footer">
                 <span className="goal-current">
                   {['$', '£'].includes(goal.unit) ? `${goal.unit}${goal.current.toLocaleString()}` : `${goal.current.toLocaleString()} ${goal.unit}`}

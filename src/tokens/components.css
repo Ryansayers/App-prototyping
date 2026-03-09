@@ -146,12 +146,14 @@
   --cta-carousel-radius:           var(--radius-card-lg);
   --cta-card-radius:               var(--radius-card-lg);
   --cta-color:                     #000000;
+  --cta-img-opacity:               0;
   --cta-bar-track-bg:              rgba(0, 0, 0, 0.12);
   --cta-bar-fill-bg:               rgba(0, 0, 0, 0.35);
   --cta-btn-bg:                    rgba(0, 0, 0, 0.12);
   --cta-btn-radius:                var(--radius-control);
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
   --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-100) 0%, var(--color-secondary-300) 100%);
+  --activity-bg:                   linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%);
 
   /* ── Shop ── */
   --shop-card-bg:                  var(--color-surface-subtle);
@@ -212,4 +214,6 @@
   --save-btn-color:         #ffffff;
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-900) 100%);
   --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-700) 0%, var(--color-secondary-900) 100%);
+  --activity-bg:                   linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
+  --cta-img-opacity:               0.35;
 }

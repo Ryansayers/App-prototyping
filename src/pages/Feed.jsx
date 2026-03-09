@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import './Page.css'
 import './Feed.css'
+import content from '../content.json'
+import { loadScheme } from '../seeds.js'
+
+const { news: NEWS, recognition: RECOGNITION } = loadScheme(content).feed
 
 const TAG_GRADIENTS = {
   'Your Team':       'linear-gradient(135deg, #6366f1, #8b5cf6)',
@@ -9,162 +13,6 @@ const TAG_GRADIENTS = {
   'People & Culture':'linear-gradient(135deg, #f59e0b, #ec4899)',
 }
 
-
-const NEWS = [
-  {
-    id: 'n1',
-    type: 'news',
-    tag: 'Your Team',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop',
-    title: 'Design System v2.0 launched',
-    body: 'The new component library is live. All product teams are encouraged to migrate by end of Q2.',
-    time: '2m ago',
-    relevant: true,
-    likes: 7,
-    comments: 3,
-  },
-  {
-    id: 'n2',
-    type: 'news',
-    tag: 'Company',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop',
-    title: 'Q1 All-Hands recap',
-    body: 'CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.',
-    time: '1h ago',
-    relevant: true,
-    likes: 16,
-    comments: 7,
-  },
-  {
-    id: 'n3',
-    type: 'news',
-    tag: 'Engineering',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop',
-    title: 'New CI/CD pipeline rollout',
-    body: 'Build times are down 40% following last week\'s infrastructure upgrade across all repos.',
-    time: '3h ago',
-    relevant: true,
-    likes: 8,
-    comments: 2,
-  },
-  {
-    id: 'n4',
-    type: 'news',
-    tag: 'Company',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop',
-    title: 'Office expansion — Austin TX',
-    body: 'We\'re opening a new office in Austin this summer. Applications for relocation packages are now open.',
-    time: '1d ago',
-    relevant: false,
-    likes: 6,
-    comments: 5,
-  },
-  {
-    id: 'n5',
-    type: 'news',
-    tag: 'People & Culture',
-    image: 'https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop',
-    title: 'Updated hybrid work policy',
-    body: 'Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.',
-    time: '2d ago',
-    relevant: false,
-    likes: 9,
-    comments: 4,
-  },
-]
-
-const RECOGNITION = [
-  {
-    id: 'r1',
-    type: 'recognition',
-    image: '/rc-header-1.jpg',
-    from: 'Sarah Chen',
-    fromRole: 'CEO',
-    fromInitials: 'SC',
-    fromColour: '#0ea5e9',
-    to: 'Ryan Sayers',
-    toInitials: 'RS',
-    toColour: '#F72717',
-    value: 'Innovation',
-    message: 'Ryan shipped the new mobile design system ahead of schedule — the whole company benefits from this work. Incredible effort!',
-    time: '5m ago',
-    isYou: true,
-    likes: 23,
-    comments: 6,
-  },
-  {
-    id: 'r2',
-    type: 'recognition',
-    image: '/rc-header-2.jpg',
-    from: 'Marcus Lee',
-    fromRole: 'Engineering Lead',
-    fromInitials: 'ML',
-    fromColour: '#10b981',
-    to: 'Priya Patel',
-    toInitials: 'PP',
-    toColour: '#f59e0b',
-    value: 'Collaboration',
-    message: 'Priya jumped in to unblock three different teams this sprint without being asked. True team player.',
-    time: '45m ago',
-    isYou: false,
-    likes: 12,
-    comments: 3,
-  },
-  {
-    id: 'r3',
-    type: 'recognition',
-    image: '/rc-header-3.png',
-    from: 'Jess Wu',
-    fromRole: 'Product Manager',
-    fromInitials: 'JW',
-    fromColour: '#ec4899',
-    to: 'Ryan Sayers',
-    toInitials: 'RS',
-    toColour: '#F72717',
-    value: 'Customer Focus',
-    message: 'The UX improvements Ryan made based on user feedback reduced drop-off by 22%. Outstanding work.',
-    time: '2h ago',
-    isYou: true,
-    likes: 19,
-    comments: 4,
-  },
-  {
-    id: 'r4',
-    type: 'recognition',
-    image: '/rc-header-4.jpg',
-    from: 'Tom Briggs',
-    fromRole: 'Head of Sales',
-    fromInitials: 'TB',
-    fromColour: '#f97316',
-    to: 'Anika Sharma',
-    toInitials: 'AS',
-    toColour: '#8b5cf6',
-    value: 'Excellence',
-    message: 'Anika closed our biggest enterprise deal of the year. Flawless execution from first call to contract.',
-    time: '5h ago',
-    isYou: false,
-    likes: 25,
-    comments: 9,
-  },
-  {
-    id: 'r5',
-    type: 'recognition',
-    image: '/rc-header-1.jpg',
-    from: 'Priya Patel',
-    fromRole: 'Senior Engineer',
-    fromInitials: 'PP',
-    fromColour: '#f59e0b',
-    to: 'Ryan Sayers',
-    toInitials: 'RS',
-    toColour: '#F72717',
-    value: 'Teamwork',
-    message: 'Ryan\'s thorough code reviews have made our whole codebase healthier. Always constructive and helpful.',
-    time: '1d ago',
-    isYou: true,
-    likes: 19,
-    comments: 5,
-  },
-]
 
 const VALUE_COLOURS = {
   Innovation:       { bg: '#ede9fe', text: '#7c3aed' },
@@ -302,7 +150,6 @@ function FeedItem({ item, saved, onSave }) {
 export default function Feed() {
   const [tab, setTab] = useState('all')
   const [savedIds, setSavedIds] = useState(new Set())
-
   const toggleSave = (id) => {
     setSavedIds((prev) => {
       const next = new Set(prev)

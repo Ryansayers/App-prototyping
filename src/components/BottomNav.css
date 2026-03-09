@@ -28,6 +28,18 @@
   color: var(--nav-item-active-color);
 }
 
+@keyframes navIconBounce {
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-4px); }
+  70%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+}
+
+.nav-item.active .nav-icon,
+.nav-item.active .nav-avatar {
+  animation: navIconBounce 0.38s ease-out both;
+}
+
 .nav-icon {
   width: 24px;
   height: 24px;

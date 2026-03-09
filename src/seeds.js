@@ -64,6 +64,8 @@ export const BG_PRESETS = [
                             darkValue: 'radial-gradient(ellipse at 25% 25%, hsl(258, 28%, 20%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 34%, 22%) 0%, transparent 50%), var(--color-surface-subtle)' },
   { label: 'Blue Purple',   value: 'linear-gradient(to right, #F1F7FF, #F1E8FF)',
                             darkValue: 'linear-gradient(to right, hsl(214, 35%, 13%), hsl(280, 35%, 13%))' },
+  { label: 'Wellbeing',     value: 'linear-gradient(150deg, hsl(152, 55%, 90%) 0%, hsl(198, 60%, 88%) 50%, hsl(265, 48%, 91%) 100%)',
+                            darkValue: 'linear-gradient(150deg, hsl(152, 30%, 11%) 0%, hsl(198, 35%, 13%) 50%, hsl(265, 28%, 12%) 100%)' },
   { label: 'Custom Image…', value: 'custom', darkValue: 'custom' },
 ]
 
@@ -123,6 +125,19 @@ const CTA_SHARED_PRESETS = [
   { label: 'Custom Image…',value: 'custom' },
 ]
 
+export const CTA_ACTIVITY_PRESETS = [
+  { label: 'None',           value: null },
+  { label: 'Soft Secondary', value: 'linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%)' },
+  { label: 'Soft Primary',   value: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)' },
+  { label: 'Peach',          value: 'linear-gradient(135deg, #fde8e4 0%, #fcd0ca 100%)' },
+  { label: 'Sky',            value: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)' },
+  { label: 'Mint',           value: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)' },
+  { label: 'Lemon',          value: 'linear-gradient(135deg, #fefce8 0%, #fef08a 100%)' },
+  { label: 'Lavender',       value: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)' },
+  { label: 'Rose',           value: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)' },
+  { label: 'Custom Image…',  value: 'custom' },
+]
+
 export const CTA_DISCOUNTS_PRESETS = [
   ...CTA_SHARED_PRESETS.slice(0, 1),
   { label: 'Smarter Legacy',      value: "url('/card-bg-smarter.png') center / cover no-repeat" },
@@ -177,6 +192,8 @@ export function applyTheme(theme) {
   applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS)
   const r = loadCardBg('rewards')
   applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
+  const a = loadCardBg('activity')
+  applyCardBg('--activity-bg', a.idx, a.url, CTA_ACTIVITY_PRESETS)
 }
 
 export function loadTheme() {
@@ -209,9 +226,10 @@ export function saveFont(idx) {
 }
 
 export const LOGO_PRESETS = [
-  { label: 'None',    src: null },
-  { label: 'Boom',    src: '/boom.svg' },
-  { label: 'Next',    src: '/logo-next.svg' },
+  { label: 'None',        src: null },
+  { label: 'Boom',        src: '/boom.svg' },
+  { label: 'Next',        src: '/logo-next.svg' },
+  { label: 'Paul Smith',  src: '/logo-paul-smith.svg' },
 ]
 
 export function loadLogo() {
@@ -221,6 +239,12 @@ export function loadLogo() {
 
 export function saveLogo(idx) {
   localStorage.setItem('brand-logo', idx)
+}
+
+export function loadScheme(content) {
+  const logoIdx = loadLogo()
+  const key = (LOGO_PRESETS[logoIdx]?.label || 'boom').toLowerCase()
+  return content.schemes[key] || content.schemes.boom
 }
 
 export function saveSeeds(indices) {

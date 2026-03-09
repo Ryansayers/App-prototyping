@@ -77,6 +77,9 @@
   --shadow-card:               none;
   --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.2);
   --shadow-progress-track:     var(--color-neutral-200);
+
+  /* ── Image contrast ── */
+  --img-filter:                none;
 }
 
 /* =============================================================
@@ -103,8 +106,10 @@
     --color-border-strong:       rgba(255, 255, 255, 0.18);
     --color-border-brand-tint:   var(--color-primary-800);
     --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
-    --shadow-progress-track:     var(--color-neutral-700);
+    --shadow-progress-track:     rgba(255, 255, 255, 0.1);
     --color-text-link:           var(--color-primary-300);
+    --img-filter:                brightness(0.8) contrast(1.05);
+    --cta-img-opacity:           0.35;
   }
 }
 
@@ -129,6 +134,7 @@
     --color-border-brand-tint:   var(--color-primary-100);
     --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.2);
     --shadow-progress-track:     var(--color-neutral-200);
+    --img-filter:                none;
 }
 
 :root[data-theme="dark"] {
@@ -150,6 +156,7 @@
     --color-border-strong:       rgba(255, 255, 255, 0.18);
     --color-border-brand-tint:   var(--color-primary-800);
     --shadow-app-shell:          0 20px 60px rgba(0, 0, 0, 0.6);
-    --shadow-progress-track:     var(--color-neutral-700);
+    --shadow-progress-track:     rgba(255, 255, 255, 0.1);
     --color-text-link:           var(--color-primary-300);
+    --img-filter:                brightness(0.8) contrast(1.05);
 }

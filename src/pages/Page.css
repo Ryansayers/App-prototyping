@@ -148,6 +148,69 @@
   cursor: pointer;
 }
 
+/* Activity Tracker */
+.activity-card {
+  background: var(--activity-bg);
+  border-radius: var(--cta-card-radius, 16px);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--cta-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.activity-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.activity-date {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.activity-count {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 8px 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.activity-sync {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.activity-sync svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.activity-add {
+  margin-top: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Benefits CTA */
 .benefits-card {
   background: var(--card-bg);
@@ -162,6 +225,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
+  filter: var(--img-filter);
 }
 
 .benefits-body {
@@ -456,6 +520,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--img-filter);
 }
 
 .wb-completed-badge {
@@ -656,7 +721,7 @@
   height: 100%;
   border-radius: 99px;
   background: var(--goal-bar-fill);
-  transition: width 0.4s ease;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .goal-footer {
@@ -701,6 +766,27 @@
   flex-direction: column;
   gap: 4px;
   color: var(--cta-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: var(--cta-img-opacity, 0);
+  filter: var(--img-filter);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta-card > *:not(.cta-card-bg-img) {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-discounts {
@@ -776,6 +862,7 @@
   height: 100%;
   background: var(--cta-bar-fill-bg);
   border-radius: 99px;
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cta-bar-footer {
@@ -846,6 +933,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--img-filter);
 }
 
 .deal-merchant {
@@ -940,6 +1028,7 @@
   object-fit: cover;
   object-position: center bottom;
   display: block;
+  filter: var(--img-filter);
 }
 
 .discover-body {
@@ -990,6 +1079,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--img-filter);
 }
 
 .spotlight-logo-badge {
