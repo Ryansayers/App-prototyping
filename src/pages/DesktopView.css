@@ -152,10 +152,10 @@
   margin: 0;
 }
 
-/* ── 3-column grid ─────────────────────────────────────────── */
+/* ── 2-column asymmetric grid (2fr sidebar 1fr) ────────────── */
 .dv-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr;
   gap: 24px;
   align-items: start;
 }
@@ -163,8 +163,7 @@
 .dv-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
+  gap: 20px;}
 
 /* ── Component overrides inside desktop view ───────────────── */
 
@@ -185,9 +184,9 @@
   margin-top: 0;
 }
 
-/* Discover cards at 80% width so you see the peek of the next card */
-.dv-col .discover-card {
-  flex: 0 0 80%;
+/* Discover cards — peek the next card */
+.dv-col--sidebar .discover-card {
+  flex: 0 0 75%;
 }
 
 /* ── Responsive fallback ───────────────────────────────────── */

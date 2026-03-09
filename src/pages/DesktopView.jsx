@@ -243,16 +243,14 @@ export default function DesktopView() {
         <div className="dv-page">
           <WelcomeBannerSection />
           <div className="dv-grid">
-            <div className="dv-col">
-              <RecognitionNudgeSection />
-              <WorkAnniversariesSection />
-            </div>
-            <div className="dv-col">
+            <div className="dv-col dv-col--main">
               <MainCardSection />
               <HeartCardSection />
-            </div>
-            <div className="dv-col">
               <VoiceCardSection />
+            </div>
+            <div className="dv-col dv-col--sidebar">
+              <RecognitionNudgeSection />
+              <WorkAnniversariesSection />
               <DiscoverSection />
               <QuickLinksSection />
             </div>
