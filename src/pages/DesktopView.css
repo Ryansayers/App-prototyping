@@ -1,0 +1,211 @@
+/* =============================================================
+   DESKTOP VIEW — /desktop-view
+   Standalone full-page layout. All classes prefixed dv- to
+   avoid collision with the mobile app styles.
+   ============================================================= */
+
+/* ── Root ──────────────────────────────────────────────────── */
+.dv-root {
+  min-height: 100vh;
+  background: var(--color-bg-page);
+  font-family: var(--font-body, 'Ubuntu', sans-serif);
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+.dv-header {
+  background: var(--header-home-bg);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dv-header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dv-logo-img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+:root[data-theme="dark"] .dv-logo-img,
+:root[data-theme="light"] .dv-logo-img { filter: none; }
+:root[data-theme="dark"] .dv-logo-img  { filter: brightness(0) invert(1); }
+
+.dv-logo-word {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--header-logo-word-color);
+}
+
+/* Nav tabs */
+.dv-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.dv-nav-item {
+  padding: 8px 18px;
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-title-color);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.dv-nav-item:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.dv-nav-item--active {
+  opacity: 1;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Header action buttons */
+.dv-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dv-icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--header-icon-btn-radius, 50%);
+  border: none;
+  background: var(--header-icon-btn-bg);
+  color: var(--header-icon-btn-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.dv-icon-btn:hover {
+  background: var(--header-icon-btn-hover-bg);
+  color: var(--header-icon-btn-hover-color);
+}
+
+.dv-icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dv-notif-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--header-notif-dot-bg);
+  border: var(--header-notif-dot-stroke-width) solid var(--header-notif-dot-stroke-color);
+}
+
+/* ── Main content ──────────────────────────────────────────── */
+.dv-main {
+  flex: 1;
+  padding: 40px 24px 64px;
+}
+
+.dv-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Welcome banner: full-width above the grid */
+.dv-banner-full {
+  width: 100%;
+}
+
+.dv-subtitle {
+  margin: 0;
+}
+
+/* ── 3-column grid ─────────────────────────────────────────── */
+.dv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.dv-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Component overrides inside desktop view ───────────────── */
+
+/* Remove bottom margins that were designed for stacked mobile flow */
+.dv-col .benefits-card,
+.dv-col .anniv-card,
+.dv-col .rec-nudge {
+  margin-bottom: 0;
+}
+
+/* Slightly taller images in the wider columns */
+.dv-col .benefits-img {
+  height: 200px;
+}
+
+/* section-heading inside dv-col needs no top margin */
+.dv-col .section-heading {
+  margin-top: 0;
+}
+
+/* Discover cards at 80% width so you see the peek of the next card */
+.dv-col .discover-card {
+  flex: 0 0 80%;
+}
+
+/* ── Responsive fallback ───────────────────────────────────── */
+/* Below 900px collapse to 1 column (edge case — page is meant for desktop) */
+@media (max-width: 900px) {
+  .dv-header {
+    padding: 0 24px;
+  }
+
+  .dv-nav {
+    display: none;
+  }
+
+  .dv-main {
+    padding: 24px 16px 48px;
+  }
+
+  .dv-grid {
+    grid-template-columns: 1fr;
+  }
+}
