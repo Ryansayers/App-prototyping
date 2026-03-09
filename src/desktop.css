@@ -1,0 +1,171 @@
+/* =============================================================
+   DESKTOP LAYOUT — ≥ 1024 px
+   Removes the phone frame, collapses bottom nav into a left
+   sidebar, and reflows the Home page into a two-column grid.
+   All other pages keep their single-column flow.
+   ============================================================= */
+
+@media (min-width: 1024px) {
+
+  /* ── App shell ── */
+  #root {
+    align-items: stretch;
+    min-height: 100dvh;
+  }
+
+  .app {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  /* ── Hide mobile-only chrome ── */
+  .status-bar { display: none; }
+  .fab        { display: none; }
+
+  /* ── Left sidebar nav ── */
+  .bottom-nav {
+    order: -1;
+    flex-shrink: 0;
+    width: 220px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 32px 12px;
+    gap: 4px;
+    border-right: 1px solid var(--color-border-default);
+    border-top: none;
+    background: var(--color-surface-default);
+    overflow-y: auto;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex: none;
+    gap: 12px;
+    padding: 11px 16px;
+    border-radius: var(--radius-control);
+    height: auto;
+  }
+
+  .nav-item.active {
+    background: var(--color-surface-brand-tint);
+  }
+
+  .nav-item.active .nav-icon,
+  .nav-item.active .nav-avatar {
+    animation: none;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .nav-label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .nav-item.active .nav-label {
+    font-weight: 600;
+  }
+
+  /* ── Main content column ── */
+  .content {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header / app-top ── */
+  .app-top {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  .app-header {
+    padding: 16px 48px;
+    min-height: 64px;
+  }
+
+  /* ── Generic page padding on desktop ── */
+  .page {
+    padding: 32px 48px 64px;
+  }
+
+  /* =============================================================
+     HOME PAGE — 2-column grid
+     Left (1fr)   : main content cards (benefits / heart / voice)
+     Right (380px): supplementary cards (nudge, anniv, discover)
+     ============================================================= */
+
+  .page--home {
+    max-width: 1410px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  /* Full-width: banner / subtitle row */
+  .page--home .welcome-banner,
+  .page--home .page-subtitle {
+    grid-column: 1 / -1;
+  }
+
+  /* Left column: main content cards */
+  .page--home .benefits-card {
+    grid-column: 1;
+  }
+
+  .page--home .benefits-img {
+    height: 220px;
+  }
+
+  /* Right column */
+  .page--home .rec-nudge       { grid-column: 2; }
+  .page--home .anniv-card      { grid-column: 2; }
+  .page--home .section-heading { grid-column: 2; margin-top: 0; }
+  .page--home .discover-carousel { grid-column: 2; }
+  .page--home .card-list       { grid-column: 2; }
+}
+
+/* =============================================================
+   WIDE — ≥ 1410 px
+   Nudge the sidebar slightly wider and let the content breathe.
+   ============================================================= */
+
+@media (min-width: 1410px) {
+  .bottom-nav {
+    width: 260px;
+  }
+
+  .app-header {
+    padding: 20px 64px;
+  }
+
+  .page {
+    padding: 40px 64px 80px;
+  }
+
+  .page--home {
+    grid-template-columns: 1fr 420px;
+    column-gap: 32px;
+  }
+}
