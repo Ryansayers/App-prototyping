@@ -200,6 +200,7 @@
           "color": "#22c55e"
         },
         "savedRetailers": [
+          { "id": 0, "name": "Sony",    "logo": "/logo-sony.svg",    "bg": "#ffffff" },
           { "id": 1, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" },
           { "id": 2, "name": "TUI",     "logo": "/logo-tui.svg",     "bg": "#ffffff" },
           { "id": 3, "name": "Samsung", "logo": "/logo-samsung.svg", "bg": "#ffffff" },
@@ -225,11 +226,11 @@
           },
           {
             "id": 3,
-            "image": "/spotlight-currys.jpg",
-            "logo": "/logo-asos.svg",
-            "logoBg": "#2d2d2d",
-            "title": "Currys",
-            "desc": "20% off online at tech"
+            "image": "/shop-currys-samsung.webp",
+            "logo": "/logo-samsung.svg",
+            "logoBg": "#ffffff",
+            "title": "Samsung",
+            "desc": "20% off Galaxy S26 Ultra"
           },
           {
             "id": 4,
@@ -594,29 +595,42 @@
     },
     "paul smith": {
       "home": {
-        "benefitsCTA": {
-          "image": "/benefits-hero.png",
-          "title": "Your Benefits",
-          "text": "From generous staff discounts on collections to creative sabbaticals — discover the full range of benefits available to you.",
-          "ctaLabel": "Explore your benefits"
+        "welcomeBanner": {
+          "eyebrow": "WELCOME",
+          "tagline": "Stay connected with all the latest happenings here at",
+          "brandName": "The House",
+          "headline": "hello!"
+        },
+        "infoCard": {
+          "image": "/ps-benefits.jpg",
+          "imagePosition": "right center",
+          "title": "Company information and history",
+          "ctaLabel": "View History"
         },
         "heartCard": {
-          "image": "/heart-hero.png",
-          "title": "Classic with a Twist",
+          "image": "/ps-values.jpg",
+          "imagePosition": "center bottom",
+          "title": "Our Values",
           "text": "Curiosity, Craftsmanship, Colour and Character — the principles that make Paul Smith unique and guide everything we create together."
         },
+        "voiceCard": {
+          "image": "/ps-voice.jpg",
+          "imagePosition": "center bottom",
+          "title": "We would love to hear your voice",
+          "text": "You've got the right attitude, know-how and you've got a personality that shines. You won't accept anything less than a great place to work."
+        },
         "anniversaries": [
-          { "id": 1, "name": "Isabelle Moreau",  "initials": "IM", "colour": "#3b82f6", "date": "4 Mar",  "years": 2 },
-          { "id": 2, "name": "George Whitfield",  "initials": "GW", "colour": "#10b981", "date": "10 Mar", "years": 6 },
-          { "id": 3, "name": "Yuki Tanaka",        "initials": "YT", "colour": "#f59e0b", "date": "15 Mar", "years": 1 },
-          { "id": 4, "name": "Camille Dubois",     "initials": "CD", "colour": "#ec4899", "date": "22 Mar", "years": 4 },
-          { "id": 5, "name": "Oliver Nash",        "initials": "ON", "colour": "#f97316", "date": "29 Mar", "years": 9 }
+          { "id": 1, "name": "Isabelle Moreau",  "initials": "IM", "colour": "#009aa0", "date": "4 Mar",  "years": 2 },
+          { "id": 2, "name": "George Whitfield",  "initials": "GW", "colour": "#e8920a", "date": "10 Mar", "years": 6 },
+          { "id": 3, "name": "Yuki Tanaka",        "initials": "YT", "colour": "#f05550", "date": "15 Mar", "years": 1 },
+          { "id": 4, "name": "Camille Dubois",     "initials": "CD", "colour": "#452848", "date": "22 Mar", "years": 4 },
+          { "id": 5, "name": "Oliver Nash",        "initials": "ON", "colour": "#7898a8", "date": "29 Mar", "years": 9 }
         ],
         "discover": [
-          { "id": 1, "title": "Speak Up",          "image": "/discover-speak-up.png"  },
-          { "id": 2, "title": "Our Story",          "image": "/discover-our-brand.png" },
-          { "id": 3, "title": "Internal Vacancies", "image": "/discover-vacancies.png" },
-          { "id": 4, "title": "Our Strategy",       "image": "/discover-strategy.png"  }
+          { "id": 1, "title": "People Spotlight",   "image": "/ps-people-spotlight.jpg", "imagePosition": "center top" },
+          { "id": 2, "title": "People News",         "image": "/ps-people-news.jpg" },
+          { "id": 3, "title": "Pathways to Sustainability", "image": "/ps-sustainability.jpg", "imagePosition": "center top" },
+          { "id": 4, "title": "Archives",            "image": "/ps-archive.jpg", "imagePosition": "center top" }
         ],
         "cards": [
           { "id": 1, "title": "Pay & Benefits",      "desc": "Payslips, allowances & perks" },
@@ -629,76 +643,88 @@
           {
             "id": "n1",
             "type": "news",
-            "tag": "Collections",
-            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
-            "title": "AW25 collection unveiled in Paris",
-            "body": "Our autumn/winter 2025 collection debuted at Paris Fashion Week to critical acclaim. Bold stripes, unexpected colour pairings and sharp tailoring led the show.",
-            "time": "30m ago",
+            "tag": "Collaboration",
+            "image": "/ps-news-barbour.jpg",
+            "title": "Paul Smith loves Barbour",
+            "body": "Our latest collaboration with Barbour is here. Classic British outerwear meets Paul Smith's signature colour and wit — the capsule collection is available now in all flagships.",
+            "time": "1h ago",
             "relevant": true,
-            "likes": 48,
-            "comments": 12
+            "likes": 54,
+            "comments": 14
           },
           {
             "id": "n2",
             "type": "news",
-            "tag": "Company",
-            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop",
-            "title": "Covent Garden flagship reopens",
-            "body": "Following a full redesign, our Covent Garden store reopens this week with an expanded accessories floor and a new made-to-measure studio.",
-            "time": "2h ago",
+            "tag": "Events",
+            "image": "/ps-news-coachella.jpg",
+            "title": "Paul Smith at Coachella 2025",
+            "body": "Our SS25 looks made their festival debut at Coachella this year. Relaxed tailoring, natural tones and that unmistakable Paul Smith ease — dressed for the desert.",
+            "time": "3h ago",
             "relevant": true,
-            "likes": 29,
-            "comments": 8
+            "likes": 41,
+            "comments": 9
           },
           {
             "id": "n3",
             "type": "news",
-            "tag": "Sustainability",
-            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop",
-            "title": "Responsible wool standard certified",
-            "body": "All Paul Smith wool products now carry RWS certification as part of our ongoing commitment to responsible sourcing.",
-            "time": "4h ago",
+            "tag": "Seasonal",
+            "image": "/ps-news-easter.jpg",
+            "title": "Our signature Easter egg returns",
+            "body": "The iconic Paul Smith houndstooth Easter egg is back for 2025. Hand-crafted in Belgium and filled with speckled mini eggs — a classic with a twist, as always.",
+            "time": "5h ago",
             "relevant": true,
-            "likes": 19,
-            "comments": 3
+            "likes": 67,
+            "comments": 21
           },
           {
             "id": "n4",
             "type": "news",
-            "tag": "Retail",
-            "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
-            "title": "New Tokyo flagship confirmed",
-            "body": "We're opening a four-storey flagship in Aoyama, Tokyo later this year — our largest store in Asia to date.",
+            "tag": "Art & Culture",
+            "image": "/ps-news-bear.jpg",
+            "title": "Colour, character and curiosity",
+            "body": "Our latest Artist in Residence commission explores the intersection of wildlife and abstract colour — bold, playful and unmistakably Paul Smith. On display in our Albemarle Street store now.",
             "time": "1d ago",
-            "relevant": false,
-            "likes": 37,
-            "comments": 11
+            "relevant": true,
+            "likes": 38,
+            "comments": 7
           },
           {
             "id": "n5",
             "type": "news",
-            "tag": "People & Culture",
-            "image": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop",
-            "title": "Creative sabbatical programme launches",
-            "body": "From Q2, all colleagues with 3+ years service can apply for a four-week paid creative sabbatical to pursue a passion project.",
+            "tag": "Retail",
+            "image": "/ps-news-store.jpg",
+            "title": "More upstairs — Albemarle Street refresh",
+            "body": "Our Mayfair flagship has a new look. Explore the expanded accessories and archive floor, featuring curated art, leather goods and a rotating selection of rare Paul Smith pieces.",
             "time": "2d ago",
             "relevant": false,
-            "likes": 52,
-            "comments": 18
+            "likes": 29,
+            "comments": 6
+          },
+          {
+            "id": "n6",
+            "type": "news",
+            "tag": "Industry",
+            "image": "/ps-news-vogue.jpg",
+            "title": "Paul Smith meets Anna Wintour at NYFW",
+            "body": "Paul joined Anna Wintour and Vogue's creative leadership at New York Fashion Week this season — a landmark moment celebrating 50 years of Paul Smith in fashion.",
+            "time": "3d ago",
+            "relevant": false,
+            "likes": 93,
+            "comments": 31
           }
         ],
         "recognition": [
           {
             "id": "r1",
             "type": "recognition",
-            "image": "/rc-header-1.jpg",
+            "image": "/ps-rc-anniversary.jpg",
             "from": "Paul Smith",
             "fromRole": "Founder & Chairman",
             "fromInitials": "PS",
-            "fromColour": "#0ea5e9",
+            "fromColour": "#e8920a",
             "to": "Ryan Sayers",
             "toInitials": "RS",
-            "toColour": "#F72717",
+            "toColour": "#009aa0",
             "value": "Innovation",
             "message": "Ryan brought real creative rigour to the digital collection experience. Exactly the kind of thinking that keeps Paul Smith ahead.",
             "time": "5m ago",
@@ -709,14 +735,14 @@
           {
             "id": "r2",
             "type": "recognition",
-            "image": "/rc-header-2.jpg",
+            "image": "/ps-rc-birthday.jpg",
             "from": "George Whitfield",
             "fromRole": "Creative Director",
             "fromInitials": "GW",
-            "fromColour": "#10b981",
+            "fromColour": "#7898a8",
             "to": "Yuki Tanaka",
             "toInitials": "YT",
-            "toColour": "#f59e0b",
+            "toColour": "#f05550",
             "value": "Collaboration",
             "message": "Yuki's coordination between Tokyo and London meant the Aoyama fit-out stayed on time and on brand. Exceptional work.",
             "time": "1h ago",
@@ -727,14 +753,14 @@
           {
             "id": "r3",
             "type": "recognition",
-            "image": "/rc-header-3.png",
+            "image": "/ps-rc-thankyou-pink.jpg",
             "from": "Camille Dubois",
             "fromRole": "Head of Press",
             "fromInitials": "CD",
-            "fromColour": "#ec4899",
+            "fromColour": "#452848",
             "to": "Ryan Sayers",
             "toInitials": "RS",
-            "toColour": "#F72717",
+            "toColour": "#009aa0",
             "value": "Customer Focus",
             "message": "The digital lookbook Ryan produced for Paris was beautiful — buyers and press were talking about it all week.",
             "time": "3h ago",
@@ -745,14 +771,14 @@
           {
             "id": "r4",
             "type": "recognition",
-            "image": "/rc-header-4.jpg",
+            "image": "/ps-rc-thankyou-teal.jpg",
             "from": "Oliver Nash",
             "fromRole": "Head of Retail",
             "fromInitials": "ON",
-            "fromColour": "#f97316",
+            "fromColour": "#f05550",
             "to": "Isabelle Moreau",
             "toInitials": "IM",
-            "toColour": "#3b82f6",
+            "toColour": "#009aa0",
             "value": "Excellence",
             "message": "Isabelle's visual merchandising for the Covent Garden relaunch was simply stunning. Every detail was considered.",
             "time": "6h ago",
@@ -763,14 +789,14 @@
           {
             "id": "r5",
             "type": "recognition",
-            "image": "/rc-header-1.jpg",
+            "image": "/ps-rc-birthday.jpg",
             "from": "Isabelle Moreau",
             "fromRole": "Senior Designer",
             "fromInitials": "IM",
-            "fromColour": "#3b82f6",
+            "fromColour": "#009aa0",
             "to": "Ryan Sayers",
             "toInitials": "RS",
-            "toColour": "#F72717",
+            "toColour": "#e8920a",
             "value": "Teamwork",
             "message": "Ryan's design systems work has made every designer's life easier. A genuine gift to the whole creative team.",
             "time": "1d ago",

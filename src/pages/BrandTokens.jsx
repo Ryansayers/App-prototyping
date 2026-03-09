@@ -7,9 +7,11 @@ import {
   applySeeds, saveSeeds, loadSeeds,
   BG_PRESETS, applyBg, loadBg, saveBg,
   applyTheme, loadTheme, saveTheme,
+  HOME_CARD_PRESETS,
   CTA_ACTIVITY_PRESETS, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
   FONT_PRESETS, applyFont, loadFont, saveFont,
-  LOGO_PRESETS, loadLogo, saveLogo,
+  LOGO_PRESETS, loadLogo, saveLogo, applySchemeAttr,
+  applyImageFilter, loadImageFilter, saveImageFilter,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -128,6 +130,12 @@ export default function BrandTokens() {
   const [rewardsUrl,   setRewardsUrl]   = useState(() => loadCardBg('rewards').url)
   const [activityIdx,  setActivityIdx]  = useState(() => loadCardBg('activity').idx)
   const [activityUrl,  setActivityUrl]  = useState(() => loadCardBg('activity').url)
+  const [imgFilter,    setImgFilter]    = useState(() => loadImageFilter())
+
+  const [contentCardIdx,  setContentCardIdx]  = useState(() => loadCardBg('content-card').idx)
+  const [annivCardIdx,    setAnnivCardIdx]    = useState(() => loadCardBg('anniv-card').idx)
+  const [recNudgeIdx,     setRecNudgeIdx]     = useState(() => loadCardBg('rec-nudge').idx)
+  const [quickLinksIdx,   setQuickLinksIdx]   = useState(() => loadCardBg('quick-links').idx)
 
   useEffect(() => {
     applyFont(loadFont())
@@ -137,16 +145,25 @@ export default function BrandTokens() {
     const { idx, url } = loadBg()
     applyBg(idx, url)
     const d = loadCardBg('discounts')
-    applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS)
+    applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS, true)
     const r = loadCardBg('rewards')
-    applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
+    applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS, true)
     const a = loadCardBg('activity')
     applyCardBg('--activity-bg', a.idx, a.url, CTA_ACTIVITY_PRESETS)
+    const cc = loadCardBg('content-card')
+    applyCardBg('--card-bg', cc.idx, cc.url, HOME_CARD_PRESETS, true)
+    const ac = loadCardBg('anniv-card')
+    applyCardBg('--anniv-card-bg', ac.idx, ac.url, HOME_CARD_PRESETS, true)
+    const rn = loadCardBg('rec-nudge')
+    applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
+    const ql = loadCardBg('quick-links')
+    applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
   }, [])
 
   function handleLogoChange(i) {
     setLogoIdx(i)
     saveLogo(i)
+    applySchemeAttr()
   }
 
   function handleFontChange(i) {
@@ -164,25 +181,32 @@ export default function BrandTokens() {
   function handleDiscountChange(i) {
     setDiscountIdx(i)
     saveCardBg('discounts', i, discountUrl)
-    applyCardBg('--cta-discounts-bg', i, discountUrl, CTA_DISCOUNTS_PRESETS)
+    applyCardBg('--cta-discounts-bg', i, discountUrl, CTA_DISCOUNTS_PRESETS, true)
   }
 
   function handleDiscountUrl(url) {
     setDiscountUrl(url)
     saveCardBg('discounts', discountIdx, url)
-    applyCardBg('--cta-discounts-bg', discountIdx, url, CTA_DISCOUNTS_PRESETS)
+    applyCardBg('--cta-discounts-bg', discountIdx, url, CTA_DISCOUNTS_PRESETS, true)
   }
 
   function handleRewardsChange(i) {
     setRewardsIdx(i)
     saveCardBg('rewards', i, rewardsUrl)
-    applyCardBg('--cta-rewards-bg', i, rewardsUrl, CTA_REWARDS_PRESETS)
+    applyCardBg('--cta-rewards-bg', i, rewardsUrl, CTA_REWARDS_PRESETS, true)
   }
 
   function handleRewardsUrl(url) {
     setRewardsUrl(url)
     saveCardBg('rewards', rewardsIdx, url)
-    applyCardBg('--cta-rewards-bg', rewardsIdx, url, CTA_REWARDS_PRESETS)
+    applyCardBg('--cta-rewards-bg', rewardsIdx, url, CTA_REWARDS_PRESETS, true)
+  }
+
+  function handleImgFilterToggle() {
+    const next = !imgFilter
+    setImgFilter(next)
+    saveImageFilter(next)
+    applyImageFilter(next)
   }
 
   function handleActivityChange(i) {
@@ -195,6 +219,30 @@ export default function BrandTokens() {
     setActivityUrl(url)
     saveCardBg('activity', activityIdx, url)
     applyCardBg('--activity-bg', activityIdx, url, CTA_ACTIVITY_PRESETS)
+  }
+
+  function handleContentCardChange(i) {
+    setContentCardIdx(i)
+    saveCardBg('content-card', i, '')
+    applyCardBg('--card-bg', i, '', HOME_CARD_PRESETS, true)
+  }
+
+  function handleAnnivCardChange(i) {
+    setAnnivCardIdx(i)
+    saveCardBg('anniv-card', i, '')
+    applyCardBg('--anniv-card-bg', i, '', HOME_CARD_PRESETS, true)
+  }
+
+  function handleRecNudgeChange(i) {
+    setRecNudgeIdx(i)
+    saveCardBg('rec-nudge', i, '')
+    applyCardBg('--rec-nudge-bg', i, '', HOME_CARD_PRESETS, true)
+  }
+
+  function handleQuickLinksChange(i) {
+    setQuickLinksIdx(i)
+    saveCardBg('quick-links', i, '')
+    applyCardBg('--quick-link-card-bg', i, '', HOME_CARD_PRESETS, true)
   }
 
   function handleBgChange(i) {
@@ -222,7 +270,7 @@ export default function BrandTokens() {
             }
           </div>
           <label className="bt-seed">
-            <span>Brand Logo</span>
+            <span>Brand</span>
             <select className="bt-select" value={logoIdx} onChange={e => handleLogoChange(Number(e.target.value))}>
               {LOGO_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
             </select>
@@ -669,6 +717,20 @@ export default function BrandTokens() {
           </div>
 
           <div className="bt-surface-row">
+            <span className="bt-surface-label">Image filter (dark mode)</span>
+            <div className="bt-bg-row">
+              <button
+                className={`bt-toggle ${imgFilter ? 'bt-toggle--on' : ''}`}
+                onClick={handleImgFilterToggle}
+                aria-pressed={imgFilter}
+              >
+                <span className="bt-toggle-thumb" />
+                <span className="bt-toggle-label">{imgFilter ? 'On' : 'Off'}</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
             <span className="bt-surface-label">Wellbeing activity card</span>
             <div className="bt-bg-row">
               <label className="bt-seed">
@@ -681,6 +743,43 @@ export default function BrandTokens() {
                 <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
                   value={activityUrl} onChange={e => handleActivityUrl(e.target.value)} />
               )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Content cards</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'var(--card-bg)' }} />
+                <select className="bt-select" value={contentCardIdx} onChange={e => handleContentCardChange(Number(e.target.value))}>
+                  {HOME_CARD_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+            </div>
+          </div>
+
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Recognition nudge</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'var(--rec-nudge-bg)' }} />
+                <select className="bt-select" value={recNudgeIdx} onChange={e => handleRecNudgeChange(Number(e.target.value))}>
+                  {HOME_CARD_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Quick links cards</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'var(--quick-link-card-bg)' }} />
+                <select className="bt-select" value={quickLinksIdx} onChange={e => handleQuickLinksChange(Number(e.target.value))}>
+                  {HOME_CARD_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
             </div>
           </div>
         </div>

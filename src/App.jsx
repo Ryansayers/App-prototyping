@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -20,6 +21,18 @@ const PAGES = {
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
+  useEffect(() => {
+    applySchemeAttr()
+    applyImageFilter(loadImageFilter())
+    applyFont(loadFont())
+    const seeds = loadSeeds()
+    applySeeds({
+      primary:   PRIMARY_PRESETS[seeds.primary]   || PRIMARY_PRESETS[0],
+      secondary: SECONDARY_PRESETS[seeds.secondary] || SECONDARY_PRESETS[0],
+      neutral:   NEUTRAL_PRESETS[seeds.neutral]   || NEUTRAL_PRESETS[0],
+    })
+    applyTheme(loadTheme())
+  }, [])
   const { title, component } = PAGES[activePage]
 
   function handlePageChange(page) {

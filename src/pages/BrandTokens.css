@@ -544,3 +544,41 @@
 code {
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
+
+/* Toggle switch */
+.bt-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface-raised);
+  border: var(--stroke-subtle) solid var(--color-border-default);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px 4px 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.bt-toggle--on {
+  background: var(--color-surface-brand-tint);
+  border-color: var(--color-border-brand);
+}
+
+.bt-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-text-disabled);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.bt-toggle--on .bt-toggle-thumb {
+  background: var(--color-brand);
+}
+
+.bt-toggle-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  min-width: 20px;
+}

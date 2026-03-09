@@ -160,3 +160,8 @@
     --color-text-link:           var(--color-primary-300);
     --img-filter:                brightness(0.8) contrast(1.05);
 }
+
+/* Scheme overrides — placed last to win the cascade */
+:root[data-scheme="paul smith"] {
+  --img-filter: none;
+}

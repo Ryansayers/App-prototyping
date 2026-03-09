@@ -10,6 +10,9 @@ export const PRIMARY_PRESETS = [
   { label: 'Amber',           h: 38,  s: 95  },
   { label: 'Rose',            h: 346, s: 84  },
   { label: 'Next Big Stone',  h: 45,  s: 12  },
+  { label: 'Paul Smith Coral',        h: 2,   s: 84  },
+  { label: 'Paul Smith Amber',        h: 37,  s: 92  },
+  { label: 'Paul Smith Teal',         h: 183, s: 100 },
 ]
 
 export const SECONDARY_PRESETS = [
@@ -27,6 +30,8 @@ export const SECONDARY_PRESETS = [
   { label: 'Sky',                   h: 204, s: 90  },
   { label: 'Violet',                h: 270, s: 76  },
   { label: 'Next Pacific Blue',     h: 192, s: 100 },
+  { label: 'Paul Smith Plum',              h: 294, s: 29  },
+  { label: 'Paul Smith Blush',             h: 5,   s: 72  },
 ]
 
 export const NEUTRAL_PRESETS = [
@@ -38,6 +43,9 @@ export const NEUTRAL_PRESETS = [
   { label: 'Rose tint',           h: 346, s: 10 },
   { label: 'Green tint',          h: 152, s: 12 },
   { label: 'Next Cool Navy-Tinted Grey', h: 205, s: 10 },
+  { label: 'Paul Smith Forest',           h: 158, s: 22 },
+  { label: 'Paul Smith Sage',             h: 152, s: 16 },
+  { label: 'Paul Smith Steel',            h: 202, s: 19 },
 ]
 
 export function applySeeds({ primary, secondary, neutral }) {
@@ -114,15 +122,32 @@ export function saveBg(idx, url) {
 }
 
 const CTA_SHARED_PRESETS = [
-  { label: 'None',         value: null },
-  { label: 'Coral',        value: 'linear-gradient(135deg, #f97060 0%, #fb9a8a 100%)' },
-  { label: 'Ocean',        value: 'linear-gradient(135deg, #1e6fa8 0%, #38a3d1 100%)' },
-  { label: 'Forest',       value: 'linear-gradient(135deg, #2d7a4f 0%, #52b07a 100%)' },
-  { label: 'Sunset',       value: 'linear-gradient(135deg, #f97316 0%, #fbbf24 100%)' },
-  { label: 'Lavender',     value: 'linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)' },
-  { label: 'Plum',         value: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%)' },
-  { label: 'Deep Violet',  value: 'linear-gradient(150deg, #312e81 0%, #5b21b6 60%, #6d28d9 100%)' },
-  { label: 'Custom Image…',value: 'custom' },
+  { label: 'None',         value: null,                                                                     darkValue: null },
+  { label: 'Coral',        value: 'linear-gradient(135deg, #f97060 0%, #fb9a8a 100%)',                     darkValue: 'linear-gradient(135deg, #b82a14 0%, #d43a20 100%)' },
+  { label: 'Ocean',        value: 'linear-gradient(135deg, #1e6fa8 0%, #38a3d1 100%)',                     darkValue: 'linear-gradient(135deg, #0a3050 0%, #144870 100%)' },
+  { label: 'Forest',       value: 'linear-gradient(135deg, #2d7a4f 0%, #52b07a 100%)',                     darkValue: 'linear-gradient(135deg, #0e3820 0%, #1a5030 100%)' },
+  { label: 'Sunset',       value: 'linear-gradient(135deg, #f97316 0%, #fbbf24 100%)',                     darkValue: 'linear-gradient(135deg, #8a3400 0%, #aa5000 100%)' },
+  { label: 'Lavender',     value: 'linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)',                     darkValue: 'linear-gradient(135deg, #380a80 0%, #5214a8 100%)' },
+  { label: 'Plum',         value: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%)',                     darkValue: 'linear-gradient(135deg, #1e0840 0%, #2e1060 100%)' },
+  { label: 'Deep Violet',  value: 'linear-gradient(150deg, #312e81 0%, #5b21b6 60%, #6d28d9 100%)',        darkValue: 'linear-gradient(150deg, #140e38 0%, #200a48 60%, #2e1060 100%)' },
+  { label: 'Custom Image…',value: 'custom',                                                                darkValue: 'custom' },
+]
+
+export const HOME_CARD_PRESETS = [
+  { label: 'Default',        value: null,                                                                                               darkValue: null },
+  { label: 'Surface',        value: 'var(--color-surface-default)',                                                                     darkValue: 'var(--color-surface-default)' },
+  { label: 'Subtle',         value: 'var(--color-surface-subtle)',                                                                      darkValue: 'var(--color-surface-subtle)' },
+  { label: 'Raised',         value: 'var(--color-surface-raised)',                                                                      darkValue: 'var(--color-surface-raised)' },
+  { label: 'Brand Tint',     value: 'var(--color-surface-brand-tint)',                                                                  darkValue: 'var(--color-surface-brand-tint)' },
+  { label: 'Accent Tint',    value: 'var(--color-surface-accent-tint)',                                                                 darkValue: 'var(--color-surface-accent-tint)' },
+  { label: 'Soft Primary',   value: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)',               darkValue: 'linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%)' },
+  { label: 'Soft Secondary', value: 'linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%)',           darkValue: 'linear-gradient(135deg, var(--color-secondary-900) 0%, var(--color-secondary-800) 100%)' },
+  { label: 'Peach',          value: 'linear-gradient(135deg, #fde8e4 0%, #fcd0ca 100%)',                                               darkValue: 'linear-gradient(135deg, #3d1410 0%, #52201a 100%)' },
+  { label: 'Sky',            value: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',                                               darkValue: 'linear-gradient(135deg, #0f2340 0%, #1a3254 100%)' },
+  { label: 'Mint',           value: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',                                               darkValue: 'linear-gradient(135deg, #082818 0%, #0d3824 100%)' },
+  { label: 'Lemon',          value: 'linear-gradient(135deg, #fefce8 0%, #fef08a 100%)',                                               darkValue: 'linear-gradient(135deg, #28240a 0%, #38320e 100%)' },
+  { label: 'Lavender',       value: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)',                                               darkValue: 'linear-gradient(135deg, #1e1040 0%, #2a1854 100%)' },
+  { label: 'Rose',           value: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)',                                               darkValue: 'linear-gradient(135deg, #3d0a24 0%, #520f32 100%)' },
 ]
 
 export const CTA_ACTIVITY_PRESETS = [
@@ -153,15 +178,17 @@ export const CTA_REWARDS_PRESETS = [
 // Keep for backward compat with applyCardBg
 export const CTA_CARD_PRESETS = CTA_DISCOUNTS_PRESETS
 
-export function applyCardBg(token, idx, url = '', presets = CTA_DISCOUNTS_PRESETS) {
+export function applyCardBg(token, idx, url = '', presets = CTA_DISCOUNTS_PRESETS, applyInDark = false) {
   const el = document.documentElement
   const preset = presets[idx]
-  if (!preset || preset.value === null || isDarkMode()) {
+  const dark = isDarkMode()
+  if (!preset || preset.value === null || (!applyInDark && dark)) {
     el.style.removeProperty(token)
   } else if (preset.value === 'custom') {
     if (url) el.style.setProperty(token, `url('${url}') center / cover no-repeat`)
   } else {
-    el.style.setProperty(token, preset.value)
+    const activeValue = dark && preset.darkValue ? preset.darkValue : preset.value
+    el.style.setProperty(token, activeValue)
   }
 }
 
@@ -179,6 +206,28 @@ export function saveCardBg(key, idx, url) {
   localStorage.setItem(`brand-card-bg-${key}-url`, url)
 }
 
+export function applyImageFilter(enabled) {
+  const el = document.documentElement
+  if (enabled) {
+    el.style.removeProperty('--img-filter')
+    el.style.setProperty('--nc-img-filter', 'grayscale(100%) brightness(1.25)')
+    el.style.setProperty('--nc-overlay-opacity', '0.6')
+  } else {
+    el.style.setProperty('--img-filter', 'none')
+    el.style.setProperty('--nc-img-filter', 'none')
+    el.style.setProperty('--nc-overlay-opacity', '0')
+  }
+}
+
+export function loadImageFilter() {
+  try { return localStorage.getItem('brand-img-filter') !== 'off' }
+  catch { return true }
+}
+
+export function saveImageFilter(enabled) {
+  localStorage.setItem('brand-img-filter', enabled ? 'on' : 'off')
+}
+
 export function applyTheme(theme) {
   if (theme === 'system') {
     document.documentElement.removeAttribute('data-theme')
@@ -189,11 +238,19 @@ export function applyTheme(theme) {
   const { idx: bgIdx, url: bgUrl } = loadBg()
   applyBg(bgIdx, bgUrl)
   const d = loadCardBg('discounts')
-  applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS)
+  applyCardBg('--cta-discounts-bg', d.idx, d.url, CTA_DISCOUNTS_PRESETS, true)
   const r = loadCardBg('rewards')
-  applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS)
+  applyCardBg('--cta-rewards-bg', r.idx, r.url, CTA_REWARDS_PRESETS, true)
   const a = loadCardBg('activity')
   applyCardBg('--activity-bg', a.idx, a.url, CTA_ACTIVITY_PRESETS)
+  const cc = loadCardBg('content-card')
+  applyCardBg('--card-bg', cc.idx, cc.url, HOME_CARD_PRESETS, true)
+  const ac = loadCardBg('anniv-card')
+  applyCardBg('--anniv-card-bg', ac.idx, ac.url, HOME_CARD_PRESETS, true)
+  const rn = loadCardBg('rec-nudge')
+  applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
+  const ql = loadCardBg('quick-links')
+  applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
 }
 
 export function loadTheme() {
@@ -239,6 +296,12 @@ export function loadLogo() {
 
 export function saveLogo(idx) {
   localStorage.setItem('brand-logo', idx)
+}
+
+export function applySchemeAttr() {
+  const idx = loadLogo()
+  const label = (LOGO_PRESETS[idx]?.label || 'boom').toLowerCase()
+  document.documentElement.setAttribute('data-scheme', label)
 }
 
 export function loadScheme(content) {

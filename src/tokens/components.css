@@ -68,9 +68,11 @@
   --feed-tab-count-active-color:   #000000;
 
   /* ── NewsCard ── */
-  --nc-bg:                         var(--color-surface-default);
+  --nc-bg:                         var(--card-bg);
   --nc-shadow:                     var(--shadow-card);
   --nc-radius:                     var(--radius-card-lg);
+  --nc-img-filter:                 grayscale(100%) brightness(1.25);
+  --nc-overlay-opacity:            0.6;
   --nc-tag-bg:                     var(--color-surface-overlay);
   --nc-tag-color:                  var(--color-text-on-dark);
   --nc-tag-radius:                 var(--radius-control);
@@ -82,7 +84,7 @@
   --nc-time-color:                 var(--color-text-primary);
 
   /* ── RecognitionCard ── */
-  --rc-bg:                         var(--color-surface-default);
+  --rc-bg:                         var(--card-bg);
   --rc-shadow:                     var(--shadow-card);
   --rc-radius:                     var(--radius-card-lg);
   --rc-you-stroke-width:           var(--stroke-default);
@@ -109,6 +111,10 @@
 
   /* ── Cards (general) ── */
   --card-bg:                       var(--color-surface-subtle);
+  --anniv-card-bg:                 linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%);
+  --anniv-card-border:             var(--color-secondary-200);
+  --rec-nudge-bg:                  var(--color-surface-brand-tint);
+  --quick-link-card-bg:            var(--color-surface-brand-tint);
   --card-hover-bg:                 var(--color-surface-brand-tint);
   --card-radius:                   var(--radius-card);
   --card-title-color:              var(--color-text-primary);
@@ -156,7 +162,7 @@
   --activity-bg:                   linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%);
 
   /* ── Shop ── */
-  --shop-card-bg:                  var(--color-surface-subtle);
+  --shop-card-bg:                  var(--card-bg);
   --shop-card-hover-bg:            var(--color-surface-brand-tint);
   --shop-card-radius:              var(--radius-card);
   --shop-thumb-bg:                 var(--color-primary-100);
@@ -212,8 +218,10 @@
   --rc-you-banner-color:    #ffffff;
   --rc-time-color:          #ffffff;
   --save-btn-color:         #ffffff;
-  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-900) 100%);
-  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-700) 0%, var(--color-secondary-900) 100%);
+  --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-900) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
   --activity-bg:                   linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
   --cta-img-opacity:               0.35;
+  --anniv-card-bg:                 linear-gradient(135deg, var(--color-secondary-900) 0%, var(--color-secondary-800) 100%);
+  --anniv-card-border:             var(--color-secondary-700);
 }

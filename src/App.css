@@ -40,7 +40,7 @@ body {
 }
 
 .app-top--page {
-  background: var(--app-top-bg);
+  background: var(--header-home-bg);
 }
 
 .content {

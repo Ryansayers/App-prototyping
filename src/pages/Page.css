@@ -4,9 +4,68 @@
   padding-top: 16px;
 }
 
+/* Welcome Banner */
+.welcome-banner {
+  background: var(--color-primary-800);
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.welcome-banner-stripe {
+  height: 8px;
+  background: linear-gradient(to right,
+    #253c35 0% 12.5%,
+    #8aad9c 12.5% 25%,
+    #f2aaa2 25% 37.5%,
+    #e8920a 37.5% 50%,
+    #f05550 50% 62.5%,
+    #452848 62.5% 75%,
+    #7898a8 75% 87.5%,
+    #009aa0 87.5% 100%
+  );
+}
+
+.welcome-banner-body {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome-banner-eyebrow {
+  color: var(--color-primary-200);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.welcome-banner-tagline {
+  color: var(--color-primary-200);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.welcome-banner-tagline strong {
+  font-weight: 700;
+  color: var(--color-primary-100);
+}
+
+.welcome-banner-headline {
+  color: var(--color-primary-100);
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
 /* Recognition Nudge */
 .rec-nudge {
-  background: var(--color-surface-brand-tint);
+  background: var(--rec-nudge-bg);
   border: var(--stroke-subtle) solid var(--feed-tab-active-stroke-color);
   border-radius: var(--cta-card-radius, 16px);
   padding: 16px;
@@ -62,8 +121,8 @@
 
 /* Work Anniversaries */
 .anniv-card {
-  background: var(--color-surface-accent-tint);
-  border: var(--stroke-subtle) solid var(--color-secondary-300);
+  background: var(--anniv-card-bg);
+  border: var(--stroke-subtle) solid var(--anniv-card-border);
   border-radius: var(--radius-card-lg);
   padding: 16px;
   margin-bottom: 16px;
@@ -272,15 +331,15 @@
 }
 
 .card {
-  background: var(--color-surface-brand-tint);
+  background: var(--quick-link-card-bg);
   border-radius: var(--card-radius, 14px);
   padding: 16px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: filter 0.15s;
 }
 
 .card:hover {
-  background: var(--card-hover-bg);
+  filter: brightness(0.93);
 }
 
 .card h3 {
