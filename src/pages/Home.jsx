@@ -105,7 +105,7 @@ function HeartCard() {
 
 export default function Home() {
   return (
-    <div className="page page--home">
+    <div className="page">
       {welcomeBanner ? <WelcomeBanner /> : <p className="page-subtitle" style={{ color: 'var(--color-text-secondary)' }}>Welcome back!</p>}
       {recognitionNudge && <RecognitionNudge />}
       {infoCard ? <InfoCard /> : <BenefitsCTA />}

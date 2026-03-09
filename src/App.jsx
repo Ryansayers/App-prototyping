@@ -10,7 +10,6 @@ import Feed from './pages/Feed'
 import Shop from './pages/Shop'
 import Profile from './pages/Profile'
 import './App.css'
-import './desktop.css'
 
 const PAGES = {
   home:      { title: 'Home',      component: <Home /> },
