@@ -813,76 +813,77 @@
           "color": "#22c55e"
         },
         "savedRetailers": [
-          { "id": 1, "name": "ASOS",    "logo": "/logo-asos.svg",    "bg": "#2d2d2d" },
+          { "id": 0, "name": "Sony",    "logo": "/logo-sony.svg",    "bg": "#ffffff" },
+          { "id": 1, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" },
           { "id": 2, "name": "TUI",     "logo": "/logo-tui.svg",     "bg": "#ffffff" },
           { "id": 3, "name": "Samsung", "logo": "/logo-samsung.svg", "bg": "#ffffff" },
           { "id": 4, "name": "Tesco",   "logo": "/logo-tesco.png",   "bg": "#ffffff" },
-          { "id": 5, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" }
+          { "id": 5, "name": "ASOS",    "logo": "/logo-asos.svg",    "bg": "#ffffff" }
         ],
         "spotlight": [
           {
             "id": 1,
-            "image": "/spotlight-shopping.jpg",
-            "logo": "/logo-asos.svg",
-            "logoBg": "#2d2d2d",
-            "title": "Fashion Cashback",
-            "desc": "7% cashback on full-priced ASOS orders"
-          },
-          {
-            "id": 2,
             "image": "/spotlight-tui.jpg",
             "logo": "/logo-tui.svg",
             "logoBg": "#ffffff",
-            "title": "Travel Escapes",
-            "desc": "Colleague rates on TUI holidays"
+            "title": "Travel Planning",
+            "desc": "Explore travel deals for every kind of explorer"
+          },
+          {
+            "id": 2,
+            "image": "/spotlight-disney.jpg",
+            "logo": "/logo-samsung.svg",
+            "logoBg": "#ffffff",
+            "title": "Disney Dining",
+            "desc": "20% off dining experiences"
           },
           {
             "id": 3,
-            "image": "/spotlight-currys.jpg",
+            "image": "/shop-currys-samsung.webp",
             "logo": "/logo-samsung.svg",
             "logoBg": "#ffffff",
-            "title": "Tech Discounts",
-            "desc": "Up to 20% off Samsung"
+            "title": "Samsung",
+            "desc": "20% off Galaxy S26 Ultra"
           },
           {
             "id": 4,
-            "image": "/spotlight-disney.jpg",
+            "image": "/spotlight-shopping.jpg",
             "logo": "/logo-asda.svg",
             "logoBg": "#ffffff",
-            "title": "Grocery Savings",
-            "desc": "Weekly savings at ASDA"
+            "title": "Asda Savings",
+            "desc": "20% off online at Asda"
           }
         ],
         "summerDeals": [
           {
             "id": 1,
-            "image": "/spotlight-shopping.jpg",
-            "logo": "/logo-asos.svg",
-            "logoBg": "#2d2d2d",
-            "normalRate": "5%",
-            "tag": "Discounts",
-            "saveRate": "Save 7% with an eGift Card",
-            "desc": "on full priced purchases at ASOS"
-          },
-          {
-            "id": 2,
             "image": "/spotlight-tui.jpg",
             "logo": "/logo-tui.svg",
             "logoBg": "#ffffff",
-            "normalRate": "3%",
+            "normalRate": "5%",
             "tag": null,
             "saveRate": "Earn 5% Cashback",
-            "desc": "on all TUI holiday bookings"
+            "desc": "on hotel only booking"
           },
           {
-            "id": 3,
+            "id": 2,
             "image": "/spotlight-currys.jpg",
             "logo": "/logo-samsung.svg",
             "logoBg": "#ffffff",
             "normalRate": "5%",
             "tag": null,
             "saveRate": "Save 20%",
-            "desc": "on Samsung home appliances and devices"
+            "desc": "on home appliances, plus get an additional 15%"
+          },
+          {
+            "id": 3,
+            "image": "/spotlight-shopping.jpg",
+            "logo": "/logo-asos.svg",
+            "logoBg": "#ffffff",
+            "normalRate": "5%",
+            "tag": "Discounts",
+            "saveRate": "Save 7% with an eGift Card",
+            "desc": "on full priced purchases delivered to your home"
           }
         ],
         "savingsForYou": [
