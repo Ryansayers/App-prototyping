@@ -172,7 +172,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
+}
+
+.dv-cards-row .benefits-card {
+  height: 100%;
 }
 
 /* Remove bottom margins that were designed for stacked mobile flow */
