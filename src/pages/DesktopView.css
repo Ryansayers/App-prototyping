@@ -1,12 +1,14 @@
 /* =============================================================
    DESKTOP VIEW — /desktop-view
-   Standalone full-page layout. All classes prefixed dv- to
-   avoid collision with the mobile app styles.
+   Fixed-height viewport layout: header + content fills 100dvh.
+   Left column cards grow to fill available height, no page scroll.
+   All classes prefixed dv- to avoid collision with mobile styles.
    ============================================================= */
 
-/* ── Root ──────────────────────────────────────────────────── */
+/* ── Root — locks to viewport height ──────────────────────── */
 .dv-root {
-  min-height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
   background: var(--color-bg-page);
   font-family: var(--font-body, 'Ubuntu', sans-serif);
   font-size: 16px;
@@ -19,13 +21,11 @@
   background: var(--header-home-bg);
   padding: 0 48px;
   height: 64px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 0;
   z-index: 10;
 }
 
@@ -52,7 +52,6 @@
   color: var(--header-logo-word-color);
 }
 
-/* Nav tabs */
 .dv-nav {
   display: flex;
   align-items: center;
@@ -84,7 +83,6 @@
   background: rgba(0, 0, 0, 0.08);
 }
 
-/* Header action buttons */
 .dv-header-actions {
   display: flex;
   align-items: center;
@@ -113,10 +111,7 @@
   color: var(--header-icon-btn-hover-color);
 }
 
-.dv-icon-btn svg {
-  width: 20px;
-  height: 20px;
-}
+.dv-icon-btn svg { width: 20px; height: 20px; }
 
 .dv-notif-dot {
   position: absolute;
@@ -129,94 +124,123 @@
   border: var(--header-notif-dot-stroke-width) solid var(--header-notif-dot-stroke-color);
 }
 
-/* ── Main content ──────────────────────────────────────────── */
+/* ── Main — fills remaining viewport height ────────────────── */
 .dv-main {
   flex: 1;
-  padding: 40px 24px 64px;
+  min-height: 0;
+  padding: 24px 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ── Page — constrained width, fills main ──────────────────── */
 .dv-page {
+  flex: 1;
+  min-height: 0;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
-/* Welcome banner: full-width above the grid */
-.dv-banner-full {
-  width: 100%;
-}
-
+.dv-banner-full,
 .dv-subtitle {
-  margin: 0;
+  flex-shrink: 0;
 }
 
-/* ── 2-column asymmetric grid (2fr sidebar 1fr) ────────────── */
+/* ── Grid — stretches to fill remaining space ──────────────── */
 .dv-grid {
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
+/* ── Columns ───────────────────────────────────────────────── */
 .dv-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;}
+  gap: 20px;
+  min-height: 0;
+}
 
-/* ── Component overrides inside desktop view ───────────────── */
+/* Left column: cards grow to fill */
+.dv-col--main {
+  overflow: hidden;
+}
 
-/* Side-by-side cards row in the main column */
+/* Right sidebar: scrolls independently */
+.dv-col--sidebar {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.dv-col--sidebar::-webkit-scrollbar { display: none; }
+
+/* ── Side-by-side card row ─────────────────────────────────── */
 .dv-cards-row {
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: stretch;
 }
 
+/* Cards fill the row height */
 .dv-cards-row .benefits-card {
   height: 100%;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-/* Remove bottom margins that were designed for stacked mobile flow */
-.dv-col .benefits-card,
-.dv-col .anniv-card,
-.dv-col .rec-nudge {
+/* Image grows to fill card, body stays natural height */
+.dv-cards-row .benefits-img {
+  flex: 1;
+  min-height: 0;
+  height: 0;           /* overrides Page.css fixed height */
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ── Voice card below the row ──────────────────────────────── */
+.dv-col--main > .benefits-card {
+  flex-shrink: 0;
   margin-bottom: 0;
 }
 
-/* Slightly taller images in the wider columns */
-.dv-col .benefits-img {
-  height: 200px;
+/* ── Sidebar component resets ──────────────────────────────── */
+.dv-col--sidebar .benefits-card,
+.dv-col--sidebar .anniv-card,
+.dv-col--sidebar .rec-nudge {
+  margin-bottom: 0;
 }
 
-/* section-heading inside dv-col needs no top margin */
-.dv-col .section-heading {
+.dv-col--sidebar .section-heading {
   margin-top: 0;
 }
 
-/* Discover cards — peek the next card */
 .dv-col--sidebar .discover-card {
   flex: 0 0 75%;
 }
 
 /* ── Responsive fallback ───────────────────────────────────── */
-/* Below 900px collapse to 1 column (edge case — page is meant for desktop) */
 @media (max-width: 900px) {
-  .dv-header {
-    padding: 0 24px;
-  }
-
-  .dv-nav {
-    display: none;
-  }
-
-  .dv-main {
-    padding: 24px 16px 48px;
-  }
-
-  .dv-grid {
-    grid-template-columns: 1fr;
-  }
+  .dv-root { height: auto; overflow: auto; }
+  .dv-header { padding: 0 24px; }
+  .dv-nav { display: none; }
+  .dv-main { padding: 24px 16px 48px; overflow: auto; }
+  .dv-grid { grid-template-columns: 1fr; align-items: start; }
+  .dv-col--main { overflow: visible; }
+  .dv-col--sidebar { overflow: visible; }
+  .dv-cards-row { flex: none; }
+  .dv-cards-row .benefits-card { height: auto; }
+  .dv-cards-row .benefits-img { flex: none; height: 180px; }
 }
