@@ -184,6 +184,18 @@
 
 .dv-cards-row .benefits-card {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dv-cards-row .benefits-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dv-cards-row .benefits-btn {
+  margin-top: auto;
 }
 
 /* Remove bottom margins that were designed for stacked mobile flow */
