@@ -201,6 +201,10 @@
   flex: 0 0 32%;
 }
 
+.dv-col--main .discover-carousel {
+  margin-bottom: 0;
+}
+
 /* ── Desktop typography scale ──────────────────────────────── */
 
 /* Welcome banner */
