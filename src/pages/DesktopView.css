@@ -6,6 +6,7 @@
 
 /* ── Root ──────────────────────────────────────────────────── */
 .dv-root {
+  width: 100%;
   min-height: 100vh;
   background: var(--color-bg-page);
   font-family: var(--font-body, 'Ubuntu', sans-serif);
