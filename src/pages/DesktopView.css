@@ -191,9 +191,9 @@
   height: 200px;
 }
 
-/* section-heading inside dv-col needs no top margin */
+/* section-heading inside dv-col needs no top or bottom margin */
 .dv-col .section-heading {
-  margin-top: 0;
+  margin: 0;
 }
 
 /* Discover cards — peek the next card */
