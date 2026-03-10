@@ -51,24 +51,26 @@ function DvHeader() {
 
   return (
     <header className="dv-header">
-      <div className="dv-header-logo">
-        {logoSrc
-          ? <img src={logoSrc} alt="Brand logo" className="dv-logo-img" />
-          : <span className="dv-logo-word">Intranet</span>}
-      </div>
-      <nav className="dv-nav">
-        {NAV_ITEMS.map((item) => (
-          <span key={item} className={`dv-nav-item${item === 'Home' ? ' dv-nav-item--active' : ''}`}>
-            {item}
-          </span>
-        ))}
-      </nav>
-      <div className="dv-header-actions">
-        <button className="dv-icon-btn" aria-label="Cart"><CartIcon /></button>
-        <button className="dv-icon-btn" onClick={() => setHasNotif(false)} aria-label="Notifications">
-          <BellIcon />
-          {hasNotif && <span className="dv-notif-dot" />}
-        </button>
+      <div className="dv-header-inner">
+        <div className="dv-header-logo">
+          {logoSrc
+            ? <img src={logoSrc} alt="Brand logo" className="dv-logo-img" />
+            : <span className="dv-logo-word">Intranet</span>}
+        </div>
+        <nav className="dv-nav">
+          {NAV_ITEMS.map((item) => (
+            <span key={item} className={`dv-nav-item${item === 'Home' ? ' dv-nav-item--active' : ''}`}>
+              {item}
+            </span>
+          ))}
+        </nav>
+        <div className="dv-header-actions">
+          <button className="dv-icon-btn" aria-label="Cart"><CartIcon /></button>
+          <button className="dv-icon-btn" onClick={() => setHasNotif(false)} aria-label="Notifications">
+            <BellIcon />
+            {hasNotif && <span className="dv-notif-dot" />}
+          </button>
+        </div>
       </div>
     </header>
   )
