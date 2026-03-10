@@ -155,7 +155,7 @@
 /* ── 2-column asymmetric grid (2fr sidebar 1fr) ────────────── */
 .dv-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 24px;
   align-items: start;
 }
