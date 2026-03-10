@@ -197,8 +197,8 @@
 }
 
 /* Discover cards — peek the next card */
-.dv-col--sidebar .discover-card {
-  flex: 0 0 75%;
+.dv-col--main .discover-card {
+  flex: 0 0 32%;
 }
 
 /* ── Responsive fallback ───────────────────────────────────── */

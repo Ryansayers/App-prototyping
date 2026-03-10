@@ -249,11 +249,11 @@ export default function DesktopView() {
                 <HeartCardSection />
               </div>
               <VoiceCardSection />
+              <DiscoverSection />
             </div>
             <div className="dv-col dv-col--sidebar">
               <RecognitionNudgeSection />
               <WorkAnniversariesSection />
-              <DiscoverSection />
               <QuickLinksSection />
             </div>
           </div>
