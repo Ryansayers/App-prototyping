@@ -220,8 +220,10 @@ function DvHeader() {
             <BellIcon />
             {hasNotif && <span className="dv-notif-dot" />}
           </button>
-          <button className="dv-icon-btn dv-icon-btn--avatar" aria-label="You">
-            <YouIcon />
+          <button className="dv-icon-btn dv-header-you-btn" aria-label="You">
+            <span className="dv-header-you-avatar">
+              <YouFilledIcon />
+            </span>
           </button>
         </div>
       </div>

@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 16px 0;
+  padding: 62px 0 16px;
   gap: 4px;
   position: sticky;
   top: 0;
@@ -170,10 +170,30 @@
   height: 20px;
 }
 
-.dv-icon-btn--avatar {
+.dv-header-you-btn {
+  width: auto;
+  padding: 0;
   border-radius: 50%;
-  background: var(--color-surface-raised);
+  background: transparent;
 }
+
+.dv-header-you-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: var(--color-text-on-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dv-header-you-avatar svg {
+  width: 16px;
+  height: 16px;
+}
+
 
 .dv-notif-dot {
   position: absolute;

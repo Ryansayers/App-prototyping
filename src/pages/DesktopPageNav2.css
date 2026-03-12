@@ -297,6 +297,22 @@
   text-overflow: ellipsis;
 }
 
+/* Animated children wrapper */
+.dv-nav-children-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.dv-nav-children-wrap--open {
+  grid-template-rows: 1fr;
+}
+
+.dv-nav-children-wrap > ul {
+  min-height: 0;
+}
+
 /* Sub-items with left border line */
 .dv-nav-children {
   list-style: none;

@@ -147,6 +147,33 @@ const StarNavIcon = () => (
 const NAV_ITEMS = [
   { id: 'home', label: 'Home', icon: HomeNavIcon },
   {
+    id: 'benefits',
+    label: 'Benefits',
+    icon: BenefitsNavIcon,
+    children: [
+      { id: 'benefits-app', label: 'App Centre' },
+      { id: 'mental',       label: 'Mental Wellbeing' },
+      { id: 'physical',     label: 'Physical Wellbeing' },
+      { id: 'financial',    label: 'Financial Wellbeing' },
+      { id: 'career-wb',    label: 'Career Wellbeing' },
+      { id: 'social-wb',    label: 'Social Wellbeing' },
+      { id: 'family-wb',    label: 'Family Wellbeing' },
+    ],
+  },
+  {
+    id: 'appreci8',
+    label: 'Recognition',
+    icon: StarNavIcon,
+    children: [
+      { id: 'rec-overview', label: 'Overview' },
+      { id: 'appreci8-hub', label: 'Appreci8 Hub' },
+      { id: 'wow-wall',     label: 'Wow Wall' },
+      { id: 'send-rec',     label: 'Send recognition' },
+      { id: 'goal-nom',     label: 'Strategic Nomination' },
+      { id: 'moments',      label: 'Moments that Matter' },
+    ],
+  },
+  {
     id: 'news',
     label: 'News',
     icon: FeedNavIcon,
@@ -185,17 +212,6 @@ const NAV_ITEMS = [
     ],
   },
   {
-    id: 'innohub',
-    label: 'External Hubs',
-    icon: EventsNavIcon,
-    children: [
-      { id: 'innohub-hq',  label: 'InnoHub HQ',            external: true },
-      { id: 'primetime',   label: 'Primetime Newsletter',   external: true },
-      { id: 'power-hour',  label: 'Product Power Hour',     external: true },
-      { id: 'status',      label: 'Status Update',          external: true },
-    ],
-  },
-  {
     id: 'heart',
     label: 'Wellbeing',
     icon: RecNavIcon,
@@ -208,33 +224,6 @@ const NAV_ITEMS = [
       { id: 'wellbeing-centre',label: 'Wellbeing Centre' },
       { id: 'unmind',          label: 'Unmind' },
       { id: 'nudge',           label: 'nudge' },
-    ],
-  },
-  {
-    id: 'appreci8',
-    label: 'Appreci8',
-    icon: StarNavIcon,
-    children: [
-      { id: 'rec-overview', label: 'Overview' },
-      { id: 'appreci8-hub', label: 'Appreci8 Hub' },
-      { id: 'wow-wall',     label: 'Wow Wall' },
-      { id: 'send-rec',     label: 'Send recognition' },
-      { id: 'goal-nom',     label: 'Strategic Nomination' },
-      { id: 'moments',      label: 'Moments that Matter' },
-    ],
-  },
-  {
-    id: 'benefits',
-    label: 'Benefits',
-    icon: BenefitsNavIcon,
-    children: [
-      { id: 'benefits-app', label: 'App Centre' },
-      { id: 'mental',       label: 'Mental Wellbeing' },
-      { id: 'physical',     label: 'Physical Wellbeing' },
-      { id: 'financial',    label: 'Financial Wellbeing' },
-      { id: 'career-wb',    label: 'Career Wellbeing' },
-      { id: 'social-wb',    label: 'Social Wellbeing' },
-      { id: 'family-wb',    label: 'Family Wellbeing' },
     ],
   },
   {
@@ -288,6 +277,17 @@ const NAV_ITEMS = [
       { id: 'workday',    label: 'Workday' },
       { id: 'emp-handbook',label: 'Employee Handbook' },
       { id: 'pay-phil',   label: 'Pay Philosophy' },
+    ],
+  },
+  {
+    id: 'innohub',
+    label: 'External Links',
+    icon: EventsNavIcon,
+    children: [
+      { id: 'innohub-hq',  label: 'InnoHub HQ',            external: true },
+      { id: 'primetime',   label: 'Primetime Newsletter',   external: true },
+      { id: 'power-hour',  label: 'Product Power Hour',     external: true },
+      { id: 'status',      label: 'Status Update',          external: true },
     ],
   },
 ]
@@ -536,7 +536,7 @@ function QuickLinksSection() {
 
 // ── Page ─────────────────────────────────────────────────────
 export default function DesktopPageNav2() {
-  const [expanded, setExpanded] = useState({})
+  const [expanded, setExpanded] = useState({ benefits: true })
   const [activeItem, setActiveItem] = useState('home')
   const [activeChild, setActiveChild] = useState(null)
 
@@ -584,20 +584,22 @@ export default function DesktopPageNav2() {
                     <span className="dv-nav-icon"><Icon /></span>
                     <span className="dv-nav-label">{label}</span>
                   </button>
-                  {children && expanded[id] && (
-                    <ul className="dv-nav-children">
-                      {children.map(child => (
-                        <li key={child.id}>
-                          <button
-                            className={`dv-nav-child${activeChild === child.id ? ' dv-nav-child--active' : ''}`}
-                            onClick={() => { setActiveItem(id); setActiveChild(child.id) }}
-                          >
-                            {child.label}
-                            {child.external && <span className="dv-nav-child-external"><ExternalLinkIcon /></span>}
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
+                  {children && (
+                    <div className={`dv-nav-children-wrap${expanded[id] ? ' dv-nav-children-wrap--open' : ''}`}>
+                      <ul className="dv-nav-children">
+                        {children.map(child => (
+                          <li key={child.id}>
+                            <button
+                              className={`dv-nav-child${activeChild === child.id ? ' dv-nav-child--active' : ''}`}
+                              onClick={() => { setActiveItem(id); setActiveChild(child.id) }}
+                            >
+                              {child.label}
+                              {child.external && <span className="dv-nav-child-external"><ExternalLinkIcon /></span>}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                 </li>
               ))}
