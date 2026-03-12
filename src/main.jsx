@@ -4,7 +4,11 @@ import './index.css'
 import App from './App.jsx'
 import BrandTokens from './pages/BrandTokens.jsx'
 import DesktopView from './pages/DesktopView.jsx'
-import { applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyBg, loadBg, applyTheme, loadTheme, applyCardBg, loadCardBg, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyFont, loadFont } from './seeds.js'
+import DesktopPageNav2 from './pages/DesktopPageNav2.jsx'
+import { applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyBg, loadBg, applyTheme, loadTheme, applyCardBg, loadCardBg, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyFont, loadFont, applySchemeAttr, applyImageFilter, loadImageFilter } from './seeds.js'
+
+applySchemeAttr()
+applyImageFilter(loadImageFilter())
 
 const { primary, secondary, neutral } = loadSeeds()
 applySeeds({
@@ -26,8 +30,9 @@ applyCardBg('--cta-rewards-bg', rewards.idx, rewards.url, CTA_REWARDS_PRESETS)
 applyFont(loadFont())
 
 const path = window.location.pathname
-const root = path === '/brand-tokens' ? <BrandTokens />
-           : path === '/desktop-view'  ? <DesktopView />
+const root = path === '/brand-tokens'      ? <BrandTokens />
+           : path === '/desktop-view'       ? <DesktopView />
+           : path === '/desktop-page-nav2'  ? <DesktopPageNav2 />
            : <App />
 
 createRoot(document.getElementById('root')).render(

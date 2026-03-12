@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Page.css'
-import './DesktopView.css'
+import './DesktopPageNav2.css'
 import content from '../content.json'
 import DiscoverCarousel from '../components/DiscoverCarousel'
 import FAB from '../components/FAB'
@@ -64,6 +64,21 @@ const AppsIcon = () => (
   </svg>
 )
 
+const ExternalLinkIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)
+
+const BrandIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+    <circle cx="12" cy="9" r="2.5" />
+  </svg>
+)
+
 // ── Side nav icons ────────────────────────────────────────────
 const HomeNavIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -122,70 +137,159 @@ const MoreNavIcon = () => (
     <circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" />
   </svg>
 )
-
-// ── AI Search icons ───────────────────────────────────────────
-const SearchIcon = () => (
+const StarNavIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-)
-const AiSparkleIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-  </svg>
-)
-const ArrowRightIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
   </svg>
 )
 
-// ── Strip sections (matches mobile BottomNav) ────────────────
-const HomeFilledIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <path d="M12 2.1L2 9.5V21a1 1 0 001 1h7v-7h4v7h7a1 1 0 001-1V9.5L12 2.1z" />
-  </svg>
-)
-const FeedFilledIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <rect x="3" y="5" width="18" height="2.5" rx="1.25" />
-    <rect x="3" y="9" width="18" height="2.5" rx="1.25" />
-    <rect x="3" y="13" width="12" height="2.5" rx="1.25" />
-    <rect x="3" y="17" width="8"  height="2.5" rx="1.25" />
-  </svg>
-)
-const ShopFilledIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <path d="M21.7 5.6l-3-4A1 1 0 0018 1H6a1 1 0 00-.8.4l-3 4A1 1 0 002 6v14a2 2 0 002 2h16a2 2 0 002-2V6a1 1 0 00-.3-.4zM12 15a5 5 0 01-5-5h2a3 3 0 006 0h2a5 5 0 01-5 5z" />
-  </svg>
-)
-const YouFilledIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-    <path d="M12 2a6 6 0 110 12A6 6 0 0112 2zm0 14c-5 0-9 2.69-9 6h18c0-3.31-4-6-9-6z" />
-  </svg>
-)
-
-const STRIP_ITEMS = [
-  { key: 'home',   label: 'Home',  icon: HomeNavIcon,   iconFilled: HomeFilledIcon,  active: true },
-  { key: 'feed',   label: 'Feed',  icon: FeedNavIcon,   iconFilled: FeedFilledIcon },
-  { key: 'shop',   label: 'Shop',  icon: ShopNavIcon,   iconFilled: ShopFilledIcon },
-  { key: 'you',    label: 'You',   icon: PeopleNavIcon, iconFilled: YouFilledIcon },
-]
-
-// ── Nav panel items ───────────────────────────────────────────
-const NAV_PRIMARY = [
-  { label: 'Overview',         icon: HomeNavIcon,     active: true },
-  { label: 'News & updates',   icon: FeedNavIcon },
-  { label: 'Recognition',      icon: RecNavIcon },
-  { label: 'Benefits',         icon: BenefitsNavIcon },
-  { label: 'People',           icon: PeopleNavIcon },
-]
-const NAV_SECONDARY = [
-  { label: 'Events',   icon: EventsNavIcon },
-  { label: 'Surveys',  icon: SurveysNavIcon },
-  { label: 'More',     icon: MoreNavIcon },
+// ── Nav items — boom! hierarchy ───────────────────────────────
+const NAV_ITEMS = [
+  { id: 'home', label: 'Home', icon: HomeNavIcon },
+  {
+    id: 'news',
+    label: 'News',
+    icon: FeedNavIcon,
+    children: [
+      { id: 'boom-news',  label: 'boom! News' },
+      { id: 'aus-news',   label: 'AUS Product News' },
+      { id: 'uk-news',    label: 'UK News' },
+      { id: 'epic-news',  label: 'EP!C News' },
+    ],
+  },
+  {
+    id: 'edenred',
+    label: 'Company',
+    icon: BrandIcon,
+    children: [
+      { id: 'purpose',   label: 'Purpose' },
+      { id: 'values',    label: 'Values' },
+      { id: 'brief',     label: 'Brief' },
+      { id: 'strategy',  label: 'Strategy' },
+      { id: 'careers',   label: 'Careers' },
+      { id: 'csr',       label: 'CSR Strategy' },
+      { id: 'group-news',label: 'Group News' },
+    ],
+  },
+  {
+    id: 'our-strategy',
+    label: 'Strategy',
+    icon: SurveysNavIcon,
+    children: [
+      { id: 'amplify',     label: 'Amplify 2025–28' },
+      { id: 'beyond',      label: 'Beyond 2022–25' },
+      { id: 'connection',  label: 'Great Connection' },
+      { id: 'connect60',   label: 'Connect60' },
+      { id: 'edenvoice',   label: 'EdenVoice' },
+      { id: 'edenred-rg',  label: 'edenred+rg' },
+    ],
+  },
+  {
+    id: 'innohub',
+    label: 'External Hubs',
+    icon: EventsNavIcon,
+    children: [
+      { id: 'innohub-hq',  label: 'InnoHub HQ',            external: true },
+      { id: 'primetime',   label: 'Primetime Newsletter',   external: true },
+      { id: 'power-hour',  label: 'Product Power Hour',     external: true },
+      { id: 'status',      label: 'Status Update',          external: true },
+    ],
+  },
+  {
+    id: 'heart',
+    label: 'Wellbeing',
+    icon: RecNavIcon,
+    children: [
+      { id: 'heart-hub',       label: 'HEART Hub' },
+      { id: 'prev-support',    label: 'Preventative Support' },
+      { id: 'daily-support',   label: 'Daily Support' },
+      { id: 'crisis-support',  label: 'Crisis Support' },
+      { id: 'wellbeing-plus',  label: 'Wellbeing+' },
+      { id: 'wellbeing-centre',label: 'Wellbeing Centre' },
+      { id: 'unmind',          label: 'Unmind' },
+      { id: 'nudge',           label: 'nudge' },
+    ],
+  },
+  {
+    id: 'appreci8',
+    label: 'Appreci8',
+    icon: StarNavIcon,
+    children: [
+      { id: 'rec-overview', label: 'Overview' },
+      { id: 'appreci8-hub', label: 'Appreci8 Hub' },
+      { id: 'wow-wall',     label: 'Wow Wall' },
+      { id: 'send-rec',     label: 'Send recognition' },
+      { id: 'goal-nom',     label: 'Strategic Nomination' },
+      { id: 'moments',      label: 'Moments that Matter' },
+    ],
+  },
+  {
+    id: 'benefits',
+    label: 'Benefits',
+    icon: BenefitsNavIcon,
+    children: [
+      { id: 'benefits-app', label: 'App Centre' },
+      { id: 'mental',       label: 'Mental Wellbeing' },
+      { id: 'physical',     label: 'Physical Wellbeing' },
+      { id: 'financial',    label: 'Financial Wellbeing' },
+      { id: 'career-wb',    label: 'Career Wellbeing' },
+      { id: 'social-wb',    label: 'Social Wellbeing' },
+      { id: 'family-wb',    label: 'Family Wellbeing' },
+    ],
+  },
+  {
+    id: 'epic',
+    label: 'EP!C',
+    icon: PeopleNavIcon,
+    children: [
+      { id: 'culture-cal',    label: 'Culture Calendar' },
+      { id: 'epic-networks',  label: 'EP!C Networks' },
+      { id: 'inclusive-rec',  label: 'Inclusive Recruitment' },
+      { id: 'epic-communities',label: 'EP!C Communities' },
+    ],
+  },
+  {
+    id: 'learning',
+    label: 'Learning',
+    icon: ShopNavIcon,
+    children: [
+      { id: 'ld-hub',      label: 'L&D Hub' },
+      { id: 'onboarding',  label: 'Onboarding' },
+      { id: 'motiv8',      label: 'Motiv8' },
+      { id: 'elev8',       label: 'Elev8' },
+      { id: 'our-values',  label: 'Values & Behaviours' },
+      { id: 'handbook',    label: 'Our Handbook' },
+      { id: 'our-brand',   label: 'Our Brand' },
+      { id: 'manager-hub', label: 'Manager Hub' },
+    ],
+  },
+  {
+    id: 'people',
+    label: 'People',
+    icon: PeopleNavIcon,
+    children: [
+      { id: 'directory',    label: 'People Directory' },
+      { id: 'offices',      label: 'Offices' },
+      { id: 'biz-support',  label: 'Business Support' },
+      { id: 'team-comms',   label: 'Team Comms' },
+      { id: 'leadership',   label: 'Leadership Team' },
+      { id: 'emp-groups',   label: 'Employee Groups' },
+    ],
+  },
+  {
+    id: 'essentials',
+    label: 'Essentials',
+    icon: MoreNavIcon,
+    children: [
+      { id: 'expenses',   label: 'Expenses' },
+      { id: 'payslips',   label: 'Payslips' },
+      { id: 'egencia',    label: 'Egencia' },
+      { id: 'mobile-apps',label: 'Mobile Apps' },
+      { id: 'workday',    label: 'Workday' },
+      { id: 'emp-handbook',label: 'Employee Handbook' },
+      { id: 'pay-phil',   label: 'Pay Philosophy' },
+    ],
+  },
 ]
 
 const REC_VALUE_COLOURS = {
@@ -430,75 +534,17 @@ function QuickLinksSection() {
   )
 }
 
-// ── AI Search Section ─────────────────────────────────────────
-const AI_CHIPS = [
-  'What benefits am I enrolled in?',
-  'How do I submit a recognition?',
-  'When is the next company event?',
-  "What's my remaining reward balance?",
-]
-
-function DvAiBanner() {
-  const [dismissed, setDismissed] = useState(false)
-  if (dismissed) return null
-  return (
-    <div className="dv-ai-banner dv-ai-banner--top">
-      <span className="dv-ai-banner-icon"><BellIcon /></span>
-      <div className="dv-ai-banner-text">
-        <span className="dv-ai-banner-title">Benefits enrollment is now open</span>
-        <span className="dv-ai-banner-sub">Review and update your selections before the deadline</span>
-      </div>
-      <button className="dv-ai-banner-close" onClick={() => setDismissed(true)} aria-label="Dismiss">×</button>
-    </div>
-  )
-}
-
-function DvAiSearchSection() {
-  const [mode, setMode] = useState('search')
-
-  return (
-    <div className="dv-ai-search">
-      <h2 className="dv-ai-search-heading">What would you like to know?</h2>
-      <div className="dv-ai-search-input-wrap">
-        <textarea
-          className="dv-ai-search-input"
-          placeholder="Search or ask a question..."
-          rows={2}
-        />
-        <div className="dv-ai-search-controls">
-          <div className="dv-ai-search-modes">
-            <button
-              className={`dv-ai-mode-btn${mode === 'search' ? ' dv-ai-mode-btn--active' : ''}`}
-              onClick={() => setMode('search')}
-              aria-label="Search mode"
-            >
-              <SearchIcon />
-            </button>
-            <button
-              className={`dv-ai-mode-btn${mode === 'ai' ? ' dv-ai-mode-btn--active' : ''}`}
-              onClick={() => setMode('ai')}
-              aria-label="AI mode"
-            >
-              <AiSparkleIcon />
-            </button>
-          </div>
-          <button className="dv-ai-submit-btn" aria-label="Submit">
-            <ArrowRightIcon />
-          </button>
-        </div>
-      </div>
-      <div className="dv-ai-chips">
-        {AI_CHIPS.map((chip) => (
-          <button key={chip} className="dv-ai-chip">{chip}</button>
-        ))}
-        <button className="dv-ai-chip dv-ai-chip--more">•••</button>
-      </div>
-    </div>
-  )
-}
-
 // ── Page ─────────────────────────────────────────────────────
-export default function DesktopView() {
+export default function DesktopPageNav2() {
+  const [expanded, setExpanded] = useState({})
+  const [activeItem, setActiveItem] = useState('home')
+  const [activeChild, setActiveChild] = useState(null)
+
+
+  function toggleExpanded(id) {
+    setExpanded(prev => ({ ...prev, [id]: !prev[id] }))
+  }
+
   useEffect(() => {
     applySchemeAttr()
     applyImageFilter(loadImageFilter())
@@ -522,39 +568,37 @@ export default function DesktopView() {
 
   return (
     <div className="dv-root">
-      {/* Icon strip — matches mobile BottomNav */}
-      <div className="dv-strip">
-        {STRIP_ITEMS.map(({ key, label, icon: Icon, iconFilled: IconFilled, active }) => (
-          <button key={key} className={`dv-strip-btn${active ? ' dv-strip-btn--active' : ''}`} aria-label={label}>
-            <span className="dv-strip-icon">
-              {active ? <IconFilled /> : <Icon />}
-            </span>
-            <span className="dv-strip-label">{label}</span>
-          </button>
-        ))}
-      </div>
-
-      {/* Content area: header + body */}
+      {/* Content area — no strip */}
       <div className="dv-content-area">
         <DvHeader />
         <div className="dv-body">
-          {/* White nav panel */}
+          {/* Brand-coloured tree nav panel */}
           <nav className="dv-nav-panel">
-            <span className="dv-nav-section-label">Workspace</span>
-            <ul className="dv-nav-list">
-              {NAV_PRIMARY.map(({ label, icon: Icon, active }) => (
-                <li key={label} className={`dv-nav-item${active ? ' dv-nav-item--active' : ''}`}>
-                  <span className="dv-nav-icon"><Icon /></span>
-                  <span className="dv-nav-label">{label}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="dv-nav-divider" />
-            <ul className="dv-nav-list">
-              {NAV_SECONDARY.map(({ label, icon: Icon }) => (
-                <li key={label} className="dv-nav-item">
-                  <span className="dv-nav-icon"><Icon /></span>
-                  <span className="dv-nav-label">{label}</span>
+            <ul className="dv-nav-list-tree">
+              {NAV_ITEMS.map(({ id, label, icon: Icon, children }) => (
+                <li key={id}>
+                  <button
+                    className={`dv-nav-item${expanded[id] ? ' dv-nav-item--expanded' : ''}${activeItem === id && !activeChild ? ' dv-nav-item--active' : ''}`}
+                    onClick={() => { setActiveItem(id); if (children) toggleExpanded(id); else setActiveChild(null) }}
+                  >
+                    <span className="dv-nav-icon"><Icon /></span>
+                    <span className="dv-nav-label">{label}</span>
+                  </button>
+                  {children && expanded[id] && (
+                    <ul className="dv-nav-children">
+                      {children.map(child => (
+                        <li key={child.id}>
+                          <button
+                            className={`dv-nav-child${activeChild === child.id ? ' dv-nav-child--active' : ''}`}
+                            onClick={() => { setActiveItem(id); setActiveChild(child.id) }}
+                          >
+                            {child.label}
+                            {child.external && <span className="dv-nav-child-external"><ExternalLinkIcon /></span>}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -562,13 +606,11 @@ export default function DesktopView() {
 
           {/* Main content */}
           <main className="dv-main">
-            <DvAiBanner />
             <div className="dv-page">
               <WelcomeBannerSection />
-              <DvAiSearchSection />
-              {/* {savingsCard && <MainCardSection />} */}
+              {savingsCard && <MainCardSection />}
               <div className="dv-col dv-col--main">
-                {/* {!savingsCard && <MainCardSection />} */}
+                {!savingsCard && <MainCardSection />}
                 {savingsCard ? (
                   <>
                     <div className="dv-cards-row">
@@ -598,7 +640,7 @@ export default function DesktopView() {
         </div>
       </div>
 
-      {/* <FAB activePage="search" /> */}
+      <FAB activePage="search" />
     </div>
   )
 }
