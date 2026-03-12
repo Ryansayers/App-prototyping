@@ -772,11 +772,27 @@
 
 /* ── Dark mode overrides ──────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
-  .dv-nav-panel { background: var(--color-neutral-900); }
+  .dv-nav-panel                      { background: var(--color-neutral-900); }
+  .dv-nav-item                       { color: var(--color-neutral-100); }
+  .dv-nav-item:hover                 { background: rgba(255,255,255,0.1); color: #fff; }
+  .dv-nav-item--expanded             { color: #fff; }
+  .dv-nav-item--active               { background: rgba(255,255,255,0.15); color: #fff; }
+  .dv-nav-children::before           { background: rgba(255,255,255,0.35); }
+  .dv-nav-child                      { color: var(--color-neutral-300); }
+  .dv-nav-child:hover                { color: #fff; background: rgba(255,255,255,0.08); }
+  .dv-nav-child--active              { background: rgba(255,255,255,0.15); color: #fff; }
 }
 
 :root[data-theme="dark"] {
-  .dv-nav-panel { background: var(--color-neutral-900); }
+  .dv-nav-panel                      { background: var(--color-neutral-900); }
+  .dv-nav-item                       { color: var(--color-neutral-100); }
+  .dv-nav-item:hover                 { background: rgba(255,255,255,0.1); color: #fff; }
+  .dv-nav-item--expanded             { color: #fff; }
+  .dv-nav-item--active               { background: rgba(255,255,255,0.15); color: #fff; }
+  .dv-nav-children::before           { background: rgba(255,255,255,0.35); }
+  .dv-nav-child                      { color: var(--color-neutral-300); }
+  .dv-nav-child:hover                { color: #fff; background: rgba(255,255,255,0.08); }
+  .dv-nav-child--active              { background: rgba(255,255,255,0.15); color: #fff; }
 }
 
 /* ── Responsive ───────────────────────────────────────────────── */
