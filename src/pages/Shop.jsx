@@ -51,6 +51,7 @@ export default function Shop() {
           <div key={deal.id} className="deal-card">
             <div className="deal-img-wrap">
               <img className="deal-img" src={deal.image} alt={deal.merchant} />
+              <div className="content-card-img-overlay" />
               <div className="deal-merchant" style={{ background: deal.merchantBg }}>
                 <img src={deal.logo} alt={deal.merchant} className="deal-merchant-logo" />
               </div>
@@ -85,6 +86,7 @@ export default function Shop() {
           <div key={item.id} className="spotlight-card">
             <div className="spotlight-img-wrap">
               <img className="spotlight-img" src={item.image} alt={item.title} />
+              <div className="content-card-img-overlay" />
               <div className="spotlight-logo-badge" style={{ background: item.logoBg }}>
                 <img src={item.logo} alt={item.title} className="spotlight-logo" />
               </div>
@@ -103,6 +105,7 @@ export default function Shop() {
           <div key={deal.id} className="summer-deal-card">
             <div className="deal-img-wrap summer-deal-img-wrap">
               <img className="deal-img" src={deal.image} alt={deal.saveRate} />
+              <div className="content-card-img-overlay" />
               <div className="deal-merchant" style={{ background: deal.logoBg }}>
                 <img src={deal.logo} alt="" className="deal-merchant-logo" />
               </div>

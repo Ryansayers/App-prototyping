@@ -11,7 +11,7 @@
   font-family: var(--font-body, 'Ubuntu', sans-serif);
   font-size: 16px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
 }
 
@@ -100,11 +100,11 @@
   flex-shrink: 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 30;
+  width: 100%;
 }
 
 .dv-header-inner {
-  max-width: calc(300px + 24px + 1100px + 24px);
   width: 100%;
   padding: 0 24px;
   height: 100%;
@@ -407,11 +407,17 @@
   max-height: 250px;
 }
 
-.dv-page > .content-card--hero .content-card-img {
+.dv-page > .content-card--hero .content-card-img-wrap {
   width: 45%;
   height: 100%;
   flex-shrink: 0;
+}
+
+.dv-page > .content-card--hero .content-card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  filter: var(--img-filter);
 }
 
 .dv-page > .content-card--hero .content-card-body {
@@ -468,11 +474,17 @@
   max-height: 250px;
 }
 
-.dv-col--main > .content-card .content-card-img {
+.dv-col--main > .content-card .content-card-img-wrap {
   width: 45%;
   height: 100%;
   flex-shrink: 0;
+}
+
+.dv-col--main > .content-card .content-card-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  filter: var(--img-filter);
 }
 
 .dv-col--main > .content-card .content-card-body {
@@ -494,6 +506,7 @@
 
 .dv-col .content-card-img {
   height: 200px;
+  filter: var(--img-filter);
 }
 
 .dv-col .section-heading {
@@ -781,6 +794,8 @@
   .dv-nav-child                      { color: var(--color-neutral-300); }
   .dv-nav-child:hover                { color: #fff; background: rgba(255,255,255,0.08); }
   .dv-nav-child--active              { background: rgba(255,255,255,0.15); color: #fff; }
+  .dv-ghost-btn                      { border-color: var(--color-secondary-400); color: var(--color-secondary-400); }
+  .dv-ghost-btn:hover                { background: var(--color-secondary-400); color: #fff; }
 }
 
 :root[data-theme="dark"] {
@@ -793,6 +808,8 @@
   .dv-nav-child                      { color: var(--color-neutral-300); }
   .dv-nav-child:hover                { color: #fff; background: rgba(255,255,255,0.08); }
   .dv-nav-child--active              { background: rgba(255,255,255,0.15); color: #fff; }
+  .dv-ghost-btn                      { border-color: var(--color-secondary-400); color: var(--color-secondary-400); }
+  .dv-ghost-btn:hover                { background: var(--color-secondary-400); color: #fff; }
 }
 
 /* ── Responsive ───────────────────────────────────────────────── */
@@ -824,3 +841,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Pure Black neutral — lighten nav panel in dark mode ─────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])[data-neutral="pure-dark"] .dv-nav-panel { background: var(--color-neutral-700); }
+}
+:root[data-theme="dark"][data-neutral="pure-dark"] .dv-nav-panel { background: var(--color-neutral-700); }

@@ -141,6 +141,32 @@
   gap: 6px;
 }
 
+.nc-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.nc-author-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.nc-author-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
 .card-footer {
   display: flex;
   align-items: center;
@@ -188,6 +214,7 @@
 }
 
 .rc-img-wrap {
+  position: relative;
   height: 200px;
   flex-shrink: 0;
 }

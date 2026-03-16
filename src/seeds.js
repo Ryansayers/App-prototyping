@@ -40,6 +40,7 @@ export const NEUTRAL_PRESETS = [
   { label: 'Warm',                h: 30,  s: 15 },
   { label: 'Cool Slate',          h: 220, s: 12 },
   { label: 'Pure Grey',           h: 0,   s: 0  },
+  { label: 'Pure Black (dark)',   h: 0,   s: 0,  pureDark: true },
   { label: 'Rose tint',           h: 346, s: 10 },
   { label: 'Green tint',          h: 152, s: 12 },
   { label: 'Next Cool Navy-Tinted Grey', h: 205, s: 10 },
@@ -56,6 +57,11 @@ export function applySeeds({ primary, secondary, neutral }) {
   el.style.setProperty('--color-secondary-s', `${secondary.s}%`)
   el.style.setProperty('--color-neutral-h',   neutral.h)
   el.style.setProperty('--color-neutral-s',   `${neutral.s}%`)
+  if (neutral.pureDark) {
+    el.setAttribute('data-neutral', 'pure-dark')
+  } else {
+    el.removeAttribute('data-neutral')
+  }
 }
 
 export const BG_PRESETS = [
@@ -209,7 +215,7 @@ export function saveCardBg(key, idx, url) {
 export function applyImageFilter(enabled) {
   const el = document.documentElement
   if (enabled) {
-    el.style.removeProperty('--img-filter')
+    el.style.setProperty('--img-filter', 'grayscale(100%) brightness(1.25)')
     el.style.setProperty('--nc-img-filter', 'grayscale(100%) brightness(1.25)')
     el.style.setProperty('--nc-overlay-opacity', '0.6')
   } else {

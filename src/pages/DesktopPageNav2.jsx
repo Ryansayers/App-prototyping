@@ -317,8 +317,8 @@ function DvHeader() {
             : <span className="dv-logo-word">Intranet</span>}
         </div>
         <div className="dv-header-actions">
-          <button className="dv-icon-btn" aria-label="Apps">
-            <AppsIcon />
+          <button className="dv-icon-btn" aria-label="Basket">
+            <CartIcon />
           </button>
           <button className="dv-icon-btn" onClick={() => setHasNotif(false)} aria-label="Notifications">
             <BellIcon />
@@ -390,12 +390,15 @@ function MainCardSection() {
   const card = infoCard || benefitsCTA
   return (
     <div className="content-card content-card--hero">
-      <img
-        className="content-card-img"
-        src={card.image}
-        alt={card.title}
-        style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
-      />
+      <div className="content-card-img-wrap">
+        <img
+          className="content-card-img"
+          src={card.image}
+          alt={card.title}
+          style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
+        />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="content-card-body">
         <h1 className="content-card-title">{card.title}</h1>
         {card.subtitle && <p className="content-card-subtitle">{card.subtitle}</p>}
@@ -409,12 +412,15 @@ function MainCardSection() {
 function HeartCardSection() {
   return (
     <div className="content-card">
-      <img
-        className="content-card-img"
-        src={heartCard.image}
-        alt={heartCard.title}
-        style={heartCard.imagePosition ? { objectPosition: heartCard.imagePosition } : undefined}
-      />
+      <div className="content-card-img-wrap">
+        <img
+          className="content-card-img"
+          src={heartCard.image}
+          alt={heartCard.title}
+          style={heartCard.imagePosition ? { objectPosition: heartCard.imagePosition } : undefined}
+        />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="content-card-body">
         <h3 className="content-card-title">{heartCard.title}</h3>
         <p className="content-card-text">{heartCard.text}</p>
@@ -427,7 +433,10 @@ function SavingsCardSection() {
   if (!savingsCard) return null
   return (
     <div className="content-card">
-      <img className="content-card-img" src={savingsCard.image} alt={savingsCard.title} />
+      <div className="content-card-img-wrap">
+        <img className="content-card-img" src={savingsCard.image} alt={savingsCard.title} />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="content-card-body">
         <h3 className="content-card-title">{savingsCard.title}</h3>
         <p className="content-card-text">{savingsCard.text}</p>
@@ -440,12 +449,15 @@ function VoiceCardSection() {
   if (!voiceCard) return null
   return (
     <div className="content-card">
-      <img
-        className="content-card-img"
-        src={voiceCard.image}
-        alt={voiceCard.title}
-        style={voiceCard.imagePosition ? { objectPosition: voiceCard.imagePosition } : undefined}
-      />
+      <div className="content-card-img-wrap">
+        <img
+          className="content-card-img"
+          src={voiceCard.image}
+          alt={voiceCard.title}
+          style={voiceCard.imagePosition ? { objectPosition: voiceCard.imagePosition } : undefined}
+        />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="content-card-body">
         <h3 className="content-card-title">{voiceCard.title}</h3>
         {voiceCard.text && <p className="content-card-text">{voiceCard.text}</p>}
@@ -568,9 +580,9 @@ export default function DesktopPageNav2() {
 
   return (
     <div className="dv-root">
+      <DvHeader />
       {/* Content area — no strip */}
       <div className="dv-content-area">
-        <DvHeader />
         <div className="dv-body">
           {/* Brand-coloured tree nav panel */}
           <nav className="dv-nav-panel">

@@ -10,13 +10,18 @@
         "benefitsCTA": {
           "image": "/benefits-hero.png",
           "title": "Your Benefits",
-          "text": "Are you making the most of your benefits? You can learn more about all your benefits and access them here.",
+          "text": "Your benefits package is designed to support your health, wellbeing, and financial future. From exclusive discounts and healthcare cover to pension contributions and flexible working — everything is in one place. Take a few minutes to explore what's available and make sure you're getting everything you're entitled to.",
           "ctaLabel": "Explore your benefits"
         },
         "heartCard": {
           "image": "/heart-hero.png",
           "title": "H.E.A.R.T.",
           "text": "Our values — Honesty, Excellence, Accountability, Respect, and Teamwork — are at the heart of everything we do."
+        },
+        "savingsCard": {
+          "image": "/savings-hero.png",
+          "title": "Save more every day",
+          "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
         },
         "anniversaries": [
           { "id": 1, "name": "Olga Mihaleva",  "initials": "OM", "colour": "#3b82f6", "date": "5 Mar",  "years": 1 },
@@ -26,10 +31,14 @@
           { "id": 5, "name": "Tom Briggs",      "initials": "TB", "colour": "#f97316", "date": "24 Mar", "years": 7 }
         ],
         "discover": [
-          { "id": 1, "title": "Speak Up",           "image": "/discover-speak-up.png"  },
-          { "id": 2, "title": "Our Brand",           "image": "/discover-our-brand.png" },
-          { "id": 3, "title": "Internal Vacancies",  "image": "/discover-vacancies.png" },
-          { "id": 4, "title": "Our Strategy",        "image": "/discover-strategy.png"  }
+          { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
+          { "id": 2, "title": "Our Brand",              "image": "/discover-our-brand.png" },
+          { "id": 3, "title": "Internal Vacancies",     "image": "/discover-vacancies.png" },
+          { "id": 4, "title": "Our Strategy",           "image": "/discover-strategy.png"  },
+          { "id": 5, "title": "Learning & Development", "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" },
+          { "id": 6, "title": "Wellbeing Hub",          "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" },
+          { "id": 7, "title": "Company Values",         "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" },
+          { "id": 8, "title": "People Updates",         "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop" }
         ],
         "cards": [
           { "id": 1, "title": "Essentials",                "desc": "Pay, Leave & Expenses" },
@@ -46,6 +55,7 @@
             "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
             "title": "Design System v2.0 launched",
             "body": "The new component library is live. All product teams are encouraged to migrate by end of Q2.",
+            "author": "Priya Sharma", "authorInitials": "PS", "authorColour": "#6366f1",
             "time": "2m ago",
             "relevant": true,
             "likes": 7,
@@ -58,6 +68,7 @@
             "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop",
             "title": "Q1 All-Hands recap",
             "body": "CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.",
+            "author": "Sarah Chen", "authorInitials": "SC", "authorColour": "#0ea5e9",
             "time": "1h ago",
             "relevant": true,
             "likes": 16,
@@ -70,6 +81,7 @@
             "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop",
             "title": "New CI/CD pipeline rollout",
             "body": "Build times are down 40% following last week's infrastructure upgrade across all repos.",
+            "author": "Marcus Lee", "authorInitials": "ML", "authorColour": "#10b981",
             "time": "3h ago",
             "relevant": true,
             "likes": 8,
@@ -82,6 +94,7 @@
             "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
             "title": "Office expansion — Austin TX",
             "body": "We're opening a new office in Austin this summer. Applications for relocation packages are now open.",
+            "author": "Tom Richards", "authorInitials": "TR", "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": false,
             "likes": 6,
@@ -94,6 +107,7 @@
             "image": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop",
             "title": "Updated hybrid work policy",
             "body": "Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.",
+            "author": "Jade Okafor", "authorInitials": "JO", "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 9,
@@ -315,6 +329,11 @@
           "title": "Our Values",
           "text": "Style, Quality, Value and Service — four principles that guide how we work together and serve our customers every day."
         },
+        "savingsCard": {
+          "image": "/savings-hero.png",
+          "title": "Save more every day",
+          "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
+        },
         "anniversaries": [
           { "id": 1, "name": "Claire Booth",    "initials": "CB", "colour": "#3b82f6", "date": "3 Mar",  "years": 2 },
           { "id": 2, "name": "James Holden",    "initials": "JH", "colour": "#10b981", "date": "9 Mar",  "years": 5 },
@@ -323,10 +342,14 @@
           { "id": 5, "name": "Emma Clarke",     "initials": "EC", "colour": "#f97316", "date": "27 Mar", "years": 3 }
         ],
         "discover": [
-          { "id": 1, "title": "Speak Up",          "image": "/discover-speak-up.png"  },
-          { "id": 2, "title": "Our Brand",          "image": "/discover-our-brand.png" },
-          { "id": 3, "title": "Internal Vacancies", "image": "/discover-vacancies.png" },
-          { "id": 4, "title": "Our Strategy",       "image": "/discover-strategy.png"  }
+          { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
+          { "id": 2, "title": "Our Brand",              "image": "/discover-our-brand.png" },
+          { "id": 3, "title": "Internal Vacancies",     "image": "/discover-vacancies.png" },
+          { "id": 4, "title": "Our Strategy",           "image": "/discover-strategy.png"  },
+          { "id": 5, "title": "Learning & Development", "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" },
+          { "id": 6, "title": "Wellbeing Hub",          "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" },
+          { "id": 7, "title": "Company Values",         "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" },
+          { "id": 8, "title": "People Updates",         "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop" }
         ],
         "cards": [
           { "id": 1, "title": "My Pay & Benefits",     "desc": "Payslips, pension & expenses" },
@@ -343,6 +366,7 @@
             "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
             "title": "Summer collection now live",
             "body": "The SS25 womenswear and menswear ranges are now available online and in all 500+ stores across the UK.",
+            "author": "Claire Booth", "authorInitials": "CB", "authorColour": "#6366f1",
             "time": "1h ago",
             "relevant": true,
             "likes": 34,
@@ -355,6 +379,7 @@
             "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop",
             "title": "Record online sales in Q1",
             "body": "Next.co.uk delivered its strongest quarter to date with online revenue up 18% year-on-year.",
+            "author": "James Holden", "authorInitials": "JH", "authorColour": "#0ea5e9",
             "time": "3h ago",
             "relevant": true,
             "likes": 21,
@@ -367,6 +392,7 @@
             "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop",
             "title": "Better Cotton Initiative milestone",
             "body": "We've reached 80% sustainably sourced cotton across our own-brand ranges, ahead of our 2025 target.",
+            "author": "Anya Patel", "authorInitials": "AP", "authorColour": "#10b981",
             "time": "5h ago",
             "relevant": true,
             "likes": 15,
@@ -379,6 +405,7 @@
             "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
             "title": "New distribution centre opening",
             "body": "Our new automated fulfilment centre in Doncaster opens next month, creating 400 new roles.",
+            "author": "David Nash", "authorInitials": "DN", "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": false,
             "likes": 11,
@@ -391,6 +418,7 @@
             "image": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop",
             "title": "Flexible working update",
             "body": "Following colleague feedback, we're extending flexible shift options to all retail and head office teams from June.",
+            "author": "Sophie Ward", "authorInitials": "SW", "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 18,
@@ -647,6 +675,7 @@
             "image": "/ps-news-barbour.jpg",
             "title": "Paul Smith loves Barbour",
             "body": "Our latest collaboration with Barbour is here. Classic British outerwear meets Paul Smith's signature colour and wit — the capsule collection is available now in all flagships.",
+            "author": "Isabelle Roy", "authorInitials": "IR", "authorColour": "#6366f1",
             "time": "1h ago",
             "relevant": true,
             "likes": 54,
@@ -659,6 +688,7 @@
             "image": "/ps-news-coachella.jpg",
             "title": "Paul Smith at Coachella 2025",
             "body": "Our SS25 looks made their festival debut at Coachella this year. Relaxed tailoring, natural tones and that unmistakable Paul Smith ease — dressed for the desert.",
+            "author": "Tom Blake", "authorInitials": "TB", "authorColour": "#0ea5e9",
             "time": "3h ago",
             "relevant": true,
             "likes": 41,
@@ -671,6 +701,7 @@
             "image": "/ps-news-easter.jpg",
             "title": "Our signature Easter egg returns",
             "body": "The iconic Paul Smith houndstooth Easter egg is back for 2025. Hand-crafted in Belgium and filled with speckled mini eggs — a classic with a twist, as always.",
+            "author": "Nina Clarke", "authorInitials": "NC", "authorColour": "#10b981",
             "time": "5h ago",
             "relevant": true,
             "likes": 67,
@@ -683,6 +714,7 @@
             "image": "/ps-news-bear.jpg",
             "title": "Colour, character and curiosity",
             "body": "Our latest Artist in Residence commission explores the intersection of wildlife and abstract colour — bold, playful and unmistakably Paul Smith. On display in our Albemarle Street store now.",
+            "author": "Luca Ferretti", "authorInitials": "LF", "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": true,
             "likes": 38,
@@ -695,6 +727,7 @@
             "image": "/ps-news-store.jpg",
             "title": "More upstairs — Albemarle Street refresh",
             "body": "Our Mayfair flagship has a new look. Explore the expanded accessories and archive floor, featuring curated art, leather goods and a rotating selection of rare Paul Smith pieces.",
+            "author": "Rosa Martin", "authorInitials": "RM", "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 29,
@@ -707,6 +740,7 @@
             "image": "/ps-news-vogue.jpg",
             "title": "Paul Smith meets Anna Wintour at NYFW",
             "body": "Paul joined Anna Wintour and Vogue's creative leadership at New York Fashion Week this season — a landmark moment celebrating 50 years of Paul Smith in fashion.",
+            "author": "Paul Smith", "authorInitials": "PS", "authorColour": "#8b5cf6",
             "time": "3d ago",
             "relevant": false,
             "likes": 93,

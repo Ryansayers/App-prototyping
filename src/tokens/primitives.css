@@ -56,6 +56,7 @@
   --color-neutral-700: hsl(var(--color-neutral-h), var(--color-neutral-s), 26%);
   --color-neutral-800: hsl(var(--color-neutral-h), var(--color-neutral-s), 17%);
   --color-neutral-900: hsl(var(--color-neutral-h), var(--color-neutral-s), 10%);
+  --color-neutral-950: hsl(var(--color-neutral-h), var(--color-neutral-s), 6%);
 
   /* ── Stroke widths ── */
   --stroke-width-1: 1px;
@@ -83,4 +84,21 @@
   --color-warning-600: #d97706;
   --color-danger-500:  #ef4444;
   --color-info-500:    #0ea5e9;
+}
+
+/* ── Pure Black dark mode — overrides dark neutrals to true black ── */
+@media (prefers-color-scheme: dark) {
+  :root[data-neutral="pure-dark"] {
+    --color-neutral-700: #111111;
+    --color-neutral-800: #080808;
+    --color-neutral-900: #000000;
+    --color-neutral-950: #000000;
+  }
+}
+
+:root[data-theme="dark"][data-neutral="pure-dark"] {
+  --color-neutral-700: #111111;
+  --color-neutral-800: #080808;
+  --color-neutral-900: #000000;
+  --color-neutral-950: #000000;
 }

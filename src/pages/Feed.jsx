@@ -85,6 +85,12 @@ function NewsCard({ item, saved, onSave }) {
         {item.relevant && <span className="nc-badge">For you</span>}
       </div>
       <div className="nc-body">
+        {item.author && (
+          <div className="nc-author">
+            <div className="nc-author-avatar" style={{ background: item.authorColour }}>{item.authorInitials}</div>
+            <span className="nc-author-name">{item.author}</span>
+          </div>
+        )}
         <p className="nc-title">{item.title}</p>
         <p className="nc-desc">{item.body}</p>
         <div className="card-footer">
@@ -103,6 +109,7 @@ function RecognitionCard({ item, saved, onSave }) {
       {item.image && (
         <div className="rc-img-wrap">
           <img className="rc-img" src={item.image} alt="" />
+          <div className="content-card-img-overlay" />
         </div>
       )}
       <div className="rc-content">

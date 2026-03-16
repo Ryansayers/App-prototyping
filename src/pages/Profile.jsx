@@ -139,6 +139,7 @@ export default function Profile() {
           <div key={act.id} className="wb-continue-card">
             <div className="wb-thumb">
               <img className="wb-thumb-img" src={act.image} alt={act.title} />
+              <div className="content-card-img-overlay" />
               {act.completed > 0 && (
                 <div className="wb-completed-badge">
                   <div className="wb-avatar-group">

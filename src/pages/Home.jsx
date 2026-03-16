@@ -2,7 +2,7 @@ import './Page.css'
 import content from '../content.json'
 import { loadScheme } from '../seeds.js'
 
-const { anniversaries: ANNIVERSARIES, cards: CARDS, discover: DISCOVER, recognitionNudge, benefitsCTA, infoCard, heartCard, voiceCard, welcomeBanner } = loadScheme(content).home
+const { anniversaries: ANNIVERSARIES, cards: CARDS, discover: DISCOVER, recognitionNudge, benefitsCTA, infoCard, heartCard, voiceCard, welcomeBanner, savingsCard } = loadScheme(content).home
 
 function WelcomeBanner() {
   return (
@@ -57,7 +57,10 @@ function WorkAnniversaries() {
 function BenefitsCTA() {
   return (
     <div className="benefits-card">
-      <img className="benefits-img" src={benefitsCTA.image} alt={benefitsCTA.title} style={benefitsCTA.imagePosition ? { objectPosition: benefitsCTA.imagePosition } : undefined} />
+      <div className="benefits-img-wrap">
+        <img className="benefits-img" src={benefitsCTA.image} alt={benefitsCTA.title} style={benefitsCTA.imagePosition ? { objectPosition: benefitsCTA.imagePosition } : undefined} />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="benefits-body">
         <h3 className="benefits-title">{benefitsCTA.title}</h3>
         {benefitsCTA.text && <p className="benefits-text">{benefitsCTA.text}</p>}
@@ -70,7 +73,10 @@ function BenefitsCTA() {
 function InfoCard() {
   return (
     <div className="benefits-card">
-      <img className="benefits-img" src={infoCard.image} alt={infoCard.title} style={infoCard.imagePosition ? { objectPosition: infoCard.imagePosition } : undefined} />
+      <div className="benefits-img-wrap">
+        <img className="benefits-img" src={infoCard.image} alt={infoCard.title} style={infoCard.imagePosition ? { objectPosition: infoCard.imagePosition } : undefined} />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="benefits-body">
         <h3 className="benefits-title">{infoCard.title}</h3>
         <button className="benefits-btn">{infoCard.ctaLabel}</button>
@@ -82,7 +88,10 @@ function InfoCard() {
 function VoiceCard() {
   return (
     <div className="benefits-card">
-      <img className="benefits-img" src={voiceCard.image} alt={voiceCard.title} style={voiceCard.imagePosition ? { objectPosition: voiceCard.imagePosition } : undefined} />
+      <div className="benefits-img-wrap">
+        <img className="benefits-img" src={voiceCard.image} alt={voiceCard.title} style={voiceCard.imagePosition ? { objectPosition: voiceCard.imagePosition } : undefined} />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="benefits-body">
         <h3 className="benefits-title">{voiceCard.title}</h3>
         {voiceCard.text && <p className="benefits-text">{voiceCard.text}</p>}
@@ -94,10 +103,28 @@ function VoiceCard() {
 function HeartCard() {
   return (
     <div className="benefits-card">
-      <img className="benefits-img" src={heartCard.image} alt={heartCard.title} style={heartCard.imagePosition ? { objectPosition: heartCard.imagePosition } : undefined} />
+      <div className="benefits-img-wrap">
+        <img className="benefits-img" src={heartCard.image} alt={heartCard.title} style={heartCard.imagePosition ? { objectPosition: heartCard.imagePosition } : undefined} />
+        <div className="content-card-img-overlay" />
+      </div>
       <div className="benefits-body">
         <h3 className="benefits-title">{heartCard.title}</h3>
         <p className="benefits-text">{heartCard.text}</p>
+      </div>
+    </div>
+  )
+}
+
+function SavingsCard() {
+  return (
+    <div className="benefits-card">
+      <div className="benefits-img-wrap">
+        <img className="benefits-img" src={savingsCard.image} alt={savingsCard.title} />
+        <div className="content-card-img-overlay" />
+      </div>
+      <div className="benefits-body">
+        <h3 className="benefits-title">{savingsCard.title}</h3>
+        <p className="benefits-text">{savingsCard.text}</p>
       </div>
     </div>
   )
@@ -110,6 +137,7 @@ export default function Home() {
       {recognitionNudge && <RecognitionNudge />}
       {infoCard ? <InfoCard /> : <BenefitsCTA />}
       <HeartCard />
+      {savingsCard && <SavingsCard />}
       {voiceCard && <VoiceCard />}
       <WorkAnniversaries />
       <h2 className="section-heading">Discover More</h2>
@@ -118,6 +146,7 @@ export default function Home() {
           <div key={item.id} className="discover-card">
             <div className="discover-img-wrap">
               <img className="discover-img" src={item.image} alt={item.title} style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined} />
+              <div className="content-card-img-overlay" />
             </div>
             <div className="discover-body">
               <p className="discover-title">{item.title}</p>

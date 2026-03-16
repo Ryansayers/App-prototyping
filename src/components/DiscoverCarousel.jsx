@@ -52,6 +52,7 @@ export default function DiscoverCarousel({ items, title }) {
                   alt={item.title}
                   style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined}
                 />
+                <div className="content-card-img-overlay" />
               </div>
               <div className="discover-body">
                 <p className="discover-title">{item.title}</p>
