@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import MvpApp from './MvpApp.jsx'
 import BrandTokens from './pages/BrandTokens.jsx'
 import DesktopView from './pages/DesktopView.jsx'
 import DesktopPageNav2 from './pages/DesktopPageNav2.jsx'
@@ -30,9 +31,18 @@ applyCardBg('--cta-rewards-bg', rewards.idx, rewards.url, CTA_REWARDS_PRESETS)
 applyFont(loadFont())
 
 const path = window.location.pathname
+const titles = {
+  '/brand-tokens':     'Brand Tokens',
+  '/desktop-view':     'Desktop-vision',
+  '/desktop-page-nav2':'Desktop-consolidation',
+  '/mvp':              'MVP',
+}
+document.title = titles[path] || 'Long-term-vision'
+
 const root = path === '/brand-tokens'      ? <BrandTokens />
            : path === '/desktop-view'       ? <DesktopView />
            : path === '/desktop-page-nav2'  ? <DesktopPageNav2 />
+           : path === '/mvp'               ? <MvpApp />
            : <App />
 
 createRoot(document.getElementById('root')).render(

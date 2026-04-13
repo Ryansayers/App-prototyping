@@ -1,0 +1,6 @@
+.app--mvp {
+  --fab-ai-bg:     linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  --fab-ai-shadow: 0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
+  --activity-bg:   var(--card-bg);
+  --cta-color:     var(--color-text-primary);
+}

@@ -85,6 +85,7 @@ export default function BottomNav({ active, onChange }) {
   const activeIndex = NAV_ITEMS.findIndex((item) => item.id === active)
 
   return (
+    <div className="bottom-nav-wrapper">
     <nav className="bottom-nav">
 {NAV_ITEMS.map((item) => {
         const isActive = active === item.id
@@ -100,5 +101,6 @@ export default function BottomNav({ active, onChange }) {
         )
       })}
     </nav>
+    </div>
   )
 }
