@@ -386,8 +386,6 @@ function DvFeedSection() {
                     <span className="nc-author-name">{item.author}</span>
                   </div>
                 )}
-                <span className="dv-news-tag">{item.tag}</span>
-                <p className="dv-news-title">{item.title}</p>
                 <p className="dv-news-excerpt">{item.body}</p>
                 <span className="dv-news-time">{item.time}</span>
               </div>

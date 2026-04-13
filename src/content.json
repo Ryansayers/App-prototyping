@@ -112,6 +112,19 @@
             "relevant": false,
             "likes": 9,
             "comments": 4
+          },
+          {
+            "id": "n6",
+            "type": "news",
+            "tag": "Wellbeing",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop",
+            "title": "Mental Health Awareness Week 2025",
+            "body": "This May we're running a series of workshops, drop-ins and guided sessions to support your mental health. Check the Wellbeing Hub for the full schedule.",
+            "author": "Nia Obi", "authorInitials": "NO", "authorColour": "#14b8a6",
+            "time": "3d ago",
+            "relevant": false,
+            "likes": 12,
+            "comments": 5
           }
         ],
         "recognition": [
@@ -423,6 +436,19 @@
             "relevant": false,
             "likes": 18,
             "comments": 9
+          },
+          {
+            "id": "n6",
+            "type": "news",
+            "tag": "Technology",
+            "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&auto=format&fit=crop",
+            "title": "Self-checkout upgrade rolling out",
+            "body": "New self-checkout terminals with faster scanning and tap-to-pay are being rolled out across 200 stores this quarter.",
+            "author": "Ben Carter", "authorInitials": "BC", "authorColour": "#6366f1",
+            "time": "3d ago",
+            "relevant": false,
+            "likes": 22,
+            "comments": 7
           }
         ],
         "recognition": [
@@ -745,6 +771,19 @@
             "relevant": false,
             "likes": 93,
             "comments": 31
+          },
+          {
+            "id": "n7",
+            "type": "news",
+            "tag": "People",
+            "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop",
+            "title": "Welcome to our new Head of Retail",
+            "body": "We're delighted to welcome Camille Dubois as our new Head of Retail Europe. Camille joins us from Maison Margiela and brings over 15 years of luxury retail leadership.",
+            "author": "HR Team", "authorInitials": "HR", "authorColour": "#f59e0b",
+            "time": "4d ago",
+            "relevant": false,
+            "likes": 47,
+            "comments": 13
           }
         ],
         "recognition": [
