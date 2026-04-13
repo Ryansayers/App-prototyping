@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <div className="card-list">
+      <div className="card-list" style={{ marginTop: 32, marginBottom: 96 }}>
         {CARDS.map((card) => (
           <div key={card.id} className="card">
             <h3>{card.title}</h3>

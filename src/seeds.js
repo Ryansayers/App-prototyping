@@ -1,18 +1,18 @@
 export const PRIMARY_PRESETS = [
-  { label: 'Light Cobalt (default)',  h: 192, s: 100 },
-  { label: 'Smarter Legacy',         h: 214, s: 85  },
-  { label: 'Edenred+',        h: 256, s: 86  },
-  { label: 'Eden Cobalt',     h: 209, s: 100 },
-  { label: 'Boom Blue',       h: 196, s: 100 },
-  { label: 'Boom Orange',     h: 21,  s: 88  },
-  { label: 'Indigo',          h: 245, s: 80  },
-  { label: 'Emerald',         h: 152, s: 76  },
-  { label: 'Amber',           h: 38,  s: 95  },
-  { label: 'Rose',            h: 346, s: 84  },
-  { label: 'Next Big Stone',  h: 45,  s: 12  },
-  { label: 'Paul Smith Coral',        h: 2,   s: 84  },
-  { label: 'Paul Smith Amber',        h: 37,  s: 92  },
-  { label: 'Paul Smith Teal',         h: 183, s: 100 },
+  { label: 'Light Cobalt (default)',  h: 192, s: 100, darkText: true  },
+  { label: 'Smarter Legacy',         h: 214, s: 85                   },
+  { label: 'Edenred+',               h: 256, s: 86                   },
+  { label: 'Eden Cobalt',            h: 209, s: 100                  },
+  { label: 'Boom Blue',              h: 196, s: 100, darkText: true  },
+  { label: 'Boom Orange',            h: 21,  s: 88,  darkText: true  },
+  { label: 'Indigo',                 h: 245, s: 80                   },
+  { label: 'Emerald',                h: 152, s: 76,  darkText: true  },
+  { label: 'Amber',                  h: 38,  s: 95,  darkText: true  },
+  { label: 'Rose',                   h: 346, s: 84                   },
+  { label: 'Next Big Stone',         h: 45,  s: 12,  darkText: true  },
+  { label: 'Paul Smith Coral',       h: 2,   s: 84                   },
+  { label: 'Paul Smith Amber',       h: 37,  s: 92,  darkText: true  },
+  { label: 'Paul Smith Teal',        h: 183, s: 100, darkText: true  },
 ]
 
 export const SECONDARY_PRESETS = [
@@ -51,8 +51,9 @@ export const NEUTRAL_PRESETS = [
 
 export function applySeeds({ primary, secondary, neutral }) {
   const el = document.documentElement
-  el.style.setProperty('--color-primary-h',   primary.h)
-  el.style.setProperty('--color-primary-s',   `${primary.s}%`)
+  el.style.setProperty('--color-primary-h',        primary.h)
+  el.style.setProperty('--color-primary-s',        `${primary.s}%`)
+  el.style.setProperty('--color-primary-contrast', primary.darkText ? '#000000' : '#ffffff')
   el.style.setProperty('--color-secondary-h', secondary.h)
   el.style.setProperty('--color-secondary-s', `${secondary.s}%`)
   el.style.setProperty('--color-neutral-h',   neutral.h)

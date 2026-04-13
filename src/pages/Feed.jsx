@@ -221,7 +221,7 @@ export default function Feed() {
         ))}
       </div>
 
-      <div className="feed-list">
+      <div className="feed-list" style={{ marginBottom: 96 }}>
         {tab === 'all' && ALL_ITEMS.map((item) => (
           <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
         ))}

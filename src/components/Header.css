@@ -54,6 +54,21 @@
   gap: 10px;
 }
 
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--nav-avatar-bg);
+  color: var(--nav-avatar-color);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+}
+
 .icon-btn {
   position: relative;
   width: 40px;
@@ -80,13 +95,20 @@
   height: 20px;
 }
 
-.notif-dot {
+.notif-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--header-notif-dot-bg);
-  border: var(--header-notif-dot-stroke-width) solid var(--header-notif-dot-stroke-color);
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 99px;
+  background: var(--color-state-danger);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }

@@ -100,7 +100,7 @@ export default function Shop() {
       </div>
 
       <h2 className="section-heading">Summer Deals</h2>
-      <div className="summer-deals-carousel">
+      <div className="summer-deals-carousel" style={{ marginBottom: 96 }}>
         {SUMMER_DEALS.map((deal) => (
           <div key={deal.id} className="summer-deal-card">
             <div className="deal-img-wrap summer-deal-img-wrap">

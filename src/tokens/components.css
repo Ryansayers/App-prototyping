@@ -49,7 +49,8 @@
   /* ── FAB ── */
   --fab-bg:                        linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
   --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-300) 0%, var(--color-secondary-400) 100%);
-  --fab-color:                     #000000;
+  --fab-color:                     var(--color-primary-contrast, #ffffff);
+  --fab-ai-color:                  #000000;
   --fab-radius:                    var(--radius-fab);
   --fab-shadow:                    0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
   --fab-ai-shadow:                 0 4px 16px hsla(var(--color-secondary-h), var(--color-secondary-s), 45%, 0.35);
@@ -218,6 +219,8 @@
   --rc-you-banner-color:    #ffffff;
   --rc-time-color:          #ffffff;
   --save-btn-color:         #ffffff;
+  --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-700) 100%);
+  --fab-ai-color:                  #ffffff;
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-900) 100%);
   --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
   --activity-bg:                   linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);

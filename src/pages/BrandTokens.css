@@ -582,3 +582,9 @@ code {
   color: var(--color-text-secondary);
   min-width: 20px;
 }
+
+.bt-page--primary-only {
+  --btn-primary-bg:    var(--color-primary-600);
+  --btn-primary-color: var(--color-primary-contrast, #ffffff);
+  --btn-ghost-color:   var(--color-primary-600);
+}

@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import MvpApp from './MvpApp.jsx'
 import BrandTokens from './pages/BrandTokens.jsx'
+import PrimaryColour from './pages/PrimaryColour.jsx'
 import DesktopView from './pages/DesktopView.jsx'
 import DesktopPageNav2 from './pages/DesktopPageNav2.jsx'
 import { applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyBg, loadBg, applyTheme, loadTheme, applyCardBg, loadCardBg, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyFont, loadFont, applySchemeAttr, applyImageFilter, loadImageFilter } from './seeds.js'
@@ -36,6 +37,7 @@ const titles = {
   '/desktop-view':     'Desktop-vision',
   '/desktop-page-nav2':'Desktop-consolidation',
   '/mvp':              'MVP',
+  '/Primary-colour':   'Primary Colour',
 }
 document.title = titles[path] || 'Long-term-vision'
 
@@ -43,6 +45,7 @@ const root = path === '/brand-tokens'      ? <BrandTokens />
            : path === '/desktop-view'       ? <DesktopView />
            : path === '/desktop-page-nav2'  ? <DesktopPageNav2 />
            : path === '/mvp'               ? <MvpApp />
+           : path === '/Primary-colour'    ? <PrimaryColour />
            : <App />
 
 createRoot(document.getElementById('root')).render(

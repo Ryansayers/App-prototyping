@@ -81,7 +81,7 @@ const NAV_ITEMS = [
   },
 ]
 
-export default function BottomNav({ active, onChange }) {
+export default function BottomNav({ active, onChange, labels = {}, icons = {} }) {
   const activeIndex = NAV_ITEMS.findIndex((item) => item.id === active)
 
   return (
@@ -95,8 +95,8 @@ export default function BottomNav({ active, onChange }) {
             className={`nav-item ${isActive ? 'active' : ''}`}
             onClick={() => onChange(item.id)}
           >
-            <span className="nav-icon">{isActive ? item.iconFilled : item.icon}</span>
-            <span className="nav-label">{item.label}</span>
+            <span className="nav-icon">{icons[item.id] ? icons[item.id] : (isActive ? item.iconFilled : item.icon)}</span>
+            <span className="nav-label">{labels[item.id] ?? item.label}</span>
           </button>
         )
       })}

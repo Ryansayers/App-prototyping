@@ -462,11 +462,38 @@
   font-size: 15px;
   outline: none;
   margin-bottom: 16px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  background: #ffffff;
+  color: #111111;
+}
+
+.search-input::placeholder {
+  color: #999999;
 }
 
 .search-input:focus {
   border-color: var(--search-stroke-color-focus);
+}
+
+[data-theme="dark"] .search-input {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border-color: #444444;
+}
+
+[data-theme="dark"] .search-input::placeholder {
+  color: #777777;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .search-input {
+    background: #1a1a1a;
+    color: #f5f5f5;
+    border-color: #444444;
+  }
+  :root:not([data-theme="light"]) .search-input::placeholder {
+    color: #777777;
+  }
 }
 
 /* Search filters */
@@ -750,7 +777,7 @@
 }
 
 .wb-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0;
@@ -781,7 +808,7 @@
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
   color: var(--color-text-muted);
   margin: 32px 0 0;
 }
@@ -801,7 +828,7 @@
   cursor: pointer;
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--btn-ghost-color);
 }
 
@@ -847,7 +874,7 @@
 
 .goal-label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--goal-label-color);
 }
 
@@ -1249,7 +1276,7 @@
 .discover-title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--color-text-on-brand);
+  color: #ffffff;
   margin: 0;
   line-height: 1.3;
 }

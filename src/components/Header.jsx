@@ -17,9 +17,14 @@ const CartIcon = () => (
   </svg>
 )
 
-export default function Header({ title, isHome }) {
+export default function Header({ title, isHome, avatar, onNotifClick }) {
   const [hasNotif, setHasNotif] = useState(true)
   const logoSrc = LOGO_PRESETS[loadLogo()]?.src
+
+  function handleNotifClick() {
+    setHasNotif(false)
+    onNotifClick?.()
+  }
 
   return (
     <header className={`app-header ${isHome ? 'app-header--home' : ''}`}>
@@ -34,10 +39,13 @@ export default function Header({ title, isHome }) {
         <button className="icon-btn" aria-label="Checkout">
           <CartIcon />
         </button>
-        <button className="icon-btn" onClick={() => setHasNotif(false)} aria-label="Notifications">
+        <button className="icon-btn" onClick={handleNotifClick} aria-label="Notifications">
           <BellIcon />
-          {hasNotif && <span className="notif-dot" />}
+          {hasNotif && <span className="notif-badge">3</span>}
         </button>
+        {avatar && (
+          <div className="header-avatar" aria-label="Profile">{avatar}</div>
+        )}
       </div>
     </header>
   )

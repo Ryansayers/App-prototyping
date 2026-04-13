@@ -9,14 +9,16 @@ import Search from './pages/Search'
 import Feed from './pages/Feed'
 import Shop from './pages/Shop'
 import Profile from './pages/Profile'
+import Notifications from './pages/Notifications'
 import './App.css'
 
 const PAGES = {
-  home:      { title: 'Home',      component: <Home /> },
-  search:    { title: 'Search',    component: <Search /> },
-  feed:      { title: 'Feed',      component: <Feed /> },
-  shop:      { title: 'Shop',      component: <Shop /> },
-  profile:   { title: 'You',       component: <Profile /> },
+  home:          { title: 'Home',          component: <Home /> },
+  search:        { title: 'Search',        component: <Search /> },
+  feed:          { title: 'Feed',          component: <Feed /> },
+  shop:          { title: 'Shop',          component: <Shop /> },
+  profile:       { title: 'You',           component: <Profile /> },
+  notifications: { title: 'Notifications', component: <Notifications /> },
 }
 
 export default function App() {
@@ -44,7 +46,7 @@ export default function App() {
       <main className="content">
         <div className={`app-top ${activePage === 'home' ? 'app-top--home' : 'app-top--page'}`}>
           <StatusBar />
-          <Header title={title} isHome={activePage === 'home'} />
+          <Header title={title} isHome={activePage === 'home'} onNotifClick={() => setActivePage('notifications')} />
         </div>
         {component}
       </main>
