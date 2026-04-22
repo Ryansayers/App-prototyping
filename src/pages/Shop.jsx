@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import './Page.css'
 import content from '../content.json'
-import { loadCardBg, loadScheme } from '../seeds.js'
+import { loadCardBg, loadScheme, loadSavingsGoal } from '../seeds.js'
 
 const { saving: SAVING, savedRetailers: SAVED_RETAILERS, spotlight: SPOTLIGHT, summerDeals: SUMMER_DEALS, savingsForYou: SAVINGS_FOR_YOU } = loadScheme(content).shop
 
 const SMARTER_LEGACY_IDX = 1
 
 export default function Shop() {
-  const pct = Math.min(Math.round((SAVING.current / SAVING.target) * 100), 100)
+  const { enabled: goalEnabled, target: goalTarget, label: goalLabel } = loadSavingsGoal()
+  const pct = Math.min(Math.round((SAVING.current / goalTarget) * 100), 100)
   const [barWidth, setBarWidth] = useState(0)
   const showDiscountsImg = loadCardBg('discounts').idx === SMARTER_LEGACY_IDX
   const showRewardsImg = loadCardBg('rewards').idx === SMARTER_LEGACY_IDX
@@ -25,14 +26,18 @@ export default function Shop() {
           <p className="cta-title">Discounts</p>
           <p className="cta-label">Total Savings</p>
           <p className="cta-value">£300.00</p>
-          <p className="cta-sub">Save £2,000 by June</p>
-          <div className="cta-bar-track">
-            <div className="cta-bar-fill" style={{ width: `${barWidth}%` }} />
-          </div>
-          <div className="cta-bar-footer">
-            <span>£300.00</span>
-            <span>{pct}% · £2,000.00</span>
-          </div>
+          {goalEnabled && <p className="cta-sub">{goalLabel}</p>}
+          {goalEnabled && (
+            <div className="cta-bar-track">
+              <div className="cta-bar-fill" style={{ width: `${barWidth}%` }} />
+            </div>
+          )}
+          {goalEnabled && (
+            <div className="cta-bar-footer">
+              <span>£{SAVING.current.toLocaleString()}</span>
+              <span>{pct}% · £{goalTarget.toLocaleString()}</span>
+            </div>
+          )}
           <button className="cta-btn">View Discounts</button>
         </div>
         <div className="cta-card cta-rewards">

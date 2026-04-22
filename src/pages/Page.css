@@ -1247,7 +1247,7 @@
 .discover-card {
   flex: 0 0 68%;
   scroll-snap-align: start;
-  background: var(--color-primary-700);
+  background: var(--discover-card-bg, var(--color-primary-700));
   border-radius: var(--nc-radius, 16px);
   overflow: hidden;
   box-shadow: var(--nc-shadow);
@@ -1276,7 +1276,7 @@
 .discover-title {
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--discover-title-color, #ffffff);
   margin: 0;
   line-height: 1.3;
 }

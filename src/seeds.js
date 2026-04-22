@@ -77,8 +77,8 @@ export const BG_PRESETS = [
                             darkValue: 'linear-gradient(175deg, hsl(258, 18%, 12%) 0%, hsl(248, 25%, 16%) 18%, hsl(262, 14%, 12%) 34%, hsl(248, 22%, 15%) 50%, hsl(260, 16%, 12%) 66%, hsl(250, 20%, 15%) 82%, hsl(258, 12%, 12%) 100%)' },
   { label: 'Indigo Haze',  value: 'radial-gradient(ellipse at 25% 25%, hsl(258, 38%, 86%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 44%, 88%) 0%, transparent 50%), var(--color-surface-subtle)',
                             darkValue: 'radial-gradient(ellipse at 25% 25%, hsl(258, 28%, 20%) 0%, transparent 55%), radial-gradient(ellipse at 80% 15%, hsl(245, 34%, 22%) 0%, transparent 50%), var(--color-surface-subtle)' },
-  { label: 'Blue Purple',   value: 'linear-gradient(to right, #F1F7FF, #F1E8FF)',
-                            darkValue: 'linear-gradient(to right, hsl(214, 35%, 13%), hsl(280, 35%, 13%))' },
+  { label: 'Blue Purple',   value: 'linear-gradient(to bottom, #F1F7FF, #F1E8FF)',
+                            darkValue: 'linear-gradient(to bottom, hsl(214, 35%, 13%), hsl(280, 35%, 13%))' },
   { label: 'Wellbeing',     value: 'linear-gradient(150deg, hsl(152, 55%, 90%) 0%, hsl(198, 60%, 88%) 50%, hsl(265, 48%, 91%) 100%)',
                             darkValue: 'linear-gradient(150deg, hsl(152, 30%, 11%) 0%, hsl(198, 35%, 13%) 50%, hsl(265, 28%, 12%) 100%)' },
   { label: 'Custom Image…', value: 'custom', darkValue: 'custom' },
@@ -178,7 +178,13 @@ export const CTA_DISCOUNTS_PRESETS = [
 
 export const CTA_REWARDS_PRESETS = [
   ...CTA_SHARED_PRESETS.slice(0, 1),
-  { label: 'Smarter Legacy',      value: "url('/card-bg-rewards.png') center / cover no-repeat" },
+  { label: 'Smarter Legacy',      value: "url('/card-bg-smarter.png') right top / cover no-repeat" },
+  { label: 'Soft Primary',        value: 'linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%)', darkValue: 'linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%)' },
+  { label: 'Surface',             value: 'var(--color-surface-default)',      darkValue: 'var(--color-surface-default)' },
+  { label: 'Surface Subtle',      value: 'var(--color-surface-subtle)',       darkValue: 'var(--color-surface-subtle)' },
+  { label: 'Surface Raised',      value: 'var(--color-surface-raised)',       darkValue: 'var(--color-surface-raised)' },
+  { label: 'Brand Tint',          value: 'var(--color-surface-brand-tint)',   darkValue: 'var(--color-surface-brand-tint)' },
+  { label: 'Accent Tint',         value: 'var(--color-surface-accent-tint)',  darkValue: 'var(--color-surface-accent-tint)' },
   ...CTA_SHARED_PRESETS.slice(1),
 ]
 
@@ -206,6 +212,22 @@ export function loadCardBg(key) {
       url: localStorage.getItem(`brand-card-bg-${key}-url`) || '',
     }
   } catch { return { idx: 0, url: '' } }
+}
+
+export function loadSavingsGoal() {
+  try {
+    return {
+      enabled: localStorage.getItem('savings-goal-enabled') !== 'false',
+      target:  Number(localStorage.getItem('savings-goal-target') || 2000),
+      label:   localStorage.getItem('savings-goal-label') || 'Save £2,000 by June',
+    }
+  } catch { return { enabled: true, target: 2000, label: 'Save £2,000 by June' } }
+}
+
+export function saveSavingsGoal(enabled, target, label) {
+  localStorage.setItem('savings-goal-enabled', enabled)
+  localStorage.setItem('savings-goal-target', target)
+  localStorage.setItem('savings-goal-label', label)
 }
 
 export function saveCardBg(key, idx, url) {

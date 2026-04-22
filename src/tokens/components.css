@@ -47,9 +47,9 @@
   --btn-ghost-radius:              var(--radius-control);
 
   /* ── FAB ── */
-  --fab-bg:                        linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  --fab-bg:                        linear-gradient(135deg, var(--color-primary-200) 0%, var(--color-primary-400) 100%);
   --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-300) 0%, var(--color-secondary-400) 100%);
-  --fab-color:                     var(--color-primary-contrast, #ffffff);
+  --fab-color:                     #000000;
   --fab-ai-color:                  #000000;
   --fab-radius:                    var(--radius-fab);
   --fab-shadow:                    0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
@@ -159,7 +159,7 @@
   --cta-btn-bg:                    rgba(0, 0, 0, 0.12);
   --cta-btn-radius:                var(--radius-control);
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
-  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-100) 0%, var(--color-secondary-300) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
   --activity-bg:                   linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%);
 
   /* ── Shop ── */
@@ -222,7 +222,7 @@
   --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-700) 100%);
   --fab-ai-color:                  #ffffff;
   --cta-discounts-bg:              linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-900) 100%);
-  --cta-rewards-bg:                linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
+  --cta-rewards-bg:                linear-gradient(135deg, var(--color-primary-800) 0%, var(--color-primary-900) 100%);
   --activity-bg:                   linear-gradient(135deg, var(--color-secondary-800) 0%, var(--color-secondary-900) 100%);
   --cta-img-opacity:               0.35;
   --anniv-card-bg:                 linear-gradient(135deg, var(--color-secondary-900) 0%, var(--color-secondary-800) 100%);

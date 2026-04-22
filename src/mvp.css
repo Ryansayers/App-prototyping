@@ -9,10 +9,41 @@
   color: var(--color-primary-700);
 }
 
+.app--mvp .rec-nudge {
+  border: none;
+}
+
 .app--mvp {
-  --fab-ai-bg:       linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
-  --fab-ai-shadow:   0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
-  --activity-bg:     var(--card-bg);
-  --cta-color:       var(--color-text-primary);
-  --cta-rewards-bg:  linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-primary-300) 100%);
+  /* FAB */
+  --fab-ai-bg:            linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  --fab-ai-shadow:        0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
+  --fab-color:            #000000;
+
+  /* Buttons — primary seed only */
+  --btn-primary-bg:       var(--color-primary-300);
+  --btn-primary-color:    var(--color-primary-contrast, #ffffff);
+  --btn-ghost-color:      var(--color-primary-700);
+
+  /* Cards — default surfaces only */
+  --activity-bg:              var(--card-bg);
+  --anniv-card-bg:            var(--card-bg);
+  --anniv-card-border:        transparent;
+  --rec-nudge-bg:             var(--color-primary-100);
+  --quick-link-card-bg:       var(--card-bg);
+  --card-hover-bg:            var(--color-surface-default);
+  --shop-card-hover-bg:       var(--color-surface-default);
+
+  /* Header icon buttons — default surface */
+  --header-icon-btn-hover-bg: var(--color-surface-default);
+
+  /* Discover card — default surface */
+  --discover-card-bg:   var(--card-bg);
+  --discover-title-color: var(--color-text-primary);
+
+  /* Feed tabs — default active surface */
+  --feed-tab-active-bg:       var(--color-primary-100);
+  --feed-tab-active-color:    var(--color-text-primary);
+
+  /* CTA */
+  --cta-color:            var(--color-text-primary);
 }

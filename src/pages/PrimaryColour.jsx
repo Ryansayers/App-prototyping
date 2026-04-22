@@ -12,6 +12,7 @@ import {
   FONT_PRESETS, applyFont, loadFont, saveFont,
   LOGO_PRESETS, loadLogo, saveLogo, applySchemeAttr,
   applyImageFilter, loadImageFilter, saveImageFilter,
+  loadSavingsGoal, saveSavingsGoal,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -48,8 +49,6 @@ const SURFACE_TOKENS = [
   { token: '--color-surface-default',      label: 'Default' },
   { token: '--color-surface-subtle',       label: 'Subtle' },
   { token: '--color-surface-raised',       label: 'Raised' },
-  { token: '--color-surface-brand',        label: 'Brand' },
-  { token: '--color-surface-brand-tint',   label: 'Brand Tint' },
 ]
 
 const BRAND_TOKENS = [
@@ -133,6 +132,10 @@ export default function PrimaryColour() {
   const [recNudgeIdx,     setRecNudgeIdx]     = useState(() => loadCardBg('rec-nudge').idx)
   const [quickLinksIdx,   setQuickLinksIdx]   = useState(() => loadCardBg('quick-links').idx)
 
+  const [savingsGoalEnabled, setSavingsGoalEnabled] = useState(() => loadSavingsGoal().enabled)
+  const [savingsGoalTarget,  setSavingsGoalTarget]  = useState(() => loadSavingsGoal().target)
+  const [savingsGoalLabel,   setSavingsGoalLabel]   = useState(() => loadSavingsGoal().label)
+
   useEffect(() => {
     applyFont(loadFont())
   }, [])
@@ -172,6 +175,8 @@ export default function PrimaryColour() {
     setThemeMode(mode)
     saveTheme(mode)
     applyTheme(mode)
+    applyCardBg('--cta-discounts-bg', discountIdx, discountUrl, CTA_DISCOUNTS_PRESETS)
+    applyCardBg('--cta-rewards-bg', rewardsIdx, rewardsUrl, CTA_REWARDS_PRESETS)
   }
 
   function handleDiscountChange(i) {
@@ -196,6 +201,25 @@ export default function PrimaryColour() {
     setRewardsUrl(url)
     saveCardBg('rewards', rewardsIdx, url)
     applyCardBg('--cta-rewards-bg', rewardsIdx, url, CTA_REWARDS_PRESETS, true)
+  }
+
+  function handleSavingsGoalTarget(val) {
+    const n = Number(val)
+    if (!isNaN(n) && n > 0) {
+      setSavingsGoalTarget(n)
+      saveSavingsGoal(savingsGoalEnabled, n, savingsGoalLabel)
+    }
+  }
+
+  function handleSavingsGoalLabel(val) {
+    setSavingsGoalLabel(val)
+    saveSavingsGoal(savingsGoalEnabled, savingsGoalTarget, val)
+  }
+
+  function handleSavingsGoalToggle() {
+    const next = !savingsGoalEnabled
+    setSavingsGoalEnabled(next)
+    saveSavingsGoal(next, savingsGoalTarget, savingsGoalLabel)
   }
 
   function handleImgFilterToggle() {
@@ -513,7 +537,17 @@ export default function PrimaryColour() {
                 <p className="cta-value">£300.00</p>
                 <button className="cta-btn" style={{ marginTop: 12 }}>View Discounts</button>
               </div>
-              <div className="cta-card cta-rewards" style={{ flex: '0 0 auto', width: 200, minHeight: 0 }}>
+              <div
+                className="cta-card cta-rewards"
+                style={{
+                  flex: '0 0 auto',
+                  width: 200,
+                  minHeight: 0,
+                  ...(CTA_REWARDS_PRESETS[rewardsIdx]?.value && CTA_REWARDS_PRESETS[rewardsIdx].value !== 'custom'
+                    ? { background: CTA_REWARDS_PRESETS[rewardsIdx].value }
+                    : {}),
+                }}
+              >
                 <p className="cta-title">Rewards</p>
                 <p className="cta-label">Reward Points</p>
                 <p className="cta-value">4,750 pts</p>
@@ -638,6 +672,26 @@ export default function PrimaryColour() {
                 <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
                   value={discountUrl} onChange={e => handleDiscountUrl(e.target.value)} />
               )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Savings Goal</span>
+            <div className="bt-bg-row">
+              <button
+                className={`bt-toggle ${savingsGoalEnabled ? 'bt-toggle--on' : ''}`}
+                onClick={handleSavingsGoalToggle}
+                aria-pressed={savingsGoalEnabled}
+              >
+                <span className="bt-toggle-thumb" />
+                <span className="bt-toggle-label">{savingsGoalEnabled ? 'On' : 'Off'}</span>
+              </button>
+              {savingsGoalEnabled && <>
+                <input className="bt-url-input" type="number" placeholder="2000" min="1"
+                  value={savingsGoalTarget} onChange={e => handleSavingsGoalTarget(e.target.value)} style={{ width: 90 }} />
+                <input className="bt-url-input" type="text" placeholder="Save £2,000 by June"
+                  value={savingsGoalLabel} onChange={e => handleSavingsGoalLabel(e.target.value)} />
+              </>}
             </div>
           </div>
 
