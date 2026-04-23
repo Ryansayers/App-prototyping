@@ -191,6 +191,39 @@ export const CTA_REWARDS_PRESETS = [
 // Keep for backward compat with applyCardBg
 export const CTA_CARD_PRESETS = CTA_DISCOUNTS_PRESETS
 
+export const CTA_BTN_PRESETS = [
+  { label: 'Frosted (default)', value: null },
+  { label: 'Primary',          value: 'var(--color-primary-600)',          darkValue: 'var(--color-primary-500)',  color: '#ffffff',                       darkColor: '#000000' },
+  { label: 'Primary Soft',     value: 'var(--color-primary-100)',          darkValue: 'var(--color-primary-800)', color: 'var(--color-primary-800)',       darkColor: 'var(--color-primary-100)' },
+  { label: 'Dark',             value: 'rgba(0,0,0,0.80)',                  darkValue: 'rgba(0,0,0,0.80)',          color: '#ffffff',                       darkColor: '#ffffff' },
+  { label: 'White',            value: 'rgba(255,255,255,0.90)',             darkValue: 'rgba(255,255,255,0.15)',    color: '#111111',                       darkColor: '#ffffff' },
+  { label: 'Surface',          value: 'var(--color-surface-raised)',        darkValue: 'var(--color-surface-raised)', color: 'var(--color-text-primary)', darkColor: 'var(--color-text-primary)' },
+]
+
+export function applyCTABtn(idx) {
+  const el = document.documentElement
+  const preset = CTA_BTN_PRESETS[idx]
+  if (!preset || preset.value === null) {
+    el.style.removeProperty('--cta-btn-bg')
+    el.style.removeProperty('--cta-btn-color')
+    return
+  }
+  const dark = isDarkMode()
+  el.style.setProperty('--cta-btn-bg', dark && preset.darkValue ? preset.darkValue : preset.value)
+  const color = dark && preset.darkColor ? preset.darkColor : preset.color
+  if (color) el.style.setProperty('--cta-btn-color', color)
+  else el.style.removeProperty('--cta-btn-color')
+}
+
+export function loadCTABtn() {
+  try { return Number(localStorage.getItem('brand-cta-btn-idx') || 0) }
+  catch { return 0 }
+}
+
+export function saveCTABtn(idx) {
+  localStorage.setItem('brand-cta-btn-idx', idx)
+}
+
 export function applyCardBg(token, idx, url = '', presets = CTA_DISCOUNTS_PRESETS, applyInDark = false) {
   const el = document.documentElement
   const preset = presets[idx]
@@ -280,6 +313,7 @@ export function applyTheme(theme) {
   applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
   const ql = loadCardBg('quick-links')
   applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
+  applyCTABtn(loadCTABtn())
 }
 
 export function loadTheme() {

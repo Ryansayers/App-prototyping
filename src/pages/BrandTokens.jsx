@@ -9,6 +9,7 @@ import {
   applyTheme, loadTheme, saveTheme,
   HOME_CARD_PRESETS,
   CTA_ACTIVITY_PRESETS, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
+  CTA_BTN_PRESETS, applyCTABtn, loadCTABtn, saveCTABtn,
   FONT_PRESETS, applyFont, loadFont, saveFont,
   LOGO_PRESETS, loadLogo, saveLogo, applySchemeAttr,
   applyImageFilter, loadImageFilter, saveImageFilter,
@@ -142,6 +143,8 @@ export default function BrandTokens() {
   const [savingsGoalTarget,  setSavingsGoalTarget]  = useState(() => loadSavingsGoal().target)
   const [savingsGoalLabel,   setSavingsGoalLabel]   = useState(() => loadSavingsGoal().label)
 
+  const [ctaBtnIdx, setCtaBtnIdx] = useState(() => loadCTABtn())
+
   useEffect(() => {
     applyFont(loadFont())
   }, [])
@@ -163,6 +166,7 @@ export default function BrandTokens() {
     applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
     const ql = loadCardBg('quick-links')
     applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
+    applyCTABtn(loadCTABtn())
   }, [])
 
   function handleLogoChange(i) {
@@ -226,6 +230,12 @@ export default function BrandTokens() {
     const next = !savingsGoalEnabled
     setSavingsGoalEnabled(next)
     saveSavingsGoal(next, savingsGoalTarget, savingsGoalLabel)
+  }
+
+  function handleCtaBtnChange(i) {
+    setCtaBtnIdx(i)
+    saveCTABtn(i)
+    applyCTABtn(i)
   }
 
   function handleImgFilterToggle() {
@@ -759,6 +769,17 @@ export default function BrandTokens() {
                 <input className="bt-url-input" type="text" placeholder="https://example.com/image.jpg"
                   value={rewardsUrl} onChange={e => handleRewardsUrl(e.target.value)} />
               )}
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">CTA Button</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <select className="bt-select" value={ctaBtnIdx} onChange={e => handleCtaBtnChange(Number(e.target.value))}>
+                  {CTA_BTN_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
             </div>
           </div>
 

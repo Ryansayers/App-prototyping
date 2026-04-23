@@ -47,8 +47,9 @@
   --btn-ghost-radius:              var(--radius-control);
 
   /* ── FAB ── */
-  --fab-bg:                        linear-gradient(135deg, var(--color-primary-200) 0%, var(--color-primary-400) 100%);
-  --fab-ai-bg:                     linear-gradient(135deg, var(--color-secondary-300) 0%, var(--color-secondary-400) 100%);
+  --fab-bg:                        var(--color-primary-200);
+  --fab-ai-bg:                     var(--color-secondary-200);
+  --fab-wallet-bg:                 var(--color-secondary-200);
   --fab-color:                     #000000;
   --fab-ai-color:                  #000000;
   --fab-radius:                    var(--radius-fab);

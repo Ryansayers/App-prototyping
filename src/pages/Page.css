@@ -1017,7 +1017,7 @@
   height: 44px;
   padding: 0 18px;
   background: var(--cta-btn-bg);
-  color: inherit;
+  color: var(--cta-btn-color, inherit);
   border: none;
   border-radius: var(--cta-btn-radius, 20px);
   font-size: 13px;

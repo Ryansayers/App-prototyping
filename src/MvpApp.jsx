@@ -18,7 +18,7 @@ const PAGES = {
   search:        { title: 'Search',        component: <Search /> },
   feed:          { title: 'Feed',          component: <Feed /> },
   shop:          { title: 'Shop',          component: <Shop /> },
-  profile:       { title: 'Wellbeing',     component: <MvpProfile /> },
+  profile:       { title: 'You',           component: <MvpProfile /> },
   notifications: { title: 'Notifications', component: <Notifications /> },
 }
 
@@ -64,7 +64,7 @@ export default function MvpApp() {
         {component}
       </main>
       <FAB activePage={activePage} />
-      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'Wellbeing' }} icons={{ profile: sunIcon }} />
+      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: sunIcon }} />
     </div>
   )
 }

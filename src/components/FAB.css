@@ -1,6 +1,6 @@
 .fab {
   position: absolute;
-  bottom: 84px;
+  bottom: 80px;
   right: 20px;
   width: 56px;
   height: 56px;
@@ -67,8 +67,18 @@
   left: 140%;
 }
 
-.fab-ai:hover {
+.fab-ai:hover,
+.fab-wallet:hover {
   transform: none;
+}
+
+.fab-wallet {
+  width: 140px;
+  border-radius: var(--fab-radius, 28px);
+  gap: 8px;
+  background: var(--fab-wallet-bg);
+  color: var(--fab-color);
+  box-shadow: none;
 }
 
 .fab:active {
@@ -99,7 +109,8 @@
     opacity 0.25s ease 0.15s;
 }
 
-.fab-ai .fab-label {
+.fab-ai .fab-label,
+.fab-wallet .fab-label {
   max-width: 80px;
   opacity: 1;
 }

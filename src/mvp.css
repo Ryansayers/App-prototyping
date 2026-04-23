@@ -15,7 +15,8 @@
 
 .app--mvp {
   /* FAB */
-  --fab-ai-bg:            linear-gradient(135deg, var(--color-primary-300) 0%, var(--color-primary-500) 100%);
+  --fab-ai-bg:            var(--color-primary-200);
+  --fab-wallet-bg:        var(--color-primary-200);
   --fab-ai-shadow:        0 4px 16px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.4);
   --fab-color:            #000000;
 

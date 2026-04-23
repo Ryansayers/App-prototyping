@@ -41,7 +41,7 @@ export default function Shop() {
           <button className="cta-btn">View Discounts</button>
         </div>
         <div className="cta-card cta-rewards">
-          {showRewardsImg && <img className="cta-card-bg-img" src="/card-bg-rewards.png" alt="" />}
+          {showRewardsImg && <img className="cta-card-bg-img" src="/card-bg-smarter.png" alt="" />}
           <p className="cta-title">Rewards</p>
           <p className="cta-label">Reward Points</p>
           <p className="cta-value">4,750 pts</p>
