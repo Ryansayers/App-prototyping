@@ -24,39 +24,265 @@
           "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
         },
         "featureCards": [
-          { "id": 1, "title": "Your Savings",   "text": "boom! Discounts is the easiest way to save. Be sure to make the most of this tool and grow your income!", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
-          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
-          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
-          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+          {
+            "id": 1,
+            "title": "Your Savings",
+            "text": "boom! Discounts is the easiest way to save. Be sure to make the most of this tool and grow your income!",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#e91e8c",
+            "icon": "percent"
+          },
+          {
+            "id": 2,
+            "title": "Your Benefits",
+            "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#2196f3",
+            "icon": "gift"
+          },
+          {
+            "id": 3,
+            "title": "Your Wellbeing",
+            "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#009688",
+            "icon": "heart"
+          },
+          {
+            "id": 4,
+            "title": "Your Growth",
+            "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#7b1fa2",
+            "icon": "growth"
+          }
         ],
         "anniversaries": [
-          { "id": 1, "name": "Olga Mihaleva",  "initials": "OM", "colour": "#3b82f6", "date": "5 Mar",  "years": 1 },
-          { "id": 2, "name": "Marcus Lee",      "initials": "ML", "colour": "#10b981", "date": "8 Mar",  "years": 3 },
-          { "id": 3, "name": "Priya Patel",     "initials": "PP", "colour": "#f59e0b", "date": "12 Mar", "years": 5 },
-          { "id": 4, "name": "Anika Sharma",    "initials": "AS", "colour": "#8b5cf6", "date": "19 Mar", "years": 2 },
-          { "id": 5, "name": "Tom Briggs",      "initials": "TB", "colour": "#f97316", "date": "24 Mar", "years": 7 }
+          {
+            "id": 1,
+            "name": "Olga Mihaleva",
+            "initials": "OM",
+            "colour": "#3b82f6",
+            "date": "5 Mar",
+            "years": 1
+          },
+          {
+            "id": 2,
+            "name": "Marcus Lee",
+            "initials": "ML",
+            "colour": "#10b981",
+            "date": "8 Mar",
+            "years": 3
+          },
+          {
+            "id": 3,
+            "name": "Priya Patel",
+            "initials": "PP",
+            "colour": "#f59e0b",
+            "date": "12 Mar",
+            "years": 5
+          },
+          {
+            "id": 4,
+            "name": "Anika Sharma",
+            "initials": "AS",
+            "colour": "#8b5cf6",
+            "date": "19 Mar",
+            "years": 2
+          },
+          {
+            "id": 5,
+            "name": "Tom Briggs",
+            "initials": "TB",
+            "colour": "#f97316",
+            "date": "24 Mar",
+            "years": 7
+          },
+          {
+            "id": 6,
+            "name": "Lena Fischer",
+            "initials": "LF",
+            "colour": "#ec4899",
+            "date": "1 Apr",
+            "years": 4
+          },
+          {
+            "id": 7,
+            "name": "David Okafor",
+            "initials": "DO",
+            "colour": "#14b8a6",
+            "date": "3 Apr",
+            "years": 6
+          },
+          {
+            "id": 8,
+            "name": "Mei Nakamura",
+            "initials": "MN",
+            "colour": "#6366f1",
+            "date": "7 Apr",
+            "years": 2
+          },
+          {
+            "id": 9,
+            "name": "Carlos Ruiz",
+            "initials": "CR",
+            "colour": "#84cc16",
+            "date": "10 Apr",
+            "years": 10
+          },
+          {
+            "id": 10,
+            "name": "Fatima Al-Amin",
+            "initials": "FA",
+            "colour": "#f43f5e",
+            "date": "14 Apr",
+            "years": 1
+          },
+          {
+            "id": 11,
+            "name": "Ben Kowalski",
+            "initials": "BK",
+            "colour": "#0ea5e9",
+            "date": "17 Apr",
+            "years": 3
+          },
+          {
+            "id": 12,
+            "name": "Amara Diallo",
+            "initials": "AD",
+            "colour": "#a78bfa",
+            "date": "20 Apr",
+            "years": 5
+          },
+          {
+            "id": 13,
+            "name": "Sofia Eriksson",
+            "initials": "SE",
+            "colour": "#fb923c",
+            "date": "23 Apr",
+            "years": 8
+          },
+          {
+            "id": 14,
+            "name": "James O'Brien",
+            "initials": "JO",
+            "colour": "#34d399",
+            "date": "26 Apr",
+            "years": 2
+          },
+          {
+            "id": 15,
+            "name": "Nadia Voronova",
+            "initials": "NV",
+            "colour": "#c084fc",
+            "date": "29 Apr",
+            "years": 11
+          }
         ],
         "birthdays": [
-          { "id": 1, "name": "Sarah Mitchell",  "initials": "SM", "colour": "#6366f1", "date": "18 Mar", "image": "/av-1.jpg" },
-          { "id": 2, "name": "Bozhin Gyoshev",  "initials": "BG", "colour": "#8b5cf6", "date": "29 Mar", "image": "/av-2.jpg" },
-          { "id": 3, "name": "Marcus Green",    "initials": "MG", "colour": "#ef4444", "date": "2 Apr",  "image": null },
-          { "id": 4, "name": "Priya Singh",     "initials": "PS", "colour": "#f59e0b", "date": "8 Apr",  "image": "/av-3.jpg" },
-          { "id": 5, "name": "Tom Chen",        "initials": "TC", "colour": "#3b82f6", "date": "15 Apr", "image": null }
+          {
+            "id": 1,
+            "name": "Sarah Mitchell",
+            "initials": "SM",
+            "colour": "#6366f1",
+            "date": "18 Mar",
+            "image": "/av-1.jpg"
+          },
+          {
+            "id": 2,
+            "name": "Bozhin Gyoshev",
+            "initials": "BG",
+            "colour": "#8b5cf6",
+            "date": "29 Mar",
+            "image": "/av-2.jpg"
+          },
+          {
+            "id": 3,
+            "name": "Marcus Green",
+            "initials": "MG",
+            "colour": "#ef4444",
+            "date": "2 Apr",
+            "image": null
+          },
+          {
+            "id": 4,
+            "name": "Priya Singh",
+            "initials": "PS",
+            "colour": "#f59e0b",
+            "date": "8 Apr",
+            "image": "/av-3.jpg"
+          },
+          {
+            "id": 5,
+            "name": "Tom Chen",
+            "initials": "TC",
+            "colour": "#3b82f6",
+            "date": "15 Apr",
+            "image": null
+          }
         ],
         "discover": [
-          { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
-          { "id": 2, "title": "Our Brand",              "image": "/discover-our-brand.png" },
-          { "id": 3, "title": "Internal Vacancies",     "image": "/discover-vacancies.png" },
-          { "id": 4, "title": "Our Strategy",           "image": "/discover-strategy.png"  },
-          { "id": 5, "title": "Learning & Development", "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" },
-          { "id": 6, "title": "Wellbeing Hub",          "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" },
-          { "id": 7, "title": "Company Values",         "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" },
-          { "id": 8, "title": "People Updates",         "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop" }
+          {
+            "id": 1,
+            "title": "Speak Up",
+            "image": "/discover-speak-up.png"
+          },
+          {
+            "id": 2,
+            "title": "Our Brand",
+            "image": "/discover-our-brand.png"
+          },
+          {
+            "id": 3,
+            "title": "Internal Vacancies",
+            "image": "/discover-vacancies.png"
+          },
+          {
+            "id": 4,
+            "title": "Our Strategy",
+            "image": "/discover-strategy.png"
+          },
+          {
+            "id": 5,
+            "title": "Learning & Development",
+            "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 6,
+            "title": "Wellbeing Hub",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 7,
+            "title": "Company Values",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 8,
+            "title": "People Updates",
+            "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop"
+          }
         ],
         "cards": [
-          { "id": 1, "title": "Essentials",                "desc": "Pay, Leave & Expenses" },
-          { "id": 2, "title": "People & Locations",        "desc": "Discover our team hubs" },
-          { "id": 3, "title": "Learning Pathways at RG",   "desc": "Hand-picked articles just for you." }
+          {
+            "id": 1,
+            "title": "Essentials",
+            "desc": "Pay, Leave & Expenses"
+          },
+          {
+            "id": 2,
+            "title": "People & Locations",
+            "desc": "Discover our team hubs"
+          },
+          {
+            "id": 3,
+            "title": "Learning Pathways at RG",
+            "desc": "Hand-picked articles just for you."
+          }
         ]
       },
       "feed": {
@@ -68,7 +294,9 @@
             "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
             "title": "Design System v2.0 launched",
             "body": "The new component library is live. All product teams are encouraged to migrate by end of Q2.",
-            "author": "Priya Sharma", "authorInitials": "PS", "authorColour": "#6366f1",
+            "author": "Priya Sharma",
+            "authorInitials": "PS",
+            "authorColour": "#6366f1",
             "time": "2m ago",
             "relevant": true,
             "likes": 7,
@@ -81,7 +309,9 @@
             "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop",
             "title": "Q1 All-Hands recap",
             "body": "CEO Sarah Chen shared our record-breaking Q1 results and the roadmap for the rest of the year.",
-            "author": "Sarah Chen", "authorInitials": "SC", "authorColour": "#0ea5e9",
+            "author": "Sarah Chen",
+            "authorInitials": "SC",
+            "authorColour": "#0ea5e9",
             "time": "1h ago",
             "relevant": true,
             "likes": 16,
@@ -94,7 +324,9 @@
             "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop",
             "title": "New CI/CD pipeline rollout",
             "body": "Build times are down 40% following last week's infrastructure upgrade across all repos.",
-            "author": "Marcus Lee", "authorInitials": "ML", "authorColour": "#10b981",
+            "author": "Marcus Lee",
+            "authorInitials": "ML",
+            "authorColour": "#10b981",
             "time": "3h ago",
             "relevant": true,
             "likes": 8,
@@ -107,7 +339,9 @@
             "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
             "title": "Office expansion — Austin TX",
             "body": "We're opening a new office in Austin this summer. Applications for relocation packages are now open.",
-            "author": "Tom Richards", "authorInitials": "TR", "authorColour": "#f59e0b",
+            "author": "Tom Richards",
+            "authorInitials": "TR",
+            "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": false,
             "likes": 6,
@@ -120,7 +354,9 @@
             "image": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop",
             "title": "Updated hybrid work policy",
             "body": "Starting May 1st, all teams move to a 3-2 office/remote split. See the updated guidelines in the handbook.",
-            "author": "Jade Okafor", "authorInitials": "JO", "authorColour": "#ec4899",
+            "author": "Jade Okafor",
+            "authorInitials": "JO",
+            "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 9,
@@ -133,7 +369,9 @@
             "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop",
             "title": "Mental Health Awareness Week 2025",
             "body": "This May we're running a series of workshops, drop-ins and guided sessions to support your mental health. Check the Wellbeing Hub for the full schedule.",
-            "author": "Nia Obi", "authorInitials": "NO", "authorColour": "#14b8a6",
+            "author": "Nia Obi",
+            "authorInitials": "NO",
+            "authorColour": "#14b8a6",
             "time": "3d ago",
             "relevant": false,
             "likes": 12,
@@ -240,12 +478,42 @@
           "color": "#22c55e"
         },
         "savedRetailers": [
-          { "id": 0, "name": "Sony",    "logo": "/logo-sony.svg",    "bg": "#ffffff" },
-          { "id": 1, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" },
-          { "id": 2, "name": "TUI",     "logo": "/logo-tui.svg",     "bg": "#ffffff" },
-          { "id": 3, "name": "Samsung", "logo": "/logo-samsung.svg", "bg": "#ffffff" },
-          { "id": 4, "name": "Tesco",   "logo": "/logo-tesco.png",   "bg": "#ffffff" },
-          { "id": 5, "name": "ASOS",    "logo": "/logo-asos.svg",    "bg": "#ffffff" }
+          {
+            "id": 0,
+            "name": "Sony",
+            "logo": "/logo-sony.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 1,
+            "name": "ASDA",
+            "logo": "/logo-asda.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 2,
+            "name": "TUI",
+            "logo": "/logo-tui.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 3,
+            "name": "Samsung",
+            "logo": "/logo-samsung.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 4,
+            "name": "Tesco",
+            "logo": "/logo-tesco.png",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 5,
+            "name": "ASOS",
+            "logo": "/logo-asos.svg",
+            "bg": "#ffffff"
+          }
         ],
         "spotlight": [
           {
@@ -361,38 +629,257 @@
           "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
         },
         "featureCards": [
-          { "id": 1, "title": "Your Savings",   "text": "Next Discounts is the easiest way to save. Make the most of this tool and grow your income!", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
-          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
-          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with our values.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
-          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+          {
+            "id": 1,
+            "title": "Your Savings",
+            "text": "Next Discounts is the easiest way to save. Make the most of this tool and grow your income!",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#e91e8c",
+            "icon": "percent"
+          },
+          {
+            "id": 2,
+            "title": "Your Benefits",
+            "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#2196f3",
+            "icon": "gift"
+          },
+          {
+            "id": 3,
+            "title": "Your Wellbeing",
+            "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with our values.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#009688",
+            "icon": "heart"
+          },
+          {
+            "id": 4,
+            "title": "Your Growth",
+            "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#7b1fa2",
+            "icon": "growth"
+          }
         ],
         "anniversaries": [
-          { "id": 1, "name": "Claire Booth",    "initials": "CB", "colour": "#3b82f6", "date": "3 Mar",  "years": 2 },
-          { "id": 2, "name": "James Holden",    "initials": "JH", "colour": "#10b981", "date": "9 Mar",  "years": 5 },
-          { "id": 3, "name": "Sophie Metcalfe", "initials": "SM", "colour": "#f59e0b", "date": "14 Mar", "years": 1 },
-          { "id": 4, "name": "Raj Kapoor",      "initials": "RK", "colour": "#8b5cf6", "date": "21 Mar", "years": 8 },
-          { "id": 5, "name": "Emma Clarke",     "initials": "EC", "colour": "#f97316", "date": "27 Mar", "years": 3 }
+          {
+            "id": 1,
+            "name": "Claire Booth",
+            "initials": "CB",
+            "colour": "#3b82f6",
+            "date": "3 Mar",
+            "years": 2
+          },
+          {
+            "id": 2,
+            "name": "James Holden",
+            "initials": "JH",
+            "colour": "#10b981",
+            "date": "9 Mar",
+            "years": 5
+          },
+          {
+            "id": 3,
+            "name": "Sophie Metcalfe",
+            "initials": "SM",
+            "colour": "#f59e0b",
+            "date": "14 Mar",
+            "years": 1
+          },
+          {
+            "id": 4,
+            "name": "Raj Kapoor",
+            "initials": "RK",
+            "colour": "#8b5cf6",
+            "date": "21 Mar",
+            "years": 8
+          },
+          {
+            "id": 5,
+            "name": "Emma Clarke",
+            "initials": "EC",
+            "colour": "#f97316",
+            "date": "27 Mar",
+            "years": 3
+          },
+          {
+            "id": 6,
+            "name": "Theo Barnett",
+            "initials": "TB",
+            "colour": "#ec4899",
+            "date": "2 Apr",
+            "years": 1
+          },
+          {
+            "id": 7,
+            "name": "Priya Mehta",
+            "initials": "PM",
+            "colour": "#14b8a6",
+            "date": "5 Apr",
+            "years": 4
+          },
+          {
+            "id": 8,
+            "name": "Lucas Martins",
+            "initials": "LM",
+            "colour": "#6366f1",
+            "date": "8 Apr",
+            "years": 7
+          },
+          {
+            "id": 9,
+            "name": "Ingrid Larsen",
+            "initials": "IL",
+            "colour": "#84cc16",
+            "date": "11 Apr",
+            "years": 2
+          },
+          {
+            "id": 10,
+            "name": "Omar Hassan",
+            "initials": "OH",
+            "colour": "#f43f5e",
+            "date": "15 Apr",
+            "years": 9
+          },
+          {
+            "id": 11,
+            "name": "Hannah Reid",
+            "initials": "HR",
+            "colour": "#0ea5e9",
+            "date": "18 Apr",
+            "years": 3
+          },
+          {
+            "id": 12,
+            "name": "Kwame Asante",
+            "initials": "KA",
+            "colour": "#a78bfa",
+            "date": "21 Apr",
+            "years": 6
+          },
+          {
+            "id": 13,
+            "name": "Chloe Petit",
+            "initials": "CP",
+            "colour": "#fb923c",
+            "date": "24 Apr",
+            "years": 1
+          },
+          {
+            "id": 14,
+            "name": "Ravi Krishnan",
+            "initials": "RK",
+            "colour": "#34d399",
+            "date": "27 Apr",
+            "years": 5
+          },
+          {
+            "id": 15,
+            "name": "Zoe Walters",
+            "initials": "ZW",
+            "colour": "#c084fc",
+            "date": "30 Apr",
+            "years": 12
+          }
         ],
         "birthdays": [
-          { "id": 1, "name": "Claire Davies",   "initials": "CD", "colour": "#3b82f6", "date": "20 Mar", "image": "/av-4.jpg" },
-          { "id": 2, "name": "James Okafor",    "initials": "JO", "colour": "#10b981", "date": "1 Apr",  "image": null },
-          { "id": 3, "name": "Sophie Li",       "initials": "SL", "colour": "#8b5cf6", "date": "10 Apr", "image": "/av-5.jpg" },
-          { "id": 4, "name": "Raj Mehta",       "initials": "RM", "colour": "#f97316", "date": "18 Apr", "image": null }
+          {
+            "id": 1,
+            "name": "Claire Davies",
+            "initials": "CD",
+            "colour": "#3b82f6",
+            "date": "20 Mar",
+            "image": "/av-4.jpg"
+          },
+          {
+            "id": 2,
+            "name": "James Okafor",
+            "initials": "JO",
+            "colour": "#10b981",
+            "date": "1 Apr",
+            "image": null
+          },
+          {
+            "id": 3,
+            "name": "Sophie Li",
+            "initials": "SL",
+            "colour": "#8b5cf6",
+            "date": "10 Apr",
+            "image": "/av-5.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Raj Mehta",
+            "initials": "RM",
+            "colour": "#f97316",
+            "date": "18 Apr",
+            "image": null
+          }
         ],
         "discover": [
-          { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
-          { "id": 2, "title": "Our Brand",              "image": "/discover-our-brand.png" },
-          { "id": 3, "title": "Internal Vacancies",     "image": "/discover-vacancies.png" },
-          { "id": 4, "title": "Our Strategy",           "image": "/discover-strategy.png"  },
-          { "id": 5, "title": "Learning & Development", "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop" },
-          { "id": 6, "title": "Wellbeing Hub",          "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" },
-          { "id": 7, "title": "Company Values",         "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" },
-          { "id": 8, "title": "People Updates",         "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop" }
+          {
+            "id": 1,
+            "title": "Speak Up",
+            "image": "/discover-speak-up.png"
+          },
+          {
+            "id": 2,
+            "title": "Our Brand",
+            "image": "/discover-our-brand.png"
+          },
+          {
+            "id": 3,
+            "title": "Internal Vacancies",
+            "image": "/discover-vacancies.png"
+          },
+          {
+            "id": 4,
+            "title": "Our Strategy",
+            "image": "/discover-strategy.png"
+          },
+          {
+            "id": 5,
+            "title": "Learning & Development",
+            "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 6,
+            "title": "Wellbeing Hub",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 7,
+            "title": "Company Values",
+            "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop"
+          },
+          {
+            "id": 8,
+            "title": "People Updates",
+            "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop"
+          }
         ],
         "cards": [
-          { "id": 1, "title": "My Pay & Benefits",     "desc": "Payslips, pension & expenses" },
-          { "id": 2, "title": "Store Locator",         "desc": "Find your nearest Next store" },
-          { "id": 3, "title": "Learning at Next",      "desc": "Courses and development paths" }
+          {
+            "id": 1,
+            "title": "My Pay & Benefits",
+            "desc": "Payslips, pension & expenses"
+          },
+          {
+            "id": 2,
+            "title": "Store Locator",
+            "desc": "Find your nearest Next store"
+          },
+          {
+            "id": 3,
+            "title": "Learning at Next",
+            "desc": "Courses and development paths"
+          }
         ]
       },
       "feed": {
@@ -404,7 +891,9 @@
             "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
             "title": "Summer collection now live",
             "body": "The SS25 womenswear and menswear ranges are now available online and in all 500+ stores across the UK.",
-            "author": "Claire Booth", "authorInitials": "CB", "authorColour": "#6366f1",
+            "author": "Claire Booth",
+            "authorInitials": "CB",
+            "authorColour": "#6366f1",
             "time": "1h ago",
             "relevant": true,
             "likes": 34,
@@ -417,7 +906,9 @@
             "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop",
             "title": "Record online sales in Q1",
             "body": "Next.co.uk delivered its strongest quarter to date with online revenue up 18% year-on-year.",
-            "author": "James Holden", "authorInitials": "JH", "authorColour": "#0ea5e9",
+            "author": "James Holden",
+            "authorInitials": "JH",
+            "authorColour": "#0ea5e9",
             "time": "3h ago",
             "relevant": true,
             "likes": 21,
@@ -430,7 +921,9 @@
             "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop",
             "title": "Better Cotton Initiative milestone",
             "body": "We've reached 80% sustainably sourced cotton across our own-brand ranges, ahead of our 2025 target.",
-            "author": "Anya Patel", "authorInitials": "AP", "authorColour": "#10b981",
+            "author": "Anya Patel",
+            "authorInitials": "AP",
+            "authorColour": "#10b981",
             "time": "5h ago",
             "relevant": true,
             "likes": 15,
@@ -443,7 +936,9 @@
             "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
             "title": "New distribution centre opening",
             "body": "Our new automated fulfilment centre in Doncaster opens next month, creating 400 new roles.",
-            "author": "David Nash", "authorInitials": "DN", "authorColour": "#f59e0b",
+            "author": "David Nash",
+            "authorInitials": "DN",
+            "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": false,
             "likes": 11,
@@ -456,7 +951,9 @@
             "image": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80&auto=format&fit=crop",
             "title": "Flexible working update",
             "body": "Following colleague feedback, we're extending flexible shift options to all retail and head office teams from June.",
-            "author": "Sophie Ward", "authorInitials": "SW", "authorColour": "#ec4899",
+            "author": "Sophie Ward",
+            "authorInitials": "SW",
+            "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 18,
@@ -469,7 +966,9 @@
             "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80&auto=format&fit=crop",
             "title": "Self-checkout upgrade rolling out",
             "body": "New self-checkout terminals with faster scanning and tap-to-pay are being rolled out across 200 stores this quarter.",
-            "author": "Ben Carter", "authorInitials": "BC", "authorColour": "#6366f1",
+            "author": "Ben Carter",
+            "authorInitials": "BC",
+            "authorColour": "#6366f1",
             "time": "3d ago",
             "relevant": false,
             "likes": 22,
@@ -576,11 +1075,36 @@
           "color": "#22c55e"
         },
         "savedRetailers": [
-          { "id": 1, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" },
-          { "id": 2, "name": "TUI",     "logo": "/logo-tui.svg",     "bg": "#ffffff" },
-          { "id": 3, "name": "Samsung", "logo": "/logo-samsung.svg", "bg": "#ffffff" },
-          { "id": 4, "name": "Tesco",   "logo": "/logo-tesco.png",   "bg": "#ffffff" },
-          { "id": 5, "name": "ASOS",    "logo": "/logo-asos.svg",    "bg": "#ffffff" }
+          {
+            "id": 1,
+            "name": "ASDA",
+            "logo": "/logo-asda.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 2,
+            "name": "TUI",
+            "logo": "/logo-tui.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 3,
+            "name": "Samsung",
+            "logo": "/logo-samsung.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 4,
+            "name": "Tesco",
+            "logo": "/logo-tesco.png",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 5,
+            "name": "ASOS",
+            "logo": "/logo-asos.svg",
+            "bg": "#ffffff"
+          }
         ],
         "spotlight": [
           {
@@ -699,34 +1223,240 @@
           "text": "You've got the right attitude, know-how and you've got a personality that shines. You won't accept anything less than a great place to work."
         },
         "featureCards": [
-          { "id": 1, "title": "Your Savings",   "text": "Discounts is the easiest way to save. Make the most of this tool and benefit from exclusive offers.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
-          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
-          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
-          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+          {
+            "id": 1,
+            "title": "Your Savings",
+            "text": "Discounts is the easiest way to save. Make the most of this tool and benefit from exclusive offers.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#e91e8c",
+            "icon": "percent"
+          },
+          {
+            "id": 2,
+            "title": "Your Benefits",
+            "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#2196f3",
+            "icon": "gift"
+          },
+          {
+            "id": 3,
+            "title": "Your Wellbeing",
+            "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#009688",
+            "icon": "heart"
+          },
+          {
+            "id": 4,
+            "title": "Your Growth",
+            "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.",
+            "ctaLabel": "Learn more",
+            "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop",
+            "circleColor": "#7b1fa2",
+            "icon": "growth"
+          }
         ],
         "anniversaries": [
-          { "id": 1, "name": "Isabelle Moreau",  "initials": "IM", "colour": "#009aa0", "date": "4 Mar",  "years": 2 },
-          { "id": 2, "name": "George Whitfield",  "initials": "GW", "colour": "#e8920a", "date": "10 Mar", "years": 6 },
-          { "id": 3, "name": "Yuki Tanaka",        "initials": "YT", "colour": "#f05550", "date": "15 Mar", "years": 1 },
-          { "id": 4, "name": "Camille Dubois",     "initials": "CD", "colour": "#452848", "date": "22 Mar", "years": 4 },
-          { "id": 5, "name": "Oliver Nash",        "initials": "ON", "colour": "#7898a8", "date": "29 Mar", "years": 9 }
+          {
+            "id": 1,
+            "name": "Isabelle Moreau",
+            "initials": "IM",
+            "colour": "#009aa0",
+            "date": "4 Mar",
+            "years": 2
+          },
+          {
+            "id": 2,
+            "name": "George Whitfield",
+            "initials": "GW",
+            "colour": "#e8920a",
+            "date": "10 Mar",
+            "years": 6
+          },
+          {
+            "id": 3,
+            "name": "Yuki Tanaka",
+            "initials": "YT",
+            "colour": "#f05550",
+            "date": "15 Mar",
+            "years": 1
+          },
+          {
+            "id": 4,
+            "name": "Camille Dubois",
+            "initials": "CD",
+            "colour": "#452848",
+            "date": "22 Mar",
+            "years": 4
+          },
+          {
+            "id": 5,
+            "name": "Oliver Nash",
+            "initials": "ON",
+            "colour": "#7898a8",
+            "date": "29 Mar",
+            "years": 9
+          },
+          {
+            "id": 6,
+            "name": "Antoine Leroy",
+            "initials": "AL",
+            "colour": "#009aa0",
+            "date": "2 Apr",
+            "years": 3
+          },
+          {
+            "id": 7,
+            "name": "Petra Kovač",
+            "initials": "PK",
+            "colour": "#e8920a",
+            "date": "5 Apr",
+            "years": 7
+          },
+          {
+            "id": 8,
+            "name": "Mia Johansson",
+            "initials": "MJ",
+            "colour": "#f05550",
+            "date": "9 Apr",
+            "years": 2
+          },
+          {
+            "id": 9,
+            "name": "Luca Bianchi",
+            "initials": "LB",
+            "colour": "#452848",
+            "date": "12 Apr",
+            "years": 5
+          },
+          {
+            "id": 10,
+            "name": "Hana Müller",
+            "initials": "HM",
+            "colour": "#7898a8",
+            "date": "16 Apr",
+            "years": 10
+          },
+          {
+            "id": 11,
+            "name": "Finn Sørensen",
+            "initials": "FS",
+            "colour": "#009aa0",
+            "date": "19 Apr",
+            "years": 1
+          },
+          {
+            "id": 12,
+            "name": "Rosa Ferretti",
+            "initials": "RF",
+            "colour": "#e8920a",
+            "date": "22 Apr",
+            "years": 4
+          },
+          {
+            "id": 13,
+            "name": "Nico Lambert",
+            "initials": "NL",
+            "colour": "#f05550",
+            "date": "25 Apr",
+            "years": 8
+          },
+          {
+            "id": 14,
+            "name": "Suki Hayashi",
+            "initials": "SH",
+            "colour": "#452848",
+            "date": "28 Apr",
+            "years": 3
+          },
+          {
+            "id": 15,
+            "name": "Ethan Walsh",
+            "initials": "EW",
+            "colour": "#7898a8",
+            "date": "30 Apr",
+            "years": 6
+          }
         ],
         "birthdays": [
-          { "id": 1, "name": "Isabelle Chen",   "initials": "IC", "colour": "#009aa0", "date": "22 Mar", "image": "/av-6.jpg" },
-          { "id": 2, "name": "George Beaumont", "initials": "GB", "colour": "#e8920a", "date": "3 Apr",  "image": null },
-          { "id": 3, "name": "Yuki Sato",       "initials": "YS", "colour": "#f05550", "date": "12 Apr", "image": "/av-1.jpg" },
-          { "id": 4, "name": "Camille Laurent", "initials": "CL", "colour": "#452848", "date": "20 Apr", "image": null }
+          {
+            "id": 1,
+            "name": "Isabelle Chen",
+            "initials": "IC",
+            "colour": "#009aa0",
+            "date": "22 Mar",
+            "image": "/av-6.jpg"
+          },
+          {
+            "id": 2,
+            "name": "George Beaumont",
+            "initials": "GB",
+            "colour": "#e8920a",
+            "date": "3 Apr",
+            "image": null
+          },
+          {
+            "id": 3,
+            "name": "Yuki Sato",
+            "initials": "YS",
+            "colour": "#f05550",
+            "date": "12 Apr",
+            "image": "/av-1.jpg"
+          },
+          {
+            "id": 4,
+            "name": "Camille Laurent",
+            "initials": "CL",
+            "colour": "#452848",
+            "date": "20 Apr",
+            "image": null
+          }
         ],
         "discover": [
-          { "id": 1, "title": "People Spotlight",   "image": "/ps-people-spotlight.jpg", "imagePosition": "center top" },
-          { "id": 2, "title": "People News",         "image": "/ps-people-news.jpg" },
-          { "id": 3, "title": "Pathways to Sustainability", "image": "/ps-sustainability.jpg", "imagePosition": "center top" },
-          { "id": 4, "title": "Archives",            "image": "/ps-archive.jpg", "imagePosition": "center top" }
+          {
+            "id": 1,
+            "title": "People Spotlight",
+            "image": "/ps-people-spotlight.jpg",
+            "imagePosition": "center top"
+          },
+          {
+            "id": 2,
+            "title": "People News",
+            "image": "/ps-people-news.jpg"
+          },
+          {
+            "id": 3,
+            "title": "Pathways to Sustainability",
+            "image": "/ps-sustainability.jpg",
+            "imagePosition": "center top"
+          },
+          {
+            "id": 4,
+            "title": "Archives",
+            "image": "/ps-archive.jpg",
+            "imagePosition": "center top"
+          }
         ],
         "cards": [
-          { "id": 1, "title": "Pay & Benefits",      "desc": "Payslips, allowances & perks" },
-          { "id": 2, "title": "Creative Studio",     "desc": "Archive, resources & brand tools" },
-          { "id": 3, "title": "Learning & Growth",   "desc": "Craft skills and career development" }
+          {
+            "id": 1,
+            "title": "Pay & Benefits",
+            "desc": "Payslips, allowances & perks"
+          },
+          {
+            "id": 2,
+            "title": "Creative Studio",
+            "desc": "Archive, resources & brand tools"
+          },
+          {
+            "id": 3,
+            "title": "Learning & Growth",
+            "desc": "Craft skills and career development"
+          }
         ]
       },
       "feed": {
@@ -738,7 +1468,9 @@
             "image": "/ps-news-barbour.jpg",
             "title": "Paul Smith loves Barbour",
             "body": "Our latest collaboration with Barbour is here. Classic British outerwear meets Paul Smith's signature colour and wit — the capsule collection is available now in all flagships.",
-            "author": "Isabelle Roy", "authorInitials": "IR", "authorColour": "#6366f1",
+            "author": "Isabelle Roy",
+            "authorInitials": "IR",
+            "authorColour": "#6366f1",
             "time": "1h ago",
             "relevant": true,
             "likes": 54,
@@ -751,7 +1483,9 @@
             "image": "/ps-news-coachella.jpg",
             "title": "Paul Smith at Coachella 2025",
             "body": "Our SS25 looks made their festival debut at Coachella this year. Relaxed tailoring, natural tones and that unmistakable Paul Smith ease — dressed for the desert.",
-            "author": "Tom Blake", "authorInitials": "TB", "authorColour": "#0ea5e9",
+            "author": "Tom Blake",
+            "authorInitials": "TB",
+            "authorColour": "#0ea5e9",
             "time": "3h ago",
             "relevant": true,
             "likes": 41,
@@ -764,7 +1498,9 @@
             "image": "/ps-news-easter.jpg",
             "title": "Our signature Easter egg returns",
             "body": "The iconic Paul Smith houndstooth Easter egg is back for 2025. Hand-crafted in Belgium and filled with speckled mini eggs — a classic with a twist, as always.",
-            "author": "Nina Clarke", "authorInitials": "NC", "authorColour": "#10b981",
+            "author": "Nina Clarke",
+            "authorInitials": "NC",
+            "authorColour": "#10b981",
             "time": "5h ago",
             "relevant": true,
             "likes": 67,
@@ -777,7 +1513,9 @@
             "image": "/ps-news-bear.jpg",
             "title": "Colour, character and curiosity",
             "body": "Our latest Artist in Residence commission explores the intersection of wildlife and abstract colour — bold, playful and unmistakably Paul Smith. On display in our Albemarle Street store now.",
-            "author": "Luca Ferretti", "authorInitials": "LF", "authorColour": "#f59e0b",
+            "author": "Luca Ferretti",
+            "authorInitials": "LF",
+            "authorColour": "#f59e0b",
             "time": "1d ago",
             "relevant": true,
             "likes": 38,
@@ -790,7 +1528,9 @@
             "image": "/ps-news-store.jpg",
             "title": "More upstairs — Albemarle Street refresh",
             "body": "Our Mayfair flagship has a new look. Explore the expanded accessories and archive floor, featuring curated art, leather goods and a rotating selection of rare Paul Smith pieces.",
-            "author": "Rosa Martin", "authorInitials": "RM", "authorColour": "#ec4899",
+            "author": "Rosa Martin",
+            "authorInitials": "RM",
+            "authorColour": "#ec4899",
             "time": "2d ago",
             "relevant": false,
             "likes": 29,
@@ -803,7 +1543,9 @@
             "image": "/ps-news-vogue.jpg",
             "title": "Paul Smith meets Anna Wintour at NYFW",
             "body": "Paul joined Anna Wintour and Vogue's creative leadership at New York Fashion Week this season — a landmark moment celebrating 50 years of Paul Smith in fashion.",
-            "author": "Paul Smith", "authorInitials": "PS", "authorColour": "#8b5cf6",
+            "author": "Paul Smith",
+            "authorInitials": "PS",
+            "authorColour": "#8b5cf6",
             "time": "3d ago",
             "relevant": false,
             "likes": 93,
@@ -816,7 +1558,9 @@
             "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop",
             "title": "Welcome to our new Head of Retail",
             "body": "We're delighted to welcome Camille Dubois as our new Head of Retail Europe. Camille joins us from Maison Margiela and brings over 15 years of luxury retail leadership.",
-            "author": "HR Team", "authorInitials": "HR", "authorColour": "#f59e0b",
+            "author": "HR Team",
+            "authorInitials": "HR",
+            "authorColour": "#f59e0b",
             "time": "4d ago",
             "relevant": false,
             "likes": 47,
@@ -923,12 +1667,42 @@
           "color": "#22c55e"
         },
         "savedRetailers": [
-          { "id": 0, "name": "Sony",    "logo": "/logo-sony.svg",    "bg": "#ffffff" },
-          { "id": 1, "name": "ASDA",    "logo": "/logo-asda.svg",    "bg": "#ffffff" },
-          { "id": 2, "name": "TUI",     "logo": "/logo-tui.svg",     "bg": "#ffffff" },
-          { "id": 3, "name": "Samsung", "logo": "/logo-samsung.svg", "bg": "#ffffff" },
-          { "id": 4, "name": "Tesco",   "logo": "/logo-tesco.png",   "bg": "#ffffff" },
-          { "id": 5, "name": "ASOS",    "logo": "/logo-asos.svg",    "bg": "#ffffff" }
+          {
+            "id": 0,
+            "name": "Sony",
+            "logo": "/logo-sony.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 1,
+            "name": "ASDA",
+            "logo": "/logo-asda.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 2,
+            "name": "TUI",
+            "logo": "/logo-tui.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 3,
+            "name": "Samsung",
+            "logo": "/logo-samsung.svg",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 4,
+            "name": "Tesco",
+            "logo": "/logo-tesco.png",
+            "bg": "#ffffff"
+          },
+          {
+            "id": 5,
+            "name": "ASOS",
+            "logo": "/logo-asos.svg",
+            "bg": "#ffffff"
+          }
         ],
         "spotlight": [
           {

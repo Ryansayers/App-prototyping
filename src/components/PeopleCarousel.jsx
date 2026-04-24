@@ -8,7 +8,7 @@ function Avatar({ person, size }) {
   )
 }
 
-export default function PeopleCarousel({ people, eyebrow = 'Birthday', ctaLabel = 'Recognise' }) {
+export default function PeopleCarousel({ people, eyebrow = 'Birthday', ctaLabel = 'Recognise', seeMoreLabel }) {
   const [idx, setIdx] = useState(0)
   const touchStartX = useRef(null)
 
@@ -34,6 +34,7 @@ export default function PeopleCarousel({ people, eyebrow = 'Birthday', ctaLabel 
     <div className="bday-card" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <p className="bday-eyebrow">{eyebrow}</p>
       <p className="bday-date">{current.sublabel}</p>
+      {current.note && <p className="bday-note">{current.note}</p>}
       <p className="bday-name">{current.name}</p>
 
       <div className="bday-avatars">
@@ -58,6 +59,7 @@ export default function PeopleCarousel({ people, eyebrow = 'Birthday', ctaLabel 
       </div>
 
       <button className="bday-recognise-btn">{ctaLabel}</button>
+      {seeMoreLabel && <button className="anniv-link">{seeMoreLabel}</button>}
     </div>
   )
 }

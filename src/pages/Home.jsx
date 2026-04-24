@@ -6,7 +6,7 @@ import PeopleCarousel from '../components/PeopleCarousel'
 
 const { anniversaries: ANNIVERSARIES, birthdays: BIRTHDAYS, cards: CARDS, discover: DISCOVER, recognitionNudge, benefitsCTA, infoCard, heartCard, voiceCard, welcomeBanner, savingsCard } = loadScheme(content).home
 
-const ANNIV_PEOPLE = ANNIVERSARIES?.map(a => ({ ...a, sublabel: `${a.years} ${a.years === 1 ? 'year' : 'years'}` }))
+const ANNIV_PEOPLE = ANNIVERSARIES?.map(a => ({ ...a, sublabel: `${a.years} ${a.years === 1 ? 'year' : 'years'}`, note: a.date }))
 
 function WelcomeBanner() {
   return (
@@ -143,7 +143,7 @@ export default function Home() {
       <HeartCard />
       {savingsCard && <SavingsCard />}
       {voiceCard && <VoiceCard />}
-      <PeopleCarousel people={ANNIV_PEOPLE} eyebrow="Work Anniversary" ctaLabel="Recognise" />
+      <PeopleCarousel people={ANNIV_PEOPLE} eyebrow="Work Anniversary" ctaLabel="Recognise" seeMoreLabel="See more anniversaries" />
       <h2 className="section-heading">Discover More</h2>
       <div className="discover-carousel">
         {DISCOVER.map((item) => (

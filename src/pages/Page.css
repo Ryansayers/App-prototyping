@@ -236,6 +236,12 @@
   line-height: 1.2;
 }
 
+.bday-note {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 .bday-name {
   font-size: 14px;
   font-weight: 600;
@@ -345,6 +351,11 @@
 
 .bday-recognise-btn:hover {
   opacity: 0.85;
+}
+
+.bday-card .anniv-link {
+  margin-top: 8px;
+  align-self: center;
 }
 
 /* Feature Cards */
