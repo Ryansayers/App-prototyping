@@ -68,14 +68,19 @@ const NAV_ITEMS = [
     id: 'profile',
     label: 'You',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="9" cy="10" r="0.5" fill="currentColor" stroke="currentColor" strokeWidth={2} />
+        <circle cx="15" cy="10" r="0.5" fill="currentColor" stroke="currentColor" strokeWidth={2} />
+        <path d="M8.5 14.5c1 1.5 5.5 1.5 7 0" />
       </svg>
     ),
     iconFilled: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-        <path d="M12 2a6 6 0 110 12A6 6 0 0112 2zm0 14c-5 0-9 2.69-9 6h18c0-3.31-4-6-9-6z" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" fill="currentColor" stroke="currentColor" />
+        <circle cx="9" cy="10" r="0.5" fill="white" stroke="white" strokeWidth={2} />
+        <circle cx="15" cy="10" r="0.5" fill="white" stroke="white" strokeWidth={2} />
+        <path d="M8.5 14.5c1 1.5 5.5 1.5 7 0" stroke="white" />
       </svg>
     ),
   },

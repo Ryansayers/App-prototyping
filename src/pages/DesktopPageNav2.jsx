@@ -3,6 +3,8 @@ import './Page.css'
 import './DesktopPageNav2.css'
 import content from '../content.json'
 import DiscoverCarousel from '../components/DiscoverCarousel'
+import BirthdayCarousel from '../components/BirthdayCarousel'
+import PeopleCarousel from '../components/PeopleCarousel'
 import FAB from '../components/FAB'
 import {
   loadScheme,
@@ -18,7 +20,8 @@ import {
 
 // ── Content ──────────────────────────────────────────────────
 const {
-  anniversaries: ANNIVERSARIES,
+  anniversaries: ANNIVERSARIES_RAW,
+  birthdays: BIRTHDAYS,
   cards: CARDS,
   discover: DISCOVER,
   recognitionNudge,
@@ -30,6 +33,8 @@ const {
   savingsCard,
 } = loadScheme(content).home
 
+const ANNIVERSARIES = ANNIVERSARIES_RAW
+const ANNIV_PEOPLE = ANNIVERSARIES_RAW?.map(a => ({ ...a, sublabel: `${a.years} ${a.years === 1 ? 'year' : 'years'}` }))
 const { news: NEWS = [], recognition: RECOGNITION = [] } = loadScheme(content).feed || {}
 
 // ── Icons ─────────────────────────────────────────────────────
@@ -642,7 +647,7 @@ export default function DesktopPageNav2() {
               <div className="dv-col dv-col--sidebar">
                 <RecognitionNudgeSection />
                 <QuickLinksSection />
-                <WorkAnniversariesSection />
+                <BirthdayCarousel birthdays={BIRTHDAYS} />
               </div>
               <div className="dv-discover">
                 <DiscoverSection />

@@ -334,6 +334,7 @@
 .dv-col--main    { grid-area: main; display: flex; flex-direction: column; gap: 18px; }
 .dv-col--sidebar { grid-area: sidebar; display: flex; flex-direction: column; gap: 18px; }
 .dv-col--sidebar .anniv-card { flex: 1; }
+.dv-col--sidebar .bday-card  { flex: 1; }
 .dv-discover     { grid-area: discover; }
 
 /* Hero card placed directly in dv-page */
@@ -850,7 +851,7 @@
 
 .dv-ai-mode-btn--active {
   background: var(--color-brand);
-  color: var(--color-text-on-brand);
+  color: #ffffff;
 }
 
 .dv-ai-mode-btn svg {
@@ -864,7 +865,7 @@
   border-radius: 50%;
   border: none;
   background: var(--color-brand);
-  color: var(--color-text-on-brand);
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -917,7 +918,7 @@
   align-items: center;
   gap: 12px;
   background: var(--color-primary-700);
-  color: var(--color-text-on-brand);
+  color: #ffffff;
   border-radius: 10px;
   padding: 11px 14px;
 }
@@ -963,7 +964,7 @@
 .dv-ai-banner-close {
   background: transparent;
   border: none;
-  color: var(--color-text-on-brand);
+  color: #ffffff;
   cursor: pointer;
   font-size: 20px;
   line-height: 1;

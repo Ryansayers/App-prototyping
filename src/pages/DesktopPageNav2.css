@@ -395,6 +395,7 @@
 .dv-col--main    { grid-area: main; display: flex; flex-direction: column; gap: 18px; }
 .dv-col--sidebar { grid-area: sidebar; display: flex; flex-direction: column; gap: 18px; }
 .dv-col--sidebar .anniv-card { flex: 1; }
+.dv-col--sidebar .bday-card  { flex: 1; }
 .dv-discover     { grid-area: discover; }
 
 /* Hero card placed directly in dv-page */

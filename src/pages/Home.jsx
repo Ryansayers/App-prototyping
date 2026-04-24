@@ -1,8 +1,12 @@
 import './Page.css'
 import content from '../content.json'
 import { loadScheme } from '../seeds.js'
+import BirthdayCarousel from '../components/BirthdayCarousel'
+import PeopleCarousel from '../components/PeopleCarousel'
 
-const { anniversaries: ANNIVERSARIES, cards: CARDS, discover: DISCOVER, recognitionNudge, benefitsCTA, infoCard, heartCard, voiceCard, welcomeBanner, savingsCard } = loadScheme(content).home
+const { anniversaries: ANNIVERSARIES, birthdays: BIRTHDAYS, cards: CARDS, discover: DISCOVER, recognitionNudge, benefitsCTA, infoCard, heartCard, voiceCard, welcomeBanner, savingsCard } = loadScheme(content).home
+
+const ANNIV_PEOPLE = ANNIVERSARIES?.map(a => ({ ...a, sublabel: `${a.years} ${a.years === 1 ? 'year' : 'years'}` }))
 
 function WelcomeBanner() {
   return (
@@ -139,7 +143,7 @@ export default function Home() {
       <HeartCard />
       {savingsCard && <SavingsCard />}
       {voiceCard && <VoiceCard />}
-      <WorkAnniversaries />
+      <PeopleCarousel people={ANNIV_PEOPLE} eyebrow="Work Anniversary" ctaLabel="Recognise" />
       <h2 className="section-heading">Discover More</h2>
       <div className="discover-carousel">
         {DISCOVER.map((item) => (

@@ -23,12 +23,25 @@
           "title": "Save more every day",
           "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
         },
+        "featureCards": [
+          { "id": 1, "title": "Your Savings",   "text": "boom! Discounts is the easiest way to save. Be sure to make the most of this tool and grow your income!", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
+          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
+          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
+          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+        ],
         "anniversaries": [
           { "id": 1, "name": "Olga Mihaleva",  "initials": "OM", "colour": "#3b82f6", "date": "5 Mar",  "years": 1 },
           { "id": 2, "name": "Marcus Lee",      "initials": "ML", "colour": "#10b981", "date": "8 Mar",  "years": 3 },
           { "id": 3, "name": "Priya Patel",     "initials": "PP", "colour": "#f59e0b", "date": "12 Mar", "years": 5 },
           { "id": 4, "name": "Anika Sharma",    "initials": "AS", "colour": "#8b5cf6", "date": "19 Mar", "years": 2 },
           { "id": 5, "name": "Tom Briggs",      "initials": "TB", "colour": "#f97316", "date": "24 Mar", "years": 7 }
+        ],
+        "birthdays": [
+          { "id": 1, "name": "Sarah Mitchell",  "initials": "SM", "colour": "#6366f1", "date": "18 Mar", "image": "/av-1.jpg" },
+          { "id": 2, "name": "Bozhin Gyoshev",  "initials": "BG", "colour": "#8b5cf6", "date": "29 Mar", "image": "/av-2.jpg" },
+          { "id": 3, "name": "Marcus Green",    "initials": "MG", "colour": "#ef4444", "date": "2 Apr",  "image": null },
+          { "id": 4, "name": "Priya Singh",     "initials": "PS", "colour": "#f59e0b", "date": "8 Apr",  "image": "/av-3.jpg" },
+          { "id": 5, "name": "Tom Chen",        "initials": "TC", "colour": "#3b82f6", "date": "15 Apr", "image": null }
         ],
         "discover": [
           { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
@@ -347,12 +360,24 @@
           "title": "Save more every day",
           "text": "Unlock exclusive discounts and cashback at hundreds of top retailers through your employee benefits."
         },
+        "featureCards": [
+          { "id": 1, "title": "Your Savings",   "text": "Next Discounts is the easiest way to save. Make the most of this tool and grow your income!", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
+          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
+          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with our values.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
+          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+        ],
         "anniversaries": [
           { "id": 1, "name": "Claire Booth",    "initials": "CB", "colour": "#3b82f6", "date": "3 Mar",  "years": 2 },
           { "id": 2, "name": "James Holden",    "initials": "JH", "colour": "#10b981", "date": "9 Mar",  "years": 5 },
           { "id": 3, "name": "Sophie Metcalfe", "initials": "SM", "colour": "#f59e0b", "date": "14 Mar", "years": 1 },
           { "id": 4, "name": "Raj Kapoor",      "initials": "RK", "colour": "#8b5cf6", "date": "21 Mar", "years": 8 },
           { "id": 5, "name": "Emma Clarke",     "initials": "EC", "colour": "#f97316", "date": "27 Mar", "years": 3 }
+        ],
+        "birthdays": [
+          { "id": 1, "name": "Claire Davies",   "initials": "CD", "colour": "#3b82f6", "date": "20 Mar", "image": "/av-4.jpg" },
+          { "id": 2, "name": "James Okafor",    "initials": "JO", "colour": "#10b981", "date": "1 Apr",  "image": null },
+          { "id": 3, "name": "Sophie Li",       "initials": "SL", "colour": "#8b5cf6", "date": "10 Apr", "image": "/av-5.jpg" },
+          { "id": 4, "name": "Raj Mehta",       "initials": "RM", "colour": "#f97316", "date": "18 Apr", "image": null }
         ],
         "discover": [
           { "id": 1, "title": "Speak Up",              "image": "/discover-speak-up.png"  },
@@ -673,12 +698,24 @@
           "title": "We would love to hear your voice",
           "text": "You've got the right attitude, know-how and you've got a personality that shines. You won't accept anything less than a great place to work."
         },
+        "featureCards": [
+          { "id": 1, "title": "Your Savings",   "text": "Discounts is the easiest way to save. Make the most of this tool and benefit from exclusive offers.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&q=80&auto=format&fit=crop", "circleColor": "#e91e8c", "icon": "percent" },
+          { "id": 2, "title": "Your Benefits",  "text": "Are you making the most of your benefits? Learn more about all your benefits and access them here.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop", "circleColor": "#2196f3", "icon": "gift" },
+          { "id": 3, "title": "Your Wellbeing", "text": "Our goal is always to lead the way when it comes to providing a world-class people experience. Achieve your goals with HEART.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80&auto=format&fit=crop", "circleColor": "#009688", "icon": "heart" },
+          { "id": 4, "title": "Your Growth",    "text": "Learning something new is the best way to keep growing professionally. Take advantage of our Learning and Performance resources.", "ctaLabel": "Learn more", "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80&auto=format&fit=crop", "circleColor": "#7b1fa2", "icon": "growth" }
+        ],
         "anniversaries": [
           { "id": 1, "name": "Isabelle Moreau",  "initials": "IM", "colour": "#009aa0", "date": "4 Mar",  "years": 2 },
           { "id": 2, "name": "George Whitfield",  "initials": "GW", "colour": "#e8920a", "date": "10 Mar", "years": 6 },
           { "id": 3, "name": "Yuki Tanaka",        "initials": "YT", "colour": "#f05550", "date": "15 Mar", "years": 1 },
           { "id": 4, "name": "Camille Dubois",     "initials": "CD", "colour": "#452848", "date": "22 Mar", "years": 4 },
           { "id": 5, "name": "Oliver Nash",        "initials": "ON", "colour": "#7898a8", "date": "29 Mar", "years": 9 }
+        ],
+        "birthdays": [
+          { "id": 1, "name": "Isabelle Chen",   "initials": "IC", "colour": "#009aa0", "date": "22 Mar", "image": "/av-6.jpg" },
+          { "id": 2, "name": "George Beaumont", "initials": "GB", "colour": "#e8920a", "date": "3 Apr",  "image": null },
+          { "id": 3, "name": "Yuki Sato",       "initials": "YS", "colour": "#f05550", "date": "12 Apr", "image": "/av-1.jpg" },
+          { "id": 4, "name": "Camille Laurent", "initials": "CL", "colour": "#452848", "date": "20 Apr", "image": null }
         ],
         "discover": [
           { "id": 1, "title": "People Spotlight",   "image": "/ps-people-spotlight.jpg", "imagePosition": "center top" },

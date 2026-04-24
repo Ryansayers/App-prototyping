@@ -29,7 +29,7 @@
   --activity-bg:              var(--card-bg);
   --anniv-card-bg:            var(--card-bg);
   --anniv-card-border:        transparent;
-  --rec-nudge-bg:             var(--color-primary-100);
+  --rec-nudge-bg:             #ffffff;
   --quick-link-card-bg:       var(--card-bg);
   --card-hover-bg:            var(--color-surface-default);
   --shop-card-hover-bg:       var(--color-surface-default);
@@ -47,4 +47,10 @@
 
   /* CTA */
   --cta-color:            var(--color-text-primary);
+}
+
+.app--mvp .rec-nudge .cta-btn {
+  align-self: flex-end;
+  background: var(--color-primary-600);
+  color: #fff;
 }

@@ -47,10 +47,12 @@ export default function MvpApp() {
     setActivePage(page)
   }
 
-  const sunIcon = (
+  const smileyIcon = (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="4" fill={activePage === 'profile' ? 'currentColor' : 'none'} />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      <circle cx="12" cy="12" r="10" fill={activePage === 'profile' ? 'currentColor' : 'none'} stroke="currentColor" />
+      <circle cx="9" cy="10" r="0.5" fill="currentColor" stroke="currentColor" strokeWidth={2} />
+      <circle cx="15" cy="10" r="0.5" fill="currentColor" stroke="currentColor" strokeWidth={2} />
+      <path d="M8.5 14.5c1 1.5 5.5 1.5 7 0" stroke={activePage === 'profile' ? 'white' : 'currentColor'} />
     </svg>
   )
 
@@ -64,7 +66,7 @@ export default function MvpApp() {
         {component}
       </main>
       <FAB activePage={activePage} />
-      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: sunIcon }} />
+      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} />
     </div>
   )
 }
