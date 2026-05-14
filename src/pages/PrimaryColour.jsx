@@ -248,7 +248,7 @@ export default function PrimaryColour() {
   function handleHomeViewChange(view) {
     setHomeView(view)
     saveHomeView(view)
-    window.dispatchEvent(new Event('home-view-changed'))
+    window.dispatchEvent(new CustomEvent('home-view-changed', { detail: view }))
   }
 
   function handleImgFilterToggle() {
@@ -818,41 +818,44 @@ export default function PrimaryColour() {
             </div>
           </div>
 
-          <div className="bt-surface-row bt-surface-row--top">
-            <span className="bt-surface-label">Navigation items</span>
-            <div className="bt-nav-toggles">
-              {NAV_ITEM_IDS.map((id) => {
-                const isVisible = !hiddenNav.includes(id)
-                const label = id === 'profile' ? 'You' : id.charAt(0).toUpperCase() + id.slice(1)
-                return (
-                  <div key={id}>
-                    <div className="bt-nav-toggle-row">
-                      <span className="bt-nav-toggle-label">{label}</span>
+        </div>
+      </Section>
+
+      <Section title="Navigation">
+        <div className="bt-nav-toggles">
+          {NAV_ITEM_IDS.map((id) => {
+            const isVisible = !hiddenNav.includes(id)
+            const label = id === 'profile' ? 'You' : id.charAt(0).toUpperCase() + id.slice(1)
+            return (
+              <div key={id}>
+                <div className="bt-nav-toggle-row">
+                  <span className="bt-nav-toggle-label">{label}</span>
+                  <button
+                    className={`bt-toggle ${isVisible ? 'bt-toggle--on' : ''}`}
+                    onClick={() => handleNavToggle(id)}
+                    aria-pressed={isVisible}
+                  >
+                    <span className="bt-toggle-thumb" />
+                  </button>
+                </div>
+                {id === 'home' && (
+                  <>
+                    <div className="bt-nav-sub-row">
                       <button
-                        className={`bt-toggle ${isVisible ? 'bt-toggle--on' : ''}`}
-                        onClick={() => handleNavToggle(id)}
-                        aria-pressed={isVisible}
-                      >
-                        <span className="bt-toggle-thumb" />
-                      </button>
+                        className={`bt-view-pill ${homeView === 'native' ? 'bt-view-pill--active' : ''}`}
+                        onClick={() => handleHomeViewChange('native')}
+                      >Native</button>
+                      <button
+                        className={`bt-view-pill ${homeView === 'web' ? 'bt-view-pill--active' : ''}`}
+                        onClick={() => handleHomeViewChange('web')}
+                      >Web</button>
                     </div>
-                    {id === 'home' && (
-                      <div className="bt-nav-sub-row">
-                        <button
-                          className={`bt-view-pill ${homeView === 'native' ? 'bt-view-pill--active' : ''}`}
-                          onClick={() => handleHomeViewChange('native')}
-                        >Native</button>
-                        <button
-                          className={`bt-view-pill ${homeView === 'web' ? 'bt-view-pill--active' : ''}`}
-                          onClick={() => handleHomeViewChange('web')}
-                        >Web</button>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+                    <p className="bt-nav-note">⚠️ Home is still in early phases of development and should only be enabled if absolutely necessary.</p>
+                  </>
+                )}
+              </div>
+            )
+          })}
         </div>
       </Section>
     </div>

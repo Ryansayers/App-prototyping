@@ -637,3 +637,11 @@ code {
   color: var(--color-surface-default, #fff);
   border-color: var(--color-text-primary);
 }
+
+.bt-nav-note {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 4px 0 0;
+  line-height: 1.4;
+  max-width: 240px;
+}

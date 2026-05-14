@@ -139,7 +139,7 @@ export default function Home() {
   const [homeView, setHomeView] = useState(() => loadHomeView())
 
   useEffect(() => {
-    const handler = () => setHomeView(loadHomeView())
+    const handler = (e) => setHomeView(e.detail)
     window.addEventListener('home-view-changed', handler)
     return () => window.removeEventListener('home-view-changed', handler)
   }, [])
