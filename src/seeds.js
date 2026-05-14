@@ -384,3 +384,25 @@ export function loadSeeds() {
   } catch {}
   return { primary: 0, secondary: 0, neutral: 0 }
 }
+
+export const NAV_ITEM_IDS = ['home', 'feed', 'shop', 'search', 'profile']
+
+export function loadNavConfig() {
+  try {
+    const saved = localStorage.getItem('brand-nav-hidden')
+    return saved ? JSON.parse(saved) : []
+  } catch { return [] }
+}
+
+export function saveNavConfig(hiddenItems) {
+  localStorage.setItem('brand-nav-hidden', JSON.stringify(hiddenItems))
+}
+
+export function loadHomeView() {
+  try { return localStorage.getItem('brand-home-view') || 'native' }
+  catch { return 'native' }
+}
+
+export function saveHomeView(view) {
+  localStorage.setItem('brand-home-view', view)
+}

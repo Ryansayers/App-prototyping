@@ -588,3 +588,52 @@ code {
   --btn-primary-color: var(--color-primary-contrast, #ffffff);
   --btn-ghost-color:   var(--color-primary-600);
 }
+
+.bt-surface-row--top {
+  align-items: flex-start;
+}
+
+.bt-nav-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bt-nav-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 160px;
+}
+
+.bt-nav-toggle-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.bt-nav-sub-row {
+  display: flex;
+  gap: 6px;
+  padding: 6px 0 4px 2px;
+}
+
+.bt-view-pill {
+  padding: 4px 14px;
+  border-radius: 99px;
+  border: 1.5px solid var(--color-border-default);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.bt-view-pill--active {
+  background: var(--color-text-primary);
+  color: var(--color-surface-default, #fff);
+  border-color: var(--color-text-primary);
+}

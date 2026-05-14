@@ -14,6 +14,8 @@ import {
   LOGO_PRESETS, loadLogo, saveLogo, applySchemeAttr,
   applyImageFilter, loadImageFilter, saveImageFilter,
   loadSavingsGoal, saveSavingsGoal,
+  NAV_ITEM_IDS, loadNavConfig, saveNavConfig,
+  loadHomeView, saveHomeView,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -138,6 +140,8 @@ export default function PrimaryColour() {
   const [savingsGoalLabel,   setSavingsGoalLabel]   = useState(() => loadSavingsGoal().label)
 
   const [ctaBtnIdx, setCtaBtnIdx] = useState(() => loadCTABtn())
+  const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
+  const [homeView, setHomeView] = useState(() => loadHomeView())
 
   useEffect(() => {
     applyFont(loadFont())
@@ -230,6 +234,21 @@ export default function PrimaryColour() {
     setCtaBtnIdx(i)
     saveCTABtn(i)
     applyCTABtn(i)
+  }
+
+  function handleNavToggle(id) {
+    const next = hiddenNav.includes(id)
+      ? hiddenNav.filter((x) => x !== id)
+      : [...hiddenNav, id]
+    setHiddenNav(next)
+    saveNavConfig(next)
+    window.dispatchEvent(new Event('nav-config-changed'))
+  }
+
+  function handleHomeViewChange(view) {
+    setHomeView(view)
+    saveHomeView(view)
+    window.dispatchEvent(new Event('home-view-changed'))
   }
 
   function handleImgFilterToggle() {
@@ -796,6 +815,42 @@ export default function PrimaryColour() {
                   {HOME_CARD_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
                 </select>
               </label>
+            </div>
+          </div>
+
+          <div className="bt-surface-row bt-surface-row--top">
+            <span className="bt-surface-label">Navigation items</span>
+            <div className="bt-nav-toggles">
+              {NAV_ITEM_IDS.map((id) => {
+                const isVisible = !hiddenNav.includes(id)
+                const label = id === 'profile' ? 'You' : id.charAt(0).toUpperCase() + id.slice(1)
+                return (
+                  <div key={id}>
+                    <div className="bt-nav-toggle-row">
+                      <span className="bt-nav-toggle-label">{label}</span>
+                      <button
+                        className={`bt-toggle ${isVisible ? 'bt-toggle--on' : ''}`}
+                        onClick={() => handleNavToggle(id)}
+                        aria-pressed={isVisible}
+                      >
+                        <span className="bt-toggle-thumb" />
+                      </button>
+                    </div>
+                    {id === 'home' && (
+                      <div className="bt-nav-sub-row">
+                        <button
+                          className={`bt-view-pill ${homeView === 'native' ? 'bt-view-pill--active' : ''}`}
+                          onClick={() => handleHomeViewChange('native')}
+                        >Native</button>
+                        <button
+                          className={`bt-view-pill ${homeView === 'web' ? 'bt-view-pill--active' : ''}`}
+                          onClick={() => handleHomeViewChange('web')}
+                        >Web</button>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>

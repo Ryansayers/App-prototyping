@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react'
 import './Page.css'
 import content from '../content.json'
-import { loadScheme } from '../seeds.js'
+import { loadScheme, loadHomeView } from '../seeds.js'
 import BirthdayCarousel from '../components/BirthdayCarousel'
 import PeopleCarousel from '../components/PeopleCarousel'
 
@@ -135,6 +136,22 @@ function SavingsCard() {
 }
 
 export default function Home() {
+  const [homeView, setHomeView] = useState(() => loadHomeView())
+
+  useEffect(() => {
+    const handler = () => setHomeView(loadHomeView())
+    window.addEventListener('home-view-changed', handler)
+    return () => window.removeEventListener('home-view-changed', handler)
+  }, [])
+
+  if (homeView === 'web') {
+    return (
+      <div className="page" style={{ padding: 0 }}>
+        <img src="/hub-web-view.png" alt="Web view" style={{ width: '100%', display: 'block' }} />
+      </div>
+    )
+  }
+
   return (
     <div className="page">
       {welcomeBanner ? <WelcomeBanner /> : <p className="page-subtitle" style={{ color: 'var(--color-text-secondary)' }}>Welcome back!</p>}
@@ -145,10 +162,10 @@ export default function Home() {
       {voiceCard && <VoiceCard />}
       <PeopleCarousel people={ANNIV_PEOPLE} eyebrow="Work Anniversary" ctaLabel="Recognise" seeMoreLabel="See more anniversaries" />
       <h2 className="section-heading">Discover More</h2>
-      <div className="discover-carousel">
+      <div className="discover-list">
         {DISCOVER.map((item) => (
-          <div key={item.id} className="discover-card">
-            <div className="discover-img-wrap">
+          <div key={item.id} className="discover-list-card">
+            <div className="discover-list-img-wrap">
               <img className="discover-img" src={item.image} alt={item.title} style={item.imagePosition ? { objectPosition: item.imagePosition } : undefined} />
               <div className="content-card-img-overlay" />
             </div>

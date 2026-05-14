@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -24,6 +24,13 @@ const PAGES = {
 
 export default function MvpApp() {
   const [activePage, setActivePage] = useState('home')
+  const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
+  useEffect(() => {
+    const onStorage = () => setHiddenNav(loadNavConfig())
+    window.addEventListener('nav-config-changed', onStorage)
+    return () => window.removeEventListener('nav-config-changed', onStorage)
+  }, [])
+
   useEffect(() => {
     applySchemeAttr()
     applyImageFilter(loadImageFilter())
@@ -66,7 +73,7 @@ export default function MvpApp() {
         {component}
       </main>
       <FAB activePage={activePage} />
-      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} />
+      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} hidden={hiddenNav} />
     </div>
   )
 }

@@ -1524,6 +1524,28 @@
   box-shadow: var(--nc-shadow);
 }
 
+/* Discover list (replaces carousel) */
+.discover-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.discover-list-card {
+  background: var(--discover-card-bg, var(--color-primary-700));
+  border-radius: var(--nc-radius, 16px);
+  overflow: hidden;
+  box-shadow: var(--nc-shadow);
+}
+
+.discover-list-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
 .discover-img-wrap {
   position: relative;
   width: 100%;

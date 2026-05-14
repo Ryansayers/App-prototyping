@@ -86,26 +86,26 @@ const NAV_ITEMS = [
   },
 ]
 
-export default function BottomNav({ active, onChange, labels = {}, icons = {} }) {
-  const activeIndex = NAV_ITEMS.findIndex((item) => item.id === active)
+export default function BottomNav({ active, onChange, labels = {}, icons = {}, hidden = [] }) {
+  const visibleItems = NAV_ITEMS.filter((item) => !hidden.includes(item.id))
 
   return (
     <div className="bottom-nav-wrapper">
-    <nav className="bottom-nav">
-{NAV_ITEMS.map((item) => {
-        const isActive = active === item.id
-        return (
-          <button
-            key={item.id}
-            className={`nav-item ${isActive ? 'active' : ''}`}
-            onClick={() => onChange(item.id)}
-          >
-            <span className="nav-icon">{icons[item.id] ? icons[item.id] : (isActive ? item.iconFilled : item.icon)}</span>
-            <span className="nav-label">{labels[item.id] ?? item.label}</span>
-          </button>
-        )
-      })}
-    </nav>
+      <nav className="bottom-nav">
+        {visibleItems.map((item) => {
+          const isActive = active === item.id
+          return (
+            <button
+              key={item.id}
+              className={`nav-item ${isActive ? 'active' : ''}`}
+              onClick={() => onChange(item.id)}
+            >
+              <span className="nav-icon">{icons[item.id] ? icons[item.id] : (isActive ? item.iconFilled : item.icon)}</span>
+              <span className="nav-label">{labels[item.id] ?? item.label}</span>
+            </button>
+          )
+        })}
+      </nav>
     </div>
   )
 }
