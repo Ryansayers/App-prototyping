@@ -1,16 +1,18 @@
 import './FAB.css'
 
 export default function FAB({ activePage, onClick }) {
-  const isSearch = activePage === 'search'
-  const isShop   = activePage === 'shop'
+  if (activePage === 'search' || activePage === 'profile') return null
 
-  const className = `fab ${isSearch ? 'fab-ai' : ''} ${isShop ? 'fab-wallet' : ''}`
-  const ariaLabel = isSearch ? 'Ask AI' : isShop ? 'Wallet' : 'Add'
+  const isHome = activePage === 'home'
+  const isShop = activePage === 'shop'
+
+  const className = `fab ${isHome ? 'fab-ai' : ''} ${isShop ? 'fab-wallet' : ''}`
+  const ariaLabel = isHome ? 'Ask AI' : isShop ? 'Wallet' : 'Add'
 
   return (
     <button className={className} onClick={onClick} aria-label={ariaLabel}>
       <span className="fab-icon">
-        {isSearch ? (
+        {isHome ? (
           <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
             <path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" />
           </svg>
@@ -26,7 +28,7 @@ export default function FAB({ activePage, onClick }) {
           </svg>
         )}
       </span>
-      <span className="fab-label">{isSearch ? 'Ask AI' : 'Wallet'}</span>
+      <span className="fab-label">{isHome ? 'Ask AI' : 'Wallet'}</span>
     </button>
   )
 }

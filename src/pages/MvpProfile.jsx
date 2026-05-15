@@ -147,14 +147,13 @@ function HabitsCarousel() {
   )
 }
 
-function ExploreCard() {
+function ExploreWellbeingCTA() {
   return (
-    <div className="you-explore-card">
-      <span className="you-explore-icon">🧘</span>
-      <div className="you-explore-body">
-        <p className="you-explore-title">Explore Employee Wellbeing</p>
-        <p className="you-explore-desc">Find recipes, acivities and wellbeing content</p>
-      </div>
+    <div className="cta-card cta-discounts" style={{ marginBottom: 28 }}>
+      <p className="cta-title">Employee Wellbeing</p>
+      <p className="cta-label">Your wellbeing hub</p>
+      <p className="cta-sub">Recipes, workouts, mindfulness and more</p>
+      <button className="cta-btn">Explore activities</button>
     </div>
   )
 }
@@ -193,7 +192,7 @@ export default function MvpProfile() {
       <h1 className="you-page-heading" style={{ marginTop: 8 }}>Activity</h1>
       <ActivityCard />
       <HabitsCarousel />
-      <ExploreCard />
+      <ExploreWellbeingCTA />
       <ChallengeList />
     </div>
   )

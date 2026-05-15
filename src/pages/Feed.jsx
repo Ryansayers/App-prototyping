@@ -167,23 +167,13 @@ export default function Feed() {
 
   const savedItems = ALL_ITEMS.filter((item) => savedIds.has(item.id))
 
-  const YOUR_TEAM_ITEMS = ALL_ITEMS.filter(
-    item => (item.type === 'news' && item.tag === 'Your Team') || (item.type === 'recognition' && item.isYou)
-  )
-
-  const TAB_LABELS = { all: 'All', team: 'Your Team', news: 'News', recognition: 'Recognition', saved: 'Saved' }
+  const TAB_LABELS = { all: 'All', news: 'News', recognition: 'Recognition', saved: 'Saved' }
 
   const TAB_ICONS = {
     all: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
         <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
-      </svg>
-    ),
-    team: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
       </svg>
     ),
     news: (
@@ -206,7 +196,7 @@ export default function Feed() {
   return (
     <div className="page feed-page">
       <div className="feed-tabs">
-        {['all', 'team', 'news', 'recognition', 'saved'].map((t) => (
+        {['all', 'news', 'recognition', 'saved'].map((t) => (
           <button
             key={t}
             className={`feed-tab ${tab === t ? 'feed-tab--active' : ''}`}
@@ -223,9 +213,6 @@ export default function Feed() {
 
       <div className="feed-list" style={{ marginBottom: 96 }}>
         {tab === 'all' && ALL_ITEMS.map((item) => (
-          <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
-        ))}
-        {tab === 'team' && YOUR_TEAM_ITEMS.map((item) => (
           <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
         ))}
         {tab === 'news' && NEWS.map((item) => (
