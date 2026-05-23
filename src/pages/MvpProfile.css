@@ -4,11 +4,10 @@
 }
 
 .you-page-heading {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--color-text-primary);
-  margin: 0 0 12px;
-  letter-spacing: -0.01em;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--section-heading-color);
+  margin: 32px 0 12px;
 }
 
 /* Activity card */
