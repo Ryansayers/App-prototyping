@@ -406,3 +406,12 @@ export function loadHomeView() {
 export function saveHomeView(view) {
   localStorage.setItem('brand-home-view', view)
 }
+
+export function loadLaunchHub() {
+  try { return localStorage.getItem('brand-launch-hub') !== 'false' }
+  catch { return true }
+}
+
+export function saveLaunchHub(enabled) {
+  localStorage.setItem('brand-launch-hub', enabled ? 'true' : 'false')
+}

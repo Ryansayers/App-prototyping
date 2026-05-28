@@ -459,6 +459,119 @@
   line-height: 1;
 }
 
+/* ── Launch Hub CTA card ── */
+.launch-hub-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  background: var(--fab-bg);
+  color: var(--fab-color);
+  text-align: left;
+  box-shadow: none;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.launch-hub-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px hsla(var(--color-primary-h), var(--color-primary-s), 45%, 0.2);
+}
+
+.launch-hub-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.launch-hub-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.launch-hub-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.launch-hub-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+/* ── Hub webview overlay ── */
+.hub-webview {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface-default, #fff);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-webview-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border-default, rgba(0,0,0,0.08));
+  flex-shrink: 0;
+}
+
+.hub-webview-back {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-surface-raised, rgba(0,0,0,0.06));
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 150ms ease;
+}
+
+.hub-webview-back:active {
+  background: var(--color-surface-subtle);
+}
+
+.hub-webview-url {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-align: center;
+  background: var(--color-surface-raised, rgba(0,0,0,0.05));
+  padding: 6px 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hub-webview-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
 .rc-you-banner {
   background: var(--rc-you-banner-bg);
   border-radius: var(--rc-you-banner-radius, 12px);

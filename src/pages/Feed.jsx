@@ -154,7 +154,27 @@ function FeedItem({ item, saved, onSave }) {
     : <RecognitionCard item={item} saved={saved} onSave={onSave} />
 }
 
-export default function Feed() {
+const ExternalLinkIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)
+
+function LaunchHubCard({ onLaunchHub }) {
+  return (
+    <button className="launch-hub-card" onClick={onLaunchHub}>
+      <div className="launch-hub-card-body">
+        <p className="launch-hub-eyebrow">Your employee hub</p>
+        <p className="launch-hub-title">Launch Hub</p>
+      </div>
+      <span className="launch-hub-icon"><ExternalLinkIcon /></span>
+    </button>
+  )
+}
+
+export default function Feed({ onLaunchHub }) {
   const [tab, setTab] = useState('all')
   const [savedIds, setSavedIds] = useState(new Set())
   const toggleSave = (id) => {
@@ -212,6 +232,7 @@ export default function Feed() {
       </div>
 
       <div className="feed-list" style={{ marginBottom: 96 }}>
+        {onLaunchHub && <LaunchHubCard onLaunchHub={onLaunchHub} />}
         {tab === 'all' && ALL_ITEMS.map((item) => (
           <FeedItem key={item.id} item={item} saved={savedIds.has(item.id)} onSave={toggleSave} />
         ))}

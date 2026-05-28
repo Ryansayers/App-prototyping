@@ -476,53 +476,96 @@
 .activity-card {
   background: var(--activity-bg);
   border-radius: var(--cta-card-radius, 16px);
-  padding: 20px 24px;
+  padding: 16px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 0;
   color: var(--cta-color);
   margin-bottom: 16px;
   text-align: center;
 }
 
+.activity-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
 .activity-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   margin: 0;
 }
 
 .activity-date {
-  font-size: 13px;
-  opacity: 0.7;
+  font-size: 12px;
+  opacity: 0.65;
   margin: 0;
 }
 
-.activity-count {
-  font-size: 40px;
+.act-ring-wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+}
+
+.act-ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.act-ring-count {
+  font-size: 22px;
   font-weight: 800;
-  line-height: 1.1;
-  margin: 8px 0 4px;
+  line-height: 1;
   letter-spacing: -0.5px;
+}
+
+.act-ring-unit {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.activity-target {
+  font-size: 12px;
+  opacity: 0.65;
+  margin: 10px 0 14px;
+}
+
+.activity-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .activity-sync {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  opacity: 0.7;
+  font-size: 11px;
+  opacity: 0.6;
   margin: 0;
 }
 
 .activity-sync svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
 }
 
 .activity-add {
-  margin-top: 4px;
   background: none;
   border: none;
   padding: 0;

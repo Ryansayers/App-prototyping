@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig, loadLaunchHub } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -22,13 +22,39 @@ const PAGES = {
   notifications: { title: 'Notifications', component: <Notifications /> },
 }
 
+function HubWebView({ onClose }) {
+  return (
+    <div className="hub-webview">
+      <div className="hub-webview-bar">
+        <button className="hub-webview-back" onClick={onClose} aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+        </button>
+        <span className="hub-webview-url">hub.yourcompany.com</span>
+        <div style={{ width: 32 }} />
+      </div>
+      <div className="hub-webview-content">
+        <img src="/hub-web-view.png" alt="Hub" style={{ width: '100%', display: 'block' }} />
+      </div>
+    </div>
+  )
+}
+
 export default function MvpApp() {
   const [activePage, setActivePage] = useState('home')
   const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
+  const [showHub, setShowHub] = useState(false)
+  const [launchHubEnabled, setLaunchHubEnabled] = useState(() => loadLaunchHub())
   useEffect(() => {
-    const onStorage = () => setHiddenNav(loadNavConfig())
-    window.addEventListener('nav-config-changed', onStorage)
-    return () => window.removeEventListener('nav-config-changed', onStorage)
+    const onNavChange = () => setHiddenNav(loadNavConfig())
+    const onHubChange = (e) => setLaunchHubEnabled(e.detail)
+    window.addEventListener('nav-config-changed', onNavChange)
+    window.addEventListener('launch-hub-changed', onHubChange)
+    return () => {
+      window.removeEventListener('nav-config-changed', onNavChange)
+      window.removeEventListener('launch-hub-changed', onHubChange)
+    }
   }, [])
 
   useEffect(() => {
@@ -48,7 +74,10 @@ export default function MvpApp() {
     else el.removeAttribute('data-neutral')
     applyTheme('light')
   }, [])
-  const { title, component } = PAGES[activePage]
+  const { title } = PAGES[activePage]
+  const component = activePage === 'feed'
+    ? <Feed onLaunchHub={launchHubEnabled ? () => setShowHub(true) : null} />
+    : PAGES[activePage].component
 
   function handlePageChange(page) {
     setActivePage(page)
@@ -74,6 +103,7 @@ export default function MvpApp() {
       </main>
       <FAB activePage={activePage} />
       <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} hidden={hiddenNav} />
+      {showHub && <HubWebView onClose={() => setShowHub(false)} />}
     </div>
   )
 }

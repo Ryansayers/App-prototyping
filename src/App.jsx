@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadLaunchHub } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -12,6 +12,25 @@ import Profile from './pages/Profile'
 import Notifications from './pages/Notifications'
 import './App.css'
 
+function HubWebView({ onClose }) {
+  return (
+    <div className="hub-webview">
+      <div className="hub-webview-bar">
+        <button className="hub-webview-back" onClick={onClose} aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+          </svg>
+        </button>
+        <span className="hub-webview-url">hub.yourcompany.com</span>
+        <div style={{ width: 32 }} />
+      </div>
+      <div className="hub-webview-content">
+        <img src="/hub-web-view.png" alt="Hub" style={{ width: '100%', display: 'block' }} />
+      </div>
+    </div>
+  )
+}
+
 const PAGES = {
   home:          { title: 'Home',          component: <Home /> },
   search:        { title: 'Search',        component: <Search /> },
@@ -23,6 +42,13 @@ const PAGES = {
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
+  const [showHub, setShowHub] = useState(false)
+  const [launchHubEnabled, setLaunchHubEnabled] = useState(() => loadLaunchHub())
+  useEffect(() => {
+    const onHubChange = (e) => setLaunchHubEnabled(e.detail)
+    window.addEventListener('launch-hub-changed', onHubChange)
+    return () => window.removeEventListener('launch-hub-changed', onHubChange)
+  }, [])
   useEffect(() => {
     applySchemeAttr()
     applyImageFilter(loadImageFilter())
@@ -35,7 +61,10 @@ export default function App() {
     })
     applyTheme(loadTheme())
   }, [])
-  const { title, component } = PAGES[activePage]
+  const { title } = PAGES[activePage]
+  const component = activePage === 'feed'
+    ? <Feed onLaunchHub={launchHubEnabled ? () => setShowHub(true) : null} />
+    : PAGES[activePage].component
 
   function handlePageChange(page) {
     setActivePage(page)
@@ -52,6 +81,7 @@ export default function App() {
       </main>
       <FAB activePage={activePage} />
       <BottomNav active={activePage} onChange={handlePageChange} />
+      {showHub && <HubWebView onClose={() => setShowHub(false)} />}
     </div>
   )
 }

@@ -16,6 +16,7 @@ import {
   loadSavingsGoal, saveSavingsGoal,
   NAV_ITEM_IDS, loadNavConfig, saveNavConfig,
   loadHomeView, saveHomeView,
+  loadLaunchHub, saveLaunchHub,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -148,6 +149,7 @@ export default function BrandTokens() {
   const [ctaBtnIdx, setCtaBtnIdx] = useState(() => loadCTABtn())
   const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
   const [homeView, setHomeView] = useState(() => loadHomeView())
+  const [launchHub, setLaunchHub] = useState(() => loadLaunchHub())
 
   useEffect(() => {
     applyFont(loadFont())
@@ -255,6 +257,13 @@ export default function BrandTokens() {
     setHomeView(view)
     saveHomeView(view)
     window.dispatchEvent(new CustomEvent('home-view-changed', { detail: view }))
+  }
+
+  function handleLaunchHubToggle() {
+    const next = !launchHub
+    setLaunchHub(next)
+    saveLaunchHub(next)
+    window.dispatchEvent(new CustomEvent('launch-hub-changed', { detail: next }))
   }
 
   function handleImgFilterToggle() {
@@ -907,6 +916,16 @@ export default function BrandTokens() {
               </div>
             )
           })}
+          <div className="bt-nav-toggle-row" style={{ marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--color-border-default)' }}>
+            <span className="bt-nav-toggle-label">Launch Hub (Feed)</span>
+            <button
+              className={`bt-toggle ${launchHub ? 'bt-toggle--on' : ''}`}
+              onClick={handleLaunchHubToggle}
+              aria-pressed={launchHub}
+            >
+              <span className="bt-toggle-thumb" />
+            </button>
+          </div>
         </div>
       </Section>
     </div>
