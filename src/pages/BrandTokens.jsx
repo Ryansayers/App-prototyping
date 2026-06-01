@@ -634,7 +634,7 @@ export default function BrandTokens() {
                 <p className="cta-title">Discounts</p>
                 <p className="cta-label">Total Savings</p>
                 <p className="cta-value">£300.00</p>
-                <button className="cta-btn" style={{ marginTop: 12 }}>View Discounts</button>
+                <button className="cta-btn" style={{ marginTop: 12 }}>Explore Discounts</button>
               </div>
               <div className="cta-card cta-rewards" style={{ flex: '0 0 auto', width: 200, minHeight: 0 }}>
                 <p className="cta-title">Rewards</p>

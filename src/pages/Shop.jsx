@@ -38,7 +38,7 @@ export default function Shop() {
               <span>{pct}% · £{goalTarget.toLocaleString()}</span>
             </div>
           )}
-          <button className="cta-btn">View Discounts</button>
+          <button className="cta-btn">Explore Discounts</button>
         </div>
         <div className="cta-card cta-rewards">
           {showRewardsImg && <img className="cta-card-bg-img" src="/card-bg-smarter.png" alt="" />}

@@ -590,7 +590,7 @@ export default function PrimaryColour() {
                 <p className="cta-title">Discounts</p>
                 <p className="cta-label">Total Savings</p>
                 <p className="cta-value">£300.00</p>
-                <button className="cta-btn" style={{ marginTop: 12 }}>View Discounts</button>
+                <button className="cta-btn" style={{ marginTop: 12 }}>Explore Discounts</button>
               </div>
               <div
                 className="cta-card cta-rewards"
