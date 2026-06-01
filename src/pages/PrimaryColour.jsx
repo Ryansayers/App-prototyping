@@ -17,6 +17,8 @@ import {
   NAV_ITEM_IDS, loadNavConfig, saveNavConfig,
   loadHomeView, saveHomeView,
   loadLaunchHub, saveLaunchHub,
+  loadBrandLogoVisible, saveBrandLogoVisible,
+  loadAskAiPage, saveAskAiPage,
 } from '../seeds.js'
 
 function useSeed(key, presets) {
@@ -144,6 +146,8 @@ export default function PrimaryColour() {
   const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
   const [homeView, setHomeView] = useState(() => loadHomeView())
   const [launchHub, setLaunchHub] = useState(() => loadLaunchHub())
+  const [brandLogoVisible, setBrandLogoVisible] = useState(() => loadBrandLogoVisible())
+  const [askAiPage, setAskAiPage] = useState(() => loadAskAiPage())
 
   useEffect(() => {
     applyFont(loadFont())
@@ -258,6 +262,19 @@ export default function PrimaryColour() {
     setLaunchHub(next)
     saveLaunchHub(next)
     window.dispatchEvent(new CustomEvent('launch-hub-changed', { detail: next }))
+  }
+
+  function handleBrandLogoToggle() {
+    const next = !brandLogoVisible
+    setBrandLogoVisible(next)
+    saveBrandLogoVisible(next)
+    window.dispatchEvent(new CustomEvent('brand-logo-visible-changed', { detail: next }))
+  }
+
+  function handleAskAiPageChange(page) {
+    setAskAiPage(page)
+    saveAskAiPage(page)
+    window.dispatchEvent(new CustomEvent('ask-ai-page-changed', { detail: page }))
   }
 
   function handleImgFilterToggle() {
@@ -865,6 +882,23 @@ export default function PrimaryColour() {
               </div>
             )
           })}
+          <div className="bt-nav-toggle-row" style={{ marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--color-border-default)' }}>
+            <span className="bt-nav-toggle-label">Brand logo (Home)</span>
+            <button
+              className={`bt-toggle ${brandLogoVisible ? 'bt-toggle--on' : ''}`}
+              onClick={handleBrandLogoToggle}
+              aria-pressed={brandLogoVisible}
+            >
+              <span className="bt-toggle-thumb" />
+            </button>
+          </div>
+          <div className="bt-nav-toggle-row" style={{ marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--color-border-default)' }}>
+            <span className="bt-nav-toggle-label">Ask AI location</span>
+            <div className="bt-view-pills">
+              <button className={`bt-view-pill ${askAiPage === 'home' ? 'bt-view-pill--active' : ''}`} onClick={() => handleAskAiPageChange('home')}>Home</button>
+              <button className={`bt-view-pill ${askAiPage === 'search' ? 'bt-view-pill--active' : ''}`} onClick={() => handleAskAiPageChange('search')}>Search</button>
+            </div>
+          </div>
           <div className="bt-nav-toggle-row" style={{ marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--color-border-default)' }}>
             <span className="bt-nav-toggle-label">Launch Hub (Feed)</span>
             <button

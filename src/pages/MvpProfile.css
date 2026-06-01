@@ -1,3 +1,15 @@
+:root {
+  --challenge-icon-bg:     var(--color-secondary-100);
+  --challenge-icon-fill:   var(--color-secondary-200);
+  --challenge-icon-stroke: var(--color-secondary-600);
+}
+
+:root[data-theme="dark"] {
+  --challenge-icon-bg:     var(--color-secondary-800);
+  --challenge-icon-fill:   var(--color-secondary-700);
+  --challenge-icon-stroke: var(--color-secondary-300);
+}
+
 /* ── You page ── */
 .you-page {
   padding-bottom: 96px;
@@ -276,7 +288,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-secondary-100);
+  background: var(--challenge-icon-bg);
   border-radius: 12px;
   flex-shrink: 0;
 }

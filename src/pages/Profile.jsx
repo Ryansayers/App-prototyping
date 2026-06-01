@@ -44,9 +44,9 @@ const CHALLENGES = [
     id: 1,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
-        <path d="M12 2.69 17.66 8.35a8 8 0 1 1-11.32 0Z" style={{ fill: 'var(--color-secondary-200)' }} />
-        <path d="M12 2.69 17.66 8.35a8 8 0 1 1-11.32 0Z" style={{ stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M9.5 16.5a3 3 0 0 0 5 0" style={{ stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 2.69 17.66 8.35a8 8 0 1 1-11.32 0Z" style={{ fill: 'var(--challenge-icon-fill)' }} />
+        <path d="M12 2.69 17.66 8.35a8 8 0 1 1-11.32 0Z" style={{ stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M9.5 16.5a3 3 0 0 0 5 0" style={{ stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
     title: 'Drink 2L (64 fl oz.) of water',
@@ -59,9 +59,9 @@ const CHALLENGES = [
     id: 2,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
-        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" style={{ fill: 'var(--color-secondary-200)', stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M18 8h1a4 4 0 0 1 0 8h-1" style={{ stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M6 1v3M10 1v3M14 1v3" style={{ stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" style={{ fill: 'var(--challenge-icon-fill)', stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1" style={{ stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M6 1v3M10 1v3M14 1v3" style={{ stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
     title: 'Limit caffeine intake to one serving per day',
@@ -74,7 +74,7 @@ const CHALLENGES = [
     id: 3,
     icon: (
       <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" style={{ fill: 'var(--color-secondary-200)', stroke: 'var(--color-secondary-600)' }} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" style={{ fill: 'var(--challenge-icon-fill)', stroke: 'var(--challenge-icon-stroke)' }} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     title: 'Get 8 hours of sleep',

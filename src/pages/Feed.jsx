@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Page.css'
 import './Feed.css'
 import content from '../content.json'
-import { loadScheme } from '../seeds.js'
+import { loadScheme, LOGO_PRESETS, loadLogo } from '../seeds.js'
 
 const { news: NEWS, recognition: RECOGNITION } = loadScheme(content).feed
 
@@ -163,14 +163,21 @@ const ExternalLinkIcon = () => (
 )
 
 function LaunchHubCard({ onLaunchHub }) {
+  const logoSrc = LOGO_PRESETS[loadLogo()]?.src
   return (
-    <button className="launch-hub-card" onClick={onLaunchHub}>
-      <div className="launch-hub-card-body">
-        <p className="launch-hub-eyebrow">Your employee hub</p>
-        <p className="launch-hub-title">Launch Hub</p>
+    <div className="nc launch-hub-nc" onClick={onLaunchHub} role="button" tabIndex={0}>
+      <div className="nc-img-wrap launch-hub-nc-img">
+        {logoSrc && <img src={logoSrc} alt="" className="launch-hub-nc-logo" />}
       </div>
-      <span className="launch-hub-icon"><ExternalLinkIcon /></span>
-    </button>
+      <div className="nc-body">
+        <p className="nc-title">Launch Boom</p>
+        <p className="nc-desc">Open your company engagement portal</p>
+        <div className="card-footer">
+          <span className="nc-time">hub.yourcompany.com</span>
+          <ExternalLinkIcon />
+        </div>
+      </div>
+    </div>
   )
 }
 

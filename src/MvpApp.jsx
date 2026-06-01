@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig, loadLaunchHub } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig, loadLaunchHub, loadBrandLogoVisible, loadAskAiPage } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -46,14 +46,22 @@ export default function MvpApp() {
   const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
   const [showHub, setShowHub] = useState(false)
   const [launchHubEnabled, setLaunchHubEnabled] = useState(() => loadLaunchHub())
+  const [brandLogoVisible, setBrandLogoVisible] = useState(() => loadBrandLogoVisible())
+  const [askAiPage, setAskAiPage] = useState(() => loadAskAiPage())
   useEffect(() => {
     const onNavChange = () => setHiddenNav(loadNavConfig())
     const onHubChange = (e) => setLaunchHubEnabled(e.detail)
+    const onLogoChange = (e) => setBrandLogoVisible(e.detail)
+    const onAskAiChange = (e) => setAskAiPage(e.detail)
     window.addEventListener('nav-config-changed', onNavChange)
     window.addEventListener('launch-hub-changed', onHubChange)
+    window.addEventListener('brand-logo-visible-changed', onLogoChange)
+    window.addEventListener('ask-ai-page-changed', onAskAiChange)
     return () => {
       window.removeEventListener('nav-config-changed', onNavChange)
       window.removeEventListener('launch-hub-changed', onHubChange)
+      window.removeEventListener('brand-logo-visible-changed', onLogoChange)
+      window.removeEventListener('ask-ai-page-changed', onAskAiChange)
     }
   }, [])
 
@@ -97,11 +105,11 @@ export default function MvpApp() {
       <main className="content">
         <div className={`app-top ${activePage === 'home' ? 'app-top--home' : 'app-top--page'}`}>
           <StatusBar />
-          <Header title={title} isHome={activePage === 'home'} avatar="RS" onNotifClick={() => setActivePage('notifications')} />
+          <Header title={title} isHome={activePage === 'home'} avatar="RS" onNotifClick={() => setActivePage('notifications')} showLogo={brandLogoVisible} />
         </div>
         {component}
       </main>
-      <FAB activePage={activePage} />
+      <FAB activePage={activePage} askAiPage={askAiPage} />
       <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} hidden={hiddenNav} />
       {showHub && <HubWebView onClose={() => setShowHub(false)} />}
     </div>

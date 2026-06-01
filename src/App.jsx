@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadLaunchHub } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, applySeeds, loadSeeds, PRIMARY_PRESETS, SECONDARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadLaunchHub, loadBrandLogoVisible, loadAskAiPage } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -44,10 +44,20 @@ export default function App() {
   const [activePage, setActivePage] = useState('home')
   const [showHub, setShowHub] = useState(false)
   const [launchHubEnabled, setLaunchHubEnabled] = useState(() => loadLaunchHub())
+  const [brandLogoVisible, setBrandLogoVisible] = useState(() => loadBrandLogoVisible())
+  const [askAiPage, setAskAiPage] = useState(() => loadAskAiPage())
   useEffect(() => {
     const onHubChange = (e) => setLaunchHubEnabled(e.detail)
+    const onLogoChange = (e) => setBrandLogoVisible(e.detail)
+    const onAskAiChange = (e) => setAskAiPage(e.detail)
     window.addEventListener('launch-hub-changed', onHubChange)
-    return () => window.removeEventListener('launch-hub-changed', onHubChange)
+    window.addEventListener('brand-logo-visible-changed', onLogoChange)
+    window.addEventListener('ask-ai-page-changed', onAskAiChange)
+    return () => {
+      window.removeEventListener('launch-hub-changed', onHubChange)
+      window.removeEventListener('brand-logo-visible-changed', onLogoChange)
+      window.removeEventListener('ask-ai-page-changed', onAskAiChange)
+    }
   }, [])
   useEffect(() => {
     applySchemeAttr()
@@ -75,11 +85,11 @@ export default function App() {
       <main className="content">
         <div className={`app-top ${activePage === 'home' ? 'app-top--home' : 'app-top--page'}`}>
           <StatusBar />
-          <Header title={title} isHome={activePage === 'home'} onNotifClick={() => setActivePage('notifications')} />
+          <Header title={title} isHome={activePage === 'home'} onNotifClick={() => setActivePage('notifications')} showLogo={brandLogoVisible} />
         </div>
         {component}
       </main>
-      <FAB activePage={activePage} />
+      <FAB activePage={activePage} askAiPage={askAiPage} />
       <BottomNav active={activePage} onChange={handlePageChange} />
       {showHub && <HubWebView onClose={() => setShowHub(false)} />}
     </div>

@@ -415,3 +415,21 @@ export function loadLaunchHub() {
 export function saveLaunchHub(enabled) {
   localStorage.setItem('brand-launch-hub', enabled ? 'true' : 'false')
 }
+
+export function loadBrandLogoVisible() {
+  try { return localStorage.getItem('brand-logo-visible') !== 'false' }
+  catch { return true }
+}
+
+export function saveBrandLogoVisible(enabled) {
+  localStorage.setItem('brand-logo-visible', enabled ? 'true' : 'false')
+}
+
+export function loadAskAiPage() {
+  try { return localStorage.getItem('ask-ai-page') || 'home' }
+  catch { return 'home' }
+}
+
+export function saveAskAiPage(page) {
+  localStorage.setItem('ask-ai-page', page)
+}

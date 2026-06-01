@@ -125,19 +125,21 @@ function FeedFAB() {
   )
 }
 
-export default function FAB({ activePage, onClick }) {
-  if (activePage === 'search' || activePage === 'profile') return null
+export default function FAB({ activePage, onClick, askAiPage = 'home' }) {
+  if (activePage === 'profile') return null
   if (activePage === 'feed') return <FeedFAB />
+  if (activePage === 'search' && askAiPage !== 'search') return null
+  if (activePage === 'home' && askAiPage !== 'home') return null
 
-  const isHome = activePage === 'home'
+  const isAskAi = activePage === askAiPage
   const isShop = activePage === 'shop'
-  const className = `fab ${isHome ? 'fab-ai' : ''} ${isShop ? 'fab-wallet' : ''}`
-  const ariaLabel = isHome ? 'Ask AI' : isShop ? 'Wallet' : 'Add'
+  const className = `fab ${isAskAi ? 'fab-ai' : ''} ${isShop ? 'fab-wallet' : ''}`
+  const ariaLabel = isAskAi ? 'Ask AI' : isShop ? 'Wallet' : 'Add'
 
   return (
     <button className={className} onClick={onClick} aria-label={ariaLabel}>
       <span className="fab-icon">
-        {isHome ? (
+        {isAskAi ? (
           <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
             <path d="M13 2L4.5 13.5H11L10 22L20.5 10H14L13 2Z" />
           </svg>
@@ -153,7 +155,7 @@ export default function FAB({ activePage, onClick }) {
           </svg>
         )}
       </span>
-      <span className="fab-label">{isHome ? 'Ask AI' : 'Wallet'}</span>
+      <span className="fab-label">{isAskAi ? 'Ask AI' : 'Wallet'}</span>
     </button>
   )
 }

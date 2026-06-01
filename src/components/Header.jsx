@@ -17,7 +17,7 @@ const CartIcon = () => (
   </svg>
 )
 
-export default function Header({ title, isHome, avatar, onNotifClick }) {
+export default function Header({ title, isHome, avatar, onNotifClick, showLogo = true }) {
   const [hasNotif, setHasNotif] = useState(true)
   const logoSrc = LOGO_PRESETS[loadLogo()]?.src
 
@@ -28,7 +28,7 @@ export default function Header({ title, isHome, avatar, onNotifClick }) {
 
   return (
     <header className={`app-header ${isHome ? 'app-header--home' : ''}`}>
-      {isHome ? (
+      {isHome && showLogo ? (
         <div className="header-logo">
           {logoSrc && <img src={logoSrc} alt="Brand logo" className="header-logo-img" />}
         </div>
