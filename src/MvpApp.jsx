@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig, loadLaunchHub, loadBrandLogoVisible, loadAskAiPage } from './seeds.js'
+import { applySchemeAttr, applyImageFilter, loadImageFilter, applyTheme, loadTheme, loadSeeds, PRIMARY_PRESETS, NEUTRAL_PRESETS, applyFont, loadFont, loadNavConfig, loadLaunchHub, loadBrandLogoVisible, loadAskAiPage, applyFeedTabActiveBg, loadCardBg } from './seeds.js'
 import StatusBar from './components/StatusBar'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
@@ -69,6 +69,7 @@ export default function MvpApp() {
     applySchemeAttr()
     applyImageFilter(loadImageFilter())
     applyFont(loadFont())
+    applyFeedTabActiveBg(loadCardBg('feed-tab-active').idx)
     const seeds = loadSeeds()
     const primary = PRIMARY_PRESETS[seeds.primary] || PRIMARY_PRESETS[0]
     const neutral = NEUTRAL_PRESETS[seeds.neutral] || NEUTRAL_PRESETS[0]
@@ -82,7 +83,10 @@ export default function MvpApp() {
     else el.removeAttribute('data-neutral')
     applyTheme('light')
   }, [])
-  const { title } = PAGES[activePage]
+  const feedAsHome = launchHubEnabled && hiddenNav.includes('home')
+  const { title } = feedAsHome && activePage === 'feed'
+    ? { title: 'Home' }
+    : PAGES[activePage]
   const component = activePage === 'feed'
     ? <Feed onLaunchHub={launchHubEnabled ? () => setShowHub(true) : null} />
     : PAGES[activePage].component
@@ -90,6 +94,12 @@ export default function MvpApp() {
   function handlePageChange(page) {
     setActivePage(page)
   }
+
+  const feedHomeIcon = feedAsHome ? (
+    activePage === 'feed'
+      ? <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.1L2 9.5V21a1 1 0 001 1h7v-7h4v7h7a1 1 0 001-1V9.5L12 2.1z" /></svg>
+      : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" /><path d="M9 21V12h6v9" /></svg>
+  ) : null
 
   const smileyIcon = (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
@@ -110,7 +120,7 @@ export default function MvpApp() {
         {component}
       </main>
       <FAB activePage={activePage} askAiPage={askAiPage} />
-      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You' }} icons={{ profile: smileyIcon }} hidden={hiddenNav} />
+      <BottomNav active={activePage} onChange={handlePageChange} labels={{ profile: 'You', ...(feedAsHome ? { feed: 'Home' } : {}) }} icons={{ profile: smileyIcon, ...(feedAsHome ? { feed: feedHomeIcon } : {}) }} hidden={hiddenNav} />
       {showHub && <HubWebView onClose={() => setShowHub(false)} />}
     </div>
   )

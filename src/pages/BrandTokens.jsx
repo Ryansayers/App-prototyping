@@ -7,7 +7,7 @@ import {
   applySeeds, saveSeeds, loadSeeds,
   BG_PRESETS, applyBg, loadBg, saveBg,
   applyTheme, loadTheme, saveTheme,
-  HOME_CARD_PRESETS,
+  HOME_CARD_PRESETS, FEED_TAB_ACTIVE_PRESETS, applyFeedTabActiveBg,
   CTA_ACTIVITY_PRESETS, CTA_DISCOUNTS_PRESETS, CTA_REWARDS_PRESETS, applyCardBg, loadCardBg, saveCardBg,
   CTA_BTN_PRESETS, applyCTABtn, loadCTABtn, saveCTABtn,
   FONT_PRESETS, applyFont, loadFont, saveFont,
@@ -148,6 +148,7 @@ export default function BrandTokens() {
   const [savingsGoalTarget,  setSavingsGoalTarget]  = useState(() => loadSavingsGoal().target)
   const [savingsGoalLabel,   setSavingsGoalLabel]   = useState(() => loadSavingsGoal().label)
 
+  const [feedTabActiveBgIdx, setFeedTabActiveBgIdx] = useState(() => loadCardBg('feed-tab-active').idx)
   const [ctaBtnIdx, setCtaBtnIdx] = useState(() => loadCTABtn())
   const [hiddenNav, setHiddenNav] = useState(() => loadNavConfig())
   const [homeView, setHomeView] = useState(() => loadHomeView())
@@ -176,6 +177,7 @@ export default function BrandTokens() {
     applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
     const ql = loadCardBg('quick-links')
     applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
+    applyFeedTabActiveBg(loadCardBg('feed-tab-active').idx)
     applyCTABtn(loadCTABtn())
   }, [])
 
@@ -240,6 +242,12 @@ export default function BrandTokens() {
     const next = !savingsGoalEnabled
     setSavingsGoalEnabled(next)
     saveSavingsGoal(next, savingsGoalTarget, savingsGoalLabel)
+  }
+
+  function handleFeedTabActiveBgChange(i) {
+    setFeedTabActiveBgIdx(i)
+    saveCardBg('feed-tab-active', i, '')
+    applyFeedTabActiveBg(i)
   }
 
   function handleCtaBtnChange(i) {
@@ -890,6 +898,18 @@ export default function BrandTokens() {
                 <div className="bt-seed-dot" style={{ background: 'var(--quick-link-card-bg)' }} />
                 <select className="bt-select" value={quickLinksIdx} onChange={e => handleQuickLinksChange(Number(e.target.value))}>
                   {HOME_CARD_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div className="bt-surface-row">
+            <span className="bt-surface-label">Feed tab active colour</span>
+            <div className="bt-bg-row">
+              <label className="bt-seed">
+                <div className="bt-seed-dot" style={{ background: 'var(--feed-tab-active-bg)' }} />
+                <select className="bt-select" value={feedTabActiveBgIdx} onChange={e => handleFeedTabActiveBgChange(Number(e.target.value))}>
+                  {FEED_TAB_ACTIVE_PRESETS.map((p, i) => <option key={i} value={i}>{p.label}</option>)}
                 </select>
               </label>
             </div>

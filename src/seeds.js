@@ -157,6 +157,44 @@ export const HOME_CARD_PRESETS = [
   { label: 'Rose',           value: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)',                                               darkValue: 'linear-gradient(135deg, #3d0a24 0%, #520f32 100%)' },
 ]
 
+export const FEED_TAB_ACTIVE_PRESETS = [
+  { label: 'Default',        value: null,                                                                                             darkValue: null,                                                                                            strokeColor: null,                          darkStrokeColor: null },
+  { label: 'Surface',        value: 'var(--color-surface-default)',                                                                   darkValue: 'var(--color-surface-default)',                                                                   strokeColor: 'var(--color-border-default)',  darkStrokeColor: 'var(--color-border-default)' },
+  { label: 'Subtle',         value: 'var(--color-surface-subtle)',                                                                    darkValue: 'var(--color-surface-subtle)',                                                                    strokeColor: 'var(--color-border-default)',  darkStrokeColor: 'var(--color-border-default)' },
+  { label: 'Raised',         value: 'var(--color-surface-raised)',                                                                    darkValue: 'var(--color-surface-raised)',                                                                    strokeColor: 'var(--color-border-default)',  darkStrokeColor: 'var(--color-border-default)' },
+  { label: 'Brand Tint',     value: 'var(--color-surface-brand-tint)',                                                                darkValue: 'var(--color-surface-brand-tint)',                                                                strokeColor: 'var(--color-primary-300)',     darkStrokeColor: 'var(--color-primary-600)' },
+  { label: 'Accent Tint',    value: 'var(--color-surface-accent-tint)',                                                               darkValue: 'var(--color-surface-accent-tint)',                                                               strokeColor: 'var(--color-secondary-200)',   darkStrokeColor: 'var(--color-secondary-600)' },
+  { label: 'Soft Primary',   value: 'linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-primary-100) 100%)',             darkValue: 'linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-800) 100%)',             strokeColor: 'var(--color-primary-200)',     darkStrokeColor: 'var(--color-primary-700)' },
+  { label: 'Soft Secondary', value: 'linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%)',         darkValue: 'linear-gradient(135deg, var(--color-secondary-900) 0%, var(--color-secondary-800) 100%)',         strokeColor: 'var(--color-secondary-200)',   darkStrokeColor: 'var(--color-secondary-700)' },
+  { label: 'Peach',          value: 'linear-gradient(135deg, #fde8e4 0%, #fcd0ca 100%)',                                             darkValue: 'linear-gradient(135deg, #3d1410 0%, #52201a 100%)',                                             strokeColor: '#f9a89a',                     darkStrokeColor: '#7a2018' },
+  { label: 'Sky',            value: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',                                             darkValue: 'linear-gradient(135deg, #0f2340 0%, #1a3254 100%)',                                             strokeColor: '#93c5fd',                     darkStrokeColor: '#1e3a5f' },
+  { label: 'Mint',           value: 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)',                                             darkValue: 'linear-gradient(135deg, #082818 0%, #0d3824 100%)',                                             strokeColor: '#6ee7b7',                     darkStrokeColor: '#0a4020' },
+  { label: 'Lemon',          value: 'linear-gradient(135deg, #fefce8 0%, #fef08a 100%)',                                             darkValue: 'linear-gradient(135deg, #28240a 0%, #38320e 100%)',                                             strokeColor: '#fde047',                     darkStrokeColor: '#4a3c10' },
+  { label: 'Lavender',       value: 'linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)',                                             darkValue: 'linear-gradient(135deg, #1e1040 0%, #2a1854 100%)',                                             strokeColor: '#c4b5fd',                     darkStrokeColor: '#3b1f72' },
+  { label: 'Rose',           value: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)',                                             darkValue: 'linear-gradient(135deg, #3d0a24 0%, #520f32 100%)',                                             strokeColor: '#f9a8d4',                     darkStrokeColor: '#6b1038' },
+  { label: 'Grey',           value: 'var(--color-neutral-200)',                                                                      darkValue: 'var(--color-neutral-700)',                                                                       strokeColor: 'var(--color-neutral-400)',     darkStrokeColor: 'var(--color-neutral-500)' },
+]
+
+export function applyFeedTabActiveBg(idx) {
+  const preset = FEED_TAB_ACTIVE_PRESETS[idx]
+  const dark = isDarkMode()
+  const value  = (!preset || preset.value  === null) ? null : (dark && preset.darkValue       ? preset.darkValue       : preset.value)
+  const stroke = (!preset || preset.strokeColor === null) ? null : (dark && preset.darkStrokeColor ? preset.darkStrokeColor : preset.strokeColor)
+  const el = document.documentElement
+  if (value)  el.style.setProperty('--feed-tab-active-bg', value)
+  else        el.style.removeProperty('--feed-tab-active-bg')
+  if (stroke) el.style.setProperty('--feed-tab-active-stroke-color', stroke)
+  else        el.style.removeProperty('--feed-tab-active-stroke-color')
+  // .app--mvp declares its own --feed-tab-active-bg in mvp.css, shadowing :root
+  const mvpEl = document.querySelector('.app--mvp')
+  if (mvpEl) {
+    if (value)  mvpEl.style.setProperty('--feed-tab-active-bg', value)
+    else        mvpEl.style.removeProperty('--feed-tab-active-bg')
+    if (stroke) mvpEl.style.setProperty('--feed-tab-active-stroke-color', stroke)
+    else        mvpEl.style.removeProperty('--feed-tab-active-stroke-color')
+  }
+}
+
 export const CTA_ACTIVITY_PRESETS = [
   { label: 'None',           value: null },
   { label: 'Soft Secondary', value: 'linear-gradient(135deg, var(--color-secondary-50) 0%, var(--color-secondary-100) 100%)' },
@@ -313,6 +351,7 @@ export function applyTheme(theme) {
   applyCardBg('--rec-nudge-bg', rn.idx, rn.url, HOME_CARD_PRESETS, true)
   const ql = loadCardBg('quick-links')
   applyCardBg('--quick-link-card-bg', ql.idx, ql.url, HOME_CARD_PRESETS, true)
+  applyFeedTabActiveBg(loadCardBg('feed-tab-active').idx)
   applyCTABtn(loadCTABtn())
 }
 
