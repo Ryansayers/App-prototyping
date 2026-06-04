@@ -27,7 +27,7 @@
   background: var(--feed-tab-bg);
   color: var(--feed-tab-color);
   font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -114,7 +114,7 @@
   background: var(--nc-tag-bg);
   backdrop-filter: blur(4px);
   color: var(--nc-tag-color);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 3px 9px;
   border-radius: var(--nc-tag-radius, 20px);
@@ -128,7 +128,7 @@
   right: 10px;
   background: var(--nc-badge-bg);
   color: var(--nc-badge-color);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 3px 9px;
   border-radius: var(--nc-badge-radius, 20px);
@@ -155,14 +155,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   flex-shrink: 0;
 }
 
 .nc-author-name {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-secondary);
 }
@@ -183,14 +183,14 @@
 }
 
 .nc-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--nc-desc-color);
   margin: 0;
   line-height: 1.5;
 }
 
 .nc-time {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--nc-time-color);
 }
 
@@ -261,7 +261,7 @@
   height: 36px;
   border-radius: var(--rc-avatar-radius, 50%);
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -302,7 +302,7 @@
 }
 
 .rc-from {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--rc-from-color);
   margin: 0;
 }
@@ -310,17 +310,17 @@
 .rc-role {
   font-weight: 400;
   color: var(--rc-role-color);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .rc-to {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--rc-to-color);
   margin: 0;
 }
 
 .rc-time {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--rc-time-color);
   flex-shrink: 0;
   align-self: flex-start;
@@ -328,7 +328,7 @@
 
 .rc-value {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 4px 12px;
   border-radius: var(--rc-value-radius, 20px);
@@ -337,7 +337,7 @@
 }
 
 .rc-message {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--rc-message-color);
   line-height: 1.6;
   margin: 0;
@@ -378,7 +378,7 @@
   justify-content: center;
   background: var(--feed-tab-count-bg);
   color: var(--feed-tab-count-color);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   width: 16px;
   height: 16px;
@@ -409,7 +409,7 @@
 }
 
 .saved-empty p:last-child {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--result-empty-color);
 }
 
@@ -454,7 +454,7 @@
 }
 
 .action-count {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1;
 }
@@ -520,7 +520,7 @@
 
 .hub-webview-url {
   flex: 1;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-text-secondary);
   text-align: center;
@@ -541,7 +541,7 @@
   background: var(--rc-you-banner-bg);
   border-radius: var(--rc-you-banner-radius, 12px);
   padding: 8px 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--rc-you-banner-color);
 }

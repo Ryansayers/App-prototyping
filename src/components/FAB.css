@@ -172,7 +172,7 @@
   border: none;
   cursor: pointer;
   font-family: var(--font-body, sans-serif);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
@@ -253,7 +253,7 @@
   transform: translateX(-50%);
   background: rgba(26, 20, 16, 0.9);
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   padding: 10px 18px;
   border-radius: 24px;

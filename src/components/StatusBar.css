@@ -8,7 +8,7 @@
 }
 
 .status-time {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--statusbar-text);
   letter-spacing: 0.2px;

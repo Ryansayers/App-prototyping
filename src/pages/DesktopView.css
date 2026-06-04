@@ -82,7 +82,7 @@
 }
 
 .dv-strip-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -237,7 +237,7 @@
 }
 
 .dv-nav-section-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -461,11 +461,11 @@
 
 /* ── Desktop typography ───────────────────────────────────────── */
 .dv-root .welcome-banner-headline  { font-size: 72px; }
-.dv-root .welcome-banner-eyebrow   { font-size: 12px; }
+.dv-root .welcome-banner-eyebrow   { font-size: 14px; }
 .dv-root .welcome-banner-tagline   { font-size: 15px; }
 
 .dv-root .content-card-title           { font-size: 20px; }
-.dv-root .content-card-subtitle        { font-size: 12px; font-weight: 600; color: var(--color-text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.04em; }
+.dv-root .content-card-subtitle        { font-size: 14px; font-weight: 600; color: var(--color-text-muted); margin: 0; text-transform: uppercase; letter-spacing: 0.04em; }
 .dv-page > .content-card--hero .content-card-title { font-size: 27px; }
 .dv-root .content-card-text            { font-size: 15px; }
 .dv-root .content-card-btn             { font-size: 14px; }
@@ -473,11 +473,11 @@
 .dv-root .rec-nudge-award          { font-size: 16px; }
 .dv-root .rec-nudge-pts-value      { font-size: 36px; }
 .dv-root .rec-nudge-pts-unit       { font-size: 15px; }
-.dv-root .rec-nudge-desc           { font-size: 13px; }
+.dv-root .rec-nudge-desc           { font-size: 14px; }
 
 .dv-root .anniv-title              { font-size: 19px; }
 .dv-root .anniv-name               { font-size: 15px; }
-.dv-root .anniv-date               { font-size: 13px; }
+.dv-root .anniv-date               { font-size: 14px; }
 .dv-root .anniv-years              { font-size: 14px; }
 
 .dv-root .section-heading          { font-size: 20px; }
@@ -522,7 +522,7 @@
   border: 1.5px solid var(--color-brand);
   background: transparent;
   color: var(--color-brand);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
@@ -559,7 +559,7 @@
 }
 
 .dv-news-tag {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-primary);
   text-transform: uppercase;
@@ -567,7 +567,7 @@
 }
 
 .dv-news-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--card-title-color);
   margin: 0;
@@ -575,7 +575,7 @@
 }
 
 .dv-news-excerpt {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
@@ -586,7 +586,7 @@
 }
 
 .dv-news-time {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -627,7 +627,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
 }
@@ -641,11 +641,11 @@
 .dv-rec-avatar--sm {
   width: 20px;
   height: 20px;
-  font-size: 9px;
+  font-size: 14px;
 }
 
 .dv-rec-to-label {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -662,18 +662,18 @@
 }
 
 .dv-rec-from-name {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--card-title-color);
 }
 
 .dv-rec-from-role {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
 .dv-rec-value {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 999px;
@@ -681,7 +681,7 @@
 }
 
 .dv-rec-message {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
@@ -692,7 +692,7 @@
 }
 
 .dv-rec-time {
-  font-size: 11px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
@@ -894,7 +894,7 @@
   border: 1.5px solid var(--color-border-default);
   background: transparent;
   color: var(--color-text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s;
@@ -957,7 +957,7 @@
 }
 
 .dv-ai-banner-sub {
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0.85;
 }
 

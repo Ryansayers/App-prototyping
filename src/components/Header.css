@@ -60,7 +60,7 @@
   border-radius: 50%;
   background: var(--nav-avatar-bg);
   color: var(--nav-avatar-color);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -105,7 +105,7 @@
   border-radius: 99px;
   background: var(--color-state-danger);
   color: #ffffff;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;

@@ -95,7 +95,7 @@
 }
 
 .you-stat-label {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
 }
 
@@ -178,7 +178,7 @@
 }
 
 .you-habit-sub {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
 }
@@ -234,7 +234,7 @@
 }
 
 .you-explore-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
   line-height: 1.4;
@@ -304,7 +304,7 @@
 }
 
 .you-challenge-meta {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
 }
@@ -325,7 +325,7 @@
 }
 
 .you-challenge-creator-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
 }
 
@@ -384,7 +384,7 @@
   border-radius: 50%;
   background: var(--color-state-danger);
   color: #ffffff;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -407,7 +407,7 @@
 }
 
 .mvp-notif-sub {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 2px 0 0;
   white-space: nowrap;
@@ -442,7 +442,7 @@
   background: none;
   border: none;
   color: var(--color-brand);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   padding: 0;
@@ -479,7 +479,7 @@
 
 .mvp-challenge-badge {
   display: inline-block;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -498,7 +498,7 @@
   color: var(--color-text-secondary);
   padding: 0;
   text-transform: none;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
 }
@@ -511,7 +511,7 @@
 }
 
 .mvp-challenge-dates {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0 0 6px;
 }
@@ -540,7 +540,7 @@
 }
 
 .mvp-challenge-participants {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin-left: 10px;
 }
@@ -566,7 +566,7 @@
 }
 
 .event-dates {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-secondary);
   margin: 0 0 6px;
@@ -599,7 +599,7 @@
 }
 
 .event-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0 0 8px;
   display: -webkit-box;
@@ -612,7 +612,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--event-accent, #7c3aed);
   cursor: pointer;
@@ -655,7 +655,7 @@
 }
 
 .friend-location {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
 }

@@ -35,7 +35,7 @@
 
 .welcome-banner-eyebrow {
   color: var(--color-primary-200);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -44,7 +44,7 @@
 
 .welcome-banner-tagline {
   color: var(--color-primary-200);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.45;
   margin: 0;
 }
@@ -95,13 +95,13 @@
 }
 
 .rec-nudge-pts-unit {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   opacity: 0.75;
 }
 
 .rec-nudge-desc {
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0.75;
   margin: 0 0 12px;
 }
@@ -160,7 +160,7 @@
   height: 40px;
   border-radius: 50%;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -183,12 +183,12 @@
 }
 
 .anniv-date {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
 .anniv-years {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-text-primary);
   flex-shrink: 0;
@@ -200,7 +200,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   color: var(--color-text-primary);
@@ -220,7 +220,7 @@
 }
 
 .bday-eyebrow {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -237,7 +237,7 @@
 }
 
 .bday-note {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
   margin: 0;
 }
@@ -272,7 +272,7 @@
 .bday-av--side {
   width: 40px;
   height: 40px;
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.5;
 }
 
@@ -447,7 +447,7 @@
 }
 
 .feat-card-text {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 1.55;
   margin: 0;
@@ -463,7 +463,7 @@
   border: none;
   background: var(--btn-primary-bg, var(--color-primary-600));
   color: var(--btn-primary-color, #fff);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -501,7 +501,7 @@
 }
 
 .activity-date {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.65;
   margin: 0;
 }
@@ -530,7 +530,7 @@
 }
 
 .act-ring-unit {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   opacity: 0.65;
   text-transform: uppercase;
@@ -538,7 +538,7 @@
 }
 
 .activity-target {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.65;
   margin: 10px 0 14px;
 }
@@ -554,7 +554,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0.6;
   margin: 0;
 }
@@ -569,7 +569,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   color: inherit;
@@ -622,7 +622,7 @@
 }
 
 .benefits-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
@@ -637,7 +637,7 @@
   color: var(--btn-ghost-color);
   border: var(--stroke-default) solid var(--btn-ghost-color);
   border-radius: var(--radius-control);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -700,7 +700,7 @@
 }
 
 .content-card-subtitle {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-muted);
   margin: 0;
@@ -709,7 +709,7 @@
 }
 
 .content-card-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin: 0;
@@ -724,7 +724,7 @@
   color: var(--btn-ghost-color);
   border: var(--stroke-default) solid var(--btn-ghost-color);
   border-radius: var(--radius-control);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -757,7 +757,7 @@
 }
 
 .card p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--card-body-color);
 }
 
@@ -830,7 +830,7 @@
   border-radius: var(--radius-pill);
   background: var(--color-surface-default);
   color: var(--color-text-secondary);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
@@ -867,7 +867,7 @@
 }
 
 .recent-searches-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-secondary);
 }
@@ -875,7 +875,7 @@
 .recent-clear-all {
   background: none;
   border: none;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-text-primary);
   cursor: pointer;
@@ -1029,7 +1029,7 @@
   border-radius: 99px;
   padding: 4px 10px 4px 4px;
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -1068,7 +1068,7 @@
 }
 
 .wb-category {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text-tertiary);
   text-transform: uppercase;
@@ -1076,7 +1076,7 @@
 }
 
 .wb-type-badge {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   background: var(--color-surface-raised);
   color: var(--color-text-secondary);
@@ -1096,7 +1096,7 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--color-text-tertiary);
   background: var(--color-surface-raised);
@@ -1113,7 +1113,7 @@
 }
 
 .section-subheading {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1135,7 +1135,7 @@
   padding: 0;
   cursor: pointer;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--btn-ghost-color);
 }
@@ -1187,7 +1187,7 @@
 }
 
 .goal-challenge {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--goal-challenge-color);
   margin-top: 2px;
   white-space: nowrap;
@@ -1224,13 +1224,13 @@
 }
 
 .goal-current {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--goal-current-color);
 }
 
 .goal-target {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--goal-target-color);
 }
 
@@ -1302,7 +1302,7 @@
 }
 
 .cta-label {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   opacity: 0.85;
 }
@@ -1314,7 +1314,7 @@
 }
 
 .cta-sub {
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0.75;
   margin-bottom: 12px;
 }
@@ -1328,7 +1328,7 @@
   color: var(--cta-btn-color, inherit);
   border: none;
   border-radius: var(--cta-btn-radius, 20px);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -1367,7 +1367,7 @@
 .cta-bar-footer {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0.8;
   margin-bottom: 10px;
 }
@@ -1461,7 +1461,7 @@
   background: var(--nc-tag-bg);
   backdrop-filter: blur(4px);
   color: var(--nc-tag-color);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 3px 9px;
   border-radius: var(--nc-tag-radius, 20px);
@@ -1485,7 +1485,7 @@
 }
 
 .deal-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
 }
@@ -1692,7 +1692,7 @@
 }
 
 .spotlight-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--nc-desc-color);
   margin: 0;
   line-height: 1.4;
@@ -1734,7 +1734,7 @@
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(4px);
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 3px 9px;
   border-radius: var(--nc-tag-radius, 20px);
@@ -1775,21 +1775,21 @@
   left: 10px;
   background: var(--shop-tag-bg);
   color: var(--shop-tag-color);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 2px 7px;
   border-radius: var(--shop-tag-radius, 20px);
 }
 
 .shop-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--shop-name-color);
   margin-bottom: 4px;
 }
 
 .shop-price {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--shop-price-color);
   font-weight: 500;
 }
