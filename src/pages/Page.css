@@ -809,7 +809,7 @@
   display: flex;
   gap: 8px;
   padding: 0 16px;
-  margin: 0 -16px 16px;
+  margin: 0 -16px 24px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -857,6 +857,7 @@
 /* Recent searches */
 .recent-searches {
   margin-bottom: 8px;
+  padding-top: 4px;
 }
 
 .recent-searches-header {
@@ -945,14 +946,14 @@
 
 /* Trending cards */
 .trending-section {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .trending-title {
   font-size: 17px;
   font-weight: 700;
   color: var(--color-text-primary);
-  margin: 0 0 12px;
+  margin: 0 0 16px;
 }
 
 .trending-scroll {
@@ -1014,7 +1015,7 @@
 .trending-card-earn {
   font-size: 14px;
   font-weight: 600;
-  color: var(--color-brand);
+  color: var(--color-primary-700);
   margin-top: 2px;
 }
 
