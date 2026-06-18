@@ -58,6 +58,15 @@ const ITEMS = {
   help:         ['How to redeem points', 'Setting up your profile', 'Wellbeing programme guide', 'Contact HR', 'IT support', 'FAQs'],
 }
 
+const TRENDING_CARDS = [
+  { id: 1, name: 'Nike',            category: 'Sports & Outdoors',   earn: '6%',  logoBg: '#111',   logoColor: '#fff', logoText: 'NIKE' },
+  { id: 2, name: 'ASOS',            category: 'Fashion',             earn: '4%',  logoBg: '#000',   logoColor: '#fff', logoText: 'ASOS' },
+  { id: 3, name: 'Boots',           category: 'Health & Beauty',     earn: '3%',  logoBg: '#003087',logoColor: '#fff', logoText: 'boots' },
+  { id: 4, name: 'Apple',           category: 'Tech & Electronics',  earn: '2%',  logoBg: '#555',   logoColor: '#fff', logoText: '' },
+  { id: 5, name: 'Marks & Spencer', category: 'Food & Clothing',     earn: '5%',  logoBg: '#1a1a1a',logoColor: '#fff', logoText: 'M&S' },
+  { id: 6, name: 'TUI',             category: 'Travel',              earn: '3%',  logoBg: '#e2001a',logoColor: '#fff', logoText: 'TUI' },
+]
+
 const RECENT_SEARCHES = ['Nike trainers', 'Q1 All-Hands', 'Redeem points', 'Hybrid work policy']
 
 const ClockIcon = () => (
@@ -101,6 +110,28 @@ export default function Search() {
           </button>
         ))}
       </div>
+
+      {!query && (
+        <div className="trending-section">
+          <h2 className="trending-title">Trending now</h2>
+          <div className="trending-scroll">
+            {TRENDING_CARDS.map(card => (
+              <div key={card.id} className="trending-card">
+                <div className="trending-card-logo" style={{ background: card.logoBg }}>
+                  <span className="trending-card-logo-text" style={{ color: card.logoColor }}>
+                    {card.logoText || card.name.charAt(0)}
+                  </span>
+                </div>
+                <div className="trending-card-body">
+                  <span className="trending-card-name">{card.name}</span>
+                  <span className="trending-card-category">{card.category}</span>
+                  <span className="trending-card-earn">Earn {card.earn}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {!query && recents.length > 0 && (
         <div className="recent-searches">

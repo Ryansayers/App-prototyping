@@ -943,6 +943,81 @@
   font-style: italic;
 }
 
+/* Trending cards */
+.trending-section {
+  margin-bottom: 20px;
+}
+
+.trending-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 12px;
+}
+
+.trending-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px;
+  padding: 0 20px 4px;
+}
+
+.trending-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.trending-card {
+  flex-shrink: 0;
+  width: 152px;
+  background: var(--color-surface-default);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+  cursor: pointer;
+}
+
+.trending-card-logo {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trending-card-logo-text {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.trending-card-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.trending-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.trending-card-category {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.trending-card-earn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-brand);
+  margin-top: 2px;
+}
+
 /* Profile */
 .avatar {
   width: 72px;
